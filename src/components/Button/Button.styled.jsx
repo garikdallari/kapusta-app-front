@@ -7,8 +7,7 @@ export const StyledBtn = styled.button`
   width: 125px;
   padding: 12px 34px;
   text-align: center;
-  font-weight: bold;
-  font-style: normal;
+  font-weight: 700;
   text-transform: uppercase;
   border-radius: 16px;
   border: 0px;
