@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const ModalConteiner = styled.div`
+  position: relative;
   width: 380px;
   height: 194px;
   display: flex;
@@ -30,4 +31,15 @@ export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 265px;
+`;
+export const CloseButton = styled.div`
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 20px;
+  top: 20px;
+  stroke: #52555f;
+
+  padding: 3px;
+  cursor: pointer;
 `;
