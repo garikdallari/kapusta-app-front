@@ -2,6 +2,7 @@
 import { Formik, Form } from 'formik';
 import { LoginValidationShema } from '../../helpers/LoginValidationShema';
 import Button from '../Button/Button';
+import GoogleButton from '../GoogleButton/GoogleButton';
 import {
   ErrorMessage,
   WrapperForm,
@@ -25,6 +26,7 @@ export default function LoginForm() {
   return (
     <>
       <WrapperForm>
+        <GoogleButton />
         <AdditionallyInfo>
           Или зайти с помощью e-mail и пароля, предварительно
           зарегистрировавшись:
