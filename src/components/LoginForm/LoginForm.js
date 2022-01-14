@@ -1,4 +1,3 @@
-// import React from 'react';
 import { Formik, Form } from 'formik';
 import { LoginValidationShema } from '../../helpers/LoginValidationShema';
 import Button from '../Button/Button';
