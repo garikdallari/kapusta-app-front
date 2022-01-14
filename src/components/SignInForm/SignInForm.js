@@ -3,8 +3,10 @@ import { SignInValidationSchema } from '../../helpers/SignInValidationShema';
 import Button from '../Button/Button';
 import GoogleButton from '../GoogleButton/GoogleButton';
 import {
+  ErrorMessageName,
   ErrorMessageEmail,
   ErrorMessagePassword,
+  ErrorMessageConfirmPassword,
   WrapperForm,
   StyledInput,
   InputName,
@@ -42,12 +44,27 @@ export default function SignInForm() {
         </AdditionallyInfo>
         <Formik
           initialValues={initialValues}
+          validatedOnBlur
           validationSchema={SignInValidationSchema}
           onSubmit={handleSubmit}
         >
-          {({ errors, touched, isValid, dirty }) => (
-            <Form>
-              <InputName>Электронная почта:</InputName>
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            isValid,
+            handleSubmit,
+            dirty,
+          }) => (
+            <Form onSubmit={handleSubmit}>
+              <InputName>Name:</InputName>
+              <StyledInput name="name" type="text" placeholder="Name" />
+              {errors.name && touched.name && (
+                <ErrorMessageName>{errors.name}</ErrorMessageName>
+              )}
+              <InputName>Email:</InputName>
               <StyledInput
                 name="email"
                 type="email"
@@ -56,7 +73,7 @@ export default function SignInForm() {
               {errors.email && touched.email && (
                 <ErrorMessageEmail>{errors.email}</ErrorMessageEmail>
               )}
-              <InputName>Пароль:</InputName>
+              <InputName>Password:</InputName>
               <StyledInput
                 type="password"
                 name="password"
@@ -65,6 +82,18 @@ export default function SignInForm() {
               />
               {touched.password && errors.password && (
                 <ErrorMessagePassword>{errors.password}</ErrorMessagePassword>
+              )}
+              <InputName>Confirm Password:</InputName>
+              <StyledInput
+                type="password"
+                name="confirmPassword"
+                autoComplete="on"
+                placeholder="Confirm your password"
+              />
+              {touched.confirmPassword && errors.confirmPassword && (
+                <ErrorMessageConfirmPassword>
+                  {errors.confirmPassword}
+                </ErrorMessageConfirmPassword>
               )}
 
               <BoxButton>

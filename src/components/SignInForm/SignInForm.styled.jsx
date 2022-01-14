@@ -74,9 +74,9 @@ export const InputName = styled.p`
   }
 `;
 
-export const ErrorMessageEmail = styled.p`
+export const ErrorMessageName = styled.p`
   position: absolute;
-  top: 279px;
+  top: 282px;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 400;
   font-size: 10px;
@@ -84,13 +84,13 @@ export const ErrorMessageEmail = styled.p`
   letter-spacing: 0.04em;
   color: #eb5757;
   @media (min-width: 768px) {
-    top: 300px;
+    top: 301px;
   }
 `;
 
-export const ErrorMessagePassword = styled.p`
+export const ErrorMessageEmail = styled.p`
   position: absolute;
-  top: 386px;
+  top: 384px;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 400;
   font-size: 10px;
@@ -99,6 +99,34 @@ export const ErrorMessagePassword = styled.p`
   color: #eb5757;
   @media (min-width: 768px) {
     top: 406px;
+  }
+`;
+
+export const ErrorMessagePassword = styled.p`
+  position: absolute;
+  top: 491px;
+  font-family: ${props => props.theme.fontFamily};
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #eb5757;
+  @media (min-width: 768px) {
+    top: 516px;
+  }
+`;
+
+export const ErrorMessageConfirmPassword = styled.p`
+  position: absolute;
+  top: 595px;
+  font-family: ${props => props.theme.fontFamily};
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #eb5757;
+  @media (min-width: 768px) {
+    top: 623px;
   }
 `;
 
