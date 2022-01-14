@@ -1,12 +1,12 @@
 import './App.css';
 
-import LoginForm from './components/LoginForm/LoginForm';
+import SignInForm from './components/SignInForm/SignInForm';
 import Container from './components/Container/Container';
 
 function App() {
   return (
     <Container>
-      <LoginForm></LoginForm>
+      <SignInForm></SignInForm>
     </Container>
   );
 }
