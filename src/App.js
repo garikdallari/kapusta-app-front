@@ -1,7 +1,6 @@
 import { Switch, Redirect, Route } from 'react-router-dom';
 import './App.css';
 
-import LoginForm from './components/LoginForm/LoginForm';
 import Container from './components/Container/Container';
 
 import PublicRoute from './routes/PublicRoute';
@@ -15,8 +14,6 @@ import HomePage from './pages/HomePage/HomePage';
 function App() {
   return (
     <Container>
-      <LoginForm></LoginForm>
-
       <Switch>
         <Route path="/" exact>
           <Redirect to="/login" />
