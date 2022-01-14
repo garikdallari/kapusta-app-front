@@ -5,10 +5,10 @@ export const StyledBtn = styled.button`
   line-height: 14px;
   letter-spacing: 0.02em;
   width: 125px;
-  padding: 12px 34px;
+  max-height: 44px;
+  padding: 12px 15px;
   text-align: center;
-  font-weight: bold;
-  font-style: normal;
+  font-weight: 700;
   text-transform: uppercase;
   border-radius: 16px;
   border: 0px;
@@ -18,6 +18,10 @@ export const StyledBtn = styled.button`
   background-color: ${props => props.backgroundColor};
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:not(:last-child) {
+    margin-right: ${props => props.marginRight};
+  }
 
   /* cursor: pointer;
   &:hover,

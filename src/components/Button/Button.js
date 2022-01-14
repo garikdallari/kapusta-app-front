@@ -1,11 +1,20 @@
 import { StyledBtn } from './Button.styled';
 
-// props => text(string), backgroundColor(string), textColor(string)
-
-export default function Button({ text, backgroundColor, textColor }) {
+export default function Button({
+  text,
+  backgroundColor,
+  textColor,
+  type,
+  marginRight,
+}) {
   return (
     <>
-      <StyledBtn backgroundColor={backgroundColor} textColor={textColor}>
+      <StyledBtn
+        type={type}
+        backgroundColor={backgroundColor}
+        textColor={textColor}
+        marginRight={marginRight}
+      >
         {text}
       </StyledBtn>
     </>
