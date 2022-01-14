@@ -17,8 +17,8 @@ export const WrapperForm = styled.div`
 `;
 
 export const StyledInput = styled(Field)`
-  max-width: 253px;
-  max-height: 52px;
+  width: 253px;
+  height: 52px;
   background-color: #f6f7fb;
   border-radius: 30px;
   border: none;
