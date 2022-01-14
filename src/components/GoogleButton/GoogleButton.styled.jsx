@@ -2,13 +2,25 @@ import styled from '@emotion/styled';
 
 export const Button = styled.button`
   font-family: ${props => props.theme.fontFamily};
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 0.87;
-  padding: 10px 15px;
+  line-height: 1.14;
+  padding: 11px;
+  justify-content: center;
   align-items: center;
+  display: flex;
+  background-color: #f6f7fb;
+  border-radius: 26px;
+  border: 0px;
+  width: 125px;
+  height: 40px;
   letter-spacing: 0.02em;
   color: #000000;
-  /* display: flex; */
+  box-shadow: 1px 2px 5px rgba(170, 178, 197, 0.4);
+
+  svg {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+  }
 `;

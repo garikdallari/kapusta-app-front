@@ -10,6 +10,7 @@ import {
   InputName,
   AdditionallyInfo,
   BoxButton,
+  WrapperButton,
 } from './LoginForm.styled';
 
 export default function LoginForm() {
@@ -26,7 +27,13 @@ export default function LoginForm() {
   return (
     <>
       <WrapperForm>
-        <GoogleButton />
+        <AdditionallyInfo>
+          Вы можете авторизоваться с помощью Google Account:
+        </AdditionallyInfo>
+        <WrapperButton>
+          <GoogleButton />
+        </WrapperButton>
+
         <AdditionallyInfo>
           Или зайти с помощью e-mail и пароля, предварительно
           зарегистрировавшись:

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const StyledBtn = styled.button`
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.16;
   letter-spacing: 0.02em;
   width: 125px;
   max-height: 44px;
