@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { Field } from 'formik';
 
 export const WrapperForm = styled.div`
-  outline: 1px solid black;
   width: 300px;
   padding: 40px 17px;
   background-color: #ffffff;
