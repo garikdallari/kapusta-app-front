@@ -4,7 +4,8 @@ import { LoginValidationShema } from '../../helpers/LoginValidationShema';
 import Button from '../Button/Button';
 import GoogleButton from '../GoogleButton/GoogleButton';
 import {
-  ErrorMessage,
+  ErrorMessageEmail,
+  ErrorMessagePassword,
   WrapperForm,
   StyledInput,
   InputName,
@@ -52,7 +53,7 @@ export default function LoginForm() {
                 placeholder="your@email.com"
               />
               {errors.email && touched.email && (
-                <ErrorMessage>{errors.email}</ErrorMessage>
+                <ErrorMessageEmail>{errors.email}</ErrorMessageEmail>
               )}
               <InputName>Пароль:</InputName>
               <StyledInput
@@ -62,7 +63,7 @@ export default function LoginForm() {
                 placeholder="Password"
               />
               {touched.password && errors.password && (
-                <ErrorMessage>{errors.password}</ErrorMessage>
+                <ErrorMessagePassword>{errors.password}</ErrorMessagePassword>
               )}
 
               <BoxButton>

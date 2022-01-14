@@ -17,6 +17,7 @@ export const WrapperForm = styled.div`
 `;
 
 export const StyledInput = styled(Field)`
+  position: relative;
   width: 253px;
   height: 52px;
   background-color: #f6f7fb;
@@ -60,27 +61,27 @@ export const InputName = styled.p`
   margin: 0px 0px 12px 0px;
 `;
 
-// export const WrapperForm = styled.div`
-//   display: flex;
-//   margin-top: 50px;
-//   width: 265px;
-//   flex-direction: column;
-//   margin-left: auto;
-//   margin-right: auto;
-//   justify-content: center;
-//   padding: 40px;
-//   border: 1px solid #1976d2;
-//   border-radius: 2%;
-// `;
-
-export const ErrorMessage = styled.p`
-  font-size: 12px;
-  color: #f12121;
+export const ErrorMessageEmail = styled.p`
+  position: absolute;
+  top: 290px;
+  font-family: ${props => props.theme.fontFamily};
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #eb5757;
 `;
 
-// export const TitleForm = styled.h2`
-//   text-align: center;
-// `;
+export const ErrorMessagePassword = styled.p`
+  position: absolute;
+  top: 397px;
+  font-family: ${props => props.theme.fontFamily};
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #eb5757;
+`;
 
 export const BoxButton = styled.div``;
 
