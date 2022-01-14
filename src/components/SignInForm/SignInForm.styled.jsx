@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { Field } from 'formik';
 
 export const WrapperForm = styled.div`
-  outline: 1px solid black;
   width: 300px;
   padding: 40px 17px;
   background-color: #ffffff;
@@ -76,7 +75,7 @@ export const InputName = styled.p`
 
 export const ErrorMessageName = styled.p`
   position: absolute;
-  top: 282px;
+  top: 269px;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 400;
   font-size: 10px;
@@ -84,13 +83,13 @@ export const ErrorMessageName = styled.p`
   letter-spacing: 0.04em;
   color: #eb5757;
   @media (min-width: 768px) {
-    top: 301px;
+    top: 286px;
   }
 `;
 
 export const ErrorMessageEmail = styled.p`
   position: absolute;
-  top: 384px;
+  top: 374px;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 400;
   font-size: 10px;
@@ -98,13 +97,13 @@ export const ErrorMessageEmail = styled.p`
   letter-spacing: 0.04em;
   color: #eb5757;
   @media (min-width: 768px) {
-    top: 406px;
+    top: 393px;
   }
 `;
 
 export const ErrorMessagePassword = styled.p`
   position: absolute;
-  top: 491px;
+  top: 481px;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 400;
   font-size: 10px;
@@ -112,13 +111,13 @@ export const ErrorMessagePassword = styled.p`
   letter-spacing: 0.04em;
   color: #eb5757;
   @media (min-width: 768px) {
-    top: 516px;
+    top: 501px;
   }
 `;
 
 export const ErrorMessageConfirmPassword = styled.p`
   position: absolute;
-  top: 595px;
+  top: 584px;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 400;
   font-size: 10px;
@@ -126,7 +125,7 @@ export const ErrorMessageConfirmPassword = styled.p`
   letter-spacing: 0.04em;
   color: #eb5757;
   @media (min-width: 768px) {
-    top: 623px;
+    top: 609px;
   }
 `;
 

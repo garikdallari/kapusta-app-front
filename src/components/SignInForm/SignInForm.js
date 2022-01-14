@@ -32,15 +32,14 @@ export default function SignInForm() {
     <>
       <WrapperForm>
         <AdditionallyInfo>
-          Вы можете авторизоваться с помощью Google Account:
+          You can log in with your Google Account:
         </AdditionallyInfo>
         <WrapperButton>
           <GoogleButton />
         </WrapperButton>
 
         <AdditionallyInfo>
-          Или зайти с помощью e-mail и пароля, предварительно
-          зарегистрировавшись:
+          Or log in using e-mail and password, in advance by registering:
         </AdditionallyInfo>
         <Formik
           initialValues={initialValues}
@@ -48,16 +47,7 @@ export default function SignInForm() {
           validationSchema={SignInValidationSchema}
           onSubmit={handleSubmit}
         >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            isValid,
-            handleSubmit,
-            dirty,
-          }) => (
+          {({ errors, touched, isValid, handleSubmit, dirty }) => (
             <Form onSubmit={handleSubmit}>
               <InputName>Name:</InputName>
               <StyledInput name="name" type="text" placeholder="Name" />
@@ -99,18 +89,18 @@ export default function SignInForm() {
               <BoxButton>
                 <Button
                   marginRight="15px"
-                  text="войти"
+                  text="LogIn"
                   type="submit"
-                  textColor="#FFFFFF"
-                  backgroundColor="#FF751D"
+                  textColor="52555F"
+                  backgroundColor="#F5F6FB"
                   disabled={!isValid && !dirty}
                 />
 
                 <Button
-                  text="Регистрация"
+                  text="SignIn"
                   type="submit"
-                  textColor="52555F"
-                  backgroundColor="#F5F6FB"
+                  textColor="#FFFFFF"
+                  backgroundColor="#FF751D"
                   disabled={!isValid && !dirty}
                 />
               </BoxButton>

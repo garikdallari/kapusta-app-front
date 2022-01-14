@@ -28,15 +28,14 @@ export default function LoginForm() {
     <>
       <WrapperForm>
         <AdditionallyInfo>
-          Вы можете авторизоваться с помощью Google Account:
+          You can log in with your Google Account:
         </AdditionallyInfo>
         <WrapperButton>
           <GoogleButton />
         </WrapperButton>
 
         <AdditionallyInfo>
-          Или зайти с помощью e-mail и пароля, предварительно
-          зарегистрировавшись:
+          Or log in using e-mail and password, in advance by registering:
         </AdditionallyInfo>
         <Formik
           initialValues={initialValues}
@@ -45,7 +44,7 @@ export default function LoginForm() {
         >
           {({ errors, touched, isValid, dirty }) => (
             <Form>
-              <InputName>Электронная почта:</InputName>
+              <InputName>Email:</InputName>
               <StyledInput
                 name="email"
                 type="email"
@@ -54,7 +53,7 @@ export default function LoginForm() {
               {errors.email && touched.email && (
                 <ErrorMessageEmail>{errors.email}</ErrorMessageEmail>
               )}
-              <InputName>Пароль:</InputName>
+              <InputName>Password:</InputName>
               <StyledInput
                 type="password"
                 name="password"
@@ -68,7 +67,7 @@ export default function LoginForm() {
               <BoxButton>
                 <Button
                   marginRight="15px"
-                  text="войти"
+                  text="LogIn"
                   type="submit"
                   textColor="#FFFFFF"
                   backgroundColor="#FF751D"
@@ -76,7 +75,7 @@ export default function LoginForm() {
                 />
 
                 <Button
-                  text="Регистрация"
+                  text="SignIn"
                   type="submit"
                   textColor="52555F"
                   backgroundColor="#F5F6FB"

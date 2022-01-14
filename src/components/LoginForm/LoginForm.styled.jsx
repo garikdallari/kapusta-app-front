@@ -75,7 +75,7 @@ export const InputName = styled.p`
 
 export const ErrorMessageEmail = styled.p`
   position: absolute;
-  top: 279px;
+  top: 270px;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 400;
   font-size: 10px;
@@ -83,13 +83,13 @@ export const ErrorMessageEmail = styled.p`
   letter-spacing: 0.04em;
   color: #eb5757;
   @media (min-width: 768px) {
-    top: 300px;
+    top: 287px;
   }
 `;
 
 export const ErrorMessagePassword = styled.p`
   position: absolute;
-  top: 386px;
+  top: 373px;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 400;
   font-size: 10px;
@@ -97,7 +97,7 @@ export const ErrorMessagePassword = styled.p`
   letter-spacing: 0.04em;
   color: #eb5757;
   @media (min-width: 768px) {
-    top: 406px;
+    top: 394px;
   }
 `;
 
