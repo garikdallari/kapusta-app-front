@@ -32,14 +32,15 @@ export const ButtonContainer = styled.div`
   justify-content: space-between;
   width: 265px;
 `;
-export const CloseButton = styled.div`
+export const CloseButton = styled.button`
   position: absolute;
-  width: 20px;
-  height: 20px;
   right: 20px;
   top: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: inherit;
   stroke: #52555f;
 
-  padding: 3px;
   cursor: pointer;
 `;
