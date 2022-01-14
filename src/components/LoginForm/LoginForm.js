@@ -1,110 +1,15 @@
 // import React from 'react';
-// import { Formik } from 'formik';
-// // import { useDispatch } from 'react-redux';
-// import {
-//   WrapperForm,
-//   ErrorMessage,
-//   TitleForm,
-//   StyledInput,
-// } from './LoginForm.styled';
-// import * as yup from 'yup';
-
-// export default function LoginForm() {
-//   const initialValues = {
-//     email: '',
-//     password: '',
-//   };
-
-//   const validationSchema = yup.object().shape({
-//     email: yup
-//       .string()
-//       .email('Please enter a valid email')
-//       .required('This field is required'),
-//     password: yup
-//       .string()
-//       .typeError('Should be a string')
-//       .required('This field is required'),
-//   });
-
-//   const onSubmit = values => {
-//     //  dispatch(authOperations.login(values));
-
-//     console.log(values);
-//   };
-
-//   return (
-//     <>
-//       <Formik
-//         initialValues={initialValues}
-//         validatedOnBlur
-//         onSubmit={onSubmit}
-//         validationSchema={validationSchema}
-//       >
-//         {({
-//           values,
-//           errors,
-//           touched,
-//           handleChange,
-//           handleBlur,
-//           isValid,
-//           handleSubmit,
-//           dirty,
-//         }) => (
-//           <WrapperForm>
-//             <TitleForm>AUTHORIZATION</TitleForm>
-//             <Box
-//               component="form"
-//               sx={{
-//                 '& > :not(style)': { m: 1, width: '250px' },
-//               }}
-//               onSubmit={handleSubmit}
-//             >
-//               <StyledInput
-//                 label="email"
-//                 variant="outlined"
-//                 type="email"
-//                 name="email"
-//                 onChange={handleChange}
-//                 onBlur={handleBlur}
-//                 value={values.email}
-//                 autoComplete="on"
-//               />
-//               {touched.email && errors.email && (
-//                 <ErrorMessage>{`*${errors.email}`}</ErrorMessage>
-//               )}
-
-//               <StyledInput
-//                 label="password"
-//                 variant="outlined"
-//                 type="password"
-//                 name="password"
-//                 onChange={handleChange}
-//                 onBlur={handleBlur}
-//                 value={values.password}
-//                 autoComplete="on"
-//               />
-//               {touched.password && errors.password && (
-//                 <ErrorMessage>{`*${errors.password}`}</ErrorMessage>
-//               )}
-
-//               <Button
-//                 variant="contained"
-//                 disabled={!isValid && !dirty}
-//                 type="submit"
-//               >
-//                 LogIn
-//               </Button>
-//             </Box>
-//           </WrapperForm>
-//         )}
-//       </Formik>
-//     </>
-//   );
-// }
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import { ErrorMessage } from './LoginForm.styled';
-import * as Yup from 'yup';
+import { Formik, Form } from 'formik';
+import { LoginValidationShema } from '../../helpers/LoginValidationShema';
+import Button from '../Button/Button';
+import {
+  ErrorMessage,
+  WrapperForm,
+  StyledInput,
+  InputName,
+  AdditionallyInfo,
+  BoxButton,
+} from './LoginForm.styled';
 
 export default function LoginForm() {
   const initialValues = {
@@ -112,51 +17,67 @@ export default function LoginForm() {
     email: '',
   };
 
-  const LoginSchema = Yup.object().shape({
-    email: Yup.string()
-      .email('Please enter a valid email')
-      .required('This field is required'),
-    password: Yup.string()
-      .typeError('Should be a string')
-      .required('This field is required'),
-  });
+  const handleSubmit = values => {
+    // example  dispatch(authOperations.login(values));
+    console.log(values);
+  };
 
   return (
     <>
-      <div>
-        <h1>Login</h1>
+      <WrapperForm>
+        <AdditionallyInfo>
+          Или зайти с помощью e-mail и пароля, предварительно
+          зарегистрировавшись:
+        </AdditionallyInfo>
         <Formik
           initialValues={initialValues}
-          validationSchema={LoginSchema}
-          onSubmit={values => {
-            //  dispatch(authOperations.login(values));
-            console.log(values);
-          }}
+          validationSchema={LoginValidationShema}
+          onSubmit={handleSubmit}
         >
           {({ errors, touched, isValid, dirty }) => (
             <Form>
-              <Field name="email" type="email" placeholder="your@email.com" />
+              <InputName>Электронная почта:</InputName>
+              <StyledInput
+                name="email"
+                type="email"
+                placeholder="your@email.com"
+              />
               {errors.email && touched.email && (
                 <ErrorMessage>{errors.email}</ErrorMessage>
               )}
-
-              <Field
+              <InputName>Пароль:</InputName>
+              <StyledInput
                 type="password"
                 name="password"
                 autoComplete="on"
-                placeholder="password"
+                placeholder="Password"
               />
-
               {touched.password && errors.password && (
                 <ErrorMessage>{errors.password}</ErrorMessage>
               )}
-              <button type="submit" disabled={!isValid && !dirty}>
-                Submit
-              </button>
+
+              <BoxButton>
+                <Button
+                  marginRight="15px"
+                  text="войти"
+                  type="submit"
+                  textColor="#FFFFFF"
+                  backgroundColor="#FF751D"
+                  disabled={!isValid && !dirty}
+                />
+
+                <Button
+                  text="Регистрация"
+                  type="submit"
+                  textColor="52555F"
+                  backgroundColor="#F5F6FB"
+                  disabled={!isValid && !dirty}
+                />
+              </BoxButton>
             </Form>
           )}
         </Formik>
-      </div>
+      </WrapperForm>
     </>
   );
 }

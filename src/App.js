@@ -1,14 +1,13 @@
 import './App.css';
 
 import LoginForm from './components/LoginForm/LoginForm';
-import Button from './components/Button/Button';
+import Container from './components/Container/Container';
 
 function App() {
   return (
-    <>
+    <Container>
       <LoginForm></LoginForm>
-      <Button text="click" textColor="black"></Button>
-    </>
+    </Container>
   );
 }
 
