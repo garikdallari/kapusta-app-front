@@ -7,7 +7,7 @@ export const WrapperBackgroundBody = styled.div`
 export const WrapperLoginForm = styled.div`
   @media (min-width: 320px) {
     position: absolute;
-    top: 167%;
+    top: 162%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -31,4 +31,10 @@ export const SubTitle = styled.h2`
   text-transform: uppercase;
   color: #52555f;
   margin: 0px 0px 0px 10px;
+`;
+
+export const WrapperIcon = styled.div`
+  position: absolute;
+  top: 40%;
+  right: -15px;
 `;

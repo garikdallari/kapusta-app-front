@@ -1,5 +1,6 @@
 import {
   WrapperBackgroundBody,
+  WrapperIcon,
   WrapperLoginForm,
   SubTitle,
 } from './LoginPage.styled';
@@ -13,7 +14,6 @@ export default function LoginPage() {
   return (
     <>
       <Header></Header>
-
       <WrapperBackgroundBody>
         <BackgroundBody padding="86px 88px 137px 49px">
           <Icons
@@ -23,12 +23,21 @@ export default function LoginPage() {
             height="46.34px"
           />
           <SubTitle>Smart Finance</SubTitle>
+          <WrapperIcon>
+            <Icons
+              name="mob-cabbage-up"
+              color="#000000"
+              width="83px"
+              height="89px"
+            />
+          </WrapperIcon>
         </BackgroundBody>
 
         <WrapperLoginForm>
           <LoginForm />
         </WrapperLoginForm>
       </WrapperBackgroundBody>
+      <Icons name="mob-cabbage-up" color="#000000" width="83px" height="89px" />
     </>
   );
 }
