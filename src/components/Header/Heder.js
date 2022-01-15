@@ -1,13 +1,11 @@
-import { WrapperLogo, Container } from './Header';
+import { Container } from './Header.styled.jsx';
 import LogoIcon from '../LogoIcon/LogoIcon';
 
 export default function Header() {
   return (
     <>
       <Container>
-        <WrapperLogo>
-          <LogoIcon />
-        </WrapperLogo>
+        <LogoIcon />
       </Container>
     </>
   );
