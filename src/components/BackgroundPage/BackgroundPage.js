@@ -1,11 +1,15 @@
-import { BackGroundColor } from './BackgroundPage.styled';
+import { BackGroundWrapper } from './BackgroundPage.styled';
+import cab from '../../images/cabbage/mob-cabbage-up.svg';
 
-export default function BackgroundPage() {
+export default function BackgroundPage({ children }) {
   return (
     <>
-      <div>
-        <BackGroundColor />
-      </div>
+      <BackGroundWrapper>
+        <div>
+          <img src={cab} alt="logo" width="83px" height="89px" />
+        </div>
+        {children}
+      </BackGroundWrapper>
     </>
   );
 }
