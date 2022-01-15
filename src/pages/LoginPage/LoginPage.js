@@ -4,11 +4,12 @@ import {
   WrapperLoginForm,
   SubTitle,
   ContainerIcon,
+  BackgroundBody,
 } from './LoginPage.styled';
 import Icons from '../../components/Icons/Icons';
 // components
 import Header from '../../components/Header/Header';
-import BackgroundBody from '../../components/BackgroundBody/BackgroundBody';
+// import BackgroundBody from '../../components/BackgroundBody/BackgroundBody';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import Container from '../../components/Container/Container';
 

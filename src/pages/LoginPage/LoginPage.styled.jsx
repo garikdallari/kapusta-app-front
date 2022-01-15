@@ -1,5 +1,25 @@
 import styled from '@emotion/styled';
 
+export const BackgroundBody = styled.div`
+  position: relative;
+  background-color: ${props => props.theme.backgroundBodyColor};
+  max-width: 767px;
+  height: 286px;
+  border-radius: 0px 0px 0px 80px;
+  padding: 86px 88px 137px 49px;
+
+  @media (min-width: 320px) {
+    max-width: 767px;
+    height: 286px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 2280px;
+    height: 526px;
+    padding: 90px 290px 335px 171px;
+  }
+`;
+
 export const WrapperBackgroundBody = styled.div`
   position: relative;
 `;
