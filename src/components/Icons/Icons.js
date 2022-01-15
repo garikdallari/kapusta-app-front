@@ -1,7 +1,7 @@
 import React from 'react';
 import IconsSVG from './symbol-defs.svg';
 
-function Icons({ name, color, width, height, className }) {
+export default function Icons({ name, color, width, height, className }) {
   return (
     <svg
       className={`icon icon-${name} ${className}`}
@@ -13,5 +13,3 @@ function Icons({ name, color, width, height, className }) {
     </svg>
   );
 }
-
-export default Icons;
