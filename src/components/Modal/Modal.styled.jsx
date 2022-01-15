@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const ModalConteiner = styled.div`
+export const ModalContainer = styled.div`
   position: relative;
   width: 380px;
   height: 194px;
@@ -20,6 +20,7 @@ export const ModalContent = styled.div`
 `;
 
 export const ModalText = styled.p`
+  margin: 0;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
