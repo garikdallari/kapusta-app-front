@@ -1,22 +1,26 @@
 import { Formik, Form } from 'formik';
-import { LoginValidationShema } from '../../helpers/LoginValidationShema';
+import { SignInValidationSchema } from '../../helpers/SignInValidationShema';
 import Button from '../Button/Button';
 import GoogleButton from '../GoogleButton/GoogleButton';
 import {
+  ErrorMessageName,
   ErrorMessageEmail,
   ErrorMessagePassword,
+  ErrorMessageConfirmPassword,
   WrapperForm,
   StyledInput,
   InputName,
   AdditionallyInfo,
   BoxButton,
   WrapperButton,
-} from './LoginForm.styled';
+} from './SignInForm.styled';
 
-export default function LoginForm() {
+export default function SignInForm() {
   const initialValues = {
-    password: '',
+    name: '',
     email: '',
+    password: '',
+    confirmPassword: '',
   };
 
   const handleSubmit = values => {
@@ -39,11 +43,17 @@ export default function LoginForm() {
         </AdditionallyInfo>
         <Formik
           initialValues={initialValues}
-          validationSchema={LoginValidationShema}
+          validatedOnBlur
+          validationSchema={SignInValidationSchema}
           onSubmit={handleSubmit}
         >
-          {({ errors, touched, isValid, dirty }) => (
-            <Form>
+          {({ errors, touched, isValid, handleSubmit, dirty }) => (
+            <Form onSubmit={handleSubmit}>
+              <InputName>Name:</InputName>
+              <StyledInput name="name" type="text" placeholder="Name" />
+              {errors.name && touched.name && (
+                <ErrorMessageName>{errors.name}</ErrorMessageName>
+              )}
               <InputName>Email:</InputName>
               <StyledInput
                 name="email"
@@ -63,22 +73,34 @@ export default function LoginForm() {
               {touched.password && errors.password && (
                 <ErrorMessagePassword>{errors.password}</ErrorMessagePassword>
               )}
+              <InputName>Confirm Password:</InputName>
+              <StyledInput
+                type="password"
+                name="confirmPassword"
+                autoComplete="on"
+                placeholder="Confirm your password"
+              />
+              {touched.confirmPassword && errors.confirmPassword && (
+                <ErrorMessageConfirmPassword>
+                  {errors.confirmPassword}
+                </ErrorMessageConfirmPassword>
+              )}
 
               <BoxButton>
                 <Button
                   marginRight="15px"
                   text="LogIn"
                   type="submit"
-                  textColor="#FFFFFF"
-                  backgroundColor="#FF751D"
+                  textColor="52555F"
+                  backgroundColor="#F5F6FB"
                   disabled={!isValid && !dirty}
                 />
 
                 <Button
                   text="SignIn"
                   type="submit"
-                  textColor="52555F"
-                  backgroundColor="#F5F6FB"
+                  textColor="#FFFFFF"
+                  backgroundColor="#FF751D"
                   disabled={!isValid && !dirty}
                 />
               </BoxButton>

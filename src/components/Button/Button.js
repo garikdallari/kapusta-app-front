@@ -6,6 +6,7 @@ export default function Button({
   textColor,
   type,
   marginRight,
+  disabled,
 }) {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Button({
         backgroundColor={backgroundColor}
         textColor={textColor}
         marginRight={marginRight}
+        disabled={disabled}
       >
         {text}
       </StyledBtn>

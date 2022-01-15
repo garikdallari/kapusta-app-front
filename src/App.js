@@ -1,6 +1,5 @@
 import { Switch, Redirect, Route } from 'react-router-dom';
 import './App.css';
-
 import Container from './components/Container/Container';
 
 import PublicRoute from './routes/PublicRoute';
