@@ -2,6 +2,6 @@ export const theme = {
   fontSize: {},
   color: {},
   fontFamily: 'Roboto',
-  backgroundImage: {},
+  backgroundBodyColor: '#F5F6FB',
   image: {},
 };
