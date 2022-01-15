@@ -1,12 +1,14 @@
-import { WrapperLogo } from './Header';
+import { WrapperLogo, Container } from './Header';
 import LogoIcon from '../LogoIcon/LogoIcon';
 
 export default function Header() {
   return (
     <>
-      <WrapperLogo>
-        <LogoIcon />
-      </WrapperLogo>
+      <Container>
+        <WrapperLogo>
+          <LogoIcon />
+        </WrapperLogo>
+      </Container>
     </>
   );
 }
