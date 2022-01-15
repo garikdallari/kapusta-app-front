@@ -1,7 +1,5 @@
 import { BackGroundWrapper } from './BackgroundPage.styled';
-// import cab from '../../images/cabbage/mob-cabbage-up.svg';
 import Icons from '../Icons/Icons';
-import cion from '../../images/cabbage/mob-cabbage-up.svg';
 
 export default function BackgroundPage({ children }) {
   return (
