@@ -9,7 +9,6 @@ import {
 import Icons from '../../components/Icons/Icons';
 // components
 import Header from '../../components/Header/Header';
-// import BackgroundBody from '../../components/BackgroundBody/BackgroundBody';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import Container from '../../components/Container/Container';
 
@@ -18,7 +17,7 @@ export default function LoginPage() {
     <>
       <Header></Header>
       <WrapperBackgroundBody>
-        <BackgroundBody padding="86px 88px 137px 49px">
+        <BackgroundBody>
           <Icons
             name="kapusta"
             color="#000000"
@@ -40,6 +39,7 @@ export default function LoginPage() {
           <LoginForm />
         </WrapperLoginForm>
       </WrapperBackgroundBody>
+
       <Container>
         <ContainerIcon>
           <Icons
