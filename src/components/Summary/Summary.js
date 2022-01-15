@@ -2,34 +2,29 @@ import {
     SummaryTable,
     StyledTr,
     SummaryWrapper,
-    HeadTd
+    HeadTd,
+    MontTd
   } from './Summary.styled';
   
   export default function Summury() {
     const monthes = [
-      { name: "January", amount: 10000 },
-      { name: "February", amount: 10000 },
+      { name: "January", amount: 10000.01 },
+      { name: "February", amount: 100},
       { name: "March", amount: 10000 },
       { name: "April", amount: 10000 },
       { name: "May", amount: 10000 },
       { name: "June", amount: 10000 },
-    
     ];
   
     return (
       <SummaryWrapper>
-        <SummaryTable>
-          <thead>
-            <StyledTr>
-              <HeadTd colspan="2">Summary</HeadTd>
-           </StyledTr>
-          </thead>
-  
+        <HeadTd>Summary</HeadTd>
+         <SummaryTable>
           <tbody>
-            {monthes.map(month => {
+            {monthes.length>0&&monthes.map(month => {
               return (
                 <StyledTr key={ month.name}>
-                  <td>{month.name}</td>
+                  <MontTd>{month.name}</MontTd>
                   <td>{month.amount}</td>
                   </StyledTr>
               );

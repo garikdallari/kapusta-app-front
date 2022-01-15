@@ -7,6 +7,8 @@ import {
     HeadTable,
     BodyTr,
     StyledFinanceTable,
+    TabletText,
+    DesktopText
   } from './FinanceTable.styled';
   import React from 'react';
   import { RiDeleteBinLine } from 'react-icons/ri';
@@ -27,7 +29,7 @@ import {
     },
     {
       date: '3',
-      description: 'rtyeityeut ureytuwyte etruetyieu ureyityqewtuy ueriyrq',
+      description: 'rtyeityeut ureytuwyte etruetyieu ureyityqewtuy ueriydsfdsfdfdfdfdfdfdffdfdfdfrq',
       category: 'car',
       amount: 6,
     },
@@ -63,21 +65,24 @@ import {
                     <BodyTr key={e.date}>
                       <DateTd>{e.date}</DateTd>
                       <td>
-                        <EllipsisText
+                      <TabletText><EllipsisText
                           text={e.description}
                           tooltip={e.description}
-                          length={30}
-                        />
+                          length={35}
+                        /></TabletText> 
+                       <DesktopText> <EllipsisText
+                          text={e.description}
+                          tooltip={e.description}
+                          length={60}
+                        /></DesktopText> 
                       </td>
                       <StyledTd>{e.category}</StyledTd>
                       <StyledTd>{e.amount}</StyledTd>
                       <StyledTd>
                         <IconContext.Provider
-                          size={14}
-                          value={{ color: '#52555F' }}
-                        >
+                          value={{ color: '#52555F', size: '18px' }}>
                           <DeleteBtn>
-                            <RiDeleteBinLine />
+                            <RiDeleteBinLine/>
                           </DeleteBtn>
                         </IconContext.Provider>
                       </StyledTd>

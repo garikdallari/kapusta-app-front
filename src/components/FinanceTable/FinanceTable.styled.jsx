@@ -9,6 +9,8 @@ export const StyledFinanceTable = styled.div`
   color: #52555f;
   width: 282px;
   display: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -27,22 +29,29 @@ text-align: center;
 width: 32px;
 height: 32px;
 aligh-self: center;
-&:hover{
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+&:hover, &:focus{
     background-color: #F5F6FB;
     border-radius:50%;
-
+    
 `;
 
 export const ScrollBody = styled.div`
-  overflow-x: scroll;
+  overflow-y: scroll;
   height: 344px;
+
+
   ::-webkit-scrollbar {
     width: 6px;
+    background-color: #f5f6fb;
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: #ff751d;
     border-radius: 2px;
+  }
+  ::-webkit-scrollbar-track-piece{
+    background-color: #f5f6fb;
   }
 `;
 
@@ -80,3 +89,19 @@ export const StyledTd = styled.td`
   width: 100px;
   text-align: center;
 `;
+
+export const TabletText = styled.p`
+@media screen and (min-width: 768px) {
+  display: block;
+}
+@media screen and (min-width: 1280px) {
+  display:none;
+}`
+
+export const DesktopText = styled.p`
+@media screen and (min-width: 768px) {
+  display: none;
+}
+@media screen and (min-width: 1280px) {
+  display:block;
+}`
