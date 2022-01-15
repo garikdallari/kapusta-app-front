@@ -3,12 +3,14 @@ import {
   WrapperIcon,
   WrapperLoginForm,
   SubTitle,
+  ContainerIcon,
 } from './LoginPage.styled';
 import Icons from '../../components/Icons/Icons';
 // components
 import Header from '../../components/Header/Header';
 import BackgroundBody from '../../components/BackgroundBody/BackgroundBody';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import Container from '../../components/Container/Container';
 
 export default function LoginPage() {
   return (
@@ -37,7 +39,16 @@ export default function LoginPage() {
           <LoginForm />
         </WrapperLoginForm>
       </WrapperBackgroundBody>
-      <Icons name="mob-cabbage-up" color="#000000" width="83px" height="89px" />
+      <Container>
+        <ContainerIcon>
+          <Icons
+            name="mob-cabbage-down"
+            color="#000000"
+            width="83px"
+            height="89px"
+          />
+        </ContainerIcon>
+      </Container>
     </>
   );
 }

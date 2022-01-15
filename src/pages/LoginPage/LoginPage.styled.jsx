@@ -38,3 +38,7 @@ export const WrapperIcon = styled.div`
   top: 40%;
   right: -15px;
 `;
+
+export const ContainerIcon = styled.div`
+  margin-top: 407px;
+`;
