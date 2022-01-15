@@ -7,6 +7,6 @@ export const theme = {
     buttonDarkText: '#52555F',
   },
   fontFamily: 'Roboto',
-  backgroundImage: {},
+  backgroundBodyColor: '#F5F6FB',
   image: {},
 };
