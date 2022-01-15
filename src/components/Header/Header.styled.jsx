@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   padding: 0px 10px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 
   @media screen and (min-width: 320px) {
     max-width: 767px;
@@ -17,4 +19,11 @@ export const Container = styled.div`
   @media screen and (min-width: 1280px) {
     padding: 0px 26px;
   }
+`;
+
+export const MenuBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0px 13px 0px;
 `;
