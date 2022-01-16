@@ -46,3 +46,13 @@ export const Select = styled.select`
 export const ProductContainer = styled.div`
   margin-top: 15px;
 `;
+
+export const Label = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;

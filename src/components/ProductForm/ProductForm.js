@@ -1,18 +1,24 @@
-import { Input, Select, ProductContainer } from './ProductForm.styled';
+import {
+  Input,
+  Select,
+  ProductContainer,
+  Label,
+  Form,
+} from './ProductForm.styled';
 
 export default function ProductForm() {
   return (
     <ProductContainer>
-      <form name="productForm" autoComplete="on" noValidate>
-        <label>
+      <Form name="productForm" autoComplete="on" noValidate>
+        <Label>
           <Input
             type="text"
             name="descriptionProduct"
             placeholder="Описание товара"
           />
-        </label>
+        </Label>
 
-        <label>
+        <Label>
           <Select name="size">
             <option value disabled selected hidden>
               Категория товара
@@ -21,8 +27,8 @@ export default function ProductForm() {
             <option value="Food">Продукты</option>
             <option value="Health">Здоровье</option>
           </Select>
-        </label>
-      </form>
+        </Label>
+      </Form>
     </ProductContainer>
   );
 }
