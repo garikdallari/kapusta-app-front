@@ -1,8 +1,8 @@
-import { Input, Select } from './ProductForm.styled';
+import { Input, Select, ProductContainer } from './ProductForm.styled';
 
 export default function ProductForm() {
   return (
-    <div>
+    <ProductContainer>
       <form name="productForm" autoComplete="on" noValidate>
         <label>
           <Input
@@ -13,17 +13,16 @@ export default function ProductForm() {
         </label>
 
         <label>
-          <Select name="size" placeholder="Описание товара">
-            <option value disabled selected>
+          <Select name="size">
+            <option value disabled selected hidden>
               Категория товара
             </option>
-            <option value="xs">Extra Small</option>
-            <option value="s">Small</option>
-            <option value="m">Medium</option>
-            <option value="l">Large</option>
+            <option value="Transport">Транспорт</option>
+            <option value="Food">Продукты</option>
+            <option value="Health">Здоровье</option>
           </Select>
         </label>
       </form>
-    </div>
+    </ProductContainer>
   );
 }

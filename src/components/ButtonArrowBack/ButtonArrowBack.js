@@ -1,14 +1,15 @@
 import { HiArrowNarrowLeft } from 'react-icons/hi';
-import Button from './ButtonLeft.styled';
+import Button from './ButtonArrowBack.styled';
+import { theme } from '../../constants/theme';
 
-export default function ButtonLeft() {
+export default function ButtonArrowBack() {
   return (
     <Button onClick={() => console.log('Клик на кнопку Стрелка влево.')}>
       <HiArrowNarrowLeft
         style={{
-          color: 'FF751D',
-          width: '18px',
-          height: '12px',
+          color: theme.color.buttonOrangeBg,
+          width: '100%',
+          height: '100%',
         }}
       />
     </Button>
