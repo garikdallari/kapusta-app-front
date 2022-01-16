@@ -1,3 +1,6 @@
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import authOperations from '../../redux/auth/auth-operations';
 import { Formik, Form } from 'formik';
 import { SignInValidationSchema } from '../../helpers/SignInValidationShema';
 import Button from '../Button/Button';
@@ -13,9 +16,11 @@ import {
   AdditionallyInfo,
   BoxButton,
   WrapperButton,
-} from './SignInForm.styled';
+} from './SignupForm.styled';
 
 export default function SignInForm() {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const initialValues = {
     name: '',
     email: '',
@@ -23,9 +28,9 @@ export default function SignInForm() {
     confirmPassword: '',
   };
 
-  const handleSubmit = values => {
-    // example  dispatch(authOperations.login(values));
-    console.log(values);
+  const handleSubmit = ({ name, email, password }) => {
+    dispatch(authOperations.signup({ name, email, password }));
+    history.push('/home');
   };
 
   return (
