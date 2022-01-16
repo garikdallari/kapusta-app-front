@@ -1,4 +1,32 @@
 import styled from '@emotion/styled';
+import Icons from '../../components/Icons/Icons';
+
+export const StyledTopIcon = styled(Icons)`
+  color: #000000;
+  width: 83px;
+  height: 89px;
+
+  @media (min-width: 768px) {
+    width: 1000px;
+    height: 232px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1334px;
+  }
+`;
+
+export const StyledBottomIcon = styled(Icons)`
+  color: #000000;
+  width: 83px;
+  height: 89px;
+`;
+
+export const LogoIcon = styled(Icons)`
+  color: #000000;
+  width: 183px;
+  height: 46.34px;
+`;
 
 export const BackgroundBody = styled.div`
   position: relative;
@@ -33,7 +61,7 @@ export const WrapperLoginForm = styled.div`
   }
 
   @media (min-width: 768px) {
-    top: 75%;
+    top: 85%;
   }
   @media (min-width: 1280px) {
     top: 75%;
@@ -53,12 +81,12 @@ export const SubTitle = styled.h2`
   margin: 0px 0px 0px 10px;
 `;
 
-export const WrapperIcon = styled.div`
+export const WrapperTopIcon = styled.div`
   position: absolute;
   top: 40%;
   right: -15px;
 `;
 
-export const ContainerIcon = styled.div`
+export const WrapperBottomIcon = styled.div`
   margin-top: 407px;
 `;

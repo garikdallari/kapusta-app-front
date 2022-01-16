@@ -1,12 +1,14 @@
 import {
   WrapperBackgroundBody,
-  WrapperIcon,
+  WrapperTopIcon,
   WrapperLoginForm,
   SubTitle,
-  ContainerIcon,
+  WrapperBottomIcon,
   BackgroundBody,
+  LogoIcon,
+  StyledTopIcon,
+  StyledBottomIcon,
 } from './LoginPage.styled';
-import Icons from '../../components/Icons/Icons';
 // components
 import Header from '../../components/Header/Header';
 import LoginForm from '../../components/LoginForm/LoginForm';
@@ -16,9 +18,11 @@ import useWindowDimensions from '../../helpers/useWindowDimensions';
 export default function LoginPage() {
   const { width } = useWindowDimensions();
 
-  const changeUpIcon = width => {
+  const changeTopIcon = width => {
+    console.log(width);
     if (width > 319 && width < 767) return 'mob-cabbage-up';
     if (width > 768 && width < 1279) return 'tabl-cabbage-up';
+    if (width > 1280) return 'desc-cabbage-up';
   };
 
   return (
@@ -26,21 +30,11 @@ export default function LoginPage() {
       <Header></Header>
       <WrapperBackgroundBody>
         <BackgroundBody>
-          <Icons
-            name="kapusta"
-            color="#000000"
-            width="183px"
-            height="46.34px"
-          />
+          <LogoIcon name="kapusta" />
           <SubTitle>Smart Finance</SubTitle>
-          <WrapperIcon>
-            <Icons
-              name={changeUpIcon(width)}
-              color="#000000"
-              width="83px"
-              height="89px"
-            />
-          </WrapperIcon>
+          <WrapperTopIcon>
+            <StyledTopIcon name={changeTopIcon(width)} />
+          </WrapperTopIcon>
         </BackgroundBody>
 
         <WrapperLoginForm>
@@ -49,14 +43,9 @@ export default function LoginPage() {
       </WrapperBackgroundBody>
 
       <Container>
-        <ContainerIcon>
-          <Icons
-            name="mob-cabbage-down"
-            color="#000000"
-            width="83px"
-            height="89px"
-          />
-        </ContainerIcon>
+        <WrapperBottomIcon>
+          <StyledBottomIcon name="mob-cabbage-down" />
+        </WrapperBottomIcon>
       </Container>
     </>
   );
