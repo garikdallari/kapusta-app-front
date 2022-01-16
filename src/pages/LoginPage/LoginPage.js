@@ -11,8 +11,16 @@ import Icons from '../../components/Icons/Icons';
 import Header from '../../components/Header/Header';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import Container from '../../components/Container/Container';
+import useWindowDimensions from '../../helpers/useWindowDimensions';
 
 export default function LoginPage() {
+  const { width } = useWindowDimensions();
+
+  const changeUpIcon = width => {
+    if (width > 319 && width < 767) return 'mob-cabbage-up';
+    if (width > 768 && width < 1279) return 'tabl-cabbage-up';
+  };
+
   return (
     <>
       <Header></Header>
@@ -27,7 +35,7 @@ export default function LoginPage() {
           <SubTitle>Smart Finance</SubTitle>
           <WrapperIcon>
             <Icons
-              name="mob-cabbage-up"
+              name={changeUpIcon(width)}
               color="#000000"
               width="83px"
               height="89px"
