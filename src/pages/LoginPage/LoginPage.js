@@ -8,6 +8,7 @@ import {
   LogoIcon,
   StyledTopIcon,
   StyledBottomIcon,
+  WrapperContent,
 } from './LoginPage.styled';
 // components
 import Header from '../../components/Header/Header';
@@ -19,10 +20,9 @@ export default function LoginPage() {
   const { width } = useWindowDimensions();
 
   const changeTopIcon = width => {
-    console.log(width);
-    if (width > 319 && width < 767) return 'mob-cabbage-up';
-    if (width > 768 && width < 1279) return 'tabl-cabbage-up';
-    if (width > 1280) return 'desc-cabbage-up';
+    if (width >= 319 && width <= 767) return 'mob-cabbage-up';
+    if (width >= 768 && width <= 1279) return 'tabl-cabbage-up';
+    if (width >= 1280) return 'desc-cabbage-up';
   };
 
   return (
@@ -30,8 +30,10 @@ export default function LoginPage() {
       <Header></Header>
       <WrapperBackgroundBody>
         <BackgroundBody>
-          <LogoIcon name="kapusta" />
-          <SubTitle>Smart Finance</SubTitle>
+          <WrapperContent>
+            <LogoIcon name="kapusta" />
+            <SubTitle>Smart Finance</SubTitle>
+          </WrapperContent>
           <WrapperTopIcon>
             <StyledTopIcon name={changeTopIcon(width)} />
           </WrapperTopIcon>

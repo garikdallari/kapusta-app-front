@@ -1,27 +1,6 @@
 import styled from '@emotion/styled';
 import Icons from '../../components/Icons/Icons';
 
-export const StyledTopIcon = styled(Icons)`
-  color: #000000;
-  width: 83px;
-  height: 89px;
-
-  @media (min-width: 768px) {
-    width: 1000px;
-    height: 232px;
-  }
-
-  @media (min-width: 1280px) {
-    width: 1334px;
-  }
-`;
-
-export const StyledBottomIcon = styled(Icons)`
-  color: #000000;
-  width: 83px;
-  height: 89px;
-`;
-
 export const LogoIcon = styled(Icons)`
   color: #000000;
   width: 183px;
@@ -35,6 +14,7 @@ export const BackgroundBody = styled.div`
   height: 286px;
   border-radius: 0px 0px 0px 80px;
   padding: 86px 88px 137px 49px;
+  z-index: 0;
 
   @media (min-width: 320px) {
     max-width: 767px;
@@ -61,7 +41,7 @@ export const WrapperLoginForm = styled.div`
   }
 
   @media (min-width: 768px) {
-    top: 85%;
+    top: 86%;
   }
   @media (min-width: 1280px) {
     top: 75%;
@@ -85,8 +65,40 @@ export const WrapperTopIcon = styled.div`
   position: absolute;
   top: 40%;
   right: -15px;
+  z-index: -1;
+
+  /* @media (min-width: 768px) {
+    top: 3%;
+    right: -115px;
+  } */
+
+  @media (min-width: 1280px) {
+  }
+`;
+
+export const StyledTopIcon = styled(Icons)`
+  color: #000000;
+  width: 83px;
+  height: 89px;
+
+  @media (min-width: 768px) {
+    width: 1000px;
+    height: 232px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1334px;
+  }
 `;
 
 export const WrapperBottomIcon = styled.div`
   margin-top: 407px;
 `;
+
+export const StyledBottomIcon = styled(Icons)`
+  color: #000000;
+  width: 83px;
+  height: 89px;
+`;
+
+export const WrapperContent = styled.div``;
