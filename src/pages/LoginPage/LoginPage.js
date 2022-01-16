@@ -9,11 +9,12 @@ import {
   StyledTopIcon,
   StyledBottomIcon,
   WrapperContent,
+  Container,
 } from './LoginPage.styled';
 // components
 import Header from '../../components/Header/Header';
 import LoginForm from '../../components/LoginForm/LoginForm';
-import Container from '../../components/Container/Container';
+// import Container from '../../components/Container/Container';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 
 export default function LoginPage() {
@@ -27,24 +28,24 @@ export default function LoginPage() {
 
   return (
     <>
-      <Header></Header>
-      <WrapperBackgroundBody>
-        <BackgroundBody>
-          <WrapperContent>
-            <LogoIcon name="kapusta" />
-            <SubTitle>Smart Finance</SubTitle>
-          </WrapperContent>
-          <WrapperTopIcon>
-            <StyledTopIcon name={changeTopIcon(width)} />
-          </WrapperTopIcon>
-        </BackgroundBody>
-
-        <WrapperLoginForm>
-          <LoginForm />
-        </WrapperLoginForm>
-      </WrapperBackgroundBody>
-
       <Container>
+        <Header></Header>
+        <WrapperBackgroundBody>
+          <BackgroundBody>
+            <WrapperContent>
+              <LogoIcon name="kapusta" />
+              <SubTitle>Smart Finance</SubTitle>
+            </WrapperContent>
+            <WrapperTopIcon>
+              <StyledTopIcon name={changeTopIcon(width)} />
+            </WrapperTopIcon>
+          </BackgroundBody>
+
+          <WrapperLoginForm>
+            <LoginForm />
+          </WrapperLoginForm>
+        </WrapperBackgroundBody>
+
         <WrapperBottomIcon>
           <StyledBottomIcon name="mob-cabbage-down" />
         </WrapperBottomIcon>
