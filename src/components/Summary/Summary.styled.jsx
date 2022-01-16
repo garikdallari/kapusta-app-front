@@ -1,44 +1,50 @@
 import styled from '@emotion/styled';
 
 export const SummaryTable = styled.table`
-  background-color: #f5f6fb;
+  background-color: ${props => props.theme.backgroundBodyColor};
   border-collapse: collapse;
   width: 100%;
-  `;
+`;
 
 export const SummaryWrapper = styled.div`
-  background-color: #f5f6fb;
+  display: none;
+  background-color: ${props => props.theme.backgroundBodyColor};
   border-radius: 20px 20px 20px 0;
   overflow: hidden;
   width: 230px;
   height: 266px;
-  font-family: Roboto;
-  font-size: 12px;
+  font-family: ${props => props.theme.fontFamily};
+  font-size: ${props => props.theme.fontSize.descriptionProduct};
   line-height: 1.16;
   align-items: center;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #52555f;
+  color: ${props => props.theme.color.buttonDarkText};
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 `;
 
 export const StyledTr = styled.tr`
   border: 2px solid #ffffff;
   height: 38px;
-  &:first-child{border-top:none;}
+  &:first-child {
+    border-top: none;
+  }
   text-align: left;
 `;
 
 export const HeadTd = styled.div`
-display:flex;
-border: 2px solid #ffffff;
-height: 38px;
+  display: flex;
+  border: 2px solid #ffffff;
+  height: 38px;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #000000;
- align-items:center;
- justify-content:center;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const MontTd = styled.td`
-padding-left: 20px;
- `
+  padding-left: 20px;
+`;

@@ -1,6 +1,5 @@
 import React from 'react';
-import { RiDeleteBinLine } from 'react-icons/ri';
-import { IconContext } from 'react-icons';
+import Icons from '../Icons/Icons'
 import EllipsisText from 'react-ellipsis-text';
 import {
   DescriptionTd,
@@ -65,22 +64,23 @@ export default function MobileTable() {
                   </DescriptionTd>
                   <AmountTd>{e.amount} $</AmountTd>
                   <DeleteTd>
-                    <IconContext.Provider
-                      value={{ color: '#52555F', size: '18px' }}
-                    >
-                      <DeleteBtn>
-                        <RiDeleteBinLine />
+                  <DeleteBtn>
+                  <Icons
+            name="delete"
+            color="#52555F"
+            width="18px"
+            height="18px"
+          />
                       </DeleteBtn>
-                    </IconContext.Provider>
-                  </DeleteTd>
+                       </DeleteTd>
                 </BodyTr>
               );
             })}
-          <BodyTr>
+          {/* <BodyTr>
             <DescriptionTd></DescriptionTd>
           </BodyTr>
           <BodyTr></BodyTr>
-          <BodyTr></BodyTr>
+          <BodyTr></BodyTr> */}
         </tbody>
       </Table>
     </StyledMobileTable>

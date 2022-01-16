@@ -1,7 +1,7 @@
 import React from 'react';
-import { RiDeleteBinLine } from 'react-icons/ri';
-import { IconContext } from 'react-icons';
+import Icons from '../Icons/Icons'
 import EllipsisText from 'react-ellipsis-text';
+
 import {
   StyledTd,
   DateTd,
@@ -83,13 +83,16 @@ export default function TabletDesktopTable() {
                     <StyledTd>{e.category}</StyledTd>
                     <StyledTd>{e.amount}$</StyledTd>
                     <StyledTd>
-                      <IconContext.Provider
-                        value={{ color: '#52555F', size: '18px' }}
-                      >
+                     
                         <DeleteBtn>
-                          <RiDeleteBinLine />
+                        <Icons
+            name="delete"
+            color="#52555F"
+            width="18px"
+            height="18px"
+          />
                         </DeleteBtn>
-                      </IconContext.Provider>
+                    
                     </StyledTd>
                   </BodyTr>
                 );

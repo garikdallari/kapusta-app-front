@@ -8,12 +8,12 @@ import {
 
 export default function Summury() {
   const monthes = [
-    { name: 'January', amount: 10000.01 },
-    { name: 'February', amount: 100 },
-    { name: 'March', amount: 10000 },
-    { name: 'April', amount: 10000 },
-    { name: 'May', amount: 10000 },
-    { name: 'June', amount: 10000 },
+    // { name: 'January', amount: 10000.01 },
+    // { name: 'February', amount: 100 },
+    // { name: 'March', amount: 10000 },
+    // { name: 'April', amount: 10000 },
+    // { name: 'May', amount: 10000 },
+    // { name: 'June', amount: 10000 },
   ];
 
   return (
