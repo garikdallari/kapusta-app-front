@@ -5,7 +5,7 @@ import {
   Vertical,
   Nomination,
   Amount,
-  AmountIncome
+  AmountIncome,
 } from './Accounting.styled';
 
 export default function Accounting() {

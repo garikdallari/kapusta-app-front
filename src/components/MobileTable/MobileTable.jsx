@@ -12,7 +12,7 @@ import {
   DeleteTd,
   StyledP,
   Date,
-  Category
+  Category,
 } from './MobileTable.styled.jsx';
 
 const data = [
@@ -58,8 +58,10 @@ export default function MobileTable() {
                       tooltip={e.description}
                       length={20}
                     />
-                    <StyledP><Date>{e.date}</Date>
-                      <Category>{e.category}</Category></StyledP>
+                    <StyledP>
+                      <Date>{e.date}</Date>
+                      <Category>{e.category}</Category>
+                    </StyledP>
                   </DescriptionTd>
                   <AmountTd>{e.amount} $</AmountTd>
                   <DeleteTd>

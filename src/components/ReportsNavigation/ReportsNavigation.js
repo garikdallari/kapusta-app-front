@@ -1,4 +1,4 @@
-import { ReportBox, ReportHeader } from './ReportsNavigation.jsx';
+import { ReportBox, ReportHeader } from './ReportsNavigation.styled';
 
 export default function ReportsNavigation() {
   return (

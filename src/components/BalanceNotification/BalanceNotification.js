@@ -2,7 +2,7 @@ import {
   Notification,
   WelcTextNotification,
   DescrTextNotification,
-} from './BalanceNotification.jsx';
+} from './BalanceNotification.styled';
 
 export default function BalanceNotification() {
   return (
