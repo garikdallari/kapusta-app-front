@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
+import { theme } from '../../constants/theme';
 
 export const Input = styled.input`
-  color: #c7ccdc;
-  font-size: 12px;
+  color: ${theme.color.buttonDarkText};
+  font-size: ${theme.fontSize.descriptionProduct};
   background-color: inherit;
   padding: 0px;
   height: 44px;
@@ -14,8 +15,7 @@ export const Input = styled.input`
     outline: none;
   }
   ::placeholder {
-    font-size: 12px;
-    color: #c7ccdc;
+    color: ${theme.color.inputPlaceholderColor};
   }
 
   // @media (min-width: 768px) {
@@ -24,12 +24,12 @@ export const Input = styled.input`
 `;
 
 export const Select = styled.select`
-  font-size: 12px;
-  color: #c7ccdc;
+  font-size: ${theme.fontSize.descriptionProduct};
+  color: ${theme.color.inputPlaceholderColor};
   background-color: inherit;
   padding: 0px;
   height: 44px;
-  padding-left: 20px;
+  padding-left: 18px;
   border: 2px solid #ffffff;
   border-radius: 0px 0px 16px 0px;
   min-width: 282px;
@@ -40,4 +40,7 @@ export const Select = styled.select`
   // @media (min-width: 768px) {
   //   display: none;
   // }
+`;
+export const ProductContainer = styled.div`
+  margin-top: 15px;
 `;
