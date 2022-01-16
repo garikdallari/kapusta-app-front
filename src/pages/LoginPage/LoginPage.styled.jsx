@@ -41,7 +41,7 @@ export const WrapperLoginForm = styled.div`
   }
 
   @media (min-width: 768px) {
-    top: 86%;
+    top: 92%;
   }
   @media (min-width: 1280px) {
     top: 75%;
@@ -67,10 +67,10 @@ export const WrapperTopIcon = styled.div`
   right: -15px;
   z-index: -1;
 
-  /* @media (min-width: 768px) {
+  @media (min-width: 768px) {
     top: 3%;
-    right: -115px;
-  } */
+    right: 12px;
+  }
 
   @media (min-width: 1280px) {
   }
@@ -82,7 +82,7 @@ export const StyledTopIcon = styled(Icons)`
   height: 89px;
 
   @media (min-width: 768px) {
-    width: 1000px;
+    width: 750px;
     height: 232px;
   }
 
