@@ -5,7 +5,7 @@ import {
   SvgContainer,
   Section,
 } from './IconsReportSection.styled';
-import Icons from '../../components/Icons/Icons';
+import Icons from '../Icons/Icons';
 
 const IconsReportSection = () => {
   return (

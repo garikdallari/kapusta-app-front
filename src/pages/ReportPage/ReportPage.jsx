@@ -1,4 +1,3 @@
-
 import {
   WrapperBackgroundBody,
   BackgroundBody,
@@ -7,6 +6,7 @@ import {
 import Header from '../../components/Header/Header';
 import Container from '../../components/Container/Container';
 import Accounting from '../../components/Accounting/Accounting';
+import IconsReportSection from '../../components/IconsReportSection/IconsReportSection';
 
 export default function LoginPage() {
   return (
