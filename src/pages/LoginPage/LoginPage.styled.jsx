@@ -2,13 +2,9 @@ import styled from '@emotion/styled';
 import Icons from '../../components/Icons/Icons';
 
 export const Container = styled.div`
-  padding: 0px 5px;
+  padding: 0px 9px;
   margin: 0 auto;
-
-  @media screen and (min-width: 320px) {
-    max-width: 767px;
-    padding: 0px 0px;
-  }
+  max-width: 767px;
 
   @media screen and (min-width: 768px) {
     max-width: 1280px;
@@ -43,11 +39,6 @@ export const BackgroundBody = styled.div`
   border-radius: 0px 0px 0px 80px;
   padding: 86px 88px 137px 49px;
   z-index: 0;
-  /* 
-  @media (min-width: 320px) {
-    max-width: 767px;
-    height: 286px;
-  } */
 
   @media (min-width: 768px) {
     max-width: 1280px;
