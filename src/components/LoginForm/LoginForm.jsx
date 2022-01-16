@@ -26,7 +26,6 @@ export default function LoginForm() {
 
   const handleSubmit = values => {
     dispatch(authOperations.login(values));
-    console.log(values);
     history.push('/home');
   };
 
