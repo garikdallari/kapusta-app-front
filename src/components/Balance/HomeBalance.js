@@ -8,10 +8,10 @@ import {
   BalanceBox,
 } from './Balance.styled.jsx';
 
-import BalanceNotification from '../../components/BalanceNotification/BalanceNotification';
-import ReportsNavigation from '../../components/ReportsNavigation/ReportsNavigation';
+import BalanceNotification from '../BalanceNotification/BalanceNotification';
+import ReportsNavigation from '../ReportsNavigation/ReportsNavigation';
 
-export default function Balance() {
+export default function HomeBalance() {
   return (
     <>
       <WrapperInput>

@@ -8,7 +8,7 @@ export const ReportBox = styled.div`
   }
 `;
 
-export const ReportHeader = styled.p`
+export const ReportHeader = styled.a`
   display: flex;
   justify-content: center;
   margin: 0 auto;
