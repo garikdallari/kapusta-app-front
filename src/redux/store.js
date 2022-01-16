@@ -1,9 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
-import reducer from './transactions/trans-reducer';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import transReducer from './transactions/trans-reducer';
+import authReducer from './auth/auth-slice';
 
-const store = configureStore({
-  reducer,
+const authPersistConfig = { key: 'auth', storage, whitelist: ['token'] };
+
+export const store = configureStore({
+  reducer: {
+    auth: persistReducer(authPersistConfig, authReducer),
+    transactions: transReducer,
+  },
+  //middlewares,
   devTools: process.env.NODE_ENV === 'development',
 });
 
-export default store;
+export const persistor = persistStore(store);
