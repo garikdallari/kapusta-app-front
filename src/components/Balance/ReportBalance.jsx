@@ -1,13 +1,14 @@
 import {
   BalanceTitle,
-  Label,
   InputContainer,
-  ReportData,
   ReportInput,
   WrapperInput,
   BalanceBox,
   Data,
+  Placeholder,
 } from './Balance.styled.jsx';
+
+import CurrentPeriod from './CurrentPeriod';
 
 export default function ReportBalance() {
   return (
@@ -15,12 +16,12 @@ export default function ReportBalance() {
       <WrapperInput>
         <Data>
           <BalanceTitle>Current period:</BalanceTitle>
-          <ReportData>June 21</ReportData>
+          <CurrentPeriod />
         </Data>
         <BalanceBox>
           <BalanceTitle>Balance:</BalanceTitle>
           <InputContainer>
-            <Label>$</Label>
+            <Placeholder>$</Placeholder>
             <ReportInput></ReportInput>
           </InputContainer>
         </BalanceBox>

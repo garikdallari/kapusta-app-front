@@ -8,14 +8,14 @@ import {
 } from './LoginPage.styled';
 import Icons from '../../components/Icons/Icons';
 // components
-import Header from '../../components/Header/Header';
+// import Header from '../../components/Header/Header';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import Container from '../../components/Container/Container';
 
 export default function LoginPage() {
   return (
     <>
-      <Header></Header>
+      {/* <Header></Header> */}
       <WrapperBackgroundBody>
         <BackgroundBody>
           <Icons
