@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 export const Section = styled.div`
   position: relative;
   margin: 40px auto 0;
-  padding: 0 9px;
-
+  width: 282px;
   background-color: ${props => props.bgColor};
+
   @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -13,7 +13,7 @@ export const Section = styled.div`
     margin-top: 30px;
 
     width: 666px;
-    padding: 0 32px 30px 32px;
+    padding: 20px 32px 30px 32px;
 
     border-radius: 30px;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
