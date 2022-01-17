@@ -1,54 +1,50 @@
 import {
   WrapperBackgroundBody,
-  WrapperIcon,
+  WrapperTopIcon,
   WrapperLoginForm,
   SubTitle,
-  ContainerIcon,
+  WrapperBottomIcon,
   BackgroundBody,
-} from './LoginPage.styled';
-import Icons from '../../components/Icons/Icons';
+  LogoIcon,
+  StyledTopIcon,
+  StyledBottomIcon,
+  WrapperContent,
+  Container,
+} from './RegisterPage.styled';
 // components
 import Header from '../../components/Header/Header';
 import SignupForm from '../../components/SignupForm/SignupForm';
-import Container from '../../components/Container/Container';
+//helpers
+import useWindowDimensions from '../../helpers/useWindowDimensions';
+import { changeNameTopIcon } from '../../helpers/changeNameTopIcon';
+import { changeNameBottomIcon } from '../../helpers/changeNameBottomIcon';
 
 export default function RegisterPage() {
+  const { width } = useWindowDimensions();
+
   return (
     <>
-      <Header></Header>
-      <WrapperBackgroundBody>
-        <BackgroundBody>
-          <Icons
-            name="kapusta"
-            color="#000000"
-            width="183px"
-            height="46.34px"
-          />
-          <SubTitle>Smart Finance</SubTitle>
-          <WrapperIcon>
-            <Icons
-              name="mob-cabbage-up"
-              color="#000000"
-              width="83px"
-              height="89px"
-            />
-          </WrapperIcon>
-        </BackgroundBody>
-
-        <WrapperLoginForm>
-          <SignupForm />
-        </WrapperLoginForm>
-      </WrapperBackgroundBody>
-
       <Container>
-        <ContainerIcon>
-          <Icons
-            name="mob-cabbage-down"
-            color="#000000"
-            width="83px"
-            height="89px"
-          />
-        </ContainerIcon>
+        <Header></Header>
+        <WrapperBackgroundBody>
+          <BackgroundBody>
+            <WrapperContent>
+              <LogoIcon name="kapusta" />
+              <SubTitle>Smart Finance</SubTitle>
+            </WrapperContent>
+            <WrapperTopIcon>
+              <StyledTopIcon name={changeNameTopIcon(width)} />
+            </WrapperTopIcon>
+          </BackgroundBody>
+
+          <WrapperLoginForm>
+            <SignupForm />
+          </WrapperLoginForm>
+        </WrapperBackgroundBody>
+
+        <WrapperBottomIcon>
+          <StyledBottomIcon name={changeNameBottomIcon(width)} />
+        </WrapperBottomIcon>
       </Container>
     </>
   );

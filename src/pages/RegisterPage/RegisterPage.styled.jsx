@@ -49,25 +49,6 @@ export const BackgroundBody = styled.div`
     padding: 308px 673px 79px 230px;
   }
 `;
-export const BackgroundBodyReport = styled.div`
-  position: relative;
-  background-color: ${props => props.theme.backgroundBodyColor};
-  max-width: 767px;
-  height: 286px;
-  border-radius: 0px 0px 0px 80px;
-  padding: 21px 19px 51px 19px;
-  z-index: 0;
-
-  @media (min-width: 768px) {
-    max-width: 1280px;
-    height: 526px;
-    padding: 42px 50px 76px 50px;
-  }
-
-  @media (min-width: 1280px) {
-    padding: 43px 110px 74px 110px;
-  }
-`;
 
 export const WrapperBackgroundBody = styled.div`
   position: relative;
@@ -76,16 +57,16 @@ export const WrapperBackgroundBody = styled.div`
 export const WrapperLoginForm = styled.div`
   @media (min-width: 320px) {
     position: absolute;
-    top: 162%;
+    top: 195%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   @media (min-width: 768px) {
-    top: 92%;
+    top: 114%;
   }
   @media (min-width: 1280px) {
-    top: 75%;
+    top: 90%;
     left: 76%;
   }
 `;
@@ -145,11 +126,11 @@ export const StyledTopIcon = styled(Icons)`
 `;
 
 export const WrapperBottomIcon = styled.div`
-  margin: 407px 0px 0px 35px;
+  margin: 610px 0px 0px 35px;
 
   @media (min-width: 768px) {
     position: relative;
-    margin: 206px 0px 56px 114px;
+    margin: 435px 0px 56px 114px;
   }
 
   @media (min-width: 1280px) {
