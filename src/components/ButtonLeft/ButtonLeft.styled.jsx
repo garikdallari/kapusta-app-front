@@ -5,8 +5,8 @@ export const NavContainer = styled.div`
     display: flex;
     align-items: baseline;
   }
-  @media (max-width: 768px) {
-    display: none;
+  @media (min-width: 76px) {
+    // display: none;
   }
 `;
 
@@ -26,16 +26,15 @@ export const Button = styled.button`
     background-color: white;
   }
 
-  // @media (min-width: 768px) {
-  //   display: none;
-  // }
+  @media (min-width: 768px) {
+    // display: none;
+  }
 `;
 
 export const BtnBackText = styled.p`
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     border-radius: 50px;
     type: button;
-    width: 24px;
     height: 24px;
     padding: 0px;
     background-color: inherit;
@@ -48,7 +47,7 @@ export const BtnBackText = styled.p`
       background-color: white;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
