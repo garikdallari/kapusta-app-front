@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Section = styled.div`
-  margin: 30px 0 0 0;
+  margin: 30px auto 0;
   padding: 0 9px;
   width: 300px;
 

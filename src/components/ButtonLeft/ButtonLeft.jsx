@@ -13,8 +13,8 @@ export default function ButtonLeft() {
               height: '12px',
             }}
           />
+          <BtnBackText>Go back</BtnBackText>
         </Button>
-        <BtnBackText>Go back</BtnBackText>
       </NavContainer>
     </>
   );

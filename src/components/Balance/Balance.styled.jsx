@@ -153,7 +153,7 @@ export const ReportInput = styled.input`
 
 export const Placeholder = styled.span`
   position: relative;
-  left: 170px;
+  left: 180px;
   top: 15px;
   font-family: ${props => props.theme.fontFamily};
   color: black;
@@ -166,7 +166,6 @@ export const Placeholder = styled.span`
   @media screen and (min-width: 768px) {
     left: 160px;
   }
-
   @media screen and (min-width: 1280px) {
   }
 `;
