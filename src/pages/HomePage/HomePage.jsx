@@ -5,28 +5,32 @@ import MobileTable from '../../components/MobileTable/MobileTable';
 import Summary from '../../components/Summary/Summary';
 import IncomeExpenseBtns from '../../components/IncomeExpenseBtns/IncomeExpenseBtns';
 import HomeBalance from '../../components/Balance/HomeBalance';
-import Paper from '../../components/Paper/Paper';
 import FinanceTable from '../../components/FinanceTable/FinanceTable';
-import { theme } from '../../constants/theme';
+import Container from '../../components/Container/Container';
+import {
+  TableSummaryWrapper,
+  PaperHomePage,
+  BackgroundBody,
+} from './HomePage.styled';
 
 function HomePage() {
   return (
-    <>
-      <HomeBalance />
-      <FinanceTable>
-        <IncomeExpenseBtns />
-        <Paper
-          padding="28px 30px 48px 30px"
-          borderRadius="0px 30px 30px 30px"
-          boxShadow={theme.color.boxShadow}
-        >
-          <SectionInputAndClear />
-          <TabletDesktopTable />
-          <MobileTable />
-          <Summary />
-        </Paper>
-      </FinanceTable>
-    </>
+    <BackgroundBody>
+      <Container>
+        <HomeBalance />
+        <FinanceTable>
+          <IncomeExpenseBtns />
+          <PaperHomePage>
+            <SectionInputAndClear />
+            <TableSummaryWrapper>
+              <TabletDesktopTable />
+              <MobileTable />
+              <Summary />
+            </TableSummaryWrapper>
+          </PaperHomePage>
+        </FinanceTable>
+      </Container>
+    </BackgroundBody>
   );
 }
 
