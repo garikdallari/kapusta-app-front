@@ -5,7 +5,10 @@ import {
 // components
 import Header from '../../components/Header/Header';
 import Container from '../../components/Container/Container';
+import ButtonLeft from '../../components/ButtonLeft/ButtonLeft';
 import Accounting from '../../components/Accounting/Accounting';
+import CurrentPeriod from '../../components/Balance/CurrentPeriod';
+import ReportBalance from '../../components/Balance/ReportBalance';
 import IconsReportSection from '../../components/IconsReportSection/IconsReportSection';
 
 export default function LoginPage() {
@@ -15,7 +18,11 @@ export default function LoginPage() {
       <WrapperBackgroundBody>
         <BackgroundBody>
           <Container>
+            <ButtonLeft />
+            <ReportBalance />
             <Accounting />
+            <CurrentPeriod />
+            <IconsReportSection />
           </Container>
         </BackgroundBody>
       </WrapperBackgroundBody>

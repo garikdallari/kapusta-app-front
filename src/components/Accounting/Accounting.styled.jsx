@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Section = styled.div`
-  margin: 0 auto;
+  margin: 0 0 40px 0;
   padding: 7px 11px 7px 14px;
   width: 282px;
 
@@ -24,15 +24,15 @@ export const Section = styled.div`
     padding-left: 319px;
     width: 1060px;
   }
-`
+`;
 
 export const List = styled.div`
   display: flex;
   align-items: center;
   margin: 0;
   padding: 0;
-`
-  
+`;
+
 export const Item = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,21 +53,21 @@ export const Item = styled.div`
       margin-right: 21px;
     }
   }
-`
+`;
 
 export const Vertical = styled.div`
   margin-right: 10px;
-  
+
   height: 71px;
   border-right: 1px solid ${props => props.theme.color.lightGray};
 
   @media screen and (min-width: 768px) {
     margin-right: 19px;
-    
+
     height: 36px;
     border-right: 1px solid ${props => props.theme.color.lightGray};
   }
-`
+`;
 
 export const Nomination = styled.span`
   margin: 0 0 8px 0;
@@ -80,7 +80,7 @@ export const Nomination = styled.span`
   @media screen and (min-width: 768px) {
     margin: 0 15px 0 0;
   }
-`
+`;
 
 export const Amount = styled.span`
   margin: 0;
@@ -91,7 +91,7 @@ export const Amount = styled.span`
   letter-spacing: 0.04em;
 
   color: ${props => props.theme.color.expensesColor};
-`
+`;
 export const AmountIncome = styled.span`
   margin: 0;
   font-family: ${props => props.theme.fontFamily};
@@ -101,4 +101,4 @@ export const AmountIncome = styled.span`
   letter-spacing: 0.04em;
 
   color: ${props => props.theme.color.incomeColor};
-`
+`;
