@@ -4,7 +4,7 @@ import './App.css';
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
 
-import SignupPage from './pages/SignupPage/SignupPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ReportPage from './pages/ReportPage/ReportPage';
 import HomePage from './pages/HomePage/HomePage';
@@ -17,7 +17,7 @@ function App() {
       </Route>
 
       <Route path="/signup" restricted>
-        <SignupPage />
+        <RegisterPage />
       </Route>
 
       <Route path="/login" redirectTo="/home" restricted>

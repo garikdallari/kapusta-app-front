@@ -10,7 +10,7 @@ import {
   StyledBottomIcon,
   WrapperContent,
   Container,
-} from './SignupPage.styled';
+} from './RegisterPage.styled';
 // components
 import Header from '../../components/Header/Header';
 import SignupForm from '../../components/SignupForm/SignupForm';
