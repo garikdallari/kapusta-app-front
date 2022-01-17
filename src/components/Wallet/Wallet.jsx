@@ -3,15 +3,18 @@ import { theme } from '../../constants/theme';
 import { ContainerWallet, ContainerBalance } from './Wallet.styled';
 
 export default function Wallet() {
-  const balance = '55000.00';
+  const balance = '00.00';
+  const balanceLength = balance.length <= 5;
   return (
     <ContainerWallet>
-      <ContainerBalance>{balance} UAH</ContainerBalance>
+      <ContainerBalance>
+        {balance} {balanceLength && 'UAH'}
+      </ContainerBalance>
       <HiOutlineCalculator
         style={{
           color: theme.color.colorCalculator,
-          width: '20px',
-          height: '20px',
+          width: '24px',
+          height: '24px',
         }}
       />
     </ContainerWallet>
