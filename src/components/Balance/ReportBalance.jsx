@@ -6,7 +6,6 @@ import {
   BalanceBox,
   Data,
   Placeholder,
-  FlexBox,
 } from './Balance.styled.jsx';
 
 import CurrentPeriod from './CurrentPeriod';

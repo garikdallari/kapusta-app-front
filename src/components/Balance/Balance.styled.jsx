@@ -153,7 +153,7 @@ export const ReportInput = styled.input`
 
 export const Placeholder = styled.span`
   position: relative;
-  left: 130px;
+  left: 170px;
   top: 15px;
   font-family: ${props => props.theme.fontFamily};
   color: black;

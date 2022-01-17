@@ -21,17 +21,17 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  &:focus,
-  :hover {
-    background-color: white;
-  }
+  // &:focus,
+  // :hover {
+  //   background-color: white;
+  // }
 
   @media (min-width: 768px) {
     // display: none;
   }
 `;
 
-export const BtnBackText = styled.p`
+export const BtnBackText = styled.button`
   @media (min-width: 768px) {
     border-radius: 50px;
     type: button;
