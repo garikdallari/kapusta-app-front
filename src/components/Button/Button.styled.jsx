@@ -12,7 +12,7 @@ export const StyledBtn = styled.button`
   line-height: 1.16;
   letter-spacing: 0.02em;
   width: 125px;
-  max-height: 44px;
+  height: 44px;
   padding: 12px 15px;
   text-align: center;
   font-weight: 700;
