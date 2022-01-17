@@ -57,16 +57,16 @@ export const WrapperBackgroundBody = styled.div`
 export const WrapperLoginForm = styled.div`
   @media (min-width: 320px) {
     position: absolute;
-    top: 162%;
+    top: 195%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   @media (min-width: 768px) {
-    top: 92%;
+    top: 114%;
   }
   @media (min-width: 1280px) {
-    top: 75%;
+    top: 90%;
     left: 76%;
   }
 `;
@@ -126,11 +126,11 @@ export const StyledTopIcon = styled(Icons)`
 `;
 
 export const WrapperBottomIcon = styled.div`
-  margin: 407px 0px 0px 35px;
+  margin: 610px 0px 0px 35px;
 
   @media (min-width: 768px) {
     position: relative;
-    margin: 206px 0px 56px 114px;
+    margin: 435px 0px 56px 114px;
   }
 
   @media (min-width: 1280px) {
