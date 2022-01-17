@@ -1,3 +1,6 @@
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { authOperations } from '../../redux/auth/auth-operations';
 import { Formik, Form } from 'formik';
 import { LoginValidationShema } from '../../helpers/LoginValidationShema';
 import Button from '../Button/Button';
@@ -14,14 +17,16 @@ import {
 } from './LoginForm.styled';
 
 export default function LoginForm() {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const initialValues = {
     password: '',
     email: '',
   };
 
   const handleSubmit = values => {
-    // example  dispatch(authOperations.login(values));
-    console.log(values);
+    dispatch(authOperations.login(values));
+    history.push('/home');
   };
 
   return (
