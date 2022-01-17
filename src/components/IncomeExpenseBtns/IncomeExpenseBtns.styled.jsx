@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Button = styled.button`
 height:53px;
-min-width:159px;
+width:159px;
 background-color:${props => props.theme.backgroundBodyColor};
 color:#000000;
 text-transform:uppercase;
@@ -50,4 +50,12 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 export const ButtonsWrapper = styled.div`
+display: flex;
+position:relative;
+right:3px;
+
+@media (min-width: 768px) {
+position:static;
+}
 `
+

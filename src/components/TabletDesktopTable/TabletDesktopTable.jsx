@@ -1,5 +1,5 @@
 import React from 'react';
-import Icons from '../Icons/Icons'
+import Icons from '../Icons/Icons';
 import EllipsisText from 'react-ellipsis-text';
 
 import {
@@ -83,16 +83,14 @@ export default function TabletDesktopTable() {
                     <StyledTd>{e.category}</StyledTd>
                     <StyledTd>{e.amount}$</StyledTd>
                     <StyledTd>
-                     
-                        <DeleteBtn>
+                      <DeleteBtn>
                         <Icons
-            name="delete"
-            color="#52555F"
-            width="18px"
-            height="18px"
-          />
-                        </DeleteBtn>
-                    
+                          name="delete"
+                          color="#52555F"
+                          width="18px"
+                          height="18px"
+                        />
+                      </DeleteBtn>
                     </StyledTd>
                   </BodyTr>
                 );

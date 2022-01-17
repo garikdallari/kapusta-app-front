@@ -10,9 +10,12 @@ export const WrapperInput = styled.div`
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    margin-bottom: 58px;
   }
 
   @media screen and (min-width: 1280px) {
+    margin-bottom: 9px;
+    justify-content: end;
   }
 `;
 
