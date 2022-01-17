@@ -2,13 +2,12 @@ import styled from '@emotion/styled';
 import Icons from '../../components/Icons/Icons';
 
 export const Container = styled.div`
-  padding: 0px 9px;
+  padding: 0px 0px;
   margin: 0 auto;
   max-width: 767px;
 
   @media screen and (min-width: 768px) {
     max-width: 1280px;
-    padding: 0px 0px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -97,7 +96,7 @@ export const SubTitle = styled.h2`
 export const WrapperTopIcon = styled.div`
   position: absolute;
   top: 40%;
-  right: -15px;
+  right: -1px;
   z-index: -1;
 
   @media (min-width: 768px) {
@@ -128,6 +127,7 @@ export const StyledTopIcon = styled(Icons)`
 
 export const WrapperBottomIcon = styled.div`
   margin-top: 407px;
+  margin-left: 35px;
 `;
 
 export const StyledBottomIcon = styled(Icons)`
