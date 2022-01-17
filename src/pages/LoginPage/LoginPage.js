@@ -17,14 +17,10 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 //helpers
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import { changeNameTopIcon } from '../../helpers/changeNameTopIcon';
+import { changeNameBottomIcon } from '../../helpers/changeNameBottomIcon';
 
 export default function LoginPage() {
   const { width } = useWindowDimensions();
-
-  const changeNameBottomIcon = () => {
-    if (width >= 319 && width <= 767) return 'mob-cabbage-down';
-    if (width >= 768) return 'tabl-cabbage-down ';
-  };
 
   return (
     <>
