@@ -10,6 +10,7 @@ import Accounting from '../../components/Accounting/Accounting';
 import CurrentPeriod from '../../components/Balance/CurrentPeriod';
 import ReportBalance from '../../components/Balance/ReportBalance';
 import IconsReportSection from '../../components/IconsReportSection/IconsReportSection';
+import { NavBox } from './ReportPage.styled';
 
 export default function ReportPage() {
   return (
@@ -18,8 +19,10 @@ export default function ReportPage() {
       <WrapperBackgroundBody>
         <BackgroundBodyReport>
           <Container>
-            <ButtonArrowBack />
-            <ReportBalance />
+            <NavBox>
+              <ButtonArrowBack />
+              <ReportBalance />
+            </NavBox>
             <Accounting />
             <CurrentPeriod />
             <IconsReportSection />

@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 
 export const WrapperInput = styled.div`
-  // display: flex;
-  // flex-direction: column;
   padding: 0 9px 0 9px;
   margin: 0 0 30px 0;
 
@@ -13,6 +11,7 @@ export const WrapperInput = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
+    margin: 0 0 30px 158px;
   }
 `;
 
@@ -133,7 +132,7 @@ export const BalanceButton = styled.button`
 export const ReportInput = styled.input`
   padding: 12px 30px 12px 30px;
   margin: 0 0 5px 0;
-  width: 183px;
+  width: 125px;
   height: 44px;
   margin-right: auto;
   margin-left: auto;
@@ -141,19 +140,43 @@ export const ReportInput = styled.input`
   box-sizing: border-box;
   border-radius: 22px;
   outline: none;
+  background-color: transparent;
   @media screen and (min-width: 768px) {
-    margin-left: 21px;
-    margin-right: 80px;
+    margin: 0 80px 0 21px;
   }
 
   @media screen and (min-width: 1280px) {
-    margin-right: 225px;
+    margin: 0 15px 0 21px;
+  }
+`;
+
+export const ReportButton = styled.button`
+  padding: 12px 30px 12px 30px;
+  margin: 0 0 5px 0;
+  width: 125px;
+  height: 44px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid white;
+  box-sizing: border-box;
+  border-radius: 22px;
+  outline: none;
+  background-color: transparent;
+  @media screen and (min-width: 768px) {
+    margin: 0 80px 0 21px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin: 0 225px 0 21px;
+  }
+  @media (max-width: 1279px) {
+    display: none;
   }
 `;
 
 export const Placeholder = styled.span`
   position: relative;
-  left: 180px;
+  left: 160px;
   top: 15px;
   font-family: ${props => props.theme.fontFamily};
   color: black;
@@ -164,7 +187,8 @@ export const Placeholder = styled.span`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   @media screen and (min-width: 768px) {
-    left: 160px;
+    left: 120px;
+    top: 15px;
   }
   @media screen and (min-width: 1280px) {
   }
@@ -173,7 +197,7 @@ export const Placeholder = styled.span`
 export const ReportData = styled.p`
   align-items: center;
   justify-content: center;
-  // display: flex;
+  display: flex;
   border-box: center;
   margin: 0 0 0px 0;
   @media screen and (min-width: 768px) {
@@ -192,10 +216,18 @@ export const Data = styled.p`
   line-height: 16px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  // display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
+`;
+
+export const DataBox = styled.p`
+  margin: 0 15px 0 15px;
   @media screen and (min-width: 768px) {
   }
 
