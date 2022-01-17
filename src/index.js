@@ -10,6 +10,7 @@ import store from './redux/store';
 import TabletDesktopTable from './components/TabletDesktopTable/TabletDesktopTable'
 import MobileTable from './components/MobileTable/MobileTable'
 import Summary from './components/Summary/Summary'
+import IncomeExpenseBtns from './components/IncomeExpenseBtns/IncomeExpenseBtns'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
         <ThemeProvider theme={theme}>
         <TabletDesktopTable/>
         <MobileTable/>
+        <IncomeExpenseBtns/>
         <Summary/>
           <App />
         </ThemeProvider>

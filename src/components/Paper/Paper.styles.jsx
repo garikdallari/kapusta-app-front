@@ -5,4 +5,5 @@ export const PaperContainer = styled.div`
   background-color: ${props => props.theme};
   border-radius: 30px;
   width: fit-content;
+  box-shadow: ${props => props.boxShadow};
 `;
