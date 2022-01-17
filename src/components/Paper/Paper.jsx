@@ -2,9 +2,9 @@ import React from 'react';
 import { PaperContainer } from './Paper.styles';
 import { theme } from '../../constants/theme';
 
-function Paper({ children, padding }) {
+function Paper({ children, padding, borderRadius}) {
   return (
-    <PaperContainer padding={padding} theme={theme.color.paperBgColor}>
+    <PaperContainer borderRadius={borderRadius} padding={padding} theme={theme.color.paperBgColor}>
       {children}
     </PaperContainer>
   );

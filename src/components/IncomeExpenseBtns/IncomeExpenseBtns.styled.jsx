@@ -33,7 +33,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    color: ${props => props.theme.color.buttonOrangeBg};
    background-color:  #FEFEFE;
    border-radius:  20px 20px 0 0;
-  
+   margin:0;
    :hover, :focus{
     background-color:  #FEFEFE;
     color: ${props => props.theme.color.buttonOrangeBg};}
@@ -49,4 +49,5 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 `;
 
-export const ButtonsWrapper = styled.div``;
+export const ButtonsWrapper = styled.div`
+`

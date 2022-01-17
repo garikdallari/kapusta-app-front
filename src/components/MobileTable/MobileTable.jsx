@@ -1,5 +1,5 @@
 import React from 'react';
-import Icons from '../Icons/Icons'
+import Icons from '../Icons/Icons';
 import EllipsisText from 'react-ellipsis-text';
 import {
   DescriptionTd,
@@ -64,23 +64,18 @@ export default function MobileTable() {
                   </DescriptionTd>
                   <AmountTd>{e.amount} $</AmountTd>
                   <DeleteTd>
-                  <DeleteBtn>
-                  <Icons
-            name="delete"
-            color="#52555F"
-            width="18px"
-            height="18px"
-          />
-                      </DeleteBtn>
-                       </DeleteTd>
+                    <DeleteBtn>
+                      <Icons
+                        name="delete"
+                        color="#52555F"
+                        width="18px"
+                        height="18px"
+                      />
+                    </DeleteBtn>
+                  </DeleteTd>
                 </BodyTr>
               );
             })}
-          {/* <BodyTr>
-            <DescriptionTd></DescriptionTd>
-          </BodyTr>
-          <BodyTr></BodyTr>
-          <BodyTr></BodyTr> */}
         </tbody>
       </Table>
     </StyledMobileTable>

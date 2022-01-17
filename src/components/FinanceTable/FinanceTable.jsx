@@ -1,12 +1,9 @@
 import React from 'react';
-import MobileTable from '../MobileTable/MobileTable';
-import TabletDesktopTable from '../TabletDesktopTable/TabletDesktopTable';
-
-export default function FinanceTable() {
+import { FinanceTableWrapper } from './FinanceTable.styled';
+export default function FinanceTable({children}) {
   return (
-    <>
-      <MobileTable />
-      <TabletDesktopTable />
-    </>
+    <FinanceTableWrapper>
+     {children}
+    </FinanceTableWrapper>
   );
 }

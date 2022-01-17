@@ -27,17 +27,17 @@ export const StyledMobileTable = styled.div`
   line-height: 1.16;
 
   ::-webkit-scrollbar {
-    width: 4px;
-    background-color:${props => props.theme.backgroundBodyColor};
+   
+    background-color:transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.color.buttonOrangeBg};
-    border-radius: 2px;
- 
-  }
+    background-color:transparent;
+    
+   }
+
   ::-webkit-scrollbar-track-piece {
-    background-color: ${props => props.theme.backgroundBodyColor};
+    background-color: transparent;
   }
 
   @media screen and (min-width: 768px) {

@@ -1,20 +1,19 @@
 import styled from '@emotion/styled';
         
 export const StyledTable = styled.div`
-  border-radius: 20px 20px 0 0;
+display: none;
+
+  @media screen and (min-width: 768px) {
+   display: block;
+   width: 605px;
+   margin-top: 48px;
+   border-radius: 20px 20px 0 0;
   overflow: hidden;
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSize.descriptionProduct};
   line-height: 1.16;
   color: ${props => props.theme.color.buttonDarkText};
-  width: 282px;
-  display: none;
-  margin-top: 50px;
   margin-bottom: 50px;
-
-  @media screen and (min-width: 768px) {
-    display: block;
-    width: 605px;
   }
 
   @media screen and (min-width: 1280px) {

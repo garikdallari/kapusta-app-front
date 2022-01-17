@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 export const PaperContainer = styled.div`
-  padding: ${props => props.padding}px;
+  padding: ${props => props.padding};
   background-color: ${props => props.theme};
-  border-radius: 30px;
+  border-radius: ${props => props.borderRadius};
   width: fit-content;
   box-shadow: ${props => props.boxShadow};
 `;
