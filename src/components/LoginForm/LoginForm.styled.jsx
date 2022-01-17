@@ -8,6 +8,7 @@ export const WrapperForm = styled.div`
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 30px;
   margin: 0px auto;
+  padding: 40px 17px;
 
   @media (min-width: 768px) {
     width: 436px;
