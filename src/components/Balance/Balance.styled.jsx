@@ -183,6 +183,7 @@ export const ReportData = styled.p`
     // margin: 0 0 30px 0;
   }
 `;
+
 export const Data = styled.p`
   font-family: ${props => props.theme.fontFamily};
   font-style: normal;
