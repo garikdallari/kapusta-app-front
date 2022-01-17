@@ -7,10 +7,13 @@ export const WrapperInput = styled.div`
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
+
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    margin-top:40px;
+    margin-bottom: 10px;
   }
 
   @media screen and (min-width: 1280px) {

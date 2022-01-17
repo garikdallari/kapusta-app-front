@@ -10,7 +10,7 @@ height: 32px;
 aligh-self: center;
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 &:hover, &:focus{
-    background-color: #F5F6FB;
+    background-color: ${props => props.theme.backgroundBodyColor};
     border-radius:50%;
 `;
 
@@ -20,24 +20,24 @@ export const StyledMobileTable = styled.div`
   width: 282px;
   margin-bottom: 50px;
   letter-spacing: 0.04em;
-  color: #52555f;
+  color: ${props => props.theme.color.buttonDarkText};
   font-weight: 700;
   font-family: ${props => props.theme.fontFamily};
-  font-size: 12px;
+  font-size: ${props => props.theme.fontSize.descriptionProduct};
   line-height: 1.16;
 
   ::-webkit-scrollbar {
-    width: 4px;
-    background-color: #f5f6fb;
+   
+    background-color:transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #ff751d;
-    border-radius: 2px;
- 
-  }
+    background-color:transparent;
+    
+   }
+
   ::-webkit-scrollbar-track-piece {
-    background-color: #f5f6fb;
+    background-color: transparent;
   }
 
   @media screen and (min-width: 768px) {

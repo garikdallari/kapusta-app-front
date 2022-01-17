@@ -1,20 +1,19 @@
 import styled from '@emotion/styled';
         
 export const StyledTable = styled.div`
-  border-radius: 20px 20px 0 0;
-  overflow: hidden;
-  font-family: ${props => props.theme.fontFamily};
-  font-size: 12px;
-  line-height: 1.16;
-  color: #52555f;
-  width: 282px;
-  display: none;
-  margin-top: 50px;
-  margin-bottom: 50px;
+display: none;
 
   @media screen and (min-width: 768px) {
-    display: block;
-    width: 605px;
+   display: block;
+   width: 605px;
+   margin-top: 48px;
+   border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  font-family: ${props => props.theme.fontFamily};
+  font-size: ${props => props.theme.fontSize.descriptionProduct};
+  line-height: 1.16;
+  color: ${props => props.theme.color.buttonDarkText};
+  margin-bottom: 50px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -31,7 +30,7 @@ height: 32px;
 aligh-self: center;
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 &:hover, &:focus{
-    background-color: #F5F6FB;
+    background-color:${props => props.theme.backgroundBodyColor};
     border-radius:50%;
     
 `;
@@ -43,15 +42,15 @@ export const ScrollBody = styled.div`
 
   ::-webkit-scrollbar {
     width: 6px;
-    background-color: #f5f6fb;
+    background-color: ${props => props.theme.backgroundBodyColor};
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #ff751d;
+    background-color: ${props => props.theme.color.buttonOrangeBg};
     border-radius: 2px;
   }
   ::-webkit-scrollbar-track-piece{
-    background-color: #f5f6fb;
+    background-color:${props => props.theme.backgroundBodyColor};
   }
 `;
 
@@ -62,7 +61,7 @@ export const HeadTable = styled.table`
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  background-color: #f5f6fb;
+  background-color: ${props => props.theme.backgroundBodyColor};
   width: 100%;
   table-layout: fixed;
   text-align: left;
@@ -75,7 +74,7 @@ export const BodyTable = styled.table`
 
 export const BodyTr = styled.tr`
   height: 40px;
-  border: 2px solid #f5f6fb;
+  border: 2px solid ${props => props.theme.backgroundBodyColor};
   font-weight: 400;
   letter-spacing: 0.04em;
   text-align: left;

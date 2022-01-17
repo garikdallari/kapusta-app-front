@@ -9,6 +9,7 @@ import App from './App';
 import './index.css';
 import { store, persistor } from './redux/store';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
