@@ -174,16 +174,15 @@ export const Placeholder = styled.span`
 `;
 
 export const ReportData = styled.p`
+  display: flex;
   align-items: center;
-  justify-content: center;
-  // display: flex;
-  border-box: center;
-  margin: 0 0 0px 0;
+  justify-content: space-between;
+  width: 134px;
+  margin: 0 auto;
   @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1280px) {
-    // margin: 0 0 30px 0;
   }
 `;
 
@@ -199,6 +198,8 @@ export const Data = styled.p`
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 20px;
+  margin-top: 0;
   @media screen and (min-width: 768px) {
   }
 

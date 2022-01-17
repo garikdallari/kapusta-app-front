@@ -6,12 +6,14 @@ import {
   Section,
 } from './IconsReportSection.styled';
 import Icons from '../Icons/Icons';
+import CurrentPeriod from '../../components/Balance/CurrentPeriod';
 import { theme } from '../../constants/theme';
 
 const IconsReportSection = ({ amount }) => {
   return (
     <>
       <Section bgColor={theme.color.buttonWhiteBg}>
+        <CurrentPeriod />
         <Wrapper elementoColor={theme.color.lightGray}>
           {amount &&
             amount.map(({ name, price, key }) => (

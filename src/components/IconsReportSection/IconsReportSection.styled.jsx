@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 
 export const Section = styled.div`
   position: relative;
-  margin: 0 auto;
+  margin: 40px auto 0;
   padding: 0 9px;
-  width: 320px;
 
   background-color: ${props => props.bgColor};
   @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 30px;
 
     width: 666px;
     padding: 0 32px 30px 32px;
@@ -23,7 +23,7 @@ export const Section = styled.div`
 
   @media (min-width: 1280px) {
     width: 1060px;
-    padding: 20px 220px 30px 230px;
+    padding: 40px 220px 30px 230px;
   }
 `;
 
