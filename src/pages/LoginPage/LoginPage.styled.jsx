@@ -126,14 +126,26 @@ export const StyledTopIcon = styled(Icons)`
 `;
 
 export const WrapperBottomIcon = styled.div`
-  margin-top: 407px;
-  margin-left: 35px;
+  padding: 407px 0px 0px 35px;
+
+  @media (min-width: 768px) {
+    position: relative;
+    padding: 206px 0px 56px 114px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 76px 867px 50px 230px;
+  }
 `;
 
 export const StyledBottomIcon = styled(Icons)`
   color: #000000;
   width: 83px;
   height: 89px;
+  @media (min-width: 768px) {
+    width: 183px;
+    height: 142px;
+  }
 `;
 
 export const WrapperContent = styled.div``;

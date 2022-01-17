@@ -16,10 +16,15 @@ import Header from '../../components/Header/Header';
 import LoginForm from '../../components/LoginForm/LoginForm';
 //helpers
 import useWindowDimensions from '../../helpers/useWindowDimensions';
-import { changeTopIcon } from '../../helpers/changeNameTopIcon';
+import { changeNameTopIcon } from '../../helpers/changeNameTopIcon';
 
 export default function LoginPage() {
   const { width } = useWindowDimensions();
+
+  const changeNameBottomIcon = () => {
+    if (width >= 319 && width <= 767) return 'mob-cabbage-down';
+    if (width >= 768) return 'tabl-cabbage-down ';
+  };
 
   return (
     <>
@@ -32,7 +37,7 @@ export default function LoginPage() {
               <SubTitle>Smart Finance</SubTitle>
             </WrapperContent>
             <WrapperTopIcon>
-              <StyledTopIcon name={changeTopIcon(width)} />
+              <StyledTopIcon name={changeNameTopIcon(width)} />
             </WrapperTopIcon>
           </BackgroundBody>
 
@@ -42,7 +47,7 @@ export default function LoginPage() {
         </WrapperBackgroundBody>
 
         <WrapperBottomIcon>
-          <StyledBottomIcon name="mob-cabbage-down" />
+          <StyledBottomIcon name={changeNameBottomIcon(width)} />
         </WrapperBottomIcon>
       </Container>
     </>
