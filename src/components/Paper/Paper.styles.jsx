@@ -6,4 +6,5 @@ export const PaperContainer = styled.div`
   border-radius: ${props => props.borderRadius};
   width: fit-content;
   box-shadow: ${props => props.boxShadow};
-`;
+}
+`
