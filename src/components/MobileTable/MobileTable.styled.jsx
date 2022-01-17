@@ -7,7 +7,7 @@ cursor: pointer;
 text-align: center;
 width: 32px;
 height: 32px;
-aligh-self: center;
+aligh-self: end;
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 &:hover, &:focus{
     background-color: ${props => props.theme.backgroundBodyColor};
@@ -18,7 +18,7 @@ export const StyledMobileTable = styled.div`
   overflow-y: auto;
   height: 150px;
   width: 282px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   letter-spacing: 0.04em;
   color: ${props => props.theme.color.buttonDarkText};
   font-weight: 700;
@@ -27,7 +27,7 @@ export const StyledMobileTable = styled.div`
   line-height: 1.16;
 
   ::-webkit-scrollbar {
-   
+   width:1px;
     background-color:transparent;
   }
 

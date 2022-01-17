@@ -10,9 +10,12 @@ export const WrapperInput = styled.div`
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    margin-bottom: 58px;
   }
 
   @media screen and (min-width: 1280px) {
+    margin-bottom: 9px;
+    justify-content: end;
   }
 `;
 
@@ -183,6 +186,7 @@ export const ReportData = styled.p`
     // margin: 0 0 30px 0;
   }
 `;
+
 export const Data = styled.p`
   font-family: ${props => props.theme.fontFamily};
   font-style: normal;

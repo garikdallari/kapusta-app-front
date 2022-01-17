@@ -1,6 +1,6 @@
 import {
   WrapperBackgroundBody,
-  BackgroundBody,
+  BackgroundBodyReport,
 } from '../LoginPage/LoginPage.styled';
 // components
 import Header from '../../components/Header/Header';
@@ -30,7 +30,7 @@ export default function ReportPage() {
     <>
       <Header></Header>
       <WrapperBackgroundBody>
-        <BackgroundBody>
+        <BackgroundBodyReport>
           <Container>
             <ButtonArrowBack />
             <ReportBalance />
@@ -38,7 +38,7 @@ export default function ReportPage() {
             <CurrentPeriod />
             <IconsReportSection amount={categories} />
           </Container>
-        </BackgroundBody>
+        </BackgroundBodyReport>
       </WrapperBackgroundBody>
     </>
   );
