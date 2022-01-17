@@ -13,7 +13,7 @@ import {
   AdditionallyInfo,
   BoxButton,
   WrapperButton,
-} from './SignInForm.styled';
+} from './SignupForm.styled';
 
 export default function SignInForm() {
   const initialValues = {
