@@ -38,6 +38,6 @@ export const BtnBackText = styled.span`
   }
 `;
 
-export const NavContainer = styled.div`
-  display: inline-block;
-`;
+// export const NavContainer = styled.div`
+//   display: inline-block;
+// `;
