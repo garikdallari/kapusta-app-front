@@ -48,4 +48,8 @@ export const NavContainer = styled.div`
     margin: 0 47px 0 0;
     align-items: center;
   }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;

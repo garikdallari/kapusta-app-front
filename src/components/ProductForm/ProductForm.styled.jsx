@@ -24,9 +24,13 @@ export const Input = styled.input`
 
   @media (min-width: 768px) {
     border: 2px solid ${theme.color.inputPlaceholderColor};
-    border-right: none;
     width: 192px;
     border-radius: 16px 0px 0px 0px;
+    border-right: none;
+  }
+
+  @media (min-width: 1280px) {
+    width: 289px;
   }
 `;
 
@@ -51,6 +55,9 @@ export const Select = styled.select`
     border: 2px solid ${theme.color.inputPlaceholderColor};
     width: 171px;
   }
+  @media (min-width: 1280px) {
+    width: 188px;
+  }
 `;
 
 export const Label = styled.div`
@@ -63,6 +70,10 @@ export const Form = styled.form`
 
   @media (min-width: 768px) {
     margin-left: 33px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-left: 23px;
   }
 
   @media (max-width: 767px) {
