@@ -10,7 +10,7 @@ export const ContainerWallet = styled.div`
   align-items: center;
 
   @media (min-width: 768px) {
-    border: 2px solid ${theme.color.inputPlaceholderColor};
+    border: 2px solid ${theme.color.inputBorderColorDeskTab};
     width: 104px;
     padding: 10px 10px 10px 0px;
     border-radius: 0px 22px 22px 0px;
@@ -27,6 +27,7 @@ export const ContainerWallet = styled.div`
   }
 
   @media (min-width: 1280px) {
+    border: 2px solid ${theme.color.inputBorderColorDeskTab};
     width: 124px;
   }
 `;
