@@ -42,6 +42,7 @@ export const Select = styled.select`
   height: 44px;
   padding-left: 18px;
   border: 2px solid #ffffff;
+
   &:focus {
     outline: none;
   }
@@ -81,3 +82,5 @@ export const Form = styled.form`
     flex-direction: column;
   }
 `;
+
+export const Option = styled.option``;

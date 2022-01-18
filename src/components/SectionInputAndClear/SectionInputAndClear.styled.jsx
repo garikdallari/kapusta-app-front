@@ -36,9 +36,9 @@ export const BackdropContainer = styled.div`
   }
 
   @media (max-width: 767px) {
-    background-color: ${theme.backgroundBodyColor};
+    // background-color: ${theme.backgroundBodyColor};
     padding: 15px 19px 43px 19px;
-    border-radius: 0 0 0 90px;
+    // border-radius: 0 0 0 90px;
   }
 `;
 
