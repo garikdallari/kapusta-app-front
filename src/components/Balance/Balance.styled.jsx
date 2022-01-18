@@ -89,6 +89,7 @@ export const BalanceInput = styled.input`
   border-radius: 22px 0px 0px 22px;
   box-sizing: border-box;
   outline: none;
+  background-color: transparent;
   @media screen and (min-width: 768px) {
     border-radius: 16px;
     margin: 0 15px 0 0;
@@ -206,7 +207,7 @@ export const ReportData = styled.p`
   justify-content: center;
   display: flex;
   border-box: center;
-  margin: 0 0 0px 0;
+  margin: 0 0 20px 0;
   @media screen and (min-width: 768px) {
   }
 

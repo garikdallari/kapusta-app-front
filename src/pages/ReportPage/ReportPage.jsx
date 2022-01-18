@@ -3,13 +3,13 @@ import {
   BackgroundBodyReport,
 } from '../LoginPage/LoginPage.styled';
 // components
-import Header from '../../components/Header/Header';
 import Container from '../../components/Container/Container';
 import ButtonArrowBack from '../../components/ButtonArrowBack/ButtonArrowBack';
 import Accounting from '../../components/Accounting/Accounting';
 import ReportBalance from '../../components/Balance/ReportBalance';
 import IconsReportSection from '../../components/IconsReportSection/IconsReportSection';
-import { NavBox } from './ReportPage.styled';
+import { NavBox, ReportContainer } from './ReportPage.styled';
+import { theme } from '../../constants/theme';
 
 export default function ReportPage() {
   // удалить массив categories, перед подключением store
@@ -31,12 +31,17 @@ export default function ReportPage() {
       <WrapperBackgroundBody>
         <BackgroundBodyReport>
           <Container>
-            <NavBox>
-              <ButtonArrowBack />
-              <ReportBalance />
-            </NavBox>
-            <Accounting />
-            <IconsReportSection amount={categories} />
+            <ReportContainer>
+              <NavBox>
+                <ButtonArrowBack
+                  // displayBtn={'inline-block'}
+                  displayText={'block'}
+                />
+                <ReportBalance />
+              </NavBox>
+              <Accounting />
+              <IconsReportSection amount={categories} />
+            </ReportContainer>
           </Container>
         </BackgroundBodyReport>
       </WrapperBackgroundBody>
