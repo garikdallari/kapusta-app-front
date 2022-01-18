@@ -6,140 +6,30 @@ import {
   Section,
 } from './IconsReportSection.styled';
 import Icons from '../Icons/Icons';
+import CurrentPeriod from '../../components/Balance/CurrentPeriod';
+import { theme } from '../../constants/theme';
 
-const IconsReportSection = () => {
+const IconsReportSection = ({ amount }) => {
   return (
     <>
-      <Section>
-        <Wrapper>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons
-                name="products"
-                color="current"
-                width="56px"
-                height="46.34px"
-              />
-            </SvgContainer>
-            <TextContainer>products</TextContainer>
-          </WrapperElement>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons
-                name="cocktail"
-                color="current"
-                width="56px"
-                height="46.34px"
-              />
-            </SvgContainer>
-            <TextContainer>alcohol</TextContainer>
-          </WrapperElement>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons
-                name="kite"
-                color="current"
-                width="56px"
-                height="46.34px"
-              />
-            </SvgContainer>
-            <TextContainer>entertainment</TextContainer>
-          </WrapperElement>
-        </Wrapper>
-        <Wrapper>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons
-                name="hands-holding-heart"
-                color="current"
-                width="56px"
-                height="46.34px"
-              />
-            </SvgContainer>
-            <TextContainer>health</TextContainer>
-          </WrapperElement>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons name="car" color="current" width="56px" height="46.34px" />
-            </SvgContainer>
-            <TextContainer>transport</TextContainer>
-          </WrapperElement>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons
-                name="couch"
-                color="current"
-                width="56px"
-                height="46.34px"
-              />
-            </SvgContainer>
-            <TextContainer>home stuff</TextContainer>
-          </WrapperElement>
-        </Wrapper>
-        <Wrapper>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons
-                name="tools"
-                color="current"
-                width="56px"
-                height="46.34px"
-              />
-            </SvgContainer>
-            <TextContainer>gadgets</TextContainer>
-          </WrapperElement>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons
-                name="invoice"
-                color="current"
-                width="56px"
-                height="46.34px"
-              />
-            </SvgContainer>
-            <TextContainer>utility bills</TextContainer>
-          </WrapperElement>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons
-                name="clay"
-                color="current"
-                width="56px"
-                height="46.34px"
-              />
-            </SvgContainer>
-            <TextContainer>hobby</TextContainer>
-          </WrapperElement>
-        </Wrapper>
-        <Wrapper>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons
-                name="book"
-                color="current"
-                width="56px"
-                height="46.34px"
-              />
-            </SvgContainer>
-            <TextContainer>education</TextContainer>
-          </WrapperElement>
-          <WrapperElement>
-            <TextContainer>1000.00</TextContainer>
-            <SvgContainer>
-              <Icons name="ufo" color="current" width="56px" height="46.34px" />
-            </SvgContainer>
-            <TextContainer>other</TextContainer>
-          </WrapperElement>
+      <Section bgColor={theme.color.buttonWhiteBg}>
+        <CurrentPeriod />
+        <Wrapper elementoColor={theme.color.lightGray}>
+          {amount &&
+            amount.map(({ name, price, key }) => (
+              <WrapperElement key={key} elementColor={theme.color.lightGray}>
+                <SvgContainer buttonColor={theme.color.buttonOrangeBg}>
+                  <TextContainer>{price}</TextContainer>
+                  <Icons
+                    name={name}
+                    color="currentColor"
+                    width="56px"
+                    height="56px"
+                  />
+                  <TextContainer>{name}</TextContainer>
+                </SvgContainer>
+              </WrapperElement>
+            ))}
         </Wrapper>
       </Section>
     </>

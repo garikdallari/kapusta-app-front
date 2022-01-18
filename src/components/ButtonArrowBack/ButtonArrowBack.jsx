@@ -15,6 +15,7 @@ export default function ButtonArrowBack() {
         />
         {/* <BtnBackText>Go back</BtnBackText> */}
       </Button>
+      <BtnBackText>Go back</BtnBackText>
     </NavContainer>
   );
 }

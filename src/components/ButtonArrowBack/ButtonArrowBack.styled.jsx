@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 export const Button = styled.button`
-  margin-top: 15px;
   border-radius: 50px;
   width: 24px;
   height: 24px;
-  padding: 0px;
+  padding: 0 auto;
+  margin: 0 18px 0 0;
   background-color: inherit;
   border: none;
   display: flex;
@@ -20,21 +20,23 @@ export const Button = styled.button`
   }
 `;
 
-export const BtnBackText = styled.span`
+export const BtnBackText = styled.p`
+  text-align: center;
+  font-family: ${props => props.theme.fontFamily};
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: rgba(82, 85, 95, 0.7);
   border-radius: 50px;
-  type: button;
-  width: 24px;
-  height: 24px;
-  padding: 0px;
-  background-color: inherit;
+  padding: 0 auto;
   border: none;
-  // display: flex;
   justify-content: center;
   align-items: center;
-  &:focus,
-  :hover {
-    background-color: white;
+  @media (max-width: 767px) {
+    display: none;
   }
+
 
   @media (max-width: 767px) {
     display: none;
@@ -42,5 +44,9 @@ export const BtnBackText = styled.span`
 `;
 
 export const NavContainer = styled.div`
-  display: inline-block;
+  @media (min-width: 767px) {
+    display: flex;
+    margin: 0 47px 30px 0;
+    align-items: center;
+  }
 `;
