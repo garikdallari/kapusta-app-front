@@ -49,6 +49,8 @@ export const UserAvatarName = styled.div`
 
 export const UserNameBox = styled.div`
   display: none;
+  justify-content: center;
+  align-items: center;
 
   &::after {
     content: '';
@@ -66,6 +68,7 @@ export const UserNameBox = styled.div`
 
 export const UserName = styled.p`
   font-family: ${props => props.theme.fontFamily};
+  margin: 0px;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -103,6 +106,8 @@ export const LogOutTextButton = styled.button`
   line-height: 1.16;
   letter-spacing: 0.04em;
   color: #52555f;
+  padding: 10px;
+  cursor: pointer;
   text-decoration-line: underline;
   @media (min-width: 768px) {
     display: flex;
