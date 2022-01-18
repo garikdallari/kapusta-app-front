@@ -6,17 +6,17 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media screen and (min-width: 320px) {
+  @media (min-width: 320px) {
     max-width: 767px;
     padding: 0px 19px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     max-width: 1280px;
     padding: 0px 26px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media (min-width: 1280px) {
     padding: 0px 26px;
   }
 `;
