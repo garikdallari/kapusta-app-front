@@ -1,15 +1,6 @@
-import {
-  Container,
-  MenuBox,
-  UserName,
-  UserAvatarBox,
-  LogOutIconButton,
-  UserAvatarName,
-  UserNameBox,
-  LogOutTextButton,
-} from './Header.styled.jsx';
+import { Container, MenuBox } from './Header.styled.jsx';
 import LogoIcon from '../LogoIcon/LogoIcon';
-import Icons from '../../components/Icons/Icons';
+import UserMenu from '../UserMenu/UserMenu.jsx';
 
 export default function Header() {
   return (
@@ -17,19 +8,7 @@ export default function Header() {
       <Container>
         <LogoIcon />
         <MenuBox>
-          <UserAvatarBox>
-            <UserAvatarName>U</UserAvatarName>
-          </UserAvatarBox>
-
-          <UserNameBox>
-            <UserName>User Name</UserName>
-          </UserNameBox>
-
-          <LogOutIconButton type="button">
-            <Icons name="logout" width="16px" height="16px" />
-          </LogOutIconButton>
-
-          <LogOutTextButton type="button">Exit</LogOutTextButton>
+          <UserMenu />
         </MenuBox>
       </Container>
     </>
