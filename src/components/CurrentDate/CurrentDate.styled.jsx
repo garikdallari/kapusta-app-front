@@ -25,7 +25,7 @@ export const Date = styled.span`
   font-weight: 900;
   font-size: 12px;
   line-height: 1.17;
-  // letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 
   color: ${theme.color.buttonDarkText};
