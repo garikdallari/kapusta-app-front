@@ -10,8 +10,6 @@ export const Input = styled.input`
   height: 44px;
   padding-left: 20px;
   border: 2px solid #ffffff;
-  border-radius: 16px 16px 0px 0px;
-  min-width: 282px;
   &:focus {
     outline: none;
   }
@@ -19,9 +17,21 @@ export const Input = styled.input`
     color: ${theme.color.inputPlaceholderColor};
   }
 
-  // @media (min-width: 768px) {
-  //   display: none;
-  // }
+  @media (max-width: 767px) {
+    min-width: 282px;
+    border-radius: 16px 16px 0px 0px;
+  }
+
+  @media (min-width: 768px) {
+    border: 2px solid ${theme.color.inputPlaceholderColor};
+    width: 192px;
+    border-radius: 16px 0px 0px 0px;
+    border-right: none;
+  }
+
+  @media (min-width: 1280px) {
+    width: 289px;
+  }
 `;
 
 export const Select = styled.select`
@@ -32,19 +42,22 @@ export const Select = styled.select`
   height: 44px;
   padding-left: 18px;
   border: 2px solid #ffffff;
-  border-radius: 0px 0px 16px 0px;
-  min-width: 282px;
   &:focus {
     outline: none;
   }
 
-  // @media (min-width: 768px) {
-  //   display: none;
-  // }
-`;
+  @media (max-width: 767px) {
+    min-width: 282px;
+    border-radius: 0px 0px 16px 0px;
+  }
 
-export const ProductContainer = styled.div`
-  margin-top: 15px;
+  @media (min-width: 768px) {
+    border: 2px solid ${theme.color.inputPlaceholderColor};
+    width: 171px;
+  }
+  @media (min-width: 1280px) {
+    width: 188px;
+  }
 `;
 
 export const Label = styled.div`
@@ -54,5 +67,17 @@ export const Label = styled.div`
 
 export const Form = styled.form`
   display: flex;
-  flex-direction: column;
+
+  @media (min-width: 768px) {
+    margin-left: 33px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-left: 23px;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 15px;
+    flex-direction: column;
+  }
 `;

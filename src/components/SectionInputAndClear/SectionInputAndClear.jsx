@@ -6,18 +6,20 @@ import { theme } from '../../constants/theme';
 import {
   ButtonContainer,
   BackdropContainer,
+  Section,
+  ContainerDateNow,
 } from './SectionInputAndClear.styled';
 
 export default function SectionInputAndClear() {
   return (
-    <>
+    <Section>
       <BackdropContainer>
-        <ButtonArrowBack />
-        <div>
-          <ProductForm />
-          <Wallet />
-        </div>
+        <ButtonArrowBack displayBtn={'none'} displayText={'none'} />
+        <ContainerDateNow>date now</ContainerDateNow>
+        <ProductForm />
+        <Wallet />
       </BackdropContainer>
+
       <ButtonContainer>
         <Button
           text={'ВВОД'}
@@ -28,6 +30,6 @@ export default function SectionInputAndClear() {
         />
         <Button text={'ОЧИСТИТЬ'} type={'button'} />
       </ButtonContainer>
-    </>
+    </Section>
   );
 }

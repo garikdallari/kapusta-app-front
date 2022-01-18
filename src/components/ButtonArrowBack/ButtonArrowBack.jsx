@@ -1,11 +1,14 @@
+import { useHistory } from 'react-router-dom';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import { Button, BtnBackText, NavContainer } from './ButtonArrowBack.styled';
 import { theme } from '../../constants/theme';
 
-export default function ButtonArrowBack() {
+export default function ButtonArrowBack({ displayBtn, displayText }) {
+  const history = useHistory();
+
   return (
-    <NavContainer>
-      <Button onClick={() => console.log('Клик на кнопку Стрелка влево.')}>
+    <NavContainer displayBtn={displayBtn}>
+      <Button onClick={() => history.push('/home')}>
         <HiArrowNarrowLeft
           style={{
             color: theme.color.buttonOrangeBg,
@@ -13,8 +16,8 @@ export default function ButtonArrowBack() {
             height: '100%',
           }}
         />
-        <BtnBackText>Go back</BtnBackText>
       </Button>
+      <BtnBackText displayText={displayText}>Go back</BtnBackText>
     </NavContainer>
   );
 }
