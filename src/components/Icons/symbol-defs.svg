@@ -164,5 +164,10 @@
         d="M16.016 29.123c0.518 0 0.938-0.42 0.938-0.937v-16.9c0-0.518-0.42-0.938-0.938-0.938s-0.938 0.42-0.938 0.938v16.9c0 0.518 0.42 0.937 0.938 0.937z">
       </path>
     </symbol>
+    <symbol id="icon-logout" viewBox="0 0 32 32">
+    <path fill="#cbccd0" style="fill: var(--color1, #cbccd0)" d="M20 28h-16v-24h16v2h4v-6h-24v32h24v-6h-4v2h-0z"></path>
+<path fill="#cbccd0" style="fill: var(--color1, #cbccd0)" d="M24.586 8.586l-2.828 2.828 2.586 2.586h-10.344v4h10.344l-2.586 2.586 2.828 2.828 7.414-7.414-7.414-7.414z"></path>
+</symbol>
+    
   </defs>
 </svg>
