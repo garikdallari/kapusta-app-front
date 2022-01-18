@@ -3,7 +3,6 @@ import { theme } from '../../constants/theme';
 
 export const ContainerWallet = styled.div`
   border: 2px solid ${theme.color.inputBorderColor};
-  display: block;
   width: 183px;
   height: 44px;
   display: flex;
@@ -17,6 +16,7 @@ export const ContainerWallet = styled.div`
     border-radius: 0px 22px 22px 0px;
     border-left: none;
   }
+
   @media (max-width: 767px) {
     margin-top: 30px;
     width: 183px;
@@ -24,6 +24,10 @@ export const ContainerWallet = styled.div`
     margin-left: auto;
     padding: 12px 20px 12px 0px;
     border-radius: 22px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 124px;
   }
 `;
 
