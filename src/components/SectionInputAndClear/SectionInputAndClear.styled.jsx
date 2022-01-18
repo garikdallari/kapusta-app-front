@@ -14,10 +14,15 @@ export const ButtonContainer = styled.div`
 
   @media (max-width: 767px) {
     margin-top: 40px;
+    margin-bottom: 48px;
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
     margin-top: 30px;
+    margin-bottom: 48px;
+  }
+  @media (min-width: 1280px) {
+    margin-bottom: 60px;
   }
 
   @media (min-width: 1280px) {

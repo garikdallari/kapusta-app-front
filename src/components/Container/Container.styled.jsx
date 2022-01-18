@@ -9,10 +9,11 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    max-width: 1280px;
+    max-width: 665px;
     padding: 0px 0px;
   }
 
   @media screen and (min-width: 1280px) {
+    max-width: 1060px;
   }
 `;
