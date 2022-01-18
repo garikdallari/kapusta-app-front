@@ -13,11 +13,11 @@ export const WrapperInput = styled.div`
     align-items: center;
     gap: 0;
     padding: 0;
+    margin-bottom: 58px;
   }
 
   @media screen and (min-width: 1280px) {
-    ${'' /* margin: 0 0 30px 158px; */}
-    ${'' /* width: 728px; */}
+    margin-bottom: 9px;
     margin-right: 110px;
   }
 `;

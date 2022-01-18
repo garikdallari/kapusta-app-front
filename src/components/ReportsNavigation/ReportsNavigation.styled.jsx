@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
-export const ReportBox = styled.div`
+export const ReportBox = styled.a`
   display: flex;
   justify-content: center;
   align-items: flex-end;
   gap: 15px;
-  ${'' /* margin: 0 auto; */}
+  cursor: pointer;
 
   @media screen and (max-width: 768px) {
   }
@@ -14,10 +14,7 @@ export const ReportBox = styled.div`
   }
 `;
 
-export const ReportHeader = styled.button`
-  display: flex;
-  justify-content: center;
-  ${'' /* margin-bottom: 45px; */}
+export const ReportHeader = styled.span`
   font-family: ${props => props.theme.fontFamily};
   font-style: normal;
   font-weight: normal;
