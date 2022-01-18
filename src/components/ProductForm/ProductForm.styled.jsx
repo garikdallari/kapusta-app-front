@@ -26,14 +26,11 @@ export const Input = styled.input`
     border: 2px solid ${theme.color.inputPlaceholderColor};
     width: 192px;
     border-radius: 16px 0px 0px 0px;
-  }
-
-  @media (min-width: 768px) and (max-width: 1279px) {
     border-right: none;
   }
 
   @media (min-width: 1280px) {
-    width: 477px;
+    width: 289px;
   }
 `;
 
@@ -59,7 +56,7 @@ export const Select = styled.select`
     width: 171px;
   }
   @media (min-width: 1280px) {
-    display: none;
+    width: 188px;
   }
 `;
 
