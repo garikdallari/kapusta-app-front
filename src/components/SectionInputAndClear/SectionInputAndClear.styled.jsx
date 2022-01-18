@@ -27,14 +27,3 @@ export const BackdropContainer = styled.div`
     border-radius: 0 0 0 90px;
   }
 `;
-
-export const ContainerDateNow = styled.div`
-  display: inline-block;
-  background-color: green;
-  width: 104px;
-  height: 44px;
-
-  @media (max-width: 767px) {
-    display: none;
-  }
-`;
