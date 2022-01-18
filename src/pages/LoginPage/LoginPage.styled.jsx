@@ -65,6 +65,7 @@ export const BackgroundBodyReport = styled.div`
   }
 
   @media (min-width: 1280px) {
+    margin: auto;
     padding: 43px 110px 74px 110px;
   }
 `;

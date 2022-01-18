@@ -6,7 +6,7 @@ display: none;
   @media screen and (min-width: 768px) {
    display: block;
    width: 605px;
-   margin-top: 48px;
+  
    border-radius: 20px 20px 0 0;
   overflow: hidden;
   font-family: ${props => props.theme.fontFamily};
@@ -18,8 +18,11 @@ display: none;
 
   @media screen and (min-width: 1280px) {
     width: 760px;
+    margin:0;
+    margin-right: 30px;
   }
 `;
+
 export const DeleteBtn = styled.button`
 border: none;
 background-color: transparent;

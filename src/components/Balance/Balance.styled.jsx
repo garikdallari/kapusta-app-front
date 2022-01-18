@@ -8,6 +8,7 @@ export const WrapperInput = styled.div`
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    margin-bottom: 58px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -195,6 +196,7 @@ export const Placeholder = styled.span`
 `;
 
 export const ReportData = styled.p`
+  display: flex;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -204,7 +206,6 @@ export const ReportData = styled.p`
   }
 
   @media screen and (min-width: 1280px) {
-    // margin: 0 0 30px 0;
   }
 `;
 
@@ -219,6 +220,8 @@ export const Data = styled.p`
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 20px;
+  margin-top: 0;
   @media screen and (min-width: 768px) {
   }
 
