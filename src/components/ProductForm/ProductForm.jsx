@@ -1,4 +1,4 @@
-import { Input, Select, Label, Form } from './ProductForm.styled';
+import { Input, Select, Label, Form, Option } from './ProductForm.styled';
 
 export default function ProductForm() {
   return (
@@ -7,18 +7,18 @@ export default function ProductForm() {
         <Input
           type="text"
           name="descriptionProduct"
-          placeholder="Описание товара"
+          placeholder="Product description"
         />
       </Label>
 
       <Label>
         <Select name="size">
-          <option value disabled selected hidden>
-            Категория товара
-          </option>
-          <option value="Transport">Транспорт</option>
-          <option value="Food">Продукты</option>
-          <option value="Health">Здоровье</option>
+          <Option value disabled selected hidden>
+            Product category
+          </Option>
+          <Option value="Transport">Transport</Option>
+          <Option value="Food">Food</Option>
+          <Option value="Health">Health</Option>
         </Select>
       </Label>
     </Form>

@@ -22,13 +22,13 @@ export default function SectionInputAndClear() {
 
       <ButtonContainer>
         <Button
-          text={'ВВОД'}
+          text={'INPUT'}
           type={'button'}
           backgroundColor={theme.color.buttonOrangeBg}
           textColor={theme.color.inputBorderColor}
           marginRight={'15px'}
         />
-        <Button text={'ОЧИСТИТЬ'} type={'button'} />
+        <Button text={'CLEAR'} type={'button'} />
       </ButtonContainer>
     </Section>
   );
