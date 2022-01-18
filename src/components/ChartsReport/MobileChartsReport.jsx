@@ -11,7 +11,7 @@ import {
 export default function MobileChartsReport({ data }) {
   const renderBarLabel = ({ x, y, width, value }) => (
     <text x={x + width / 1.1} y={y} textAnchor="middle" fontSize={10} dy={-10}>
-      {value ? `${value} UAH` : ''}
+      {value ? `${value} USD` : ''}
     </text>
   );
 
@@ -30,9 +30,9 @@ export default function MobileChartsReport({ data }) {
         barGap="15"
       >
         <XAxis hide axisLine={false} type="number" />
-        <YAxis dataKey="name" type="category" hide />
+        <YAxis dataKey="category" type="category" hide />
         <Bar
-          dataKey="pv"
+          dataKey="amount"
           barSize={15}
           radius={[0, 10, 10, 0]}
           label={renderBarLabel}
@@ -43,7 +43,7 @@ export default function MobileChartsReport({ data }) {
             <Cell key={`cell-${idx}`} fill={idx % 3 ? '#FFDAC0' : '#ff751d'} />
           ))}
           <LabelList
-            dataKey="name"
+            dataKey="category"
             content={renderCategoryLabel}
             fill="#52555F"
           />
