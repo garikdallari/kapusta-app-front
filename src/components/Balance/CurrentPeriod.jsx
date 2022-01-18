@@ -1,5 +1,5 @@
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
-import { ReportData, Data } from './Balance.styled.jsx';
+import { ReportData, Data, DataBox } from './Balance.styled.jsx';
 
 export default function CurrentPeriod() {
   return (
@@ -11,7 +11,7 @@ export default function CurrentPeriod() {
               color: '#FF751D',
             }}
           ></GoChevronLeft>
-          June 2021
+          <DataBox>June 2021</DataBox>
           <GoChevronRight
             style={{
               color: '#FF751D',

@@ -13,8 +13,8 @@ export default function ButtonArrowBack() {
             height: '100%',
           }}
         />
-        <BtnBackText>Go back</BtnBackText>
       </Button>
+      <BtnBackText>Go back</BtnBackText>
     </NavContainer>
   );
 }

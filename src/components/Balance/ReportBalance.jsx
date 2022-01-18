@@ -6,6 +6,7 @@ import {
   BalanceBox,
   Data,
   Placeholder,
+  ReportButton,
 } from './Balance.styled.jsx';
 
 import CurrentPeriod from './CurrentPeriod';
@@ -23,6 +24,7 @@ export default function ReportBalance() {
           <InputContainer>
             <Placeholder>$</Placeholder>
             <ReportInput></ReportInput>
+            <ReportButton type="submit">Confirm</ReportButton>
           </InputContainer>
         </BalanceBox>
       </WrapperInput>

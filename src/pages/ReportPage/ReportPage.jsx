@@ -9,6 +9,7 @@ import ButtonArrowBack from '../../components/ButtonArrowBack/ButtonArrowBack';
 import Accounting from '../../components/Accounting/Accounting';
 import ReportBalance from '../../components/Balance/ReportBalance';
 import IconsReportSection from '../../components/IconsReportSection/IconsReportSection';
+import { NavBox } from './ReportPage.styled';
 
 export default function ReportPage() {
   // удалить массив categories, перед подключением store
@@ -30,8 +31,10 @@ export default function ReportPage() {
       <WrapperBackgroundBody>
         <BackgroundBodyReport>
           <Container>
-            <ButtonArrowBack />
-            <ReportBalance />
+            <NavBox>
+              <ButtonArrowBack />
+              <ReportBalance />
+            </NavBox>
             <Accounting />
             <IconsReportSection amount={categories} />
           </Container>
