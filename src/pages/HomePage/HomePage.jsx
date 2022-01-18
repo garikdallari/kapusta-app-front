@@ -13,7 +13,6 @@ import {
   BackgroundBody,
 } from './HomePage.styled';
 
-
 function HomePage() {
   return (
     <BackgroundBody>
