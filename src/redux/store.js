@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import transReducer from './transactions/trans-reducer';
+// import transReducer from './transactions/trans-reducer';
 import authReducer from './auth/auth-slice';
+import transReducer from './transactions/trans-slice';
 
 const authPersistConfig = { key: 'auth', storage, whitelist: ['token'] };
 
