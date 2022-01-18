@@ -14,7 +14,7 @@ export default function SectionInputAndClear() {
   return (
     <Section>
       <BackdropContainer>
-        <ButtonArrowBack />
+        <ButtonArrowBack displayBtn={'none'} displayText={'none'} />
         <ContainerDateNow>date now</ContainerDateNow>
         <ProductForm />
         <Wallet />
