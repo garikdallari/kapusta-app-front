@@ -3,9 +3,10 @@ import {
   MenuBox,
   UserName,
   UserAvatarBox,
-  LogOutButton,
+  LogOutIconButton,
   UserAvatarName,
   UserNameBox,
+  LogOutTextButton,
 } from './Header.styled.jsx';
 import LogoIcon from '../LogoIcon/LogoIcon';
 import Icons from '../../components/Icons/Icons';
@@ -17,16 +18,18 @@ export default function Header() {
         <LogoIcon />
         <MenuBox>
           <UserAvatarBox>
-            <UserAvatarName>A</UserAvatarName>
+            <UserAvatarName>U</UserAvatarName>
           </UserAvatarBox>
 
           <UserNameBox>
             <UserName>User Name</UserName>
           </UserNameBox>
 
-          <LogOutButton type="button">
+          <LogOutIconButton type="button">
             <Icons name="logout" width="16px" height="16px" />
-          </LogOutButton>
+          </LogOutIconButton>
+
+          <LogOutTextButton type="button">Exit</LogOutTextButton>
         </MenuBox>
       </Container>
     </>

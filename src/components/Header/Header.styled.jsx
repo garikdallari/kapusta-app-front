@@ -6,17 +6,17 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media screen and (min-width: 320px) {
+  @media (min-width: 320px) {
     max-width: 767px;
     padding: 0px 19px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     max-width: 1280px;
     padding: 0px 26px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media (min-width: 1280px) {
     padding: 0px 26px;
   }
 `;
@@ -76,7 +76,7 @@ export const UserName = styled.p`
   color: #52555f;
 `;
 
-export const LogOutButton = styled.button`
+export const LogOutIconButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,4 +86,29 @@ export const LogOutButton = styled.button`
   border: none;
   background-color: transparent;
   margin-left: 15px;
+   @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const LogOutTextButton = styled.button`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  margin-left: 15px;
+  font-family: ${props => props.theme.fontFamily};
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: #52555f;
+  text-decoration-line: underline;
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;
