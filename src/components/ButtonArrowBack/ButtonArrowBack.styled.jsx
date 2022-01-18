@@ -16,7 +16,7 @@ export const Button = styled.button`
     background-color: white;
   }
   @media (min-width: 768px) {
-    display: none;
+    // display: none;
   }
 `;
 
@@ -33,12 +33,12 @@ export const BtnBackText = styled.p`
   border: none;
   justify-content: center;
   align-items: center;
-  @media (max-width: 767px) {
-    display: none;
-  }
 
   @media (max-width: 767px) {
     display: none;
+  }
+  @media (min-width: 320px and max-width: 768px) {
+    display: ${prop => prop.displayText};
   }
 `;
 
@@ -50,6 +50,6 @@ export const NavContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    display: none;
+    display: ${prop => prop.displayBtn};
   }
 `;

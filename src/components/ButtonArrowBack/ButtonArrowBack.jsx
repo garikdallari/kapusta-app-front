@@ -3,11 +3,11 @@ import { HiArrowNarrowLeft } from 'react-icons/hi';
 import { Button, BtnBackText, NavContainer } from './ButtonArrowBack.styled';
 import { theme } from '../../constants/theme';
 
-export default function ButtonArrowBack() {
+export default function ButtonArrowBack({ displayBtn, displayText }) {
   const history = useHistory();
 
   return (
-    <NavContainer>
+    <NavContainer displayBtn={displayBtn}>
       <Button onClick={() => history.push('/home')}>
         <HiArrowNarrowLeft
           style={{
@@ -16,9 +16,8 @@ export default function ButtonArrowBack() {
             height: '100%',
           }}
         />
-        {/* <BtnBackText>Go back</BtnBackText> */}
       </Button>
-      {/* <BtnBackText>Go back</BtnBackText> */}
+      <BtnBackText displayText={displayText}>Go back</BtnBackText>
     </NavContainer>
   );
 }
