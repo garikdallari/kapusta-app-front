@@ -15,7 +15,11 @@ export const Button = styled.button`
   :hover {
     background-color: white;
   }
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
+
 export const BtnBackText = styled.p`
   text-align: center;
   font-family: ${props => props.theme.fontFamily};
@@ -32,7 +36,9 @@ export const BtnBackText = styled.p`
   @media (max-width: 767px) {
     display: none;
   }
-  @media (min-width: 320px and max-width: 768px) {
+
+
+  @media (max-width: 767px) {
     display: none;
   }
 `;

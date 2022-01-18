@@ -6,28 +6,32 @@ import Summary from '../../components/Summary/Summary';
 import IncomeExpenseBtns from '../../components/IncomeExpenseBtns/IncomeExpenseBtns';
 import HomeBalance from '../../components/Balance/HomeBalance';
 import FinanceTable from '../../components/FinanceTable/FinanceTable';
-import Container from '../../components/Container/Container'
-import {TableSummaryWrapper, PaperHomePage,BackgroundBody} from './HomePage.styled';
+import Container from '../../components/Container/Container';
+import {
+  TableSummaryWrapper,
+  PaperHomePage,
+  BackgroundBody,
+} from './HomePage.styled';
+
 
 function HomePage() {
   return (
     <BackgroundBody>
       <Container>
-      <HomeBalance />
-      <FinanceTable>
-        <IncomeExpenseBtns />
-        <PaperHomePage>           
-          {/* <SectionInputAndClear /> */}
-        <TableSummaryWrapper>
-          <TabletDesktopTable />
-          <MobileTable />
-          <Summary />
-        </TableSummaryWrapper>
-        </PaperHomePage>
-      </FinanceTable>
+        <HomeBalance />
+        <FinanceTable>
+          <IncomeExpenseBtns />
+          <PaperHomePage>
+            <SectionInputAndClear />
+            <TableSummaryWrapper>
+              <TabletDesktopTable />
+              <MobileTable />
+              <Summary />
+            </TableSummaryWrapper>
+          </PaperHomePage>
+        </FinanceTable>
       </Container>
     </BackgroundBody>
-
   );
 }
 
