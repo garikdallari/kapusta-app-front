@@ -5,8 +5,8 @@ const getToken = state => state.auth.user.token;
 
 const authSelectors = {
   getIsLoggedIn,
-  getUsername,
-  getToken
+  getUserName,
+  getToken,
 };
 
 export default authSelectors;
