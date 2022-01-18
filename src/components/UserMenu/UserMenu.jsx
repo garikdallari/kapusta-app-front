@@ -8,16 +8,20 @@ import {
 } from './UserMenu.styled';
 
 import Icons from '../Icons/Icons';
+import authSelectors from '../../redux/auth/auth-selectors';
+import { useSelector } from 'react-redux';
 
 export default function UserMenu() {
+  const userName = useSelector(authSelectors.getUserName);
+
   return (
     <>
       <UserAvatarBox>
-        <UserAvatarName>U</UserAvatarName>
+        <UserAvatarName>{userName[0]}</UserAvatarName>
       </UserAvatarBox>
 
       <UserNameBox>
-        <UserName>User Name</UserName>
+        <UserName>{userName}</UserName>
       </UserNameBox>
 
       <LogOutIconButton type="button">
