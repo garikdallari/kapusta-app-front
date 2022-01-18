@@ -10,8 +10,10 @@ margin-right:auto;
 @media screen and (min-width: 768px) {
     display:flex;
     flex-direction:column;
+    margin-top: 58px;
 
 @media screen and (min-width: 1280px) {
+    margin-top: 0;
 
 }
 

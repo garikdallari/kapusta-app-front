@@ -37,7 +37,6 @@ export const BtnBackText = styled.p`
     display: none;
   }
 
-
   @media (max-width: 767px) {
     display: none;
   }
@@ -46,7 +45,7 @@ export const BtnBackText = styled.p`
 export const NavContainer = styled.div`
   @media (min-width: 767px) {
     display: flex;
-    margin: 0 47px 30px 0;
+    margin: 0 47px 0 0;
     align-items: center;
   }
 `;

@@ -13,12 +13,11 @@ export const WrapperInput = styled.div`
     align-items: center;
     gap: 0;
     padding: 0;
-    margin-bottom: 58px;
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 1280px) {
     margin-bottom: 9px;
-    margin-right: 110px;
   }
 `;
 
@@ -46,7 +45,6 @@ export const BalanceTitle = styled.p`
   color: rgba(82, 85, 95, 0.7);
   margin: 0 0 6px 0;
   @media screen and (min-width: 768px) {
-    margin: 0 auto;
   }
 
   @media screen and (min-width: 1280px) {
@@ -230,6 +228,7 @@ export const Data = styled.p`
   margin-bottom: 20px;
   margin-top: 0;
   @media screen and (min-width: 768px) {
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 1280px) {
