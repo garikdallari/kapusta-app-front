@@ -36,7 +36,7 @@ const login = createAsyncThunk('auth/login', async credentials => {
 
 const logout = createAsyncThunk('auth/logout', async () => {
   try {
-    await axios.post('/auth/logout');
+    await axios.get('/auth/logout');
     token.unset();
   } catch (error) {
     console.log(error.message);
