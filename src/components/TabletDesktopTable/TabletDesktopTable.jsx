@@ -25,9 +25,12 @@ import transSelectors from
 export default function TabletDesktopTable() {
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
-  let type="expense"
   const transactions=useSelector(transSelectors.getTransactions);
-  useEffect(() => dispatch(transOperations.getAllByType(type,token)),[token,type,dispatch]);
+  let type="expense"
+  
+  useEffect(() => dispatch(transOperations.getAllByType(type,token)),[dispatch,token, type]);
+  
+  // dispatch(transOperations.createTransactions(type, "3000", "food", "water", token));
 
    return (
     <StyledTable>
@@ -46,33 +49,33 @@ export default function TabletDesktopTable() {
         <BodyTable>
           <tbody>
             {transactions.length>0 &&
-              transactions.map(e => {
+              transactions.map(trans => {
                 return (
-                  <BodyTr key={e._id} id={e._id}>
-                    <DateTd>{e.date.day}.{e.date.month}.{e.date.year}</DateTd>
+                  <BodyTr key={trans._id} id={trans._id}>
+                    <DateTd>{trans.date.day}.{trans.date.month}.{trans.date.year}</DateTd>
                     <td>
                       <TabletText>
                         <EllipsisText
-                          text={e.subcategory}
-                          tooltip={e.subcategory}
+                          text={trans.subcategory}
+                          tooltip={trans.subcategory}
                           length={35}
                         />
                       </TabletText>
                       <DesktopText>
                         <EllipsisText
-                          text={e.subcategory}
-                          tooltip={e.subcategory}
+                          text={trans.subcategory}
+                          tooltip={trans.subcategory}
                           length={60}
                         />
                       </DesktopText>
                     </td>
-                    <StyledTd>{e.category}</StyledTd>
-                    <StyledTd>{e.amount}$</StyledTd>
-                    <StyledTd>
-                      <DeleteBtn id={e._id}  onClick={e =>
-                dispatch(transOperations.deleteTransactions(e.target.id, token), [dispatch])
+                    <StyledTd>{trans.category}</StyledTd>
+                    <StyledTd>{trans.amount}$</StyledTd>
+                    <StyledTd >
+                      <DeleteBtn type="button" id={trans._id}  onClick={e =>
+                dispatch(transOperations.deleteTransactions(e.target.id, token))
               } >
-                        <Icons id={e._id}
+                        <Icons 
                           name="delete"
                           color="#52555F"
                           width="18px"

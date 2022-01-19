@@ -31,7 +31,7 @@ export default function Summury() {
           {summary.length > 0 &&
             summary.map(month => {
               return (
-                <StyledTr key={month.name}>
+                <StyledTr key={month.month}>
                   <MontTd>{month.name}</MontTd>
                   <td>{month.amount}</td>
                 </StyledTr>

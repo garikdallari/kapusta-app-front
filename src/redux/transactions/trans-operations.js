@@ -7,7 +7,7 @@ const deleteTransactions = createAsyncThunk(
 
   async (id, token) => {
     try {
-      const data = await axios.delete(`/transactions/${id}`, {
+     await axios.delete(`/transactions/${id}`, {
         Authorization: `Bearer ${token}`,
       });
 
@@ -69,11 +69,42 @@ const getAllByMonth = createAsyncThunk(
   },
 );
 
+const createTransactions = createAsyncThunk(
+  'transactions/createTransactions',
+
+  async (type, amount, category, subcategory, token) => {
+    const body= {
+      "type": `${type}`,
+      "amount": `${amount}`,
+      "category": `${category}`,
+      "subcategory": `${subcategory}`,
+      "date": {
+        "day": "18",
+        "month": "1",
+        "year": "2022",
+      }}
+
+    try {
+      const { data } = await axios.post(`/transactions`,{
+      
+       
+        Authorization: `Bearer ${token}`},
+       { Body:JSON.stringify(body)})
+            console.log(data);
+      return data;
+    } catch (error) {
+      
+      throw new Error(error.message);
+    }})
+  
+
+
 const transOperations = {
   deleteTransactions,
   getBalanceBy6Month,
   getAllByType,
   getAllByMonth,
+  createTransactions
 };
 
 export default transOperations;

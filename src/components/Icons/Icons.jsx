@@ -8,6 +8,7 @@ export default function Icons({ name, color, width, height, className }) {
       fill={color}
       width={width}
       height={height}
+      pointer-events="none"
     >
       <use xlinkHref={`${IconsSVG}#icon-${name}`} />
     </svg>
