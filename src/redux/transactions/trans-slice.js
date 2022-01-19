@@ -14,7 +14,7 @@ const transSlice = createSlice({
   extraReducers: {
     [transOperations.deleteTransactions.fulfilled] 
         (state, { payload }){
-            state.transactions=state.filter(item => String(item._id) !== payload)},
+            state.transactions=(()=>state.filter(item => String(item._id) !== payload))},
 
     [transOperations.getBalanceBy6Month.fulfilled] 
             (state, { payload }){

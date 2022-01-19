@@ -12,7 +12,6 @@ const deleteTransactions= createAsyncThunk(
         });
         console.log(id)
         console.log(data);
-
         return id;
       } catch (error) {
         throw new Error(error.message);
