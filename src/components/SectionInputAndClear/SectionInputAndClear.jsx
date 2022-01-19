@@ -1,6 +1,5 @@
 import ButtonArrowBack from '../ButtonArrowBack/ButtonArrowBack';
 import ProductForm from '../ProductForm/ProductForm';
-import Wallet from '../Wallet/Wallet';
 import Button from '../Button/Button';
 import { theme } from '../../constants/theme';
 import {
@@ -17,18 +16,22 @@ export default function SectionInputAndClear() {
         <ButtonArrowBack displayBtn={'none'} displayText={'none'} />
         <ContainerDateNow>date now</ContainerDateNow>
         <ProductForm />
-        <Wallet />
       </BackdropContainer>
 
       <ButtonContainer>
         <Button
-          text={'INPUT'}
+          text={'ADD'}
           type={'button'}
           backgroundColor={theme.color.buttonOrangeBg}
           textColor={theme.color.inputBorderColor}
           marginRight={'15px'}
+          onClick={() => console.log('Click ADD')}
         />
-        <Button text={'CLEAR'} type={'button'} />
+        <Button
+          text={'CLEAR'}
+          type={'button'}
+          onClick={() => console.log('Click CLEAR')}
+        />
       </ButtonContainer>
     </Section>
   );

@@ -29,7 +29,6 @@ export const Input = styled.input`
   }
 
   @media (min-width: 1280px) {
-    border: 2px solid ${theme.color.inputBorderColorDeskTab};
     width: 289px;
   }
 `;
@@ -41,8 +40,7 @@ export const Select = styled.select`
   padding: 0px;
   height: 44px;
   padding-left: 18px;
-  border: 2px solid #ffffff;
-
+  border: 2px solid ${theme.color.inputBorderColor};
   &:focus {
     outline: none;
   }
@@ -58,13 +56,20 @@ export const Select = styled.select`
   }
   @media (min-width: 1280px) {
     width: 188px;
-    border: 2px solid ${theme.color.inputBorderColorDeskTab};
+    border-right: none;
   }
 `;
 
-export const Label = styled.div`
+export const Label = styled.label`
   margin-left: auto;
   margin-right: auto;
+`;
+
+export const LabelInputPrice = styled.label`
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  }
 `;
 
 export const Form = styled.form`
@@ -74,16 +79,38 @@ export const Form = styled.form`
     margin-left: 33px;
   }
 
-  @media (min-width: 1280px) {
-    margin-left: 23px;
-  }
-
   @media (max-width: 767px) {
     margin-top: 15px;
     flex-direction: column;
   }
+
+  @media (min-width: 1280px) {
+    margin-left: 23px;
+  }
 `;
 
 export const Option = styled.option`
-  padding: 5px;
+  // padding: 5px;
+`;
+
+export const InputPrice = styled.input`
+  margin-top: 30px;
+  padding: 0px;
+  border: 2px solid ${theme.color.inputBorderColor};
+  background-color: inherit;
+  width: 125px;
+  height: 44px;
+  border-radius: 22px 0px 0px 22px;
+  padding-right: 15px;
+
+  text-align: right;
+  letter-spacing: 0.02em;
+  color: ${theme.color.blackText};
+  font-weight: bold;
+  font-size: ${theme.fontSize.descriptionProduct};
+  line-height: 14px;
+
+  ::placeholder {
+    color: ${theme.color.blackText};
+  }
 `;

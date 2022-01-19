@@ -17,7 +17,7 @@ function HomePage() {
   return (
     <BackgroundBody>
       <Container>
-        <HomeBalance />
+        {/* <HomeBalance /> */}
         <FinanceTable>
           <IncomeExpenseBtns />
           <PaperHomePage>

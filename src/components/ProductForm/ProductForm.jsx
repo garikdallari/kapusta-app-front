@@ -1,14 +1,19 @@
-import { Input, Select, Label, Form, Option } from './ProductForm.styled';
+import {
+  Input,
+  Select,
+  Label,
+  Form,
+  Option,
+  InputPrice,
+  LabelInputPrice,
+} from './ProductForm.styled';
+import Wallet from '../../components/Wallet/Wallet';
 
 export default function ProductForm() {
   return (
     <Form name="productForm" autoComplete="on" noValidate>
       <Label>
-        <Input
-          type="text"
-          name="descriptionProduct"
-          placeholder="Product description"
-        />
+        <Input name="descriptionProduct" placeholder="Product description" />
       </Label>
 
       <Label>
@@ -21,6 +26,11 @@ export default function ProductForm() {
           <Option value="Health">Health</Option>
         </Select>
       </Label>
+
+      <LabelInputPrice>
+        <InputPrice placeholder="00.00 $" name="Price" />
+        <Wallet />
+      </LabelInputPrice>
     </Form>
   );
 }
