@@ -1,4 +1,7 @@
-import { Switch, Redirect, Route } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import authOperations from './redux/auth/auth-operations';
 import './App.css';
 
 import PublicRoute from './routes/PublicRoute';
@@ -11,16 +14,22 @@ import HomePage from './pages/HomePage/HomePage';
 import Header from './components/Header/Header';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.getCurrent());
+  });
+
   return (
     <>
       <Header></Header>
 
       <Switch>
-        <PublicRoute path="/" exact>
+        <PublicRoute path="/" exact redirectTo="/home" restricted>
           <Redirect to="/login" />
         </PublicRoute>
 
-        <PublicRoute path="/signup" restricted>
+        <PublicRoute path="/signup" redirectTo="/home" restricted>
           <RegisterPage />
         </PublicRoute>
 
@@ -28,15 +37,13 @@ function App() {
           <LoginPage />
         </PublicRoute>
 
-        <PrivateRoute path="/home">
+        <PrivateRoute path="/home" redirectTo="/login">
           <HomePage />
         </PrivateRoute>
 
-        <PrivateRoute path="/report">
+        <PrivateRoute path="/report" redirectTo="/login">
           <ReportPage />
         </PrivateRoute>
-
-        <Redirect to="/" />
       </Switch>
     </>
   );

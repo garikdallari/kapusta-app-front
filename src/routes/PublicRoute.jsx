@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 export default function PublicRoute({
   children,
-  redirectTo = '/home',
+  redirectTo = '/',
   restricted = false,
   ...routeProps
 }) {
