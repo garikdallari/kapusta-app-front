@@ -26,7 +26,7 @@ export default function HomeBalance() {
             <BalanceInput />
             <BalanceButton type="submit">Confirm</BalanceButton>
           </InputContainer>
-          <BalanceNotification />
+          {/* <BalanceNotification /> */}
         </BalanceBox>
       </WrapperInput>
     </>
