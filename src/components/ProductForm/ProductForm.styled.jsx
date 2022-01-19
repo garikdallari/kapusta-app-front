@@ -69,7 +69,6 @@ export const LabelInputPrice = styled.label`
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  }
 `;
 
 export const Form = styled.form`
