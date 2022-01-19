@@ -7,6 +7,7 @@ export default function Button({
   type,
   marginRight,
   disabled,
+  onClick,
 }) {
   return (
     <>
@@ -16,6 +17,7 @@ export default function Button({
         textColor={textColor}
         marginRight={marginRight}
         disabled={disabled}
+        onClick={onClick}
       >
         {text}
       </StyledBtn>

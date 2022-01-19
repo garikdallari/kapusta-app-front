@@ -9,12 +9,8 @@ export const Container = styled.div`
   width: 104px;
   height: 40px;
 
-  @media screen and (min-width: 768px) {
-    margin-right: 33px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    margin-right: 23px;
+  @media screen and (max-width: 767px) {
+    display: none;
   }
 `;
 

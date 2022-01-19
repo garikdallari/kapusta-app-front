@@ -10,6 +10,7 @@ export const Section = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
     margin-top: 30px;
 
     width: 666px;
