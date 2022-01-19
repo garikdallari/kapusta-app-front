@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Icons from '../Icons/Icons';
 import EllipsisText from 'react-ellipsis-text';
 
@@ -22,41 +22,14 @@ import authSelectors from
 import transSelectors from
 '../../redux/transactions/trans-selectors';
 
-
-// const data = [
-//   {
-//     date: '1',
-//     description: 'World',
-//     category: 'car',
-//     amount: 10,
-//   },
-//   {
-//     date: '2',
-//     description: 'World',
-//     category: 'car',
-//     amount: 5,
-//   },
-//   {
-//     date: '3',
-//     description:
-//       'rtyeityeut ureytuwyte etruetyieu ureyityqewtuy ueriydsfdsfdfdfdfdfdfdffdfdfdfrq',
-//     category: 'car',
-//     amount: 6,
-//   },
-//   {
-//     date: '4',
-//     description: 'World',
-//     category: 'car',
-//     amount: 7,
-//   },
-// ];
-
 export default function TabletDesktopTable() {
-  const token = useSelector(authSelectors.getToken);
-  const transactions=useSelector(transSelectors.getTransactions);
   const dispatch = useDispatch();
+  const token = useSelector(authSelectors.getToken);
+  let type="expense"
+  const transactions=useSelector(transSelectors.getTransactions);
+  useEffect(() => dispatch(transOperations.getAllByType(type,token)),[token,type,dispatch]);
 
-  return (
+   return (
     <StyledTable>
       <HeadTable>
         <thead>
@@ -72,23 +45,23 @@ export default function TabletDesktopTable() {
       <ScrollBody>
         <BodyTable>
           <tbody>
-            {transactions &&
+            {transactions.length>0 &&
               transactions.map(e => {
                 return (
-                  <BodyTr key={e.date}>
-                    <DateTd>{e.date}</DateTd>
+                  <BodyTr key={e._id} id={e._id}>
+                    <DateTd>{e.date.day}.{e.date.month}.{e.date.year}</DateTd>
                     <td>
                       <TabletText>
                         <EllipsisText
-                          text={e.description}
-                          tooltip={e.description}
+                          text={e.subcategory}
+                          tooltip={e.subcategory}
                           length={35}
                         />
                       </TabletText>
                       <DesktopText>
                         <EllipsisText
-                          text={e.description}
-                          tooltip={e.description}
+                          text={e.subcategory}
+                          tooltip={e.subcategory}
                           length={60}
                         />
                       </DesktopText>
@@ -96,10 +69,10 @@ export default function TabletDesktopTable() {
                     <StyledTd>{e.category}</StyledTd>
                     <StyledTd>{e.amount}$</StyledTd>
                     <StyledTd>
-                      <DeleteBtn id={e.id}  onClick={e =>
-                dispatch(transOperations.deleteTransaction(e.target.id,token), [dispatch])
+                      <DeleteBtn id={e._id}  onClick={e =>
+                dispatch(transOperations.deleteTransactions(e.target.id, token), [dispatch])
               } >
-                        <Icons
+                        <Icons id={e._id}
                           name="delete"
                           color="#52555F"
                           width="18px"
