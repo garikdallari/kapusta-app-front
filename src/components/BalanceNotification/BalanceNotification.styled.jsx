@@ -2,8 +2,7 @@ import styled from '@emotion/styled';
 
 export const Notification = styled.div`
   display: flex;
-  margin: 0 auto;
-  margin-top: 13px;
+  margin: 25px 0 0 0;
   padding: 30px 25px;
   flex-direction: column;
   position: relative;

@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
+import { theme } from '../../constants/theme';
 
 export const Section = styled.div`
   margin: 0 auto;
   padding: 7px 11px 7px 14px;
   width: 282px;
 
-  background: ${props => props.theme.color.buttonWhiteBg};
+  background: ${theme.color.buttonWhiteBg};
 
-  box-shadow: ${props => props.theme.color.boxShadowMobile};
+  box-shadow: ${theme.color.boxShadowMobile};
   border-radius: 20px;
 
   @media screen and (min-width: 768px) {
@@ -15,7 +16,7 @@ export const Section = styled.div`
     padding-left: 123px;
     width: 668px;
 
-    box-shadow: ${props => props.theme.color.boxShadow};
+    box-shadow: ${theme.color.boxShadow};
     border-radius: 30px;
   }
 
@@ -24,15 +25,15 @@ export const Section = styled.div`
     padding-left: 319px;
     width: 1060px;
   }
-`
+`;
 
 export const List = styled.div`
   display: flex;
   align-items: center;
   margin: 0;
   padding: 0;
-`
-  
+`;
+
 export const Item = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,10 +43,6 @@ export const Item = styled.div`
     margin-right: 15px;
   }
 
-  // :last-child {
-  //   color: #407946;
-  // }
-
   @media screen and (min-width: 768px) {
     flex-direction: row;
 
@@ -53,52 +50,52 @@ export const Item = styled.div`
       margin-right: 21px;
     }
   }
-`
+`;
 
 export const Vertical = styled.div`
   margin-right: 10px;
-  
+
   height: 71px;
-  border-right: 1px solid ${props => props.theme.color.lightGray};
+  border-right: 1px solid ${theme.color.lightGray};
 
   @media screen and (min-width: 768px) {
     margin-right: 19px;
-    
+
     height: 36px;
-    border-right: 1px solid ${props => props.theme.color.lightGray};
+    border-right: 1px solid ${theme.color.lightGray};
   }
-`
+`;
 
 export const Nomination = styled.span`
   margin: 0 0 8px 0;
-  font-family: ${props => props.theme.fontFamily}, sans-serif;
+  font-family: ${theme.fontFamily}, sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  color: ${props => props.theme.color.buttonDarkText};
+  color: ${theme.color.buttonDarkText};
 
   @media screen and (min-width: 768px) {
     margin: 0 15px 0 0;
   }
-`
+`;
 
 export const Amount = styled.span`
   margin: 0;
-  font-family: ${props => props.theme.fontFamily}, sans-serif;
+  font-family: ${theme.fontFamily}, sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.04em;
 
-  color: ${props => props.theme.color.expensesColor};
-`
+  color: ${theme.color.expensesColor};
+`;
 export const AmountIncome = styled.span`
   margin: 0;
-  font-family: ${props => props.theme.fontFamily};
+  font-family: ${theme.fontFamily};
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.04em;
 
-  color: ${props => props.theme.color.incomeColor};
-`
+  color: ${theme.color.incomeColor};
+`;
