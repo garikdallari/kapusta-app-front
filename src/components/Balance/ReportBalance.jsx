@@ -11,7 +11,7 @@ import {
 
 import CurrentPeriod from './CurrentPeriod';
 
-export default function ReportBalance() {
+export default function ReportBalance({ balance }) {
   return (
     <>
       <WrapperInput>
@@ -22,7 +22,7 @@ export default function ReportBalance() {
         <BalanceBox>
           <BalanceTitle>Balance:</BalanceTitle>
           <InputContainer>
-            <Placeholder>$</Placeholder>
+            <Placeholder>{`${balance}`}$</Placeholder>
             <ReportInput></ReportInput>
             <ReportButton type="submit">Confirm</ReportButton>
           </InputContainer>
