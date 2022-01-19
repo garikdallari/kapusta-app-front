@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Date = styled.span`
+export const Current = styled.span`
   margin-left: 10px;
 
   font-family: ${theme.fontFamily};
