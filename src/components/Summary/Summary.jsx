@@ -14,13 +14,13 @@ import transSelectors from
 '../../redux/transactions/trans-selectors';
 
 export default function Summury() {
-  // const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWU3MTIwZGM1NDQxZTA0MjY5N2VmZDEiLCJpYXQiOjE2NDI1ODcwOTZ9.VMxVv0X63jqQXYlPfbmcshA68bgersRwQWcjClRewYM"
+ 
   const token = useSelector(authSelectors.getToken);
   const summary= useSelector(transSelectors.getSummary);
   const dispatch = useDispatch();
   let type="expense";
 
-  useEffect(() => dispatch(transOperations.getBalanceBy6Month(type,token)),[token,type]);
+  useEffect(() => dispatch(transOperations.getBalanceBy6Month(type,token)),[token,type,dispatch]);
 
 
   return (

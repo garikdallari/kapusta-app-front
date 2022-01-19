@@ -4,8 +4,8 @@ export default function IncomeExpenseBtns(){
 
     return (
         <ButtonsWrapper>
-        <Button>income</Button>
         <Button>expense</Button>
+        <Button>income</Button>
         </ButtonsWrapper>
     )
 }

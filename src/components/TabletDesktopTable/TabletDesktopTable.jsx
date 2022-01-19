@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect } from 'react';
 import Icons from '../Icons/Icons';
 import EllipsisText from 'react-ellipsis-text';
 
@@ -22,24 +22,13 @@ import authSelectors from
 import transSelectors from
 '../../redux/transactions/trans-selectors';
 
-// :
-// amount: 11022200
-// category: "food"
-// createdAt: "2022-01-19T12:55:05.670Z"
-// date: {day: '16', month: '1', year: '2022'}
-// owner: "61e7120dc5441e042697efd1"
-// subcategory: "milk"
-// type: "expense"
-// updatedAt: "2022-01-19T12:55:05.670Z"
-// _id: "61e80a298f0ee3427fd04336"
-
 export default function TabletDesktopTable() {
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
   let type="expense"
-  useMemo(() => dispatch(transOperations.getAllByType(type,token)),[token,type]);
   const transactions=useSelector(transSelectors.getTransactions);
- 
+  useEffect(() => dispatch(transOperations.getAllByType(type,token)),[token,type,dispatch]);
+
    return (
     <StyledTable>
       <HeadTable>
@@ -56,7 +45,7 @@ export default function TabletDesktopTable() {
       <ScrollBody>
         <BodyTable>
           <tbody>
-            {transactions &&
+            {transactions.length>0 &&
               transactions.map(e => {
                 return (
                   <BodyTr key={e._id} id={e._id}>
