@@ -14,6 +14,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default function UserMenu() {
   const userName = useSelector(authSelectors.getUserName);
+
   const dispatch = useDispatch();
 
   return (
