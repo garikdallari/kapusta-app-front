@@ -2,20 +2,30 @@ import { createSlice } from '@reduxjs/toolkit';
 import transOperations from './trans-operations';
 
 const initialState = {
-  transactions:[],
- balance: 0,
+  transactions: [],
+  summary:[],
 };
 
+
 const transSlice = createSlice({
-  name: 'transaction',
+  name: 'transactions',
   initialState,
 
   extraReducers: {
-    [transOperations.deleteTransaction.fulfilled] 
+    [transOperations.deleteTransactions.fulfilled] 
         (state, { payload }){
-            state.transaction=state.filter(item => String(item.id) !== payload);
-    },
-  },
+            state.transactions=state.filter(item => String(item._id) !== payload)},
+
+    [transOperations.getBalanceBy6Month.fulfilled] 
+            (state, { payload }){
+              state.summary=[...payload]}
+            ,
+    
+    [transOperations.getAllByType.fulfilled] 
+            (state, { payload }){
+              state.transactions=[...payload]}
+            }
+        
 });
 
 
