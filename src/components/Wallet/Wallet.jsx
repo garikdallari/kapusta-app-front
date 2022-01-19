@@ -3,12 +3,12 @@ import { theme } from '../../constants/theme';
 import { ContainerWallet, ContainerBalance } from './Wallet.styled';
 
 export default function Wallet() {
-  const balance = '00.00';
-  const balanceLength = balance.length <= 5;
+  const balance = '55000.00';
+  const balanceLength = balance.length <= 8;
   return (
     <ContainerWallet>
       <ContainerBalance>
-        {balance} {balanceLength && 'UAH'}
+        {balance} {balanceLength && '$'}
       </ContainerBalance>
       <HiOutlineCalculator
         style={{

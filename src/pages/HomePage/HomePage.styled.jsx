@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const TableSummaryWrapper=styled.div`
+export const TableSummaryWrapper = styled.div`
 display:flex;
 align-items:center;
 justify-content:center;
@@ -12,20 +12,22 @@ justify-content:center;
     flex-direction:row;
 }
 
-`
-export const PaperHomePage=styled.div`
-padding:0;
-margin:0;
-@media screen and (min-width: 768px) {
- width: fit-content;
-padding:28px 30px 48px 30px;
-border-radius:0px 30px 30px 30px;
-box-shadow:${props => props.theme.color.boxShadow};   
-background-color:${props => props.theme.color.paperBgColor};}
-@media screen and (min-width: 1280px) {
-    padding:33px 20px 61px 20px;
-}
-`
+`;
+export const PaperHomePage = styled.div`
+  padding: 0;
+  margin: 0;
+  @media screen and (min-width: 768px) {
+    width: 665px;
+    padding: 28px 30px 48px 30px;
+    border-radius: 0px 30px 30px 30px;
+    box-shadow: ${props => props.theme.color.boxShadow};
+    background-color: ${props => props.theme.color.paperBgColor};
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 33px 20px 61px 20px;
+    width: 1060px;
+  }
+`;
 export const BackgroundBody = styled.div`
   position: relative;
   background-color: ${props => props.theme.backgroundBodyColor};

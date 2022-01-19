@@ -1,6 +1,12 @@
 import styled from '@emotion/styled';
 
-export const ReportBox = styled.div`
+export const ReportBox = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 15px;
+  cursor: pointer;
+
   @media screen and (max-width: 768px) {
   }
 
@@ -8,10 +14,7 @@ export const ReportBox = styled.div`
   }
 `;
 
-export const ReportHeader = styled.a`
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
+export const ReportHeader = styled.span`
   font-family: ${props => props.theme.fontFamily};
   font-style: normal;
   font-weight: normal;
@@ -19,7 +22,8 @@ export const ReportHeader = styled.a`
   line-height: 14px;
   letter-spacing: 0.04em;
   color: rgba(82, 85, 95, 0.7);
-  margin-bottom: 45px;
+  border: none;
+  background-color: transparent;
   @media screen and (min-width: 768px) {
     margin: 0 0 0 111px;
   }

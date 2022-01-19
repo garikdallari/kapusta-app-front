@@ -4,7 +4,6 @@ import { theme } from '../../constants/theme';
 export const Input = styled.input`
   color: ${theme.color.buttonDarkText};
   font-size: ${theme.fontSize.descriptionProduct};
-
   background-color: inherit;
   padding: 0px;
   height: 44px;
@@ -23,10 +22,15 @@ export const Input = styled.input`
   }
 
   @media (min-width: 768px) {
-    border: 2px solid ${theme.color.inputPlaceholderColor};
-    border-right: none;
+    border: 2px solid ${theme.color.inputBorderColorDeskTab};
     width: 192px;
     border-radius: 16px 0px 0px 0px;
+    border-right: none;
+  }
+
+  @media (min-width: 1280px) {
+    border: 2px solid ${theme.color.inputBorderColorDeskTab};
+    width: 289px;
   }
 `;
 
@@ -38,6 +42,7 @@ export const Select = styled.select`
   height: 44px;
   padding-left: 18px;
   border: 2px solid #ffffff;
+
   &:focus {
     outline: none;
   }
@@ -48,8 +53,12 @@ export const Select = styled.select`
   }
 
   @media (min-width: 768px) {
-    border: 2px solid ${theme.color.inputPlaceholderColor};
+    border: 2px solid ${theme.color.inputBorderColorDeskTab};
     width: 171px;
+  }
+  @media (min-width: 1280px) {
+    width: 188px;
+    border: 2px solid ${theme.color.inputBorderColorDeskTab};
   }
 `;
 
@@ -65,8 +74,16 @@ export const Form = styled.form`
     margin-left: 33px;
   }
 
+  @media (min-width: 1280px) {
+    margin-left: 23px;
+  }
+
   @media (max-width: 767px) {
     margin-top: 15px;
     flex-direction: column;
   }
+`;
+
+export const Option = styled.option`
+  padding: 5px;
 `;

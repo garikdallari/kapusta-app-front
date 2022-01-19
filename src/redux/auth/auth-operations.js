@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'http://localhost:8000/api';
+axios.defaults.baseURL = 'https://kapusta-33-5-api.herokuapp.com/api';
 
 const token = {
   set(token) {
@@ -15,7 +15,7 @@ const token = {
 const signup = createAsyncThunk('auth/signup', async credentials => {
   try {
     const { data } = await axios.post('/auth/signup', credentials);
-    token.set(data.token);
+    token.set(data.data.token);
     return data;
   } catch (error) {
     console.log(error.message);
@@ -26,7 +26,7 @@ const signup = createAsyncThunk('auth/signup', async credentials => {
 const login = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await axios.post('auth/login', credentials);
-    token.set(data.token);
+    token.set(data.data.token);
     return data;
   } catch (error) {
     console.log(error.message);

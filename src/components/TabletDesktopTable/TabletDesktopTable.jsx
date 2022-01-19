@@ -15,34 +15,47 @@ import {
   DesktopText,
 } from './TabletDesktopTable.styled';
 
-const data = [
-  {
-    date: '1',
-    description: 'World',
-    category: 'car',
-    amount: 10,
-  },
-  {
-    date: '2',
-    description: 'World',
-    category: 'car',
-    amount: 5,
-  },
-  {
-    date: '3',
-    description:
-      'rtyeityeut ureytuwyte etruetyieu ureyityqewtuy ueriydsfdsfdfdfdfdfdfdffdfdfdfrq',
-    category: 'car',
-    amount: 6,
-  },
-  {
-    date: '4',
-    description: 'World',
-    category: 'car',
-    amount: 7,
-  },
-];
+import transOperations from '../../redux/transactions/trans-operations';
+import { useSelector, useDispatch } from 'react-redux';
+import authSelectors from
+'../../redux/auth/auth-selectors';
+import transSelectors from
+'../../redux/transactions/trans-selectors';
+
+
+// const data = [
+//   {
+//     date: '1',
+//     description: 'World',
+//     category: 'car',
+//     amount: 10,
+//   },
+//   {
+//     date: '2',
+//     description: 'World',
+//     category: 'car',
+//     amount: 5,
+//   },
+//   {
+//     date: '3',
+//     description:
+//       'rtyeityeut ureytuwyte etruetyieu ureyityqewtuy ueriydsfdsfdfdfdfdfdfdffdfdfdfrq',
+//     category: 'car',
+//     amount: 6,
+//   },
+//   {
+//     date: '4',
+//     description: 'World',
+//     category: 'car',
+//     amount: 7,
+//   },
+// ];
+
 export default function TabletDesktopTable() {
+  const token = useSelector(authSelectors.getToken);
+  const transactions=useSelector(transSelectors.getTransactions);
+  const dispatch = useDispatch();
+
   return (
     <StyledTable>
       <HeadTable>
@@ -59,8 +72,8 @@ export default function TabletDesktopTable() {
       <ScrollBody>
         <BodyTable>
           <tbody>
-            {data &&
-              data.map(e => {
+            {transactions &&
+              transactions.map(e => {
                 return (
                   <BodyTr key={e.date}>
                     <DateTd>{e.date}</DateTd>
@@ -83,7 +96,9 @@ export default function TabletDesktopTable() {
                     <StyledTd>{e.category}</StyledTd>
                     <StyledTd>{e.amount}$</StyledTd>
                     <StyledTd>
-                      <DeleteBtn>
+                      <DeleteBtn id={e.id}  onClick={e =>
+                dispatch(transOperations.deleteTransaction(e.target.id,token), [dispatch])
+              } >
                         <Icons
                           name="delete"
                           color="#52555F"

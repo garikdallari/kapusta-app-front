@@ -4,7 +4,7 @@ export const Button = styled.button`
   border-radius: 50px;
   width: 24px;
   height: 24px;
-  padding: 0 auto;
+  padding: 0px;
   margin: 0 18px 0 0;
   background-color: inherit;
   border: none;
@@ -16,7 +16,7 @@ export const Button = styled.button`
     background-color: white;
   }
   @media (min-width: 768px) {
-    display: none;
+    // display: none;
   }
 `;
 
@@ -33,20 +33,23 @@ export const BtnBackText = styled.p`
   border: none;
   justify-content: center;
   align-items: center;
+
   @media (max-width: 767px) {
     display: none;
   }
-
-
-  @media (max-width: 767px) {
-    display: none;
+  @media (min-width: 320px and max-width: 768px) {
+    display: ${prop => prop.displayText};
   }
 `;
 
 export const NavContainer = styled.div`
   @media (min-width: 767px) {
     display: flex;
-    margin: 0 47px 30px 0;
+    margin: 0 47px 0 0;
     align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    display: ${prop => prop.displayBtn};
   }
 `;

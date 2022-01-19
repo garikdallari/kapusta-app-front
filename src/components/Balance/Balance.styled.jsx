@@ -1,18 +1,23 @@
 import styled from '@emotion/styled';
 
 export const WrapperInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   padding: 0 9px 0 9px;
   margin: 0 0 30px 0;
 
   @media screen and (min-width: 768px) {
-    display: flex;
     flex-direction: row-reverse;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 58px;
+    gap: 0;
+    padding: 0;
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 1280px) {
-    margin: 0 0 30px 158px;
+    margin-bottom: 9px;
   }
 `;
 
@@ -20,6 +25,7 @@ export const BalanceBox = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
+    gap: 40px;
     // justify-content: center;
   }
 
@@ -37,9 +43,8 @@ export const BalanceTitle = styled.p`
   line-height: 14px;
   letter-spacing: 0.04em;
   color: rgba(82, 85, 95, 0.7);
-  margin: 30px 0 6px 0;
+  margin: 0 0 6px 0;
   @media screen and (min-width: 768px) {
-    margin: 0 auto;
   }
 
   @media screen and (min-width: 1280px) {
@@ -84,6 +89,7 @@ export const BalanceInput = styled.input`
   border-radius: 22px 0px 0px 22px;
   box-sizing: border-box;
   outline: none;
+  background-color: transparent;
   @media screen and (min-width: 768px) {
     border-radius: 16px;
     margin: 0 15px 0 0;
@@ -201,7 +207,7 @@ export const ReportData = styled.p`
   justify-content: center;
   display: flex;
   border-box: center;
-  margin: 0 0 0px 0;
+  margin: 0 0 20px 0;
   @media screen and (min-width: 768px) {
   }
 
@@ -223,6 +229,7 @@ export const Data = styled.p`
   margin-bottom: 20px;
   margin-top: 0;
   @media screen and (min-width: 768px) {
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 1280px) {
