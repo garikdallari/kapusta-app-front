@@ -1,7 +1,8 @@
 import { Switch, Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import authOperations from './redux/auth/auth-operations';
+import authSelectors from './redux/auth/auth-selectors';
 import './App.css';
 
 import PublicRoute from './routes/PublicRoute';
@@ -14,11 +15,12 @@ import HomePage from './pages/HomePage/HomePage';
 import Header from './components/Header/Header';
 
 function App() {
+  const isFetchingCurrent = useSelector(authSelectors.getFetchingCurrent);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(authOperations.getCurrent());
-  });
+  }, [dispatch]);
 
   return (
     <>
