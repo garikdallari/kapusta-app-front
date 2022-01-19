@@ -82,14 +82,6 @@ export default function LoginForm() {
                   disabled={!isValid && !dirty}
                 />
 
-                {/* <Button
-                  text="SignIn"
-                  type="submit"
-                  textColor="52555F"
-                  backgroundColor="#F5F6FB"
-                  disabled={!isValid && !dirty}
-                /> */}
-
                 <WrapperLink>
                   <StyledLink to="/signup">Signup</StyledLink>
                 </WrapperLink>
