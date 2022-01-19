@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 import { Field } from 'formik';
 
 export const WrapperForm = styled.div`
@@ -102,10 +103,35 @@ export const ErrorMessagePassword = styled.p`
   }
 `;
 
-export const BoxButton = styled.div``;
+export const BoxButton = styled.div`
+  display: flex;
+`;
 
 export const WrapperButton = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+`;
+
+//
+export const StyledLink = styled(Link)`
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #52555f;
+  padding: 15px 38px;
+  text-decoration: none;
+`;
+
+export const WrapperLink = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 44px;
+  background-color: #f5f6fb;
+  border-radius: 16px;
+  box-shadow: 1px 2px 5px rgba(170, 178, 197, 0.4);
 `;
