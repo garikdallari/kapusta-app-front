@@ -28,7 +28,7 @@ export default function ProductForm() {
       </Label>
 
       <LabelInputPrice>
-        <InputPrice placeholder="00.00 $" name="Price" type="number" />
+        <InputPrice placeholder="00.00 $" name="Price" type="text" />
         <Wallet />
       </LabelInputPrice>
     </Form>
