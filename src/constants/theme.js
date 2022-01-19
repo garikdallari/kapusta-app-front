@@ -17,6 +17,7 @@ export const theme = {
     colorCalculator: '1D2E4A',
     inputBorderColor: '#FFFFFF',
     inputBorderColorDeskTab: '#F5F6FB',
+    blackText: '#000000',
   },
   fontFamily: 'Roboto',
   backgroundBodyColor: '#F5F6FB',
