@@ -1,26 +1,31 @@
-import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
+import { createContext } from 'react';
 import { ReportData, Data, DataBox } from './Balance.styled.jsx';
+import ArrowButton from '../ArrowButton/ArrowButton.js';
+import { useState } from 'react';
 
-export default function CurrentPeriod() {
+export default function CurrentPeriod({ updateValue }) {
+  const [selector, setSelector] = useState('expense');
+
   return (
     <>
       <Data>
         <ReportData>
-          <GoChevronLeft
-            style={{
-              color: '#FF751D',
-            }}
-          ></GoChevronLeft>
-          <DataBox>June 2021</DataBox>
-          <GoChevronRight
-            style={{
-              color: '#FF751D',
-            }}
-          ></GoChevronRight>
+          <ArrowButton
+            name={'arrow-left'}
+            date={'10-2021'}
+            updateValue={value => setSelector(value)}
+            currentValue={selector}
+            onClick={() => updateValue(selector)}
+          />
+          <DataBox>{selector}</DataBox>
+          <ArrowButton
+            name={'arrow-right'}
+            date={'12-2021'}
+            updateValue={value => setSelector(value)}
+            currentValue={selector}
+          />
         </ReportData>
       </Data>
     </>
   );
 }
-
-<GoChevronLeft></GoChevronLeft>;
