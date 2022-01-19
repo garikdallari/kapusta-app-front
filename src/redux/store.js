@@ -4,8 +4,8 @@ import storage from 'redux-persist/lib/storage';
 // import transReducer from './transactions/trans-reducer';
 import authReducer from './auth/auth-slice';
 import transReducer from './transactions/trans-slice';
-
 import balanceReducer from './balance/balance-slice';
+
 const authPersistConfig = { key: 'auth', storage, whitelist: ['token'] };
 
 export const store = configureStore({

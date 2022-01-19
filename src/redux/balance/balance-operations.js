@@ -3,7 +3,7 @@ import * as balanceApi from '../../services/balanceAPI';
 
 const getUserBalance = createAsyncThunk('auth/getUserBalance', async () => {
   const balance = await balanceApi.getUserBalance();
-  return console.log(balance.data);
+  return balance.data.result;
 });
 
 const updateUserBalance = createAsyncThunk(
