@@ -14,7 +14,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default function UserMenu() {
   const userName = useSelector(authSelectors.getUserName);
-
   const dispatch = useDispatch();
 
   return (
@@ -36,7 +35,7 @@ export default function UserMenu() {
 
       <LogOutTextButton
         type="button"
-        onClick={() => dispatch(authOperations.logout)}
+        onClick={() => dispatch(authOperations.logout())}
       >
         Exit
       </LogOutTextButton>

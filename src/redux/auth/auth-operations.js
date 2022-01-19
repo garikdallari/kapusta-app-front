@@ -44,7 +44,7 @@ const logout = createAsyncThunk('auth/logout', async () => {
   }
 });
 
-const getCurrent = createAsyncThunk('auth/current', async (_, thunkAPI) => {
+const getCurrentUser = createAsyncThunk('auth/current', async (_, thunkAPI) => {
   const state = thunkAPI.getState();
   const persistToken = state.auth.token;
 
@@ -64,7 +64,7 @@ export const authOperations = {
   signup,
   login,
   logout,
-  getCurrent,
+  getCurrentUser,
 };
 
 export default authOperations;

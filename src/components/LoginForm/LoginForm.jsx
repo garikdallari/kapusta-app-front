@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { authOperations } from '../../redux/auth/auth-operations';
 import { Formik, Form } from 'formik';
 import { LoginValidationShema } from '../../helpers/LoginValidationShema';
