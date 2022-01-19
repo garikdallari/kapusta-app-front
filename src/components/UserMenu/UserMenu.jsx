@@ -35,7 +35,7 @@ export default function UserMenu() {
 
       <LogOutTextButton
         type="button"
-        onClick={() => dispatch(authOperations.logout())}
+        onClick={() => dispatch(authOperations.logout)}
       >
         Exit
       </LogOutTextButton>

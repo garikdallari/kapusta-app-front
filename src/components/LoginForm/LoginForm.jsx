@@ -21,7 +21,6 @@ import {
 
 export default function LoginForm() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const initialValues = {
     password: '',
     email: '',
@@ -29,7 +28,6 @@ export default function LoginForm() {
 
   const handleSubmit = values => {
     dispatch(authOperations.login(values));
-    history.push('/home');
   };
 
   return (
