@@ -14,32 +14,30 @@ function App() {
   return (
     <>
       <Header></Header>
-      
-            <Switch>
-            <Route path="/" exact>
-              <Redirect to="/login" />
-            </Route>
 
-            <Route path="/signup" restricted>
-              <RegisterPage />
-            </Route>
+      <Switch>
+        <PublicRoute path="/" exact>
+          <Redirect to="/login" />
+        </PublicRoute>
 
-            <Route path="/login" redirectTo="/home" restricted>
-              <LoginPage />
-            </Route>
+        <PublicRoute path="/signup" restricted>
+          <RegisterPage />
+        </PublicRoute>
 
-            <Route path="/home">
-              <HomePage />
-            </Route>
+        <PublicRoute path="/login" redirectTo="/home" restricted>
+          <LoginPage />
+        </PublicRoute>
 
-            <Route path="/report">
-              <ReportPage />
-            </Route>
+        <PrivateRoute path="/home">
+          <HomePage />
+        </PrivateRoute>
 
-            <Redirect to="/" />
-          </Switch>
-       
-     
+        <PrivateRoute path="/report">
+          <ReportPage />
+        </PrivateRoute>
+
+        <Redirect to="/" />
+      </Switch>
     </>
   );
 }
