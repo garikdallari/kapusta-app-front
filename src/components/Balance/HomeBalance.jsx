@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import {
   WrapperInput,
   BalanceTitle,
@@ -23,7 +26,7 @@ export default function HomeBalance() {
             <BalanceInput />
             <BalanceButton type="submit">Confirm</BalanceButton>
           </InputContainer>
-          {/* <BalanceNotification /> */}
+          <BalanceNotification />
         </BalanceBox>
       </WrapperInput>
     </>
