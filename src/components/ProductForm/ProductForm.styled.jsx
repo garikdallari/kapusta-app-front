@@ -19,17 +19,18 @@ export const Input = styled.input`
   @media (max-width: 767px) {
     min-width: 282px;
     border-radius: 16px 16px 0px 0px;
+    border-bottom: none;
   }
 
   @media (min-width: 768px) {
     border: 2px solid ${theme.color.inputBorderColorDeskTab};
-    width: 192px;
+    width: 190px;
     border-radius: 16px 0px 0px 0px;
     border-right: none;
   }
 
   @media (min-width: 1280px) {
-    width: 289px;
+    width: 288px;
   }
 `;
 
@@ -52,11 +53,10 @@ export const Select = styled.select`
 
   @media (min-width: 768px) {
     border: 2px solid ${theme.color.inputBorderColorDeskTab};
-    width: 171px;
+    width: 170px;
   }
   @media (min-width: 1280px) {
     width: 188px;
-    border-right: none;
   }
 `;
 
@@ -76,7 +76,7 @@ export const Form = styled.form`
   display: flex;
 
   @media (min-width: 768px) {
-    margin-left: 33px;
+    margin-left: 32px;
   }
 
   @media (max-width: 767px) {
@@ -85,7 +85,7 @@ export const Form = styled.form`
   }
 
   @media (min-width: 1280px) {
-    margin-left: 23px;
+    margin-left: 20px;
   }
 `;
 
@@ -94,14 +94,11 @@ export const Option = styled.option`
 `;
 
 export const InputPrice = styled.input`
-  margin-top: 30px;
+  border: 2px solid ${theme.color.inputBorderColorDeskTab};
   padding: 0px;
-  border: 2px solid ${theme.color.inputBorderColor};
   background-color: inherit;
   width: 125px;
   height: 44px;
-  border-radius: 22px 0px 0px 22px;
-  padding-right: 15px;
 
   text-align: right;
   letter-spacing: 0.02em;
@@ -112,5 +109,29 @@ export const InputPrice = styled.input`
 
   ::placeholder {
     color: ${theme.color.blackText};
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 30px;
+    padding-right: 15px;
+    border: 2px solid ${theme.color.inputBorderColor};
+    border-radius: 22px 0px 0px 22px;
+  }
+
+  @media (min-width: 768px) {
+    border-left: none;
+    width: 70px;
+    border-right: none;
+    ::placeholder {
+      color: ${theme.color.inputPlaceholderColor};
+    }
+  }
+
+  @media (min-width: 1280px) {
+    width: 88px;
   }
 `;

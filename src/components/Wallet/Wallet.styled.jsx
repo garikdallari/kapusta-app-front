@@ -11,15 +11,14 @@ export const ContainerWallet = styled.div`
 
   @media (min-width: 768px) {
     border: 2px solid ${theme.color.inputBorderColorDeskTab};
-    width: 104px;
     padding: 10px 10px 10px 0px;
     border-radius: 0px 22px 22px 0px;
     border-left: none;
+    width: 40px;
   }
 
   @media (max-width: 767px) {
     margin-top: 30px;
-    // width: 183px;
     margin-right: auto;
     margin-left: auto;
     padding: 12px 20px 12px 0px;
@@ -28,7 +27,6 @@ export const ContainerWallet = styled.div`
   }
 
   @media (min-width: 1280px) {
-    border: 2px solid ${theme.color.inputBorderColorDeskTab};
-    // width: 124px;
+    border-color: ${theme.color.inputBorderColorDeskTab};
   }
 `;

@@ -26,7 +26,7 @@ export const ButtonContainer = styled.div`
   }
 
   @media (min-width: 1280px) {
-    margin-left: 27px;
+    margin-left: 26px;
   }
 `;
 
