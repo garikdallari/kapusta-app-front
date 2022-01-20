@@ -1,4 +1,8 @@
-import { Switch, Redirect, Route } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import authOperations from './redux/auth/auth-operations';
+import authSelectors from './redux/auth/auth-selectors';
 import './App.css';
 
 import PublicRoute from './routes/PublicRoute';
@@ -11,36 +15,41 @@ import HomePage from './pages/HomePage/HomePage';
 import Header from './components/Header/Header';
 
 function App() {
+  const isFetchingCurrent = useSelector(authSelectors.getFetchingCurrent);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.getCurrentUser());
+  }, [dispatch]);
+
   return (
-    <>
-      <Header></Header>
-      
-            <Switch>
-            <Route path="/" exact>
-              <Redirect to="/login" />
-            </Route>
+    !isFetchingCurrent && (
+      <>
+        <Header></Header>
 
-            <Route path="/signup" restricted>
-              <RegisterPage />
-            </Route>
+        <Switch>
+          <PublicRoute path="/" exact redirectTo="/home" restricted>
+            <Redirect to="/login" />
+          </PublicRoute>
 
-            <Route path="/login" redirectTo="/home" restricted>
-              <LoginPage />
-            </Route>
+          <PublicRoute path="/signup" redirectTo="/home" restricted>
+            <RegisterPage />
+          </PublicRoute>
 
-            <Route path="/home">
-              <HomePage />
-            </Route>
+          <PublicRoute path="/login" redirectTo="/home" restricted>
+            <LoginPage />
+          </PublicRoute>
 
-            <Route path="/report">
-              <ReportPage />
-            </Route>
+          <PrivateRoute path="/home" redirectTo="/login">
+            <HomePage />
+          </PrivateRoute>
 
-            <Redirect to="/" />
-          </Switch>
-       
-     
-    </>
+          <PrivateRoute path="/report" redirectTo="/login">
+            <ReportPage />
+          </PrivateRoute>
+        </Switch>
+      </>
+    )
   );
 }
 

@@ -1,14 +1,34 @@
-import { Container, Current } from './CurrentDate.styled';
+import { useState, forwardRef } from 'react';
+import DataPicker from 'react-datepicker';
+
 import Icons from '../Icons/Icons';
-import { format } from 'date-fns';
+import { Container, Current } from './CurrentDate.styled';
+import styles from './CurrentDate.module.css';
+import './CurrentDate.css';
 
 export default function CurrentDate() {
-  const currentDate = format(new Date(), 'dd.MM.yyyy');
+  const [startDate, setStartDate] = useState(new Date());
+  const ChooseDate = forwardRef(({ value, onClick }, ref) => (
+    <Current id="datePicker" onClick={onClick} ref={ref}>
+      <Icons
+        name="calendar"
+        color="currentColor"
+        width="20px"
+        height="20px"
+        className={styles.icon}
+      />
+      {value}
+    </Current>
+  ));
 
   return (
     <Container>
-      <Icons name="calendar" color="currentColor" width="20px" height="20px" />
-      <Current>{currentDate}</Current>
+      <DataPicker
+        selected={startDate}
+        onChange={date => setStartDate(date)}
+        customInput={<ChooseDate />}
+        dateFormat="dd.MM.yyyy"
+      ></DataPicker>
     </Container>
   );
 }
