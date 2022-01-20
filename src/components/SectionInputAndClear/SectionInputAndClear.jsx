@@ -1,23 +1,22 @@
 import ButtonArrowBack from '../ButtonArrowBack/ButtonArrowBack';
 import ProductForm from '../ProductForm/ProductForm';
 import CurrentDate from '../CurrentDate/CurrentDate';
-import Wallet from '../Wallet/Wallet';
 import Button from '../Button/Button';
 import { theme } from '../../constants/theme';
 import {
   ButtonContainer,
-  BackdropContainer,
+  Container,
   Section,
 } from './SectionInputAndClear.styled';
 
 export default function SectionInputAndClear() {
   return (
     <Section>
-      <BackdropContainer>
+      <Container>
         <ButtonArrowBack displayBtn={'none'} displayText={'none'} />
         <CurrentDate />
         <ProductForm />
-      </BackdropContainer>
+      </Container>
 
       <ButtonContainer>
         <Button
