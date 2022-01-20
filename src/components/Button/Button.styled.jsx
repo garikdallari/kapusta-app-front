@@ -31,9 +31,9 @@ export const StyledBtn = styled.button`
     margin-right: ${props => props.marginRight};
   }
 
-  /* &:hover,
+  &:hover,
   &:focus {
     background-color: #ff751d;
     color: #ffffff;
-  } */
+  }
 `;

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { theme } from '../../constants/theme';
 
 export const Button = styled.button`
   border-radius: 50px;
@@ -13,7 +14,7 @@ export const Button = styled.button`
   align-items: center;
   &:focus,
   :hover {
-    background-color: white;
+    background-color: ${theme.color.inputBorderColor};
   }
   @media (min-width: 768px) {
     // display: none;
