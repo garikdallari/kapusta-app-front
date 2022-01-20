@@ -18,17 +18,17 @@ import { useState } from 'react';
 
 export default function ProductForm() {
   const [descriptionProduct, setDescriptionProduct] = useState('');
-  const [categoryProduct, usetCategoryProduct] = useState('');
-  const [productPrice, usetProductPrice] = useState('');
+  const [categoryProduct, setCategoryProduct] = useState('');
+  const [productPrice, setProductPrice] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'descriptionProduct':
         return setDescriptionProduct(value);
       case 'categoryProduct':
-        return usetCategoryProduct(value);
+        return setCategoryProduct(value);
       case 'productPrice':
-        return usetProductPrice(value);
+        return setProductPrice(value);
       default:
         return;
     }
@@ -36,8 +36,8 @@ export default function ProductForm() {
 
   const handleClearForm = () => {
     setDescriptionProduct('');
-    usetCategoryProduct('');
-    usetProductPrice('');
+    setCategoryProduct('');
+    setProductPrice('');
   };
 
   const handleSubmitForm = () => {
