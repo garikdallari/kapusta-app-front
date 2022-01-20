@@ -1,0 +1,107 @@
+@import 'react-datepicker/dist/react-datepicker.css';
+
+.react-datepicker__day {
+  background: #fff;
+  border-radius: 5px;
+  color: #000;
+}
+.react-datepicker__day:hover,
+.react-datepicker__day:focus {
+  background: #ff751d;
+  font-weight: bold;
+  color: #fff;
+}
+
+.react-datepicker__day--outside-month {
+  color: gray;
+}
+
+.react-datepicker__day--today {
+  font-weight: normal;
+}
+
+.react-datepicker__day--disabled {
+  color: #ccc;
+}
+
+.react-datepicker__day--disabled:hover,
+.react-datepicker__day--disabled:focus {
+  background-color: #fff;
+  font-weight: normal;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.react-datepicker__header {
+  background: #f5f6fb;
+}
+.react-datepicker__month-dropdown {
+  border: white solid 1px;
+}
+
+.react-datepicker__month-option {
+  background: #f5f6fb;
+}
+
+.react-datepicker__month-dropdown {
+  border: solid #aeaeae 1px;
+}
+
+.react-datepicker__month-option--selected_month {
+  background-color: #ff751d;
+  font-weight: bold;
+  color: #fff;
+}
+
+.react-datepicker__month-option:hover,
+.react-datepicker__month-option:focus {
+  background-color: #ff751d;
+  font-weight: bold;
+  color: #fff;
+}
+
+.react-datepicker__month-option--selected {
+  display: none;
+}
+
+.react-datepicker-wrapper {
+  width: 75px;
+  height: 40px;
+}
+
+.react-datepicker__day--selected {
+  background-color: #ff751d;
+  font-weight: bold;
+  color: #fff;
+}
+
+.Date_icon__calendar__1durz:hover,
+.Date_icon__calendar__1durz:focus {
+  fill: #ff751d;
+}
+
+.react-datepicker__day--outside-month.react-datepicker__day--selected {
+  background-color: #fff;
+  color: gray;
+  font-weight: normal;
+}
+
+.react-datepicker__day--outside-month.react-datepicker__day--selected:hover,
+.react-datepicker__day--outside-month.react-datepicker__day--selected:focus {
+  background-color: #ff751d;
+  font-weight: bold;
+  color: white;
+}
+
+.react-datepicker__input-container {
+  cursor: pointer;
+}
+
+.date-picker {
+  cursor: pointer;
+  border: none;
+  width: 75px;
+  height: 40px;
+  font-size: 12px;
+  font-weight: 900;
+}
