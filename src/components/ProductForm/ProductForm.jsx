@@ -78,7 +78,7 @@ export default function ProductForm() {
             <InputPrice
               placeholder="00.00 $"
               name="productPrice"
-              type="text"
+              type="number"
               onChange={handleChange}
               value={productPrice}
             />
