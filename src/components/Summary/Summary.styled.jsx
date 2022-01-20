@@ -28,7 +28,7 @@ export const SummaryWrapper = styled.div`
 export const StyledTr = styled.tr`
   border: 2px solid #ffffff;
   height: 38px;
-  &:first-child {
+  &:first-of-type {
     border-top: none;
   }
   text-align: left;
