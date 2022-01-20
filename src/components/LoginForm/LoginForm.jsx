@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { authOperations } from '../../redux/auth/auth-operations';
 import { Formik, Form } from 'formik';
 import { LoginValidationShema } from '../../helpers/LoginValidationShema';
 import Button from '../Button/Button';
 import GoogleButton from '../GoogleButton/GoogleButton';
+
 import {
   ErrorMessageEmail,
   ErrorMessagePassword,
@@ -14,11 +14,12 @@ import {
   AdditionallyInfo,
   BoxButton,
   WrapperButton,
+  StyledLink,
+  WrapperLink,
 } from './LoginForm.styled';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const initialValues = {
     password: '',
     email: '',
@@ -26,7 +27,6 @@ export default function LoginForm() {
 
   const handleSubmit = values => {
     dispatch(authOperations.login(values));
-    history.push('/home');
   };
 
   return (
@@ -79,13 +79,9 @@ export default function LoginForm() {
                   disabled={!isValid && !dirty}
                 />
 
-                <Button
-                  text="SignIn"
-                  type="submit"
-                  textColor="52555F"
-                  backgroundColor="#F5F6FB"
-                  disabled={!isValid && !dirty}
-                />
+                <WrapperLink>
+                  <StyledLink to="/signup">Signup</StyledLink>
+                </WrapperLink>
               </BoxButton>
             </Form>
           )}
