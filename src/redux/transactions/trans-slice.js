@@ -4,6 +4,7 @@ import transOperations from './trans-operations';
 const initialState = {
   transactions: [],
   summary: [],
+ 
 };
 
 const transSlice = createSlice({
@@ -19,6 +20,7 @@ const transSlice = createSlice({
     [transOperations.getBalanceBy6Month.fulfilled](state, { payload }) {
       state.summary = [...payload];
     },
+
     [transOperations.getAllByType.fulfilled](state, { payload }) {
       state.transactions = [...payload];
     },
@@ -27,8 +29,8 @@ const transSlice = createSlice({
       state.transactions = [...payload];
     },
     
-    [transOperations.createTransactions.fulfilled](state, { payload }) {
-      state.transactions = [...payload];
+    [transOperations.createTransactions.fulfilled](state,  {payload} ) {
+       state.transactions = [...state.transactions, payload];
     },
   },
 });

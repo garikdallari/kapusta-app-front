@@ -3,7 +3,8 @@ const getSummary=state => state.transactions.summary;
 
 const transSelectors = {
     getTransactions,
-    getSummary
+    getSummary,
+ 
 };
 
 export default transSelectors;
