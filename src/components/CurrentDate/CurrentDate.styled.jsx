@@ -2,10 +2,6 @@ import styled from '@emotion/styled';
 import { theme } from '../../constants/theme';
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-
   width: 104px;
   height: 40px;
 
@@ -14,10 +10,16 @@ export const Container = styled.div`
   }
 `;
 
-export const Current = styled.span`
-  margin-left: 10px;
+export const Current = styled.button`
+  display: flex;
+  align-items: center;
 
-  font-family: ${theme.fontFamily};
+  padding: 10px 0;
+
+  width: 104px;
+  height: 40px;
+
+  font-family: ${theme.fontFamily}, sans-serif;
   font-weight: 900;
   font-size: 12px;
   line-height: 1.17;
@@ -25,4 +27,8 @@ export const Current = styled.span`
   text-transform: uppercase;
 
   color: ${theme.color.buttonDarkText};
+
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
 `;
