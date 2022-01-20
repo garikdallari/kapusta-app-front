@@ -1,4 +1,8 @@
 import { Switch, Redirect, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import authOperations from './redux/auth/auth-operations';
+import authSelectors from './redux/auth/auth-selectors';
 import './App.css';
 
 import PublicRoute from './routes/PublicRoute';
@@ -12,36 +16,41 @@ import Header from './components/Header/Header';
 import GoogleLoader from './components/GoogleLoader/GoogleLoader';
 
 function App() {
+  const isFetchingCurrent = useSelector(authSelectors.getFetchingCurrent);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.getCurrentUser());
+  }, [dispatch]);
+
   return (
     <>
       <Header></Header>
 
       <Switch>
-        <Route path="/" exact>
+        <PublicRoute path="/" exact redirectTo="/home" restricted>
           <Redirect to="/login" />
-        </Route>
+        </PublicRoute>
 
-        <Route path="/signup" restricted>
+        <PublicRoute path="/signup" redirectTo="/home" restricted>
           <RegisterPage />
-        </Route>
+        </PublicRoute>
 
-        <Route path="/login" redirectTo="/home" restricted>
+        <PublicRoute path="/login" redirectTo="/home" restricted>
           <LoginPage />
-        </Route>
+        </PublicRoute>
 
         <Route path="/google">
           <GoogleLoader />
         </Route>
 
-        <Route path="/home">
+        <PrivateRoute path="/home" redirectTo="/login">
           <HomePage />
-        </Route>
+        </PrivateRoute>
 
-        <Route path="/report">
+        <PrivateRoute path="/report" redirectTo="/login">
           <ReportPage />
-        </Route>
-
-        <Redirect to="/" />
+        </PrivateRoute>
       </Switch>
     </>
   );
