@@ -9,37 +9,40 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import ReportPage from './pages/ReportPage/ReportPage';
 import HomePage from './pages/HomePage/HomePage';
 import Header from './components/Header/Header';
+import GoogleLoader from './components/GoogleLoader/GoogleLoader';
 
 function App() {
   return (
     <>
       <Header></Header>
-      
-            <Switch>
-            <Route path="/" exact>
-              <Redirect to="/login" />
-            </Route>
 
-            <Route path="/signup" restricted>
-              <RegisterPage />
-            </Route>
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/login" />
+        </Route>
 
-            <Route path="/login" redirectTo="/home" restricted>
-              <LoginPage />
-            </Route>
+        <Route path="/signup" restricted>
+          <RegisterPage />
+        </Route>
 
-            <Route path="/home">
-              <HomePage />
-            </Route>
+        <Route path="/login" redirectTo="/home" restricted>
+          <LoginPage />
+        </Route>
 
-            <Route path="/report">
-              <ReportPage />
-            </Route>
+        <Route path="/google">
+          <GoogleLoader />
+        </Route>
 
-            <Redirect to="/" />
-          </Switch>
-       
-     
+        <Route path="/home">
+          <HomePage />
+        </Route>
+
+        <Route path="/report">
+          <ReportPage />
+        </Route>
+
+        <Redirect to="/" />
+      </Switch>
     </>
   );
 }

@@ -5,10 +5,12 @@ import { FcGoogle } from 'react-icons/fc';
 export default function GoogleButton() {
   return (
     <>
-      <Button type="submit">
-        <FcGoogle />
-        Google
-      </Button>
+      <form action="http://localhost:8000/api/auth/google">
+        <Button type="submit">
+          <FcGoogle />
+          Google
+        </Button>
+      </form>
     </>
   );
 }
