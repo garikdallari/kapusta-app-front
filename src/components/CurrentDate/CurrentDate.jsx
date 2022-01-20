@@ -1,9 +1,9 @@
 import { useState, forwardRef } from 'react';
 import DataPicker from 'react-datepicker';
-import styles from './CurrentDate.module.css';
 
 import Icons from '../Icons/Icons';
 import { Container, Current } from './CurrentDate.styled';
+import styles from './CurrentDate.module.css';
 import './CurrentDate.css';
 
 export default function CurrentDate() {
@@ -28,7 +28,6 @@ export default function CurrentDate() {
         onChange={date => setStartDate(date)}
         customInput={<ChooseDate />}
         dateFormat="dd.MM.yyyy"
-        className={styles.picker}
       ></DataPicker>
     </Container>
   );
