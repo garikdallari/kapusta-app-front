@@ -14,7 +14,9 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import ReportPage from './pages/ReportPage/ReportPage';
 import HomePage from './pages/HomePage/HomePage';
 import Header from './components/Header/Header';
+import GoogleLoader from './components/GoogleLoader/GoogleLoader';
 import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   const isFetchingCurrent = useSelector(authSelectors.getFetchingCurrent);
@@ -40,6 +42,10 @@ function App() {
 
           <PublicRoute path="/login" redirectTo="/home" restricted>
             <LoginPage />
+          </PublicRoute>
+
+          <PublicRoute path="/google" redirectTo="/home" restricted>
+            <GoogleLoader />
           </PublicRoute>
 
           <PrivateRoute path="/home" redirectTo="/login">
