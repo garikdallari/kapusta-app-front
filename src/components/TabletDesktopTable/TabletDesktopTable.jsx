@@ -23,6 +23,13 @@ import transSelectors from '../../redux/transactions/trans-selectors';
 export default function TabletDesktopTable() {
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
+  let type = 'expense';
+  const transactions = useSelector(transSelectors.getTransactions);
+  useEffect(
+    () => dispatch(transOperations.getAllByType(type, token)),
+    [token, type, dispatch],
+  );
+
   const transactions = useSelector(transSelectors.getTransactions);
   let type = 'income';
 
@@ -30,7 +37,6 @@ export default function TabletDesktopTable() {
     () => dispatch(transOperations.getAllByType(type, token)),
     [dispatch, token, type],
   );
-
   return (
     <StyledTable>
       <HeadTable>
@@ -82,6 +88,7 @@ export default function TabletDesktopTable() {
                               e.target.id,
                               token,
                             ),
+                            [dispatch],
                           )
                         }
                       >

@@ -3,6 +3,7 @@ import transOperations from './trans-operations';
 
 const initialState = {
   transactions: [],
+  allByMonth: {},
   summary: [],
  
 };
@@ -26,7 +27,10 @@ const transSlice = createSlice({
     },
 
     [transOperations.getAllByMonth.fulfilled](state, { payload }) {
-      state.transactions = [...payload];
+      state.allByMonth = {
+        expenseRes: [...payload.expenseRes],
+        incomeRes: [...payload.incomeRes],
+      };
     },
     
     [transOperations.createTransactions.fulfilled](state,  {payload} ) {
