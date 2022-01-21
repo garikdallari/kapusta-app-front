@@ -29,14 +29,6 @@ export default function TabletDesktopTable() {
     () => dispatch(transOperations.getAllByType(type, token)),
     [token, type, dispatch],
   );
-
-  const transactions = useSelector(transSelectors.getTransactions);
-  let type = 'income';
-
-  useEffect(
-    () => dispatch(transOperations.getAllByType(type, token)),
-    [dispatch, token, type],
-  );
   return (
     <StyledTable>
       <HeadTable>
