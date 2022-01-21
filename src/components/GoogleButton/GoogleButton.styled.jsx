@@ -17,6 +17,7 @@ export const Button = styled.button`
   letter-spacing: 0.02em;
   color: #000000;
   box-shadow: 1px 2px 5px rgba(170, 178, 197, 0.4);
+  cursor: pointer;
 
   svg {
     margin-right: 10px;

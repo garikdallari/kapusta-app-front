@@ -23,9 +23,9 @@ export default function TabletDesktopTable() {
 
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
+  let type = 'expense';
   const transactions = useSelector(transSelectors.getTransactions);
   const type= useSelector(transSelectors.getType);
-
   const OnClickDelete=(e)=>{
   dispatch(transOperations.deleteTransactions(e.target.id,token));
   dispatch(transOperations.getBalanceBy6Month(type,token));
@@ -33,11 +33,8 @@ export default function TabletDesktopTable() {
 
   useEffect(
     () => dispatch(transOperations.getAllByType(type, token)),
-    [dispatch, token, type],
-  );
-
-  
-
+    [token, type, dispatch],
+  )
   return (
     <StyledTable>
       <HeadTable>

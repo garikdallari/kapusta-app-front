@@ -1,5 +1,7 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { tostifyAuthOptions } from '../../helpers/tostifyAuthOptions';
 
 axios.defaults.baseURL = 'https://kapusta-33-5-api.herokuapp.com/api';
 
@@ -18,6 +20,7 @@ const signup = createAsyncThunk('auth/signup', async credentials => {
     token.set(data.data.token);
     return data;
   } catch (error) {
+    toast.error('This email is already registered ', tostifyAuthOptions);
     console.log(error.message);
     throw new Error(error.mesage);
   }
@@ -29,6 +32,7 @@ const login = createAsyncThunk('auth/login', async credentials => {
     token.set(data.data.token);
     return data;
   } catch (error) {
+    toast.error('Incorrect username or password', tostifyAuthOptions);
     console.log(error.message);
     throw new Error(error.message);
   }
