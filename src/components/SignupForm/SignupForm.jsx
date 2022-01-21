@@ -16,6 +16,8 @@ import {
   AdditionallyInfo,
   BoxButton,
   WrapperButton,
+  StyledLink,
+  WrapperLink,
 } from './SignupForm.styled';
 
 export default function SignInForm() {
@@ -92,17 +94,12 @@ export default function SignInForm() {
               )}
 
               <BoxButton>
-                <Button
-                  marginRight="15px"
-                  text="LogIn"
-                  type="submit"
-                  textColor="52555F"
-                  backgroundColor="#F5F6FB"
-                  disabled={!isValid && !dirty}
-                />
+                <WrapperLink>
+                  <StyledLink to="/login">LogIn</StyledLink>
+                </WrapperLink>
 
                 <Button
-                  text="SignIn"
+                  text="Signin"
                   type="submit"
                   textColor="#FFFFFF"
                   backgroundColor="#FF751D"

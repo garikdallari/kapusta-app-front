@@ -30,6 +30,13 @@ export default function TabletDesktopTable() {
     [token, type, dispatch],
   );
 
+  const transactions = useSelector(transSelectors.getTransactions);
+  let type = 'income';
+
+  useEffect(
+    () => dispatch(transOperations.getAllByType(type, token)),
+    [dispatch, token, type],
+  );
   return (
     <StyledTable>
       <HeadTable>
@@ -47,33 +54,34 @@ export default function TabletDesktopTable() {
         <BodyTable>
           <tbody>
             {transactions.length > 0 &&
-              transactions.map(e => {
+              transactions.map(trans => {
                 return (
-                  <BodyTr key={e._id} id={e._id}>
+                  <BodyTr key={trans._id} id={trans._id}>
                     <DateTd>
-                      {e.date.day}.{e.date.month}.{e.date.year}
+                      {trans.date.day}.{trans.date.month}.{trans.date.year}
                     </DateTd>
                     <td>
                       <TabletText>
                         <EllipsisText
-                          text={e.subcategory}
-                          tooltip={e.subcategory}
+                          text={trans.subcategory}
+                          tooltip={trans.subcategory}
                           length={35}
                         />
                       </TabletText>
                       <DesktopText>
                         <EllipsisText
-                          text={e.subcategory}
-                          tooltip={e.subcategory}
+                          text={trans.subcategory}
+                          tooltip={trans.subcategory}
                           length={60}
                         />
                       </DesktopText>
                     </td>
-                    <StyledTd>{e.category}</StyledTd>
-                    <StyledTd>{e.amount}$</StyledTd>
+                    <StyledTd>{trans.category}</StyledTd>
+                    <StyledTd>{trans.amount}$</StyledTd>
                     <StyledTd>
                       <DeleteBtn
-                        id={e._id}
+                        type="button"
+                        id={trans._id}
                         onClick={e =>
                           dispatch(
                             transOperations.deleteTransactions(
@@ -85,7 +93,6 @@ export default function TabletDesktopTable() {
                         }
                       >
                         <Icons
-                          id={e._id}
                           name="delete"
                           color="#52555F"
                           width="18px"

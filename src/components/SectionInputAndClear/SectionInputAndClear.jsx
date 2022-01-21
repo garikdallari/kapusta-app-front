@@ -1,39 +1,14 @@
 import ButtonArrowBack from '../ButtonArrowBack/ButtonArrowBack';
 import ProductForm from '../ProductForm/ProductForm';
 import CurrentDate from '../CurrentDate/CurrentDate';
-import Wallet from '../Wallet/Wallet';
-import Button from '../Button/Button';
-import { theme } from '../../constants/theme';
-import {
-  ButtonContainer,
-  BackdropContainer,
-  Section,
-} from './SectionInputAndClear.styled';
+import { Section } from './SectionInputAndClear.styled';
 
 export default function SectionInputAndClear() {
   return (
     <Section>
-      <BackdropContainer>
-        <ButtonArrowBack displayBtn={'none'} displayText={'none'} />
-        <CurrentDate />
-        <ProductForm />
-      </BackdropContainer>
-
-      <ButtonContainer>
-        <Button
-          text={'ADD'}
-          type={'button'}
-          backgroundColor={theme.color.buttonOrangeBg}
-          textColor={theme.color.inputBorderColor}
-          marginRight={'15px'}
-          onClick={() => console.log('Click ADD')}
-        />
-        <Button
-          text={'CLEAR'}
-          type={'button'}
-          onClick={() => console.log('Click CLEAR')}
-        />
-      </ButtonContainer>
+      <ButtonArrowBack displayBtn={'none'} displayText={'none'} />
+      <CurrentDate />
+      <ProductForm />
     </Section>
   );
 }

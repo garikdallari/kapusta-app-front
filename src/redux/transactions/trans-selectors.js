@@ -7,5 +7,4 @@ const transSelectors = {
   getSummary,
   getAllByMonth,
 };
-
 export default transSelectors;

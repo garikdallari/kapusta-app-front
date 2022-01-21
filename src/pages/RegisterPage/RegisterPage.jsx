@@ -12,7 +12,6 @@ import {
   Container,
 } from './RegisterPage.styled';
 // components
-import Header from '../../components/Header/Header';
 import SignupForm from '../../components/SignupForm/SignupForm';
 //helpers
 import useWindowDimensions from '../../helpers/useWindowDimensions';
@@ -25,7 +24,6 @@ export default function RegisterPage() {
   return (
     <>
       <Container>
-        <Header></Header>
         <WrapperBackgroundBody>
           <BackgroundBody>
             <WrapperContent>
