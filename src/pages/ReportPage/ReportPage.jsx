@@ -19,7 +19,6 @@ export default function ReportPage() {
   const [context, setContext] = useState('expense');
 
   const { incomeRes, expenseRes } = useSelector(transSelectors.getAllByMonth);
-  // const { incomeRes, expenseRes } = allByMonth
 
   useEffect(() => {
     setSectionState(context === 'expense' ? expenseRes : incomeRes);
