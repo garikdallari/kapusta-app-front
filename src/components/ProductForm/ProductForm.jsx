@@ -50,17 +50,12 @@ export default function ProductForm() {
   };
 
   const handleSubmitForm = () => {
-  console.log(type, amount,category, description, token);
-  setDescription(description);
-  setCategory(category);
-  setAmount(amount);
-    dispatch(transOperations.createTransactions(type, amount,category, description, token),[dispatch]);
-    // handleClearForm();
-    console.log('Send form.');
-    console.log('Clear form.');
-   };
+    dispatch(transOperations.createTransactions({type, amount, category, description, token}));
+    dispatch(transOperations.getBalanceBy6Month(type,token));
+    handleClearForm();
+  };
 
-  return (
+return (
     <>
       <Container>
         <Form  name="productForm" autoComplete="on" noValidate>
@@ -94,8 +89,7 @@ export default function ProductForm() {
               name="amount"
               type="number"
               onChange={handleChange}
-              value={amount}
-            />
+              value={amount}/>
             <Wallet />
           </LabelInputPrice>
           </Form>

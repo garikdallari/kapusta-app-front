@@ -22,15 +22,15 @@ const transSlice = createSlice({
     },
 
     [transOperations.getAllByType.fulfilled](state, { payload }) {
-      state.transactions = [...payload];
+      state.transactions = [...payload].reverse();
     },
-
+    
     [transOperations.getAllByMonth.fulfilled](state, { payload }) {
       state.transactions = [...payload];
     },
     
     [transOperations.createTransactions.fulfilled](state,  {payload} ) {
-       state.transactions = [...state.transactions, payload];
+       state.transactions = [payload,...state.transactions];
     },
   },
 });

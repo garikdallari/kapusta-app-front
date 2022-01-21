@@ -14,6 +14,8 @@ import {
 } from './HomePage.styled';
 
 function HomePage() {
+
+  
   return (
     <BackgroundBody>
       <Container>

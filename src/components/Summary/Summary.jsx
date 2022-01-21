@@ -12,7 +12,8 @@ import authSelectors from
 '../../redux/auth/auth-selectors';
 import transSelectors from
 '../../redux/transactions/trans-selectors';
-import { getMonthName}  from '../../helpers/getMonthName';
+
+import { getMonthName}  from '../../helpers/monthHelpers';
 
 export default function Summury() {
   const token = useSelector(authSelectors.getToken);
