@@ -1,3 +1,4 @@
+import React from 'react';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 axios.defaults.baseURL = 'https://kapusta-33-5-api.herokuapp.com/api';
@@ -29,7 +30,7 @@ const getBalanceBy6Month = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       );
-      console.log(data.result.balanceByMonth);
+      // console.log(data.result.balanceByMonth);
       return data.result.balanceByMonth;
     } catch (error) {
       throw new Error(error.message);
@@ -45,7 +46,7 @@ const getAllByType = createAsyncThunk(
       const { data } = await axios.get(`/transactions/getAllByType/${type}`, {
         Authorization: `Bearer ${token}`,
       });
-      console.log(data.data.result);
+      // console.log(data.data.result);
       return data.data.result;
     } catch (error) {
       throw new Error(error.message);
@@ -55,7 +56,6 @@ const getAllByType = createAsyncThunk(
 
 const getAllByMonth = createAsyncThunk(
   'transactions/getAllByMonth',
-
   async (date, token) => {
     try {
       const { data } = await axios.get(`/transactions/getAllByMonth/${date}`, {
@@ -72,18 +72,20 @@ const getAllByMonth = createAsyncThunk(
 const createTransactions = createAsyncThunk(
   'transactions/createTransactions',
 
-  async (type, amount, category, subcategoty, day, month, year, token) => {
+  async (type, amount,category, description, token) => {
     const body = {
       type: `${type}`,
       amount: `${amount}`,
       category: `${category}`,
-      subcategory: `${subcategoty}`,
+      subcategory: `${description}`,
       date: {
-        day: `${day}`,
-        month: `${month}`,
-        year: `${year}`,
+        day: `10`,
+        month: `01`,
+        year: `2022`,
       },
     };
+    console.log(body)
+
     try {
       const response = await axios.post(`/transactions`, body, {
         Authorization: `Bearer ${token}`,
@@ -92,6 +94,7 @@ const createTransactions = createAsyncThunk(
 
       return data.data;
     } catch (error) {
+      console.log(error.message)
       throw new Error(error.message);
     }
   },

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Icons from '../Icons/Icons';
 import EllipsisText from 'react-ellipsis-text';
 
@@ -16,7 +17,7 @@ import {
 } from './TabletDesktopTable.styled';
 
 import transOperations from '../../redux/transactions/trans-operations';
-import { useSelector, useDispatch } from 'react-redux';
+
 import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
 
@@ -24,12 +25,17 @@ export default function TabletDesktopTable() {
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
   const transactions = useSelector(transSelectors.getTransactions);
-  let type = 'income';
+  const type= useSelector(transSelectors.getType);
+  // const [description, setDescription] = useState('ytyr');
+  // const [category, setCategory] = useState('food');
+  // const [amount, setAmount] = useState('4444');
 
   useEffect(
     () => dispatch(transOperations.getAllByType(type, token)),
     [dispatch, token, type],
   );
+
+  dispatch(transOperations.createTransactions(type, "3000", "food", "water", token))
 
   return (
     <StyledTable>

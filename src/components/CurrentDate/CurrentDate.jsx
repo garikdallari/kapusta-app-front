@@ -8,6 +8,7 @@ import './CurrentDate.css';
 
 export default function CurrentDate() {
   const [startDate, setStartDate] = useState(new Date());
+
   const ChooseDate = forwardRef(({ value, onClick }, ref) => (
     <Current id="datePicker" onClick={onClick} ref={ref}>
       <Icons

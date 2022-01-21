@@ -4,7 +4,7 @@ import transOperations from './trans-operations';
 const initialState = {
   transactions: [],
   summary: [],
- 
+  type:"expense"
 };
 
 const transSlice = createSlice({
