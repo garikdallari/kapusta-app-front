@@ -8,11 +8,9 @@ import {
 import Icons from '../Icons/Icons';
 import CurrentPeriod from '../../components/Balance/CurrentPeriod';
 import { theme } from '../../constants/theme';
-import { Context } from '../Context/Context';
 import { useEffect } from 'react';
 
 const IconsReportSection = ({ amount }) => {
-  useEffect(() => {}, [amount]);
   return (
     <>
       <Section bgColor={theme.color.buttonWhiteBg}>
@@ -30,7 +28,7 @@ const IconsReportSection = ({ amount }) => {
                     height="56px"
                   />
                   <TextContainer>
-                    {el[0] === 'extra_income' ? 'extra' : el[0]}
+                    {el[0] === 'utility_bills' ? 'bills' : el[0]}
                   </TextContainer>
                 </SvgContainer>
               </WrapperElement>
