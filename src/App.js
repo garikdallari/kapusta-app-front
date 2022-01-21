@@ -1,4 +1,4 @@
-import { Switch, Redirect, Route } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from './redux/auth/auth-operations';
@@ -40,9 +40,9 @@ function App() {
           <LoginPage />
         </PublicRoute>
 
-        <Route path="/google">
+        <PublicRoute path="/google" redirectTo="/home" restricted>
           <GoogleLoader />
-        </Route>
+        </PublicRoute>
 
         <PrivateRoute path="/home" redirectTo="/login">
           <HomePage />

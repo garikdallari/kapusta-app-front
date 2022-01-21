@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { authOperations } from '../../redux/auth/auth-operations';
 import { setTokenToState } from '../../redux/auth/auth-slice';
 import authSelectors from '../../redux/auth/auth-selectors';
+import Container from '../Container/Container';
 
 function useQuery() {
   const { search } = useLocation();
@@ -14,7 +15,9 @@ function useQuery() {
 const GoogleLoader = () => {
   const query = useQuery();
   const dispatch = useDispatch();
+  const storedToken = useSelector(authSelectors.getToken);
   const [token, setToken] = useState(null);
+  const history = useHistory();
 
   useEffect(() => {
     setToken(query.get('token'));
@@ -24,13 +27,18 @@ const GoogleLoader = () => {
     dispatch(setTokenToState(token));
   }, [dispatch, token]);
 
-  // Вызвать getCurrent из редьюсера
-  // Отправить на главную страницу
+  useEffect(() => {
+    if (storedToken) {
+      console.log(storedToken);
+      dispatch(authOperations.getCurrentUser());
+    }
+  }, [dispatch, history, storedToken]);
 
   return (
     <>
-      <h1>Загрузка</h1>
-      {/*<p>token={token}</p>*/}
+      <Container>
+        <p>Loading...</p>
+      </Container>
     </>
   );
 };
