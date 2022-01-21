@@ -1,39 +1,30 @@
 import styled from '@emotion/styled';
-import { theme } from '../../constants/theme';
 
 export const Button = styled.button`
-  border-radius: 50px;
-  width: 24px;
+  display: flex;
+  align-items: center;
+  
+  width: 174px;
   height: 24px;
+  
   padding: 0px;
   margin: 0 18px 0 0;
   background-color: inherit;
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &:focus,
-  :hover {
-    background-color: ${theme.color.inputBorderColor};
-  }
-  @media (min-width: 768px) {
-    // display: none;
-  }
+  
+  cursor: pointer;
 `;
 
 export const BtnBackText = styled.p`
-  text-align: center;
+  margin: 0 0 0 15px;
+
   font-family: ${props => props.theme.fontFamily};
   font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   letter-spacing: 0.04em;
+
   color: rgba(82, 85, 95, 0.7);
-  border-radius: 50px;
-  padding: 0 auto;
-  border: none;
-  justify-content: center;
-  align-items: center;
 
   @media (max-width: 767px) {
     display: none;
