@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Icons from '../Icons/Icons';
 import EllipsisText from 'react-ellipsis-text';
-
 import {
   StyledTd,
   DateTd,
@@ -14,21 +14,27 @@ import {
   TabletText,
   DesktopText,
 } from './TabletDesktopTable.styled';
-
+import { addNullToMonth}  from '../../helpers/monthHelpers';
 import transOperations from '../../redux/transactions/trans-operations';
-import { useSelector, useDispatch } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
 
 export default function TabletDesktopTable() {
+
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
   let type = 'expense';
   const transactions = useSelector(transSelectors.getTransactions);
+  const type= useSelector(transSelectors.getType);
+  const OnClickDelete=(e)=>{
+  dispatch(transOperations.deleteTransactions(e.target.id,token));
+  dispatch(transOperations.getBalanceBy6Month(type,token));
+ }
+
   useEffect(
     () => dispatch(transOperations.getAllByType(type, token)),
     [token, type, dispatch],
-  );
+  )
   return (
     <StyledTable>
       <HeadTable>
@@ -45,12 +51,14 @@ export default function TabletDesktopTable() {
       <ScrollBody>
         <BodyTable>
           <tbody>
-            {transactions.length > 0 &&
-              transactions.map(trans => {
+            {transactions.length>0 &&
+             transactions.map(trans => {
                 return (
                   <BodyTr key={trans._id} id={trans._id}>
                     <DateTd>
-                      {trans.date.day}.{trans.date.month}.{trans.date.year}
+                      {trans.date.day}.
+                      {addNullToMonth(trans.date.month)}
+                      .{trans.date.year}
                     </DateTd>
                     <td>
                       <TabletText>
@@ -74,16 +82,7 @@ export default function TabletDesktopTable() {
                       <DeleteBtn
                         type="button"
                         id={trans._id}
-                        onClick={e =>
-                          dispatch(
-                            transOperations.deleteTransactions(
-                              e.target.id,
-                              token,
-                            ),
-                            [dispatch],
-                          )
-                        }
-                      >
+                        onClick={OnClickDelete}                                           >
                         <Icons
                           name="delete"
                           color="#52555F"

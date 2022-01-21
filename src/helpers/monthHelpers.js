@@ -20,3 +20,10 @@ const monthes = [
     });
     return monthName;
   };
+
+  export const addNullToMonth = month => {
+    if (month<10) {
+      return "0"+month;
+    } else  return month;
+  };
+  

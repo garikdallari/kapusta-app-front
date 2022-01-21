@@ -5,6 +5,7 @@ const initialState = {
   transactions: [],
   allByMonth: {},
   summary: [],
+  type:n "expense"
 };
 
 const transSlice = createSlice({
@@ -23,9 +24,9 @@ const transSlice = createSlice({
     },
 
     [transOperations.getAllByType.fulfilled](state, { payload }) {
-      state.transactions = [...payload];
+      state.transactions = [...payload].reverse();
     },
-
+    
     [transOperations.getAllByMonth.fulfilled](state, { payload }) {
       state.allByMonth = {
         expenseRes: [...payload.expenseRes],
@@ -33,12 +34,12 @@ const transSlice = createSlice({
         subIncomeRes: [...payload.subcategoryIncomeRes],
         subExpenseRes: [...payload.subcategoryExpenseRes],
       };
-    },
-
+    },   
+    [transOperations.createTransactions.fulfilled](state,  {payload} ) {
+       state.transactions = [payload,...state.transactions];
     [transOperations.createTransactions.fulfilled](state, { payload }) {
       state.transactions = [...state.transactions, payload];
     },
   },
 });
-
 export default transSlice.reducer;
