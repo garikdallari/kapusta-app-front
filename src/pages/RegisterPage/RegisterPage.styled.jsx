@@ -11,7 +11,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    max-width: 1280px;
+    max-width: 1980px;
   }
 `;
 
@@ -40,7 +40,7 @@ export const BackgroundBody = styled.div`
   z-index: 0;
 
   @media (min-width: 768px) {
-    max-width: 1280px;
+    max-width: 1980px;
     height: 526px;
     padding: 77px 290px 335px 171px;
   }

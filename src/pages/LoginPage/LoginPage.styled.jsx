@@ -6,12 +6,12 @@ export const Container = styled.div`
   margin: 0 auto;
   max-width: 767px;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     max-width: 1280px;
   }
 
-  @media screen and (min-width: 1280px) {
-    max-width: 1280px;
+  @media (min-width: 1280px) {
+    max-width: 1980px;
   }
 `;
 
@@ -40,7 +40,7 @@ export const BackgroundBody = styled.div`
   z-index: 0;
 
   @media (min-width: 768px) {
-    max-width: 1280px;
+    max-width: 1980px;
     height: 526px;
     padding: 77px 290px 335px 171px;
   }
@@ -49,6 +49,7 @@ export const BackgroundBody = styled.div`
     padding: 308px 673px 79px 230px;
   }
 `;
+
 export const BackgroundBodyReport = styled.div`
   position: relative;
   background-color: ${props => props.theme.backgroundBodyColor};

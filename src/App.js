@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from './redux/auth/auth-operations';
 import authSelectors from './redux/auth/auth-selectors';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 import PublicRoute from './routes/PublicRoute';
@@ -14,6 +15,8 @@ import ReportPage from './pages/ReportPage/ReportPage';
 import HomePage from './pages/HomePage/HomePage';
 import Header from './components/Header/Header';
 import GoogleLoader from './components/GoogleLoader/GoogleLoader';
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   const isFetchingCurrent = useSelector(authSelectors.getFetchingCurrent);
@@ -53,6 +56,7 @@ function App() {
             <ReportPage />
           </PrivateRoute>
         </Switch>
+        <ToastContainer autoClose={4000} />
       </>
     )
   );

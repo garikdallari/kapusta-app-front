@@ -11,13 +11,11 @@ export default function ButtonArrowBack({ displayBtn, displayText }) {
       <Button onClick={() => history.push('/home')}>
         <HiArrowNarrowLeft
           style={{
-            color: theme.color.buttonOrangeBg,
-            width: '100%',
-            height: '100%',
+            color: theme.color.buttonOrangeBg
           }}
         />
+        <BtnBackText displayText={displayText}>Go back to the main</BtnBackText>
       </Button>
-      <BtnBackText displayText={displayText}>Go back</BtnBackText>
     </NavContainer>
   );
 }
