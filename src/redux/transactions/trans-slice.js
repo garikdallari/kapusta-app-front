@@ -33,6 +33,8 @@ const transSlice = createSlice({
         incomeRes: [...payload.incomeRes],
         subIncomeRes: [...payload.subcategoryIncomeRes],
         subExpenseRes: [...payload.subcategoryExpenseRes],
+        expenseBalanceByMonth: [...payload.expenseBalanceByMonth],
+        incomeBalanceByMonth: [...payload.incomeBalanceByMonth],
       };
     },
     [transOperations.createTransactions.fulfilled](state, { payload }) {
