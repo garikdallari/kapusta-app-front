@@ -134,3 +134,39 @@ export const InputPrice = styled.input`
     width: 88px;
   }
 `;
+
+export const Container = styled.div`
+  @media (min-width: 1280px) {
+    display: flex;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  height: 44px;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 767px) {
+    margin-top: 40px;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    margin-top: 30px;
+    margin-bottom: 48px;
+  }
+  @media (min-width: 1280px) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-left: 26px;
+  }
+`;
+
+export const ButtonContainerInline = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    display: inline-block;
+    margin-left: 13%;
+  }
+`;

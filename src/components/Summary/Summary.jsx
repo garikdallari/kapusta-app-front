@@ -12,28 +12,27 @@ import authSelectors from
 '../../redux/auth/auth-selectors';
 import transSelectors from
 '../../redux/transactions/trans-selectors';
+import { getMonthName}  from '../../helpers/getMonthName';
 
 export default function Summury() {
- 
   const token = useSelector(authSelectors.getToken);
   const summary= useSelector(transSelectors.getSummary);
   const dispatch = useDispatch();
-  let type="expense";
-
+  let type="income";
+  
   useEffect(() => dispatch(transOperations.getBalanceBy6Month(type,token)),[token,type,dispatch]);
-
-
+   
   return (
     <SummaryWrapper>
       <HeadTd>Summary</HeadTd>
       <SummaryTable>
         <tbody>
           {summary.length > 0 &&
-            summary.map(month => {
-              return (
-                <StyledTr key={month.name}>
-                  <MontTd>{month.name}</MontTd>
-                  <td>{month.amount}</td>
+         summary.map(monthItem => {
+                 return (
+                <StyledTr key={monthItem.month}>
+                 <MontTd>{getMonthName(monthItem.month)}</MontTd>
+                  <td>{monthItem.amount}</td>
                 </StyledTr>
               );
             })}
