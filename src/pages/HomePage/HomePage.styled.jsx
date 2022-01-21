@@ -52,6 +52,7 @@ export const BackgroundBody = styled.div`
   }
 `;
 
+/* Don't touch */
 export const WrapperBottomIcon = styled.div`
 display:none;
 
@@ -85,3 +86,4 @@ export const StyledBottomIcon = styled(Icons)`
 export const PositionWrapper = styled.div`
   position: relative;
 `;
+/* Don' do touch */
