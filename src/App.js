@@ -24,35 +24,37 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
-      <Header></Header>
+    !isFetchingCurrent && (
+      <>
+        <Header></Header>
 
-      <Switch>
-        <PublicRoute path="/" exact redirectTo="/home" restricted>
-          <Redirect to="/login" />
-        </PublicRoute>
+        <Switch>
+          <PublicRoute path="/" exact redirectTo="/home" restricted>
+            <Redirect to="/login" />
+          </PublicRoute>
 
-        <PublicRoute path="/signup" redirectTo="/home" restricted>
-          <RegisterPage />
-        </PublicRoute>
+          <PublicRoute path="/signup" redirectTo="/home" restricted>
+            <RegisterPage />
+          </PublicRoute>
 
-        <PublicRoute path="/login" redirectTo="/home" restricted>
-          <LoginPage />
-        </PublicRoute>
+          <PublicRoute path="/login" redirectTo="/home" restricted>
+            <LoginPage />
+          </PublicRoute>
 
-        <PublicRoute path="/google" redirectTo="/home" restricted>
-          <GoogleLoader />
-        </PublicRoute>
+          <PublicRoute path="/google" redirectTo="/home" restricted>
+            <GoogleLoader />
+          </PublicRoute>
 
-        <PrivateRoute path="/home" redirectTo="/login">
-          <HomePage />
-        </PrivateRoute>
+          <PrivateRoute path="/home" redirectTo="/login">
+            <HomePage />
+          </PrivateRoute>
 
-        <PrivateRoute path="/report" redirectTo="/login">
-          <ReportPage />
-        </PrivateRoute>
-      </Switch>
-    </>
+          <PrivateRoute path="/report" redirectTo="/login">
+            <ReportPage />
+          </PrivateRoute>
+        </Switch>
+      </>
+    )
   );
 }
 
