@@ -86,4 +86,4 @@ export const StyledBottomIcon = styled(Icons)`
 export const PositionWrapper = styled.div`
   position: relative;
 `;
-/* Don' do touch */
+/* Don't  touch */
