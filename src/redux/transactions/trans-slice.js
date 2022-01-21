@@ -5,7 +5,6 @@ const initialState = {
   transactions: [],
   allByMonth: {},
   summary: [],
- 
 };
 
 const transSlice = createSlice({
@@ -14,9 +13,10 @@ const transSlice = createSlice({
 
   extraReducers: {
     [transOperations.deleteTransactions.fulfilled](state, { payload }) {
-      state.transactions =
-        state.transactions.filter(item => item._id !== payload)
-        },
+      state.transactions = state.transactions.filter(
+        item => item._id !== payload,
+      );
+    },
 
     [transOperations.getBalanceBy6Month.fulfilled](state, { payload }) {
       state.summary = [...payload];
@@ -30,11 +30,13 @@ const transSlice = createSlice({
       state.allByMonth = {
         expenseRes: [...payload.expenseRes],
         incomeRes: [...payload.incomeRes],
+        subIncomeRes: [...payload.subcategoryIncomeRes],
+        subExpenseRes: [...payload.subcategoryExpenseRes],
       };
     },
-    
-    [transOperations.createTransactions.fulfilled](state,  {payload} ) {
-       state.transactions = [...state.transactions, payload];
+
+    [transOperations.createTransactions.fulfilled](state, { payload }) {
+      state.transactions = [...state.transactions, payload];
     },
   },
 });
