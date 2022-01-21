@@ -1,9 +1,10 @@
 import Icons from '../Icons/Icons';
 import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/auth-operations';
-import { useSelector, useDispatch } from 'react-redux';
-import { Modal } from '../Modal/Modal';
-import { useState } from 'react';
+import Modal from '../Modal/Modal';
+import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+
 import {
   UserName,
   UserAvatarBox,
@@ -15,11 +16,27 @@ import {
 
 export default function UserMenu() {
   const userName = useSelector(authSelectors.getUserName);
-  const dispatch = useDispatch();
   const [modal, setModal] = useState(false);
 
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  });
+
+  const handleKeyDown = e => {
+    if (e.code === 'Escape') {
+      closeModal();
+    }
+  };
+
+  const closeModal = () => {
+    setModal(false);
+  };
+
   const handleClick = () => {
-    setModal(prevState => !prevState);
+    setModal(true);
   };
 
   return (
@@ -32,22 +49,22 @@ export default function UserMenu() {
         <UserName>{userName}</UserName>
       </UserNameBox>
 
-      <LogOutIconButton
-        type="button"
-        onClick={() => dispatch(authOperations.logout())}
-      >
+      <LogOutIconButton type="button" onClick={handleClick}>
         <Icons name="logout" width="16px" height="16px" />
       </LogOutIconButton>
 
-      <LogOutTextButton
-        type="button"
-        // onClick={() => dispatch(authOperations.logout())}
-        onClick={handleClick}
-      >
+      <LogOutTextButton type="button" onClick={handleClick}>
         Exit
       </LogOutTextButton>
 
-      {modal && <Modal></Modal>}
+      {modal && (
+        <Modal
+          onClick={closeModal}
+          text="Do you really want to leave?"
+          confirmOperation={authOperations.logout}
+          cancelOperation={() => setModal(prevState => !prevState)}
+        />
+      )}
     </>
   );
 }
