@@ -19,6 +19,9 @@ const signup = createAsyncThunk('auth/signup', async credentials => {
     token.set(data.data.token);
     return data;
   } catch (error) {
+    toast.error('This email is already registered ', {
+      hideProgressBar: true,
+    });
     console.log(error.message);
     throw new Error(error.mesage);
   }
@@ -30,6 +33,9 @@ const login = createAsyncThunk('auth/login', async credentials => {
     token.set(data.data.token);
     return data;
   } catch (error) {
+    toast.error('Incorrect username or password', {
+      hideProgressBar: true,
+    });
     console.log(error.message);
     throw new Error(error.message);
   }
