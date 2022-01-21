@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-axios.defaults.baseURL = 'https://kapusta-33-5-api.herokuapp.com/api';
+// axios.defaults.baseURL = 'https://localhost:8000/api';
 
 const deleteTransactions = createAsyncThunk(
   'transactions/delete',
@@ -58,10 +58,9 @@ const getAllByMonth = createAsyncThunk(
 
   async (date, token) => {
     try {
-      const { data } = await axios.get(`/transactions/getAllByMonth/${date}`, {
+      const data = await axios.get(`/transactions/getAllByMonth/${date}`, {
         Authorization: `Bearer ${token}`,
       });
-      console.log(data);
       return data;
     } catch (error) {
       throw new Error(error.message);

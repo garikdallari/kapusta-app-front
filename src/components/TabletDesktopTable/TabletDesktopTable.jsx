@@ -17,19 +17,20 @@ import {
 
 import transOperations from '../../redux/transactions/trans-operations';
 import { useSelector, useDispatch } from 'react-redux';
-import authSelectors from
-'../../redux/auth/auth-selectors';
-import transSelectors from
-'../../redux/transactions/trans-selectors';
+import authSelectors from '../../redux/auth/auth-selectors';
+import transSelectors from '../../redux/transactions/trans-selectors';
 
 export default function TabletDesktopTable() {
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
-  let type="expense"
-  const transactions=useSelector(transSelectors.getTransactions);
-  useEffect(() => dispatch(transOperations.getAllByType(type,token)),[token,type,dispatch]);
+  let type = 'expense';
+  const transactions = useSelector(transSelectors.getTransactions);
+  useEffect(
+    () => dispatch(transOperations.getAllByType(type, token)),
+    [token, type, dispatch],
+  );
 
-   return (
+  return (
     <StyledTable>
       <HeadTable>
         <thead>
@@ -45,11 +46,13 @@ export default function TabletDesktopTable() {
       <ScrollBody>
         <BodyTable>
           <tbody>
-            {transactions.length>0 &&
+            {transactions.length > 0 &&
               transactions.map(e => {
                 return (
                   <BodyTr key={e._id} id={e._id}>
-                    <DateTd>{e.date.day}.{e.date.month}.{e.date.year}</DateTd>
+                    <DateTd>
+                      {e.date.day}.{e.date.month}.{e.date.year}
+                    </DateTd>
                     <td>
                       <TabletText>
                         <EllipsisText
@@ -69,10 +72,20 @@ export default function TabletDesktopTable() {
                     <StyledTd>{e.category}</StyledTd>
                     <StyledTd>{e.amount}$</StyledTd>
                     <StyledTd>
-                      <DeleteBtn id={e._id}  onClick={e =>
-                dispatch(transOperations.deleteTransactions(e.target.id, token), [dispatch])
-              } >
-                        <Icons id={e._id}
+                      <DeleteBtn
+                        id={e._id}
+                        onClick={e =>
+                          dispatch(
+                            transOperations.deleteTransactions(
+                              e.target.id,
+                              token,
+                            ),
+                            [dispatch],
+                          )
+                        }
+                      >
+                        <Icons
+                          id={e._id}
                           name="delete"
                           color="#52555F"
                           width="18px"
