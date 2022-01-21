@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import transOperations from './trans-operations';
 
 const initialState = {
-  transactions: [],
+ transactions: [],
   allByMonth: {},
   summary: [],
-  type: "expense"
+ type: 'expense',
 };
 
 const transSlice = createSlice({
@@ -26,24 +26,23 @@ const transSlice = createSlice({
     [transOperations.getAllByType.fulfilled](state, { payload }) {
       state.transactions = [...payload].reverse();
     },
-    
+
     [transOperations.getAllByMonth.fulfilled](state, { payload }) {
       state.allByMonth = {
         expenseRes: [...payload.expenseRes],
         incomeRes: [...payload.incomeRes],
         subIncomeRes: [...payload.subcategoryIncomeRes],
         subExpenseRes: [...payload.subcategoryExpenseRes],
+        expenseBalanceByMonth: [...payload.expenseBalanceByMonth],
+        incomeBalanceByMonth: [...payload.incomeBalanceByMonth],
       };
     },   
-
     [transOperations.createTransactions.fulfilled](state,  {payload} ) {
        state.transactions = [payload,...state.transactions];
     },
-
     [transOperations.createTransactions.fulfilled](state, { payload }) {
       state.transactions = [...state.transactions, payload];
     }
-   
-    }
+       }
 });
 export default transSlice.reducer;
