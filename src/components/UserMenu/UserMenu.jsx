@@ -1,3 +1,9 @@
+import Icons from '../Icons/Icons';
+import authSelectors from '../../redux/auth/auth-selectors';
+import authOperations from '../../redux/auth/auth-operations';
+import { useSelector, useDispatch } from 'react-redux';
+import { Modal } from '../Modal/Modal';
+import { useState } from 'react';
 import {
   UserName,
   UserAvatarBox,
@@ -7,14 +13,14 @@ import {
   LogOutTextButton,
 } from './UserMenu.styled';
 
-import Icons from '../Icons/Icons';
-import authSelectors from '../../redux/auth/auth-selectors';
-import authOperations from '../../redux/auth/auth-operations';
-import { useSelector, useDispatch } from 'react-redux';
-
 export default function UserMenu() {
   const userName = useSelector(authSelectors.getUserName);
   const dispatch = useDispatch();
+  const [modal, setModal] = useState(false);
+
+  const handleClick = () => {
+    setModal(prevState => !prevState);
+  };
 
   return (
     <>
@@ -35,10 +41,13 @@ export default function UserMenu() {
 
       <LogOutTextButton
         type="button"
-        onClick={() => dispatch(authOperations.logout())}
+        // onClick={() => dispatch(authOperations.logout())}
+        onClick={handleClick}
       >
         Exit
       </LogOutTextButton>
+
+      {modal && <Modal></Modal>}
     </>
   );
 }
