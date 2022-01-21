@@ -8,13 +8,14 @@ margin-left:auto;
 margin-right:auto;
 
 @media screen and (min-width: 768px) {
+    position:relative;
     display:flex;
     flex-direction:column;
     margin-top: 58px;
+}
 
 @media screen and (min-width: 1280px) {
     margin-top: 0;
-
 }
 
 `;

@@ -23,8 +23,7 @@ export default function TabletDesktopTable() {
 
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
-  let type = 'expense';
-  const transactions = useSelector(transSelectors.getTransactions);
+ const transactions = useSelector(transSelectors.getTransactions);
   const type= useSelector(transSelectors.getType);
   const OnClickDelete=(e)=>{
   dispatch(transOperations.deleteTransactions(e.target.id,token));

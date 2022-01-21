@@ -7,13 +7,17 @@ align-items:center;
 justify-content:center;
 
 @media screen and (min-width: 768px) {
-    align-items: start;
-    flex-direction:column;
+  display:block;
+  
+}
+    
 
 @media screen and (min-width: 1280px) {
-    flex-direction:row;
+  display:flex;
+  flex-direction:row;
+  align-items: start;
+  justify-content:start;
 }
-
 `;
 
 export const PaperHomePage = styled.div`

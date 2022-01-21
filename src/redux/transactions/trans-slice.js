@@ -5,7 +5,7 @@ const initialState = {
   transactions: [],
   allByMonth: {},
   summary: [],
-  type:n "expense"
+  type: "expense"
 };
 
 const transSlice = createSlice({
@@ -35,11 +35,15 @@ const transSlice = createSlice({
         subExpenseRes: [...payload.subcategoryExpenseRes],
       };
     },   
+
     [transOperations.createTransactions.fulfilled](state,  {payload} ) {
        state.transactions = [payload,...state.transactions];
+    },
+
     [transOperations.createTransactions.fulfilled](state, { payload }) {
       state.transactions = [...state.transactions, payload];
-    },
-  },
+    }
+   
+    }
 });
 export default transSlice.reducer;
