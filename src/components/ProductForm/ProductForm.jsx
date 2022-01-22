@@ -21,16 +21,15 @@ import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
 import { convertDate } from '../../helpers/dateConverter';
 
-export default function ProductForm({transactionDate}) {
+export default function ProductForm({ transactionDate }) {
   const dispatch = useDispatch();
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
   const token = useSelector(authSelectors.getToken);
-  const type= useSelector(transSelectors.getType);
+  const type = useSelector(transSelectors.getType);
 
-  const {day,month,year}= convertDate(transactionDate,"YYYY-MM-DD","-");
-
+  const { day, month, year } = convertDate(transactionDate, 'YYYY-MM-DD', '-');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -52,15 +51,26 @@ export default function ProductForm({transactionDate}) {
   };
 
   const handleSubmitForm = () => {
-    dispatch(transOperations.createTransactions({type, amount, category, description,day,month,year,token}));
-    dispatch(transOperations.getBalanceBy6Month(type,token));
+    dispatch(
+      transOperations.createTransactions({
+        type,
+        amount,
+        category,
+        description,
+        day,
+        month,
+        year,
+        token,
+      }),
+    );
+    dispatch(transOperations.getBalanceBy6Month(type, token));
     handleClearForm();
   };
 
-return (
+  return (
     <>
       <Container>
-        <Form  name="productForm" autoComplete="on" noValidate>
+        <Form name="productForm" autoComplete="on" noValidate>
           <Label>
             <Input
               name="description"
@@ -71,11 +81,7 @@ return (
           </Label>
 
           <Label>
-            <Select
-              name="category"
-              onChange={handleChange}
-              value={category}
-            >
+            <Select name="category" onChange={handleChange} value={category}>
               <Option value disabled selected hidden>
                 Category product.
               </Option>
@@ -91,10 +97,11 @@ return (
               name="amount"
               type="number"
               onChange={handleChange}
-              value={amount}/>
+              value={amount}
+            />
             <Wallet />
           </LabelInputPrice>
-          </Form>
+        </Form>
 
         <ButtonContainerInline>
           <ButtonContainer>
@@ -109,7 +116,6 @@ return (
             <Button text={'CLEAR'} type={'button'} onClick={handleClearForm} />
           </ButtonContainer>
         </ButtonContainerInline>
- 
       </Container>
     </>
   );
