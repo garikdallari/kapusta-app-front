@@ -8,7 +8,7 @@ import Icons from '../Icons/Icons';
 export default function ReportsNavigation() {
   const dispatch = useDispatch();
   const history = useHistory();
-  let dateNow = format(new Date(), 'M yyyy').split(' ').join('-');
+  const dateNow = format(new Date(), 'M yyyy').split(' ').join('-');
 
   const handleClick = date => {
     dispatch(transOperations.getAllByMonth(date));
