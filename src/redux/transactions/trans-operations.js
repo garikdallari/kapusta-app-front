@@ -12,7 +12,7 @@ const deleteTransactions = createAsyncThunk(
       });
 
       return id;
-     } catch (error) {
+    } catch (error) {
       throw new Error(error.message);
     }
   },
@@ -45,7 +45,6 @@ const getAllByType = createAsyncThunk(
       const { data } = await axios.get(`/transactions/getAllByType/${type}`, {
         Authorization: `Bearer ${token}`,
       });
-      console.log(data.data.result);
       return data.data.result;
     } catch (error) {
       throw new Error(error.message);
@@ -55,7 +54,7 @@ const getAllByType = createAsyncThunk(
 
 const getAllByMonth = createAsyncThunk(
   'transactions/getAllByMonth',
-  async ({date, token}) => {
+  async (date, token) => {
     try {
       const { data } = await axios.get(`/transactions/getAllByMonth/${date}`, {
         Authorization: `Bearer ${token}`,
@@ -70,20 +69,20 @@ const getAllByMonth = createAsyncThunk(
 const createTransactions = createAsyncThunk(
   'transactions/createTransactions',
 
-  async ({type,amount,category,description,token}) => {
-   const body = {
-      "type": type,
-      "amount": amount,
-      "category": category.toLowerCase(),
-      "subcategory": description,
-      "date": {
-        "day": "10",
-        "month": "01",
-        "year": "2022",
+  async ({ type, amount, category, description, token }) => {
+    const body = {
+      type: type,
+      amount: amount,
+      category: category.toLowerCase(),
+      subcategory: description,
+      date: {
+        day: '10',
+        month: '01',
+        year: '2022',
       },
     };
-    console.log(body)
-console.log(token)
+    console.log(body);
+    console.log(token);
     try {
       const response = await axios.post(`/transactions`, body, {
         Authorization: `Bearer ${token}`,
@@ -92,7 +91,7 @@ console.log(token)
 
       return data.data;
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
       throw new Error(error.message);
     }
   },
