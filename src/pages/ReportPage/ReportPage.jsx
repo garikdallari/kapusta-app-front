@@ -22,7 +22,8 @@ export default function ReportPage() {
 
   useEffect(() => {
     setSectionState(context === 'expense' ? expenseRes : incomeRes);
-  }, [context]);
+    return () => setSectionState(null);
+  }, [context, incomeRes, expenseRes]);
 
   return (
     <>
@@ -32,10 +33,7 @@ export default function ReportPage() {
             <Container>
               <ReportContainer>
                 <NavBox>
-                  <ButtonArrowBack
-                    // displayBtn={'inline-block'}
-                    displayText={'block'}
-                  />
+                  <ButtonArrowBack displayText={'block'} />
                   <ReportBalance />
                 </NavBox>
                 <Accounting />
