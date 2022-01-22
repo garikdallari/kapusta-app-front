@@ -11,13 +11,14 @@ export const WrapperInput = styled.div`
     flex-direction: row-reverse;
     justify-content: flex-start;
     align-items: center;
-    gap: 0;
+    gap: 80px;
     padding: 0;
     margin-bottom: 0;
   }
 
   @media screen and (min-width: 1280px) {
     margin-bottom: 9px;
+    gap: 0;
   }
 `;
 
@@ -25,7 +26,7 @@ export const BalanceBox = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 22px;
     // justify-content: center;
   }
 
@@ -55,7 +56,9 @@ export const InputContainer = styled.form`
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
+    position: relative;
+    display: block;
   }
 
   @media screen and (min-width: 1280px) {
@@ -149,7 +152,7 @@ export const ReportInput = styled.input`
   outline: none;
   background-color: transparent;
   @media screen and (min-width: 768px) {
-    margin: 0 80px 0 21px;
+    ${'' /* margin: 0 80px 0 21px; */}
   }
 
   @media screen and (min-width: 1280px) {
@@ -194,7 +197,8 @@ export const Placeholder = styled.span`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   @media screen and (min-width: 768px) {
-    left: 120px;
+    position: absolute;
+    left: 45px;
     top: 15px;
   }
   @media screen and (min-width: 1280px) {
