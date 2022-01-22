@@ -12,14 +12,15 @@ import authSelectors from
 '../../redux/auth/auth-selectors';
 import transSelectors from
 '../../redux/transactions/trans-selectors';
-import { getMonthName}  from '../../helpers/getMonthName';
+
+import { getMonthName}  from '../../helpers/monthHelpers';
 
 export default function Summury() {
   const token = useSelector(authSelectors.getToken);
   const summary= useSelector(transSelectors.getSummary);
   const dispatch = useDispatch();
-  let type="income";
-  
+
+  const type= useSelector(transSelectors.getType);
   useEffect(() => dispatch(transOperations.getBalanceBy6Month(type,token)),[token,type,dispatch]);
    
   return (

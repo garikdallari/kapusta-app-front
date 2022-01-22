@@ -12,12 +12,10 @@ export default function ButtonArrowBack({ displayBtn, displayText }) {
         <HiArrowNarrowLeft
           style={{
             color: theme.color.buttonOrangeBg,
-            width: '100%',
-            height: '100%',
           }}
         />
+        <BtnBackText displayText={displayText}>Go back</BtnBackText>
       </Button>
-      <BtnBackText displayText={displayText}>Go back</BtnBackText>
     </NavContainer>
   );
 }

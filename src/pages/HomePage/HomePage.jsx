@@ -7,14 +7,23 @@ import IncomeExpenseBtns from '../../components/IncomeExpenseBtns/IncomeExpenseB
 import HomeBalance from '../../components/Balance/HomeBalance';
 import FinanceTable from '../../components/FinanceTable/FinanceTable';
 import Container from '../../components/Container/Container';
+
 // import Calc from '../../components/Calc/Calc';
+
+// import { changeNameBottomIcon } from '../../helpers/changeNameBottomIcon';
+// import useWindowDimensions from '../../helpers/useWindowDimensions';
+
 import {
   TableSummaryWrapper,
   PaperHomePage,
   BackgroundBody,
+  // WrapperBottomIcon,
+  // StyledBottomIcon,
+  // PositionWrapper,
 } from './HomePage.styled';
 
 function HomePage() {
+  // const { width } = useWindowDimensions();
   return (
     <BackgroundBody>
       <Container>

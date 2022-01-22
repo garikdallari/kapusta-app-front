@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Input,
   Select,
@@ -10,67 +12,75 @@ import {
   ButtonContainer,
   ButtonContainerInline,
 } from './ProductForm.styled';
+
 import Button from '../Button/Button';
 import { theme } from '../../constants/theme';
 import Wallet from '../../components/Wallet/Wallet';
 // import CalcModal from '../CalcModal/CalcModal';
 
-import { useState } from 'react';
+import transOperations from '../../redux/transactions/trans-operations';
+import authSelectors from '../../redux/auth/auth-selectors';
+import transSelectors from '../../redux/transactions/trans-selectors';
+
+
 
 export default function ProductForm() {
-  const [descriptionProduct, setDescriptionProduct] = useState('');
-  const [categoryProduct, setCategoryProduct] = useState('');
-  const [productPrice, setProductPrice] = useState('');
+  const dispatch = useDispatch();
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
+  const [amount, setAmount] = useState('');
+  const token = useSelector(authSelectors.getToken);
+  const type= useSelector(transSelectors.getType);
+  
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
-      case 'descriptionProduct':
-        return setDescriptionProduct(value);
-      case 'categoryProduct':
-        return setCategoryProduct(value);
-      case 'productPrice':
-        return setProductPrice(value);
+      case 'description':
+        return setDescription(value);
+      case 'category':
+        return setCategory(value);
+      case 'amount':
+        return setAmount(value);
       default:
         return;
     }
   };
 
-  const handleClearForm = e => {
-    e.preventDefault();
-    setDescriptionProduct('');
-    setCategoryProduct('');
-    setProductPrice('');
+  const handleClearForm = () => {
+    setDescription('');
+    setCategory('');
+    setAmount('');
   };
 
   const handleClick = e => {
     e.preventDefault();
-    setProductPrice(productPrice.concat(e.target?.name));
+    setAmount(setAmount.concat(e.target?.name));
   };
 
   const handleSubmitForm = () => {
-    console.log('Send form.');
-    console.log('Clear form.');
+    dispatch(transOperations.createTransactions({type, amount, category, description, token}));
+    dispatch(transOperations.getBalanceBy6Month(type,token));
     handleClearForm();
   };
 
-  return (
+return (
     <>
       <Container>
-        <Form name="productForm" autoComplete="on" noValidate>
+        <Form  name="productForm" autoComplete="on" noValidate>
           <Label>
             <Input
-              name="descriptionProduct"
+              name="description"
               placeholder="Description product."
               onChange={handleChange}
-              value={descriptionProduct}
+              value={description}
             />
           </Label>
 
           <Label>
             <Select
-              name="categoryProduct"
+              name="category"
               onChange={handleChange}
-              value={categoryProduct}
+              value={category}
             >
               <Option value disabled selected hidden>
                 Category product.
@@ -84,13 +94,12 @@ export default function ProductForm() {
           <LabelInputPrice>
             <InputPrice
               placeholder="00.00 $"
-              name="productPrice"
+              name="amount"
               type="number"
-              onChange={handleChange}
-              value={productPrice}
-              class="calc-numbers"
-              value={productPrice}
-            />
+              onChange={handleChange}      
+              class="calc-numbers"          
+              value={amount}/>
+                />
             <Wallet />
             {/* <div class="container">
               <div class="calculator">
@@ -132,7 +141,7 @@ export default function ProductForm() {
               </div>
             </div> */}
           </LabelInputPrice>
-        </Form>
+          </Form>
 
         <ButtonContainerInline>
           <ButtonContainer>
@@ -147,6 +156,7 @@ export default function ProductForm() {
             <Button text={'CLEAR'} type={'button'} onClick={handleClearForm} />
           </ButtonContainer>
         </ButtonContainerInline>
+ 
       </Container>
     </>
   );

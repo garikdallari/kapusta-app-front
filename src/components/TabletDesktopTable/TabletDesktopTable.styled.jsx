@@ -88,11 +88,19 @@ export const DateTd = styled.td`
   padding-left: 18px;
 `;
 export const StyledTd = styled.td`
+
+&:first-letter{
+  text-transform: uppercase;
+}
   width: 100px;
   text-align: center;
 `;
 
 export const TabletText = styled.p`
+
+&:first-letter{
+  text-transform: uppercase;
+}
 @media screen and (min-width: 768px) {
   display: block;
 }
@@ -101,6 +109,11 @@ export const TabletText = styled.p`
 }`
 
 export const DesktopText = styled.p`
+
+&:first-letter{
+  text-transform: uppercase;
+}
+
 @media screen and (min-width: 768px) {
   display: none;
 }
