@@ -1,3 +1,8 @@
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getBalance } from '../../redux/balance/balance-selectors.js';
+import { getUserBalance } from '../../redux/balance/balance-operations';
+
 import {
   BalanceTitle,
   InputContainer,
@@ -11,7 +16,14 @@ import {
 
 import CurrentPeriod from './CurrentPeriod';
 
-export default function ReportBalance({ balance }) {
+export default function ReportBalance() {
+  const balance = useSelector(getBalance);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUserBalance());
+  }, [dispatch]);
+
   return (
     <>
       <WrapperInput>

@@ -51,7 +51,7 @@ export const BalanceTitle = styled.p`
   }
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   display: flex;
   justify-content: center;
   margin: 0 auto;
