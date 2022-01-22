@@ -14,7 +14,7 @@ import {
   TabletText,
   DesktopText,
 } from './TabletDesktopTable.styled';
-import { addNullToMonth } from '../../helpers/monthHelpers';
+import { addNullToNumber } from '../../helpers/monthHelpers';
 import transOperations from '../../redux/transactions/trans-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
@@ -55,7 +55,7 @@ export default function TabletDesktopTable() {
                 return (
                   <BodyTr key={trans._id} id={trans._id}>
                     <DateTd>
-                      {trans.date.day}.{addNullToMonth(trans.date.month)}.
+                      {addNullToNumber(trans.date.day)}.{addNullToNumber(trans.date.month)}.
                       {trans.date.year}
                     </DateTd>
                     <td>

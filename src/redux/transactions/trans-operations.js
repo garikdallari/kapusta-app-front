@@ -72,16 +72,16 @@ const getAllByMonth = createAsyncThunk(
 const createTransactions = createAsyncThunk(
   'transactions/createTransactions',
 
-  async ({type,amount,category,description,token}) => {
+  async ({type,amount,category,description,day,month,year,token}) => {
    const body = {
       "type": type,
       "amount": amount,
       "category": category.toLowerCase(),
       "subcategory": description,
       "date": {
-        "day": "10",
-        "month": "01",
-        "year": "2022",
+        "day": day,
+        "month": month,
+        "year": year,
       },
     };
     console.log(body)
