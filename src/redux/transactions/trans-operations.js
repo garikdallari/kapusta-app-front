@@ -45,8 +45,10 @@ const getAllByType = createAsyncThunk(
       const { data } = await axios.get(`/transactions/getAllByType/${type}`, {
         Authorization: `Bearer ${token}`,
       });
-      console.log(data.data.result);
-      return data.data.result;
+    const response = await data.data.result;
+  
+      return {response:response, type:type};
+
     } catch (error) {
       throw new Error(error.message);
     }

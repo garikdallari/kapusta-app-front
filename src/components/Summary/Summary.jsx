@@ -19,9 +19,9 @@ export default function Summury() {
   const token = useSelector(authSelectors.getToken);
   const summary= useSelector(transSelectors.getSummary);
   const dispatch = useDispatch();
-
+  const transactions = useSelector(transSelectors.getTransactions);
   const type= useSelector(transSelectors.getType);
-  useEffect(() => dispatch(transOperations.getBalanceBy6Month(type,token)),[token,type,dispatch]);
+  useEffect(() => dispatch(transOperations.getBalanceBy6Month(type,token)),[token,transactions,type,dispatch]);
    
   return (
     <SummaryWrapper>

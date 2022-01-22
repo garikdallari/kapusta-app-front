@@ -24,7 +24,8 @@ const transSlice = createSlice({
     },
 
     [transOperations.getAllByType.fulfilled](state, { payload }) {
-      state.transactions = [...payload].reverse();
+     state.transactions = [...payload.response].reverse();
+    state.type = payload.type;
     },
 
     [transOperations.getAllByMonth.fulfilled](state, { payload }) {
@@ -40,9 +41,6 @@ const transSlice = createSlice({
     [transOperations.createTransactions.fulfilled](state,  {payload} ) {
        state.transactions = [payload,...state.transactions];
     },
-    [transOperations.createTransactions.fulfilled](state, { payload }) {
-      state.transactions = [...state.transactions, payload];
     }
-       }
 });
 export default transSlice.reducer;

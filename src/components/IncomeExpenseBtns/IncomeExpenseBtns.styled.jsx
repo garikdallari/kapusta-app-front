@@ -23,9 +23,10 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 :hover, :focus{
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: ${props => props.theme.color.inputBorderColor};
-  background-color:  ${props => props.theme.color.buttonOrangeBg}
+  background-color:  ${props => props.theme.color.buttonOrangeBg};
 
 }
+
 
 @media screen and (min-width: 768px) {
    width:138px;
@@ -34,19 +35,18 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    background-color:  #FEFEFE;
    border-radius:  20px 20px 0 0;
    margin:0;
+
    :hover, :focus{
     background-color:  #FEFEFE;
     color: ${props => props.theme.color.buttonOrangeBg};}
-   
-    :last-child{
-        color:#000000;
-        background-color: #FAFBFD;
-        :hover, :focus{
-            color:#000000;
-            background-color: #FAFBFD;}
-    }
-}
 
+    :last-child{
+      color:#000000;
+      background-color: #FAFBFD;
+      :hover, :focus{
+          color:#000000;
+          background-color: #FAFBFD;}
+}
 `;
 
 export const ButtonsWrapper = styled.div`
