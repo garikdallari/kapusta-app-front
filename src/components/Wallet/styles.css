@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
+
+.container {
+  position: absolute;
+  top: 410px;
+  left: 52px;
+}
+
+.calculator {
+  position: absolute;
+  z-index: 2;
+  background: #eee;
+  background: #f5f6fb;
+  width: 210px;
+  border-radius: 3px;
+  border: 1px solid rgb(204, 193, 193);
+}
+.calculator:hover {
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* Buttons */
+.calculator-buttons {
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 7px;
+}
+
+button {
+  min-height: 2px;
+  font-size: 2px;
+  font-weight: 100;
+  border: none;
+  background: white;
+  border-radius: 3px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn {
+  font-size: 1em;
+  height: 30px;
+}
+.clear {
+  background-color: #ff751d;
+  color: white;
+}
+.btn:hover {
+  background: #ff751d;
+}
+.btn:active {
+  background: #ff751d;
+}

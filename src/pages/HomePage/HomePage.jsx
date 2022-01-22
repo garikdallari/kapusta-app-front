@@ -7,6 +7,7 @@ import IncomeExpenseBtns from '../../components/IncomeExpenseBtns/IncomeExpenseB
 import HomeBalance from '../../components/Balance/HomeBalance';
 import FinanceTable from '../../components/FinanceTable/FinanceTable';
 import Container from '../../components/Container/Container';
+// import Calc from '../../components/Calc/Calc';
 import {
   TableSummaryWrapper,
   PaperHomePage,
@@ -23,6 +24,7 @@ function HomePage() {
           <PaperHomePage>
             <SectionInputAndClear />
             <TableSummaryWrapper>
+              {/* <Calc /> */}
               <TabletDesktopTable />
               <MobileTable />
               <Summary />
