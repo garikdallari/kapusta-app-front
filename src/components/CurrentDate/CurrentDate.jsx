@@ -1,5 +1,6 @@
 import { useState, forwardRef } from 'react';
 import DataPicker from 'react-datepicker';
+import moment from 'moment';
 
 import Icons from '../Icons/Icons';
 import { Container, Current } from './CurrentDate.styled';
@@ -8,6 +9,12 @@ import './CurrentDate.css';
 
 export default function CurrentDate() {
   const [startDate, setStartDate] = useState(new Date());
+
+const onChange=(date)=>{
+  setStartDate(date);
+  const newdate= moment(date).format("YYYY-MM-DD");
+  console.log(newdate.split("-"));
+}
 
   const ChooseDate = forwardRef(({ value, onClick }, ref) => (
     <Current id="datePicker" onClick={onClick} ref={ref}>
@@ -26,7 +33,7 @@ export default function CurrentDate() {
     <Container>
       <DataPicker
         selected={startDate}
-        onChange={date => setStartDate(date)}
+        onChange={(date)=>onChange(date)}
         customInput={<ChooseDate />}
         dateFormat="dd.MM.yyyy"
       ></DataPicker>
