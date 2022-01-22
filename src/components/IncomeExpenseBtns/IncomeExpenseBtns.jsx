@@ -1,4 +1,4 @@
-import { ButtonsWrapper, ButtonIncome,ButtonExpense} from './IncomeExpenseBtns.styled';
+import { ButtonsWrapper, Button} from './IncomeExpenseBtns.styled';
 import authSelectors from '../../redux/auth/auth-selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import transOperations from '../../redux/transactions/trans-operations';
@@ -28,8 +28,8 @@ export default function IncomeExpenseBtns() {
 
   return (
     <ButtonsWrapper >
-      <ButtonExpense id="expense" active={(type==="expense")?true:false} onClick={onClick}>expense</ButtonExpense>
-      <ButtonIncome id="income" active={(type==="income")?true:false} onClick={onClick}>income</ButtonIncome>
+      <Button id="expense" active={(type==="expense")?true:false} onClick={onClick}>expense</Button>
+      <Button id="income" active={(type==="income")?true:false} onClick={onClick}>income</Button>
     </ButtonsWrapper>
   );
 }
