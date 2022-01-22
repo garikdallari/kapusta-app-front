@@ -7,11 +7,9 @@ const ArrowButton = ({ name, updateValue, currentValue }) => {
   const [context, setContext] = useContext(Context);
 
   const handleClick = () => {
-    // if (!isDate) {
     const res = currentValue === 'income' ? 'expense' : 'income';
     setContext(res);
     updateValue(res);
-    // }
   };
   return (
     <Button onClick={() => handleClick()}>
