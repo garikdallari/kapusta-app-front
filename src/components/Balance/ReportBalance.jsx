@@ -17,7 +17,7 @@ export default function ReportBalance({ balance }) {
       <WrapperInput>
         <Data>
           <BalanceTitle>Current period:</BalanceTitle>
-          <CurrentPeriod />
+          <CurrentPeriod isDate={true} />
         </Data>
         <BalanceBox>
           <BalanceTitle>Balance:</BalanceTitle>

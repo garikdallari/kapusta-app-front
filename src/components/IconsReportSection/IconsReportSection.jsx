@@ -6,15 +6,15 @@ import {
   Section,
 } from './IconsReportSection.styled';
 import Icons from '../Icons/Icons';
-import CurrentPeriod from '../../components/Balance/CurrentPeriod';
+import IncomeExpenseToggle from '../../components/Balance/IncomeExpenseToggle';
 import { theme } from '../../constants/theme';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 const IconsReportSection = ({ amount }) => {
   return (
     <>
       <Section bgColor={theme.color.buttonWhiteBg}>
-        <CurrentPeriod />
+        <IncomeExpenseToggle />
         <Wrapper elementoColor={theme.color.lightGray}>
           {amount &&
             amount.map(el => (

@@ -3,16 +3,18 @@ import { Button } from './ArrowButton.styled';
 import { useContext } from 'react';
 import { Context } from '../Context/Context';
 
-const ArrowButton = ({ name, updateValue, currentValue }) => {
+const ArrowButton = ({ name, updateValue, currentValue, isDate }) => {
   const [context, setContext] = useContext(Context);
 
-  const handleClick = () => {
-    const res = currentValue === 'income' ? 'expense' : 'income';
-    setContext(res);
-    updateValue(res);
+  const handleClick = isDate => {
+    if (!isDate) {
+      const res = currentValue === 'income' ? 'expense' : 'income';
+      setContext(res);
+      updateValue(res);
+    }
   };
   return (
-    <Button onClick={() => handleClick()}>
+    <Button onClick={() => handleClick(isDate)}>
       <Icons name={name} color="currentColor" width="4px" height="10px" />
     </Button>
   );
