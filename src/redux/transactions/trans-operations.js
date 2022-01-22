@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-// axios.defaults.baseURL = 'https://localhost:8000/api';
+
 
 const deleteTransactions = createAsyncThunk(
   'transactions/delete',
@@ -29,7 +29,6 @@ const getBalanceBy6Month = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       );
-      // console.log(data.result.balanceByMonth);
       return data.result.balanceByMonth;
     } catch (error) {
       throw new Error(error.message);
@@ -72,7 +71,7 @@ const createTransactions = createAsyncThunk(
   async ({type,amount,category,description,day,month,year,token}) => {
    const body = {
       "type": type,
-      "amount": amount,
+      "amount": Number(amount),
       "category": category.toLowerCase(),
       "subcategory": description,
       "date": {
@@ -82,9 +81,7 @@ const createTransactions = createAsyncThunk(
 
       },
     };
-    console.log(body);
-    console.log(token);
-    try {
+      try {
       const response = await axios.post(`/transactions`, body, {
         Authorization: `Bearer ${token}`,
       });
