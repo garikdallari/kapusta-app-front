@@ -39,14 +39,14 @@ export const Item = styled.div`
   flex-direction: column;
   align-items: center;
 
-  :nth-child(1) {
+  :nth-of-type(1) {
     margin-right: 15px;
   }
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
 
-    :nth-child(1) {
+    :nth-of-type(1) {
       margin-right: 21px;
     }
   }
