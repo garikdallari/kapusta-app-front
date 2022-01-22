@@ -1,4 +1,3 @@
-import { createContext } from 'react';
 import { ReportData, Data, DataBox } from './Balance.styled.jsx';
 import ArrowButton from '../ArrowButton/ArrowButton.js';
 import { useState, useEffect } from 'react';
@@ -14,9 +13,6 @@ export default function CurrentPeriod({ updateValue, isDate }) {
   useEffect(() => {
     getDate(dateNow);
   }, [date]);
-
-  // handleClick = () => {};
-  // console.log(now);
 
   return (
     <>

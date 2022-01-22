@@ -8,7 +8,6 @@ import {
 import Icons from '../Icons/Icons';
 import IncomeExpenseToggle from '../../components/Balance/IncomeExpenseToggle';
 import { theme } from '../../constants/theme';
-// import { useEffect } from 'react';
 
 const IconsReportSection = ({ amount }) => {
   return (

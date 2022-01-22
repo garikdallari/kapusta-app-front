@@ -59,7 +59,7 @@ const getAllByMonth = createAsyncThunk(
       const { data } = await axios.get(`/transactions/getAllByMonth/${date}`, {
         Authorization: `Bearer ${token}`,
       });
-      return data.result;
+      return data ? data.result : null;
     } catch (error) {
       throw new Error(error.message);
     }

@@ -1,53 +1,38 @@
-import { createContext } from 'react';
-import { ReportData, Data, DataBox } from './Balance.styled.jsx';
-import ArrowButton from '../ArrowButton/ArrowButton.js';
 import { useState, useEffect } from 'react';
-
+import { useDispatch } from 'react-redux';
 import { format } from 'date-fns';
+import { ReportData, Data, DataBox } from './Balance.styled.jsx';
+import ArrowButtonPeriod from '../ArrowButton/ArrowButtonPeriod.js';
+import transOperations from '../../redux/transactions/trans-operations';
 
 export default function CurrentPeriod({}) {
-  // const [selector, setSelector] = useState('expense');
-  const dateNow = format(new Date(), 'MMM Y');
-  const currentMonth = format(new Date(), 'M');
+  const [date, getDate] = useState(format(new Date(), 'MMM Y'));
+  const [dateInMs, setDateInMs] = useState(Date.now());
 
-  const [date, getDate] = useState(dateNow);
-
-  // console.log(nextMonth);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getDate(dateNow);
-  }, [date]);
-
-  const handleClick = isNext => {
-    let res;
-    if (isNext) {
-      res = format(new Date()., 'MMM');
-    }
-    return res;
-  };
-  console.log(handleClick(true));
-  console.log(new Date().getMonth() + 2);
+    getDate(format(new Date(dateInMs), 'MMM yyyy'));
+    const fetchDate = format(new Date(dateInMs), 'M-yyyy');
+    dispatch(transOperations.getAllByMonth(fetchDate));
+  }, [dateInMs]);
 
   return (
     <>
       <Data>
         <ReportData>
-          <ArrowButton
+          <ArrowButtonPeriod
             name={'arrow-left'}
-            date={'10-2021'}
-            isDate={false}
-            // updateValue={value => setSelector(value)}
-            // currentValue={selector}
-            onClick={() => handleClick(false)}
+            isNext={false}
+            msDate={dateInMs}
+            updateValue={value => setDateInMs(value)}
           />
           <DataBox>{date}</DataBox>
-          <ArrowButton
+          <ArrowButtonPeriod
             name={'arrow-right'}
-            date={'12-2021'}
-            isDate={false}
-            // updateValue={value => setSelector(value)}
-            // currentValue={selector}
-            onClick={() => handleClick(true)}
+            msDate={dateInMs}
+            isNext={true}
+            updateValue={value => setDateInMs(value)}
           />
         </ReportData>
       </Data>
