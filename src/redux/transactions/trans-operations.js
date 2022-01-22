@@ -45,7 +45,8 @@ const getAllByType = createAsyncThunk(
       const { data } = await axios.get(`/transactions/getAllByType/${type}`, {
         Authorization: `Bearer ${token}`,
       });
-      return data.data.result;
+    const response = await data.data.result;  
+      return {response:response, type:type};
     } catch (error) {
       throw new Error(error.message);
     }
@@ -68,17 +69,17 @@ const getAllByMonth = createAsyncThunk(
 
 const createTransactions = createAsyncThunk(
   'transactions/createTransactions',
+  async ({type,amount,category,description,day,month,year,token}) => {
+   const body = {
+      "type": type,
+      "amount": amount,
+      "category": category.toLowerCase(),
+      "subcategory": description,
+      "date": {
+        "day": day,
+        "month": month,
+        "year": year,
 
-  async ({ type, amount, category, description, token }) => {
-    const body = {
-      type: type,
-      amount: amount,
-      category: category.toLowerCase(),
-      subcategory: description,
-      date: {
-        day: '10',
-        month: '01',
-        year: '2022',
       },
     };
     console.log(body);
