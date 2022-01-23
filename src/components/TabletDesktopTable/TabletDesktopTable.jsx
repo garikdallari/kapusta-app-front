@@ -14,6 +14,7 @@ import {
   TabletText,
   DesktopText,
   AmountTd,
+  AmountHeadTd
 } from './TabletDesktopTable.styled';
 
 import { AddMinusToAmount } from '../../helpers/addMinusToAmount';
@@ -67,7 +68,7 @@ export default function TabletDesktopTable() {
             <DateTd>date</DateTd>
             <td>description</td>
             <StyledTd>category </StyledTd>
-            <StyledTd>amount</StyledTd>
+            <AmountHeadTd>amount</AmountHeadTd>
             <StyledTd>&nbsp;</StyledTd>
           </tr>
         </thead>
