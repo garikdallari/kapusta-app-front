@@ -20,19 +20,20 @@ export const SummaryWrapper = styled.div`
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: ${props => props.theme.color.buttonDarkText};
- 
 
   @media screen and (min-width: 768px) {
     display: block;
     position: absolute;
     z-index: 99;
-    left:0;
-    bottom:0;
-    transform: translate(30px,318px);
+    left: 0;
+    bottom: 0;
+    transform: translate(30px, 318px);
+    position: absolute;
+    z-index: 2;
   }
 
   @media screen and (min-width: 1280px) {
-    transform: translate(814px,-180px);
+    transform: translate(814px, -180px);
   }
 `;
 
