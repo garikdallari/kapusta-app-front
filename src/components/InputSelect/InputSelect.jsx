@@ -1,7 +1,6 @@
 import Select from 'react-select';
 import { ContainerInputSelect } from './InputSelect.styled';
 import { theme } from '../../constants/theme';
-import { useState } from 'react';
 
 const data = [
   { value: 'Transport', label: 'Transport' },
@@ -76,21 +75,15 @@ const customStyles = {
   }),
 };
 
-export default function InputSelect() {
-  const [category, setCategory] = useState('');
+export default function InputSelect({ handleChange, category, setCategory }) {
   const changeCategory = category && {
-    label: category.name,
-    value: category.value,
+    label: category,
+    value: category,
   };
 
-  const handleChange = e => {
-    console.log({ name: e.label, value: e.value });
-    // setCategory(e);
-    setCategory({ name: e.label, value: e.value });
-  };
-
-  const handleClear = () => {
-    setCategory('');
+  const sendNewData = e => {
+    const eventObject = { target: { name: 'category', value: e.value } };
+    handleChange(eventObject);
   };
   return (
     <ContainerInputSelect>
@@ -99,13 +92,8 @@ export default function InputSelect() {
         styles={customStyles}
         options={data}
         placeholder={'Product category'}
-        onChange={handleChange}
+        onChange={sendNewData}
         value={changeCategory}
-      />
-      <button
-        type="button"
-        style={{ width: '30px', height: '30px' }}
-        onClick={handleClear}
       />
     </ContainerInputSelect>
   );

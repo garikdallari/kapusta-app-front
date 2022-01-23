@@ -31,8 +31,8 @@ export const StyledBtn = styled.button`
     margin-right: ${props => props.marginRight};
   }
 
-  &:hover,
-  &:focus {
+  // &:focus,
+  &:hover {
     background-color: #ff751d;
     color: #ffffff;
   }
