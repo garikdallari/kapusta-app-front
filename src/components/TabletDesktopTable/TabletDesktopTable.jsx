@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Icons from '../Icons/Icons';
 import EllipsisText from 'react-ellipsis-text';
@@ -20,27 +20,43 @@ import transOperations from '../../redux/transactions/trans-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
 import { getUserBalance } from '../../redux/balance/balance-operations.js';
+import TransConfirmModal from '../TransConfirmModal/TransConfirmModal';
 
 export default function TabletDesktopTable() {
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
   const transactions = useSelector(transSelectors.getTransByType);
   const type = useSelector(transSelectors.getType);
-  
-  
-  const OnClickDelete = e => {
-    dispatch(transOperations.deleteTransactions(e.target.id, token));
-    dispatch(transOperations.getBalanceBy6Month(type, token));
+  const [modal, setModal] = useState(false);
+  const [id, setId] = useState(null);
+
+  useEffect(() => {
+    dispatch(transOperations.getAllByType(type, token));
     dispatch(getUserBalance());
+  }, [token, type, dispatch]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  });
+
+  const handleKeyDown = e => {
+    if (e.code === 'Escape') {
+      closeModal();
+    }
   };
 
-  useEffect(
-    () =>{ 
-      dispatch(transOperations.getAllByType(type, token));
-      dispatch(getUserBalance());},
-    [token,type, dispatch],
-  );
-  
+  const closeModal = () => {
+    setModal(false);
+  };
+
+  const handleClick = e => {
+    setId(e.target.id);
+    setModal(true);
+  };
+
   return (
     <StyledTable>
       <HeadTable>
@@ -87,7 +103,7 @@ export default function TabletDesktopTable() {
                       <DeleteBtn
                         type="button"
                         id={trans._id}
-                        onClick={OnClickDelete}
+                        onClick={handleClick}
                       >
                         <Icons
                           name="delete"
@@ -114,6 +130,14 @@ export default function TabletDesktopTable() {
           </tbody>
         </BodyTable>
       </ScrollBody>
+      {modal && (
+        <TransConfirmModal
+          id={id}
+          onClick={closeModal}
+          text="Are you sure?"
+          cancelOperation={() => setModal(prevState => !prevState)}
+        />
+      )}
     </StyledTable>
   );
 }
