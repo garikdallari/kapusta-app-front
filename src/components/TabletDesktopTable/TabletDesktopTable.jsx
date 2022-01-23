@@ -14,26 +14,31 @@ import {
   TabletText,
   DesktopText,
 } from './TabletDesktopTable.styled';
+
 import { addNullToNumber } from '../../helpers/monthHelpers';
 import transOperations from '../../redux/transactions/trans-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
+import { getUserBalance } from '../../redux/balance/balance-operations.js';
 
 export default function TabletDesktopTable() {
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
- const transactions = useSelector(transSelectors.getTransactions);
-  const type= useSelector(transSelectors.getType);
+  const transactions = useSelector(transSelectors.getTransactions);
+  const type = useSelector(transSelectors.getType);
 
-  const OnClickDelete=(e)=>{
-  dispatch(transOperations.deleteTransactions(e.target.id,token));
-  dispatch(transOperations.getBalanceBy6Month(type,token));
- }
+  const OnClickDelete = e => {
+    dispatch(transOperations.deleteTransactions(e.target.id, token));
+    dispatch(transOperations.getBalanceBy6Month(type, token));
+    dispatch(getUserBalance());
+  };
 
   useEffect(
-    () => dispatch(transOperations.getAllByType(type, token)),
+    () =>{ dispatch(transOperations.getAllByType(type, token));
+      dispatch(getUserBalance());},
     [token, type, dispatch],
   );
+  
   return (
     <StyledTable>
       <HeadTable>
@@ -55,8 +60,8 @@ export default function TabletDesktopTable() {
                 return (
                   <BodyTr key={trans._id} id={trans._id}>
                     <DateTd>
-                      {addNullToNumber(trans.date.day)}.{addNullToNumber(trans.date.month)}.
-                      {trans.date.year}
+                      {addNullToNumber(trans.date.day)}.
+                      {addNullToNumber(trans.date.month)}.{trans.date.year}
                     </DateTd>
                     <td>
                       <TabletText>
@@ -96,15 +101,15 @@ export default function TabletDesktopTable() {
             <BodyTr>
               <StyledTd></StyledTd>
             </BodyTr>
-          {transactions.length<9&&<BodyTr></BodyTr>}
-          {transactions.length<8&&<BodyTr></BodyTr>}
-          {transactions.length<7&&<BodyTr></BodyTr>}
-          {transactions.length<6&&<BodyTr></BodyTr>}
-          {transactions.length<5&&<BodyTr></BodyTr>}
-          {transactions.length<4&&<BodyTr></BodyTr>}
-          {transactions.length<3&&<BodyTr></BodyTr>}
-          {transactions.length<2&&<BodyTr></BodyTr>}
-             </tbody>
+            {transactions.length < 9 && <BodyTr></BodyTr>}
+            {transactions.length < 8 && <BodyTr></BodyTr>}
+            {transactions.length < 7 && <BodyTr></BodyTr>}
+            {transactions.length < 6 && <BodyTr></BodyTr>}
+            {transactions.length < 5 && <BodyTr></BodyTr>}
+            {transactions.length < 4 && <BodyTr></BodyTr>}
+            {transactions.length < 3 && <BodyTr></BodyTr>}
+            {transactions.length < 2 && <BodyTr></BodyTr>}
+          </tbody>
         </BodyTable>
       </ScrollBody>
     </StyledTable>

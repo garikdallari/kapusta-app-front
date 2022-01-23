@@ -20,6 +20,7 @@ import transOperations from '../../redux/transactions/trans-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
 import { convertDate } from '../../helpers/dateConverter';
+import { getUserBalance } from '../../redux/balance/balance-operations.js';
 
 export default function ProductForm({ transactionDate }) {
   const dispatch = useDispatch();
@@ -28,7 +29,6 @@ export default function ProductForm({ transactionDate }) {
   const [amount, setAmount] = useState('');
   const token = useSelector(authSelectors.getToken);
   const type = useSelector(transSelectors.getType);
-
   const { day, month, year } = convertDate(transactionDate, 'YYYY-MM-DD', '-');
 
   const handleChange = ({ target: { name, value } }) => {
@@ -63,8 +63,10 @@ export default function ProductForm({ transactionDate }) {
         token,
       }),
     );
+    dispatch(getUserBalance());
     dispatch(transOperations.getBalanceBy6Month(type, token));
     handleClearForm();
+
   };
 
   return (
