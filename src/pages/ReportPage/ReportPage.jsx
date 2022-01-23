@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Context } from '../../components/Context/Context';
 import {
@@ -13,17 +13,13 @@ import Accounting from '../../components/Accounting/Accounting';
 import ReportBalance from '../../components/Balance/ReportBalance';
 import IconsReportSection from '../../components/IconsReportSection/IconsReportSection';
 import { NavBox, ReportContainer } from './ReportPage.styled';
+import CartReport from '../../components/ChartsReport/ChartsReport';
 
 export default function ReportPage() {
-  const [sectionState, setSectionState] = useState(null);
   const [context, setContext] = useState('expense');
-
-  const { incomeRes, expenseRes } = useSelector(transSelectors.getAllByMonth);
-
-  useEffect(() => {
-    setSectionState(context === 'expense' ? expenseRes : incomeRes);
-    return () => setSectionState(null);
-  }, [context, incomeRes, expenseRes]);
+  const { incomeRes, expenseRes, subIncomeRes, subExpenseRes } = useSelector(
+    transSelectors.getAllByMonth,
+  );
 
   return (
     <>
@@ -38,10 +34,14 @@ export default function ReportPage() {
                 </NavBox>
                 <Accounting />
                 <IconsReportSection
-                  amount={sectionState ? sectionState : expenseRes}
+                  amount={context === 'expense' ? expenseRes : incomeRes}
+                  amount={expenseRes}
                 />
               </ReportContainer>
             </Container>
+            <CartReport
+              data={context === 'expense' ? subExpenseRes : subIncomeRes}
+            />
           </BackgroundBodyReport>
         </WrapperBackgroundBody>
       </Context.Provider>

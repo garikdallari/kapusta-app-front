@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { tostifyAuthOptions } from '../../helpers/tostifyAuthOptions';
 
+// axios.defaults.baseURL = 'http://localhost:8000/api';
 axios.defaults.baseURL = 'https://kapusta-33-5-api.herokuapp.com/api';
 
 const token = {

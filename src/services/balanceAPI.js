@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://kapusta-33-5-api.herokuapp.com/api';
-
 export async function getUserBalance() {
   try {
     const { data } = await axios.get('/balance');
