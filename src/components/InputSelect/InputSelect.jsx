@@ -1,8 +1,10 @@
 import Select from 'react-select';
 import { ContainerInputSelect } from './InputSelect.styled';
 import { theme } from '../../constants/theme';
+import { useSelector } from 'react-redux';
+import authSelectors from '../../redux/auth/auth-selectors';
 
-const data = [
+const expenseData = [
   { value: 'Transport', label: 'Transport' },
   { value: 'Food', label: 'Food' },
   { value: 'Health', label: 'Health' },
@@ -13,6 +15,11 @@ const data = [
   { value: 'Sports, hobbies', label: 'Sports, hobbies' },
   { value: 'Education', label: 'Education' },
   { value: 'Other', label: 'Other' },
+];
+
+const incomeData = [
+  { value: 'Salary', label: 'Salary' },
+  { value: 'Additional salary', label: 'Additional salary' },
 ];
 
 const customStyles = {
@@ -82,6 +89,14 @@ const customStyles = {
 };
 
 export default function InputSelect({ handleChange, category, setCategory }) {
+  const typeTransactions = useSelector(authSelectors.getTypeTransactions);
+
+  const dataOptionsSelect =
+    typeTransactions === 'income' ? incomeData : expenseData;
+
+  const dataPlaceholder =
+    typeTransactions === 'income' ? 'Income category' : 'Product category';
+
   const changeCategory = category && {
     label: category,
     value: category,
@@ -96,8 +111,8 @@ export default function InputSelect({ handleChange, category, setCategory }) {
       <Select
         name="category"
         styles={customStyles}
-        options={data}
-        placeholder={'Product category'}
+        options={dataOptionsSelect}
+        placeholder={dataPlaceholder}
         onChange={sendNewData}
         value={changeCategory}
       />
