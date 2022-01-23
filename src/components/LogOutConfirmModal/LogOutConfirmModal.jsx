@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { GrClose } from 'react-icons/gr';
 import Button from '../Button/Button';
 import { theme } from '../../constants/theme';
+import authOperations from '../../redux/auth/auth-operations';
 import {
   ModalContainer,
   ModalContent,
@@ -10,13 +11,12 @@ import {
   CloseButton,
   Overlay,
   WrapperOverlay,
-} from './Modal.styled';
+} from './LogOutConfirmModal.styled';
 
-export default function Modal({
+export default function LogOutConfirmModal({
   onClick,
   text,
   textColor,
-  confirmOperation,
   cancelOperation,
 }) {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ export default function Modal({
                   type="button"
                   backgroundColor={theme.color.buttonOrangeBg}
                   textColor={theme.color.buttonWhiteText}
-                  onClick={() => dispatch(confirmOperation())}
+                  onClick={() => dispatch(authOperations.logout())}
                 />
                 <Button
                   text="No"
