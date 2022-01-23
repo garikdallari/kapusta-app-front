@@ -24,12 +24,10 @@ export const SummaryWrapper = styled.div`
   @media screen and (min-width: 768px) {
     display: block;
     position: absolute;
-    z-index: 99;
+    z-index: 2;
     left: 0;
     bottom: 0;
     transform: translate(30px, 318px);
-    position: absolute;
-    z-index: 2;
   }
 
   @media screen and (min-width: 1280px) {
