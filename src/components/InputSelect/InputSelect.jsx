@@ -26,7 +26,7 @@ const customStyles = {
       : theme.color.inputBorderColor,
     fontSize: '12px',
     paddingLeft: '20px',
-    height: '33px',
+    height: '32px',
     lineHeight: '14px',
     letterSpacing: '0.02em',
   }),
@@ -40,24 +40,30 @@ const customStyles = {
     fontSize: '12px',
     color: `${theme.color.inputPlaceholderColor}`,
   }),
-  control: (provided, state) => ({
+  control: (provided, state, base) => ({
     //весь контейнер инпута селект.
     ...provided,
-    // width: '188px',
-    border: `2px solid ${theme.color.inputBorderColorDeskTab}`,
+    ...base,
+    boxShadow: state.isFocused ? 0 : 0,
     height: '44px',
-    borderRadius: '0px',
-    boxShadow: 'none',
     width: '100%',
+    border: `none`,
+    backgroundColor: 'inherit',
+    borderRadius: '0px',
+    '&:hover': {
+      borderColor: state.isFocused
+        ? theme.color.inputBorderColorDeskTab
+        : theme.color.inputBorderColorDeskTab,
+    },
   }),
   indicatorSeparator: (provided, state) => ({
     ...provided,
     display: 'none',
   }),
-  //   menu: (provided, state) => ({
-  //     ...provided,
-  //     // height: '365px',
-  //   }),
+  // menu: (provided, state) => ({
+  //   ...provided,
+  //   height: '365px',
+  // }),
   singleValue: (provided, state) => ({
     //выбранное значение в инпуте.
     ...provided,

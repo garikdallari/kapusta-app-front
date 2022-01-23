@@ -100,7 +100,7 @@ export default function ProductForm({ transactionDate }) {
 
           <LabelInputPrice>
             <InputPrice
-              placeholder="00.00 $"
+              placeholder="00.00 USD"
               name="amount"
               type="number"
               onChange={handleChange}
