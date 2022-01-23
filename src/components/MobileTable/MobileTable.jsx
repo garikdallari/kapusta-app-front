@@ -7,6 +7,7 @@ import transOperations from '../../redux/transactions/trans-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
 import { getUserBalance } from '../../redux/balance/balance-operations.js';
+import { AddMinusToAmount } from '../../helpers/addMinusToAmount';
 import {
   DescriptionTd,
   DeleteBtn,
@@ -58,7 +59,7 @@ export default function MobileTable() {
                       <Category>{trans.category}</Category>
                     </StyledP>
                   </DescriptionTd>
-                  <AmountTd>{trans.amount} $</AmountTd>
+                  <AmountTd type={trans.type==="expense"?true:false}>{AddMinusToAmount(trans.amount, trans.type)} $</AmountTd>
                   <DeleteTd>
                     <DeleteBtn
                       type="button"

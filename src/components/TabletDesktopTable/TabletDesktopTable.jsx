@@ -13,8 +13,10 @@ import {
   StyledTable,
   TabletText,
   DesktopText,
+  AmountTd,
 } from './TabletDesktopTable.styled';
 
+import { AddMinusToAmount } from '../../helpers/addMinusToAmount';
 import { addNullToNumber } from '../../helpers/monthHelpers';
 import transOperations from '../../redux/transactions/trans-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
@@ -26,21 +28,19 @@ export default function TabletDesktopTable() {
   const token = useSelector(authSelectors.getToken);
   const transactions = useSelector(transSelectors.getTransByType);
   const type = useSelector(transSelectors.getType);
-  
-  
+  console.log(transactions);
+
   const OnClickDelete = e => {
     dispatch(transOperations.deleteTransactions(e.target.id, token));
     dispatch(transOperations.getBalanceBy6Month(type, token));
     dispatch(getUserBalance());
   };
 
-  useEffect(
-    () =>{ 
-      dispatch(transOperations.getAllByType(type, token));
-      dispatch(getUserBalance());},
-    [token,type, dispatch],
-  );
-  
+  useEffect(() => {
+    dispatch(transOperations.getAllByType(type, token));
+    dispatch(getUserBalance());
+  }, [token, type, dispatch]);
+
   return (
     <StyledTable>
       <HeadTable>
@@ -82,7 +82,9 @@ export default function TabletDesktopTable() {
                       </DesktopText>
                     </td>
                     <StyledTd>{trans.category}</StyledTd>
-                    <StyledTd>{trans.amount}$</StyledTd>
+                    <AmountTd type={trans.type === 'expense' ? true : false}>
+                      {AddMinusToAmount(trans.amount, trans.type)} $
+                    </AmountTd>
                     <StyledTd>
                       <DeleteBtn
                         type="button"
