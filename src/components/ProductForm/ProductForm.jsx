@@ -20,14 +20,17 @@ import Wallet from '../../components/Wallet/Wallet';
 import transOperations from '../../redux/transactions/trans-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
+import { convertDate } from '../../helpers/dateConverter';
+import { getUserBalance } from '../../redux/balance/balance-operations.js';
 
-export default function ProductForm() {
+export default function ProductForm({ transactionDate }) {
   const dispatch = useDispatch();
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
   const token = useSelector(authSelectors.getToken);
   const type = useSelector(transSelectors.getType);
+  const { day, month, year } = convertDate(transactionDate, 'YYYY-MM-DD', '-');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -55,9 +58,13 @@ export default function ProductForm() {
         amount,
         category,
         description,
+        day,
+        month,
+        year,
         token,
       }),
     );
+    dispatch(getUserBalance());
     dispatch(transOperations.getBalanceBy6Month(type, token));
     handleClearForm();
   };

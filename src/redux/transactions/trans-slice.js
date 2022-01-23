@@ -2,10 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import transOperations from './trans-operations';
 
 const initialState = {
- transactions: [],
+  byType: [],
+  all:[],
   allByMonth: {},
   summary: [],
- type: 'expense',
+  type: 'expense',
 };
 
 const transSlice = createSlice({
@@ -14,7 +15,10 @@ const transSlice = createSlice({
 
   extraReducers: {
     [transOperations.deleteTransactions.fulfilled](state, { payload }) {
-      state.transactions = state.transactions.filter(
+      state.byType = state.byType.filter(
+        item => item._id !== payload,
+      );
+      state.all = state.all.filter(
         item => item._id !== payload,
       );
     },
@@ -24,7 +28,8 @@ const transSlice = createSlice({
     },
 
     [transOperations.getAllByType.fulfilled](state, { payload }) {
-      state.transactions = [...payload].reverse();
+      state.byType = [...payload.response].reverse();
+      state.type = payload.type;
     },
 
     [transOperations.getAllByMonth.fulfilled](state, { payload }) {
@@ -36,13 +41,15 @@ const transSlice = createSlice({
         expenseBalanceByMonth: payload.expenseBalanceByMonth,
         incomeBalanceByMonth: payload.incomeBalanceByMonth,
       };
-    },   
-    [transOperations.createTransactions.fulfilled](state,  {payload} ) {
-       state.transactions = [payload,...state.transactions];
     },
     [transOperations.createTransactions.fulfilled](state, { payload }) {
-      state.transactions = [...state.transactions, payload];
-    }
-       }
+      state.byType = [payload, ...state.byType];
+      state.all = [payload, ...state.all];
+    },
+
+    [transOperations.listAllTransactions.fulfilled](state, { payload }) {
+      state.all = [...payload].reverse();
+    },
+  },
 });
 export default transSlice.reducer;

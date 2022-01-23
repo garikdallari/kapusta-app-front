@@ -37,17 +37,14 @@ export const SummaryWrapper = styled.div`
 `;
 
 export const StyledTr = styled.tr`
-  border: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
   height: 38px;
-  &:first-of-type {
-    border-top: none;
-  }
   text-align: left;
 `;
 
 export const HeadTd = styled.div`
   display: flex;
-  border: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
   height: 38px;
   font-weight: 700;
   letter-spacing: 0.02em;

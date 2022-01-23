@@ -8,31 +8,33 @@ import {
 import { useEffect } from 'react';
 import transOperations from '../../redux/transactions/trans-operations';
 import { useSelector, useDispatch } from 'react-redux';
-import authSelectors from
-'../../redux/auth/auth-selectors';
-import transSelectors from
-'../../redux/transactions/trans-selectors';
+import authSelectors from '../../redux/auth/auth-selectors';
+import transSelectors from '../../redux/transactions/trans-selectors';
 
-import { getMonthName}  from '../../helpers/monthHelpers';
+import { getMonthName } from '../../helpers/monthHelpers';
 
 export default function Summury() {
   const token = useSelector(authSelectors.getToken);
-  const summary= useSelector(transSelectors.getSummary);
+  const summary = useSelector(transSelectors.getSummary);
   const dispatch = useDispatch();
+  const transactions = useSelector(transSelectors.getTransByType);
+  const type = useSelector(transSelectors.getType);
 
-  const type= useSelector(transSelectors.getType);
-  useEffect(() => dispatch(transOperations.getBalanceBy6Month(type,token)),[token,type,dispatch]);
-   
+  useEffect(
+    () => dispatch(transOperations.getBalanceBy6Month(type, token)),
+    [token, transactions, type, dispatch],
+  );
+
   return (
     <SummaryWrapper>
       <HeadTd>Summary</HeadTd>
       <SummaryTable>
         <tbody>
           {summary.length > 0 &&
-         summary.map(monthItem => {
-                 return (
+            summary.map(monthItem => {
+              return (
                 <StyledTr key={monthItem.month}>
-                 <MontTd>{getMonthName(monthItem.month)}</MontTd>
+                  <MontTd>{getMonthName(monthItem.month)}</MontTd>
                   <td>{monthItem.amount}</td>
                 </StyledTr>
               );

@@ -30,6 +30,7 @@ export const Section = styled.div`
 export const List = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
 `;
@@ -39,21 +40,21 @@ export const Item = styled.div`
   flex-direction: column;
   align-items: center;
 
-  :nth-child(1) {
+  :nth-of-type(1) {
     margin-right: 15px;
   }
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
 
-    :nth-child(1) {
+    :nth-of-type(1) {
       margin-right: 21px;
     }
   }
 `;
 
 export const Vertical = styled.div`
-  margin-right: 10px;
+  margin-right: 15px;
 
   height: 71px;
   border-right: 1px solid ${theme.color.lightGray};

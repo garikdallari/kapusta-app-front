@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Icons from '../Icons/Icons';
 import EllipsisText from 'react-ellipsis-text';
+import { addNullToNumber } from '../../helpers/monthHelpers';
+import transOperations from '../../redux/transactions/trans-operations';
+import authSelectors from '../../redux/auth/auth-selectors';
+import transSelectors from '../../redux/transactions/trans-selectors';
+import { getUserBalance } from '../../redux/balance/balance-operations.js';
+import { AddMinusToAmount } from '../../helpers/addMinusToAmount';
 import {
   DescriptionTd,
   DeleteBtn,
@@ -14,57 +21,51 @@ import {
   Category,
 } from './MobileTable.styled.jsx';
 
-const data = [
-  {
-    date: '11.04.2004',
-    description: 'World',
-    category: 'car',
-    amount: 10000,
-  },
-  {
-    date: '13.08.2004',
-    description: 'World',
-    category: 'carff',
-    amount: 50000,
-  },
-  {
-    date: '14.07.2008',
-    description:
-      'rtyeityeut ureytuwyte etruetyieu ureyityqewtuy ueriydsfdsfdfdfdfdfdfdffdfdfdfrq',
-    category: 'sfscar',
-    amount: 60000,
-  },
-  {
-    date: '14.05.2006',
-    description: 'World',
-    category: 'carss',
-    amount: 700000,
-  },
-];
-
 export default function MobileTable() {
+  const dispatch = useDispatch();
+  const token = useSelector(authSelectors.getToken);
+  const transactions = useSelector(transSelectors.getAllTrans);
+  const type = useSelector(transSelectors.getType);
+
+  useEffect(() => {
+    dispatch(transOperations.listAllTransactions(token));
+    dispatch(getUserBalance());
+  }, [token, dispatch]);
+
+  const OnClickDelete = e => {
+    dispatch(transOperations.deleteTransactions(e.target.id, token));
+    dispatch(getUserBalance());
+  };
+
   return (
     <StyledMobileTable>
       <Table>
         <tbody>
-          {data &&
-            data.map(e => {
+          {transactions.length > 0 &&
+            transactions.map(trans => {
               return (
-                <BodyTr key={e.date}>
+                <BodyTr key={trans._id}>
                   <DescriptionTd>
                     <EllipsisText
-                      text={e.description}
-                      tooltip={e.description}
+                      text={trans.subcategory}
+                      tooltip={trans.subcategory}
                       length={20}
                     />
                     <StyledP>
-                      <Date>{e.date}</Date>
-                      <Category>{e.category}</Category>
+                      <Date>
+                        {addNullToNumber(trans.date.day)}.
+                        {addNullToNumber(trans.date.month)}.{trans.date.year}
+                      </Date>
+                      <Category>{trans.category}</Category>
                     </StyledP>
                   </DescriptionTd>
-                  <AmountTd>{e.amount} $</AmountTd>
+                  <AmountTd type={trans.type==="expense"?true:false}>{AddMinusToAmount(trans.amount, trans.type)} $</AmountTd>
                   <DeleteTd>
-                    <DeleteBtn>
+                    <DeleteBtn
+                      type="button"
+                      id={trans._id}
+                      onClick={OnClickDelete}
+                    >
                       <Icons
                         name="delete"
                         color="#52555F"

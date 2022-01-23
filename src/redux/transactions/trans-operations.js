@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-// axios.defaults.baseURL = 'https://localhost:8000/api';
+
 
 const deleteTransactions = createAsyncThunk(
   'transactions/delete',
@@ -29,7 +29,6 @@ const getBalanceBy6Month = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       );
-      // console.log(data.result.balanceByMonth);
       return data.result.balanceByMonth;
     } catch (error) {
       throw new Error(error.message);
@@ -45,7 +44,8 @@ const getAllByType = createAsyncThunk(
       const { data } = await axios.get(`/transactions/getAllByType/${type}`, {
         Authorization: `Bearer ${token}`,
       });
-      return data.data.result;
+    const response = await data.data.result;  
+      return {response:response, type:type};
     } catch (error) {
       throw new Error(error.message);
     }
@@ -59,7 +59,7 @@ const getAllByMonth = createAsyncThunk(
       const { data } = await axios.get(`/transactions/getAllByMonth/${date}`, {
         Authorization: `Bearer ${token}`,
       });
-      return data.result;
+      return data ? data.result : null;
     } catch (error) {
       throw new Error(error.message);
     }
@@ -68,27 +68,25 @@ const getAllByMonth = createAsyncThunk(
 
 const createTransactions = createAsyncThunk(
   'transactions/createTransactions',
+  async ({type,amount,category,description,day,month,year,token}) => {
+   const body = {
+      "type": type,
+      "amount": Number(amount),
+      "category": category.toLowerCase(),
+      "subcategory": description,
+      "date": {
+        "day": day,
+        "month": month,
+        "year": year,
 
-  async ({ type, amount, category, description, token }) => {
-    const body = {
-      type: type,
-      amount: amount,
-      category: category.toLowerCase(),
-      subcategory: description,
-      date: {
-        day: '10',
-        month: '01',
-        year: '2022',
       },
     };
-    console.log(body);
-    console.log(token);
-    try {
+      try {
       const response = await axios.post(`/transactions`, body, {
         Authorization: `Bearer ${token}`,
       });
       const { data } = response;
-
+console.log(data.data)
       return data.data;
     } catch (error) {
       console.log(error.message);
@@ -97,12 +95,31 @@ const createTransactions = createAsyncThunk(
   },
 );
 
+const listAllTransactions = createAsyncThunk(
+  'transactions/listAllTransactions',
+  async (token) => {
+    console.log(token)
+    try {
+      const response = await axios.get(`/transactions`, {
+        Authorization: `Bearer ${token}`,
+      });
+      const {transactions}=response.data.data;
+      return transactions;
+    } catch (error) {
+      console.log(error.message);
+      throw new Error(error.message);
+    }
+  },
+);
+
+
 const transOperations = {
   deleteTransactions,
   getBalanceBy6Month,
   getAllByType,
   getAllByMonth,
-  createTransactions,
+  listAllTransactions,
+  createTransactions
 };
 
 export default transOperations;

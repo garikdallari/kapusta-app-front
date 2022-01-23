@@ -1,3 +1,6 @@
+import { useSelector } from 'react-redux';
+import transSelectors from '../../redux/transactions/trans-selectors';
+
 import {
   Section,
   List,
@@ -9,17 +12,26 @@ import {
 } from './Accounting.styled';
 
 export default function Accounting() {
+  const { incomeBalanceByMonth, expenseBalanceByMonth } = useSelector(transSelectors.getAllByMonth);
+  
+  console.log(incomeBalanceByMonth);
+  console.log(expenseBalanceByMonth);
+
   return (
     <Section>
       <List>
         <Item>
           <Nomination>Expenses:</Nomination>
-          <Amount>- 18 000.00 usd.</Amount>
+          <Amount>
+            {`- ${Math.abs(expenseBalanceByMonth)} usd.`}
+          </Amount>
         </Item>
         <Vertical />
         <Item>
           <Nomination>Income:</Nomination>
-          <AmountIncome>+ 45 000.00 usd.</AmountIncome>
+          <AmountIncome>
+            {`+ ${incomeBalanceByMonth} usd.`}
+          </AmountIncome>
         </Item>
       </List>
     </Section>
