@@ -15,7 +15,7 @@ import {
   InputContainer,
   BalanceBox,
 } from './Balance.styled.jsx';
-
+import transSelectors from '../../redux/transactions/trans-selectors';
 import BalanceNotification from '../BalanceNotification/BalanceNotification';
 import ReportsNavigation from '../ReportsNavigation/ReportsNavigation';
 
@@ -23,6 +23,8 @@ export default function HomeBalance() {
   const currentBalance = useSelector(getBalance);
   const dispatch = useDispatch();
   const [balance, setBalance] = useState();
+  const transByType = useSelector(transSelectors.getTransByType);
+  const allTrans = useSelector(transSelectors.getAllTrans);
   let btnText = '';
 
   if (currentBalance === 0) {
@@ -34,7 +36,8 @@ export default function HomeBalance() {
   useEffect(() => {
     dispatch(getUserBalance());
     setBalance(currentBalance);
-  }, [dispatch, currentBalance]);
+  }, [dispatch,transByType,
+    allTrans, currentBalance]);
 
   const handleInput = e => {
     const { value } = e.currentTarget;

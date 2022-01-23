@@ -86,7 +86,7 @@ const createTransactions = createAsyncThunk(
         Authorization: `Bearer ${token}`,
       });
       const { data } = response;
-
+console.log(data.data)
       return data.data;
     } catch (error) {
       console.log(error.message);
@@ -95,12 +95,31 @@ const createTransactions = createAsyncThunk(
   },
 );
 
+const listAllTransactions = createAsyncThunk(
+  'transactions/listAllTransactions',
+  async (token) => {
+    console.log(token)
+    try {
+      const response = await axios.get(`/transactions`, {
+        Authorization: `Bearer ${token}`,
+      });
+      const {transactions}=response.data.data;
+      return transactions;
+    } catch (error) {
+      console.log(error.message);
+      throw new Error(error.message);
+    }
+  },
+);
+
+
 const transOperations = {
   deleteTransactions,
   getBalanceBy6Month,
   getAllByType,
   getAllByMonth,
-  createTransactions,
+  listAllTransactions,
+  createTransactions
 };
 
 export default transOperations;
