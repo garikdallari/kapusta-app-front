@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const ModalContainer = styled.div`
   position: relative;
-  width: 380px;
   height: 194px;
   display: flex;
   justify-content: center;
@@ -10,6 +9,13 @@ export const ModalContainer = styled.div`
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
+
+  @media (min-width: 320px) {
+    width: 306px;
+  }
+  @media (min-width: 768px) {
+    width: 380px;
+  }
 `;
 
 export const ModalContent = styled.div`
@@ -54,7 +60,7 @@ export const Overlay = styled.div`
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
-export const ContentModal = styled.div`
+export const WrapperOverlay = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;

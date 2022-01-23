@@ -9,7 +9,7 @@ import {
   ButtonContainer,
   CloseButton,
   Overlay,
-  ContentModal,
+  WrapperOverlay,
 } from './Modal.styled';
 
 export default function Modal({
@@ -23,7 +23,7 @@ export default function Modal({
   return (
     <>
       <Overlay>
-        <ContentModal>
+        <WrapperOverlay>
           <ModalContainer>
             <ModalContent>
               <ModalText textColor={textColor}>{text}</ModalText>
@@ -48,7 +48,7 @@ export default function Modal({
               <GrClose size={12} />
             </CloseButton>
           </ModalContainer>
-        </ContentModal>
+        </WrapperOverlay>
       </Overlay>
     </>
   );
