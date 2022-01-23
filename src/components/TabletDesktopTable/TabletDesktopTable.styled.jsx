@@ -1,24 +1,24 @@
 import styled from '@emotion/styled';
-        
+
 export const StyledTable = styled.div`
-display: none;
+  display: none;
 
   @media screen and (min-width: 768px) {
-   display: block;
-   width: 605px;
-  
-   border-radius: 20px 20px 0 0;
-  overflow: hidden;
-  font-family: ${props => props.theme.fontFamily};
-  font-size: ${props => props.theme.fontSize.descriptionProduct};
-  line-height: 1.16;
-  color: ${props => props.theme.color.buttonDarkText};
-  margin-bottom: 50px;
+    display: block;
+    width: 605px;
+
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    font-family: ${props => props.theme.fontFamily};
+    font-size: ${props => props.theme.fontSize.descriptionProduct};
+    line-height: 1.16;
+    color: ${props => props.theme.color.buttonDarkText};
+    margin-bottom: 50px;
   }
 
   @media screen and (min-width: 1280px) {
     width: 760px;
-    margin:0;
+    margin: 0;
     margin-right: 30px;
   }
 `;
@@ -42,7 +42,6 @@ export const ScrollBody = styled.div`
   overflow-y: scroll;
   height: 344px;
 
-
   ::-webkit-scrollbar {
     width: 6px;
     background-color: ${props => props.theme.backgroundBodyColor};
@@ -52,8 +51,8 @@ export const ScrollBody = styled.div`
     background-color: ${props => props.theme.color.buttonOrangeBg};
     border-radius: 2px;
   }
-  ::-webkit-scrollbar-track-piece{
-    background-color:${props => props.theme.backgroundBodyColor};
+  ::-webkit-scrollbar-track-piece {
+    background-color: ${props => props.theme.backgroundBodyColor};
   }
 `;
 
@@ -87,36 +86,47 @@ export const DateTd = styled.td`
   width: 100px;
   padding-left: 18px;
 `;
-export const StyledTd = styled.td`
 
-&:first-letter{
-  text-transform: uppercase;
-}
+export const StyledTd = styled.td`
+  &:first-letter {
+    text-transform: uppercase;
+  }
+  width: 100px;
+  text-align: center;
+`;
+
+export const AmountTd = styled.td`
+  color: ${props => (props.type ? 'red' : 'green')};
+  font-weight: 700;
+  &:first-letter {
+    text-transform: uppercase;
+  }
   width: 100px;
   text-align: center;
 `;
 
 export const TabletText = styled.p`
-
-&:first-letter{
-  text-transform: uppercase;
-}
-@media screen and (min-width: 768px) {
-  display: block;
-}
-@media screen and (min-width: 1280px) {
-  display:none;
-}`
+  margin: 0;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+`;
 
 export const DesktopText = styled.p`
+  &:first-letter {
+    text-transform: uppercase;
+  }
 
-&:first-letter{
-  text-transform: uppercase;
-}
-
-@media screen and (min-width: 768px) {
-  display: none;
-}
-@media screen and (min-width: 1280px) {
-  display:block;
-}`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 1280px) {
+    display: block;
+  }
+`;

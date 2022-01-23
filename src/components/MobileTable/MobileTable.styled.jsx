@@ -27,14 +27,13 @@ export const StyledMobileTable = styled.div`
   line-height: 1.16;
 
   ::-webkit-scrollbar {
-   width:1px;
-    background-color:transparent;
+    width: 1px;
+    background-color: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color:transparent;
-    
-   }
+    background-color: transparent;
+  }
 
   ::-webkit-scrollbar-track-piece {
     background-color: transparent;
@@ -62,28 +61,32 @@ export const DeleteTd = styled.td`
 export const AmountTd = styled.td`
   width: 100px;
   text-align: end;
+  color: ${props => (props.type ? 'red' : 'green')};
+  font-weight: 700;
 `;
 
 export const DescriptionTd = styled.td`
-&:first-letter{
+  &:first-letter {
     text-transform: uppercase;
-   }`;
+  }
+`;
 
 export const StyledP = styled.p`
-font-size: 8px;
-line-height: 1.13;
-font-weight: 400;
-margin:0;
-margin-top:3px;
-`
+  font-size: 8px;
+  line-height: 1.13;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 3px;
+`;
 
 export const Date = styled.span`
-margin-right:20px;
-`
+  margin-right: 20px;
+`;
 
 export const Category = styled.span`
-display:inline-block;
+  display: inline-block;
 
-&:first-letter{
+  &:first-letter {
     text-transform: uppercase;
-}`
+  }
+`;

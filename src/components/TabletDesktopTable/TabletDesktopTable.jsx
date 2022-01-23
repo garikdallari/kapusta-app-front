@@ -13,8 +13,10 @@ import {
   StyledTable,
   TabletText,
   DesktopText,
+  AmountTd,
 } from './TabletDesktopTable.styled';
 
+import { AddMinusToAmount } from '../../helpers/addMinusToAmount';
 import { addNullToNumber } from '../../helpers/monthHelpers';
 import transOperations from '../../redux/transactions/trans-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
@@ -98,7 +100,9 @@ export default function TabletDesktopTable() {
                       </DesktopText>
                     </td>
                     <StyledTd>{trans.category}</StyledTd>
-                    <StyledTd>{trans.amount}$</StyledTd>
+                    <AmountTd type={trans.type === 'expense' ? true : false}>
+                      {AddMinusToAmount(trans.amount, trans.type)} $
+                    </AmountTd>
                     <StyledTd>
                       <DeleteBtn
                         type="button"

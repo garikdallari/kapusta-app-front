@@ -3,7 +3,7 @@ import transOperations from './trans-operations';
 
 const initialState = {
   byType: [],
-  all:[],
+  all: [],
   allByMonth: {},
   summary: [],
   type: 'expense',
@@ -15,12 +15,8 @@ const transSlice = createSlice({
 
   extraReducers: {
     [transOperations.deleteTransactions.fulfilled](state, { payload }) {
-      state.byType = state.byType.filter(
-        item => item._id !== payload,
-      );
-      state.all = state.all.filter(
-        item => item._id !== payload,
-      );
+      state.byType = state.byType.filter(item => item._id !== payload);
+      state.all = state.all.filter(item => item._id !== payload);
     },
 
     [transOperations.getBalanceBy6Month.fulfilled](state, { payload }) {
