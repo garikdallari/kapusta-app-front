@@ -66,7 +66,6 @@ export default function ProductForm({ transactionDate }) {
     dispatch(getUserBalance());
     dispatch(transOperations.getBalanceBy6Month(type, token));
     handleClearForm();
-
   };
 
   return (

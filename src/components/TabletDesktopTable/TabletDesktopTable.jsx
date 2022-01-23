@@ -24,9 +24,10 @@ import { getUserBalance } from '../../redux/balance/balance-operations.js';
 export default function TabletDesktopTable() {
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
-  const transactions = useSelector(transSelectors.getTransactions);
+  const transactions = useSelector(transSelectors.getTransByType);
   const type = useSelector(transSelectors.getType);
-
+  
+  
   const OnClickDelete = e => {
     dispatch(transOperations.deleteTransactions(e.target.id, token));
     dispatch(transOperations.getBalanceBy6Month(type, token));
@@ -34,9 +35,10 @@ export default function TabletDesktopTable() {
   };
 
   useEffect(
-    () =>{ dispatch(transOperations.getAllByType(type, token));
+    () =>{ 
+      dispatch(transOperations.getAllByType(type, token));
       dispatch(getUserBalance());},
-    [token, type, dispatch],
+    [token,type, dispatch],
   );
   
   return (
