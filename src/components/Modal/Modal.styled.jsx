@@ -17,7 +17,6 @@ export const ModalContainer = styled.div`
     width: 380px;
   }
 `;
-
 export const ModalContent = styled.div`
   display: flex;
   align-items: center;
