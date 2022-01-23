@@ -3,15 +3,6 @@ import { BarChart, Bar, XAxis, Cell } from 'recharts';
 import MobileChartsReport from './MobileChartsReport';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 
-// const data = [
-//   {
-//     date: '1',
-//     description: 'World',
-//     category: 'car',
-//     amount: 10,
-//   },
-// ];
-
 export default function ChartsReport({ data }) {
   const { width } = useWindowDimensions();
 
@@ -38,7 +29,7 @@ export default function ChartsReport({ data }) {
           barCategoryGap={20}
         >
           <XAxis
-            dataKey="category"
+            dataKey="subcategory"
             axisLine={false}
             tickLine={false}
             dy={5}
@@ -52,12 +43,13 @@ export default function ChartsReport({ data }) {
             radius={[10, 10, 0, 0]}
             animationDuration={1000}
           >
-            {data.map((el, idx) => (
-              <Cell
-                key={`cell-${idx}`}
-                fill={idx % 3 ? '#FFDAC0' : '#ff751d'}
-              />
-            ))}
+            {data &&
+              data.map((el, idx) => (
+                <Cell
+                  key={`cell-${idx}`}
+                  fill={idx % 3 ? '#FFDAC0' : '#ff751d'}
+                />
+              ))}
           </Bar>
         </BarChart>
       </Card>

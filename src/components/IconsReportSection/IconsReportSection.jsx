@@ -8,6 +8,7 @@ import {
 import Icons from '../Icons/Icons';
 import IncomeExpenseToggle from '../../components/Balance/IncomeExpenseToggle';
 import { theme } from '../../constants/theme';
+import convertName from '../../helpers/convertName';
 
 const IconsReportSection = ({ amount }) => {
   return (
@@ -15,20 +16,18 @@ const IconsReportSection = ({ amount }) => {
       <Section bgColor={theme.color.buttonWhiteBg}>
         <IncomeExpenseToggle />
         <Wrapper elementoColor={theme.color.lightGray}>
-          {amount &&
-            amount.map(el => (
-              <WrapperElement elementColor={theme.color.lightGray}>
+          {amount !== undefined &&
+            amount.map(({ category, amount }, idx) => (
+              <WrapperElement elementColor={theme.color.lightGray} key={idx}>
                 <SvgContainer buttonColor={theme.color.buttonOrangeBg}>
-                  <TextContainer>{el[1]}</TextContainer>
+                  <TextContainer>{amount}</TextContainer>
                   <Icons
-                    name={el[0]}
+                    name={category}
                     color="currentColor"
                     width="56px"
                     height="56px"
                   />
-                  <TextContainer>
-                    {el[0] === 'utility_bills' ? 'bills' : el[0]}
-                  </TextContainer>
+                  <TextContainer>{convertName(category)}</TextContainer>
                 </SvgContainer>
               </WrapperElement>
             ))}
