@@ -1,0 +1,34 @@
+.dropdown {
+  width: 188px;
+  height: 44px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.1667;
+  letter-spacing: 0.02em;
+
+  border-top: 2px solid #f5f6fb;
+  border-bottom: 2px solid #f5f6fb;
+  border-radius: 0;
+  color: #c7ccdc;
+}
+
+@media screen and (max-width: 320px) {
+  .dropdown {
+    width: 100%;
+
+    border: 2px solid #ffffff;
+    border-bottom-right-radius: 16px;
+    border-top: 0;
+  }
+}
+
+.css-1sn6d3h-placeholder,
+.css-14dclt2-Input,
+.css-aep54n-singleValue {
+  padding-left: 12px;
+}
+
+.css-319lph-ValueContainer .css-aep54n-singleValue {
+  color: #52555f;
+}

@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Input,
-  Select,
   Label,
   Form,
-  Option,
   InputPrice,
   LabelInputPrice,
   Container,
@@ -21,6 +19,7 @@ import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
 import { convertDate } from '../../helpers/dateConverter';
 import { getUserBalance } from '../../redux/balance/balance-operations.js';
+import SelectCategory from '../SelectCategory/SelectCategory';
 
 export default function ProductForm({ transactionDate }) {
   const dispatch = useDispatch();
@@ -30,6 +29,25 @@ export default function ProductForm({ transactionDate }) {
   const token = useSelector(authSelectors.getToken);
   const type = useSelector(transSelectors.getType);
   const { day, month, year } = convertDate(transactionDate, 'YYYY-MM-DD', '-');
+
+  const options = [
+    { value: 'transport', label: 'Transport' },
+    { value: 'food', label: 'Food' },
+    { value: 'health', label: 'Health' },
+    { value: 'alcohol', label: 'Alcohol' },
+    { value: 'activities', label: 'Activities' },
+    { value: 'home_stuff', label: 'Home stuff' },
+    { value: 'gadgets', label: 'Gadgets' },
+    { value: 'utility_bills', label: 'Utility bills' },
+    { value: 'hobbies', label: 'Hobbies' },
+    { value: 'education', label: 'Education' },
+    { value: 'others', label: 'Others' },
+  ]
+
+  const optionsIncome = [
+    { value: 'salary', label: 'Salary' },
+    { value: 'extra_income', label: 'Extra Income' }
+  ]
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -82,14 +100,15 @@ export default function ProductForm({ transactionDate }) {
           </Label>
 
           <Label>
-            <Select name="category" onChange={handleChange} value={category}>
-              <Option value disabled selected hidden>
-                Category product.
-              </Option>
-              <Option value="Transport">Transport</Option>
-              <Option value="Food">Food</Option>
-              <Option value="Health">Health</Option>
-            </Select>
+            <SelectCategory
+              setCategory={setCategory}
+              options={type==='expense'
+                ? options
+                : optionsIncome}
+              placeholder={type==='expense'
+                ? "Product category"
+                : "Income сategory"}
+            />
           </Label>
 
           <LabelInputPrice>
