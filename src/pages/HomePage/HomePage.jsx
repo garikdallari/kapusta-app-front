@@ -22,7 +22,7 @@ function HomePage() {
   // const { width } = useWindowDimensions();
   return (
     <BackgroundBody>
-      <Container>
+      <Container minTabletHeight={"1180px"} minDesktopHeight={"790px"}>
         <HomeBalance />
         <FinanceTable>
           <IncomeExpenseBtns />
