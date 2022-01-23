@@ -1,9 +1,18 @@
 import { Wrapper } from './Container.styled';
 
-export default function Container({ children }) {
+export default function Container({
+  minTabletHeight,
+  minDesktopHeight,
+  children,
+}) {
   return (
     <>
-      <Wrapper>{children}</Wrapper>
+      <Wrapper
+        minTabletHeight={minTabletHeight}
+        minDesktopHeight={minDesktopHeight}
+      >
+        {children}
+      </Wrapper>
     </>
   );
 }
