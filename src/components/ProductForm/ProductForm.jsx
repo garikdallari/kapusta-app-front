@@ -12,6 +12,7 @@ import {
   ButtonContainer,
   ButtonContainerInline,
 } from './ProductForm.styled';
+import InputSelect from '../InputSelect/InputSelect';
 
 import Button from '../Button/Button';
 import { theme } from '../../constants/theme';
@@ -20,15 +21,13 @@ import transOperations from '../../redux/transactions/trans-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
 
-
 export default function ProductForm() {
   const dispatch = useDispatch();
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
   const token = useSelector(authSelectors.getToken);
-  const type= useSelector(transSelectors.getType);
-  
+  const type = useSelector(transSelectors.getType);
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -50,15 +49,23 @@ export default function ProductForm() {
   };
 
   const handleSubmitForm = () => {
-    dispatch(transOperations.createTransactions({type, amount, category, description, token}));
-    dispatch(transOperations.getBalanceBy6Month(type,token));
+    dispatch(
+      transOperations.createTransactions({
+        type,
+        amount,
+        category,
+        description,
+        token,
+      }),
+    );
+    dispatch(transOperations.getBalanceBy6Month(type, token));
     handleClearForm();
   };
 
-return (
+  return (
     <>
       <Container>
-        <Form  name="productForm" autoComplete="on" noValidate>
+        <Form name="productForm" autoComplete="on" noValidate>
           <Label>
             <Input
               name="description"
@@ -68,20 +75,21 @@ return (
             />
           </Label>
 
-          <Label>
-            <Select
-              name="category"
-              onChange={handleChange}
-              value={category}
-            >
-              <Option value disabled selected hidden>
+          <InputSelect
+            handleChange={handleChange}
+            category={category}
+            setCategory={setCategory}
+          />
+          {/* <Label>
+            <Select name="category" onChange={handleChange} value={category}>
+            <Option value disabled selected hidden>
                 Category product.
               </Option>
               <Option value="Transport">Transport</Option>
               <Option value="Food">Food</Option>
               <Option value="Health">Health</Option>
             </Select>
-          </Label>
+          </Label> */}
 
           <LabelInputPrice>
             <InputPrice
@@ -89,10 +97,11 @@ return (
               name="amount"
               type="number"
               onChange={handleChange}
-              value={amount}/>
+              value={amount}
+            />
             <Wallet />
           </LabelInputPrice>
-          </Form>
+        </Form>
 
         <ButtonContainerInline>
           <ButtonContainer>
@@ -107,7 +116,6 @@ return (
             <Button text={'CLEAR'} type={'button'} onClick={handleClearForm} />
           </ButtonContainer>
         </ButtonContainerInline>
- 
       </Container>
     </>
   );
