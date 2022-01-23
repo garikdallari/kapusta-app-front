@@ -11,13 +11,14 @@ export const WrapperInput = styled.div`
     flex-direction: row-reverse;
     justify-content: flex-start;
     align-items: center;
-    gap: 0;
+    gap: ${props => props.gap};
     padding: 0;
     margin-bottom: 0;
   }
 
   @media screen and (min-width: 1280px) {
     margin-bottom: 9px;
+    gap: 225px;
   }
 `;
 
@@ -25,7 +26,7 @@ export const BalanceBox = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 22px;
     // justify-content: center;
   }
 
@@ -52,10 +53,13 @@ export const BalanceTitle = styled.p`
 `;
 
 export const InputContainer = styled.form`
-  display: flex;
+  position: relative;
+  display: ${props => props.display};
   justify-content: center;
+  width: fit-content;
   margin: 0 auto;
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
+    display: ${props => props.display};
   }
 
   @media screen and (min-width: 1280px) {
@@ -82,7 +86,7 @@ export const Label = styled.label`
 `;
 
 export const BalanceInput = styled.input`
-  padding: 12px 0 12px 0;
+  padding: 12px 24px 12px 23px;
   width: 125px;
   height: 44px;
   border: 2px solid white;
@@ -149,7 +153,7 @@ export const ReportInput = styled.input`
   outline: none;
   background-color: transparent;
   @media screen and (min-width: 768px) {
-    margin: 0 80px 0 21px;
+    ${'' /* margin: 0 80px 0 21px; */}
   }
 
   @media screen and (min-width: 1280px) {
@@ -158,6 +162,7 @@ export const ReportInput = styled.input`
 `;
 
 export const ReportButton = styled.button`
+  display: ${props => props.display};
   padding: 12px 30px 12px 30px;
   margin: 0 0 5px 0;
   width: 125px;
@@ -182,8 +187,8 @@ export const ReportButton = styled.button`
 `;
 
 export const Placeholder = styled.span`
-  position: relative;
-  left: 160px;
+  position: absolute;
+  left: ${props => props.left};
   top: 15px;
   font-family: ${props => props.theme.fontFamily};
   color: black;
@@ -194,10 +199,12 @@ export const Placeholder = styled.span`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   @media screen and (min-width: 768px) {
-    left: 120px;
+    position: absolute;
+    left: 48px;
     top: 15px;
   }
   @media screen and (min-width: 1280px) {
+    left: 68px;
   }
 `;
 
@@ -209,8 +216,8 @@ export const ReportData = styled.p`
   border-box: center;
   margin: 0 0 20px 0;
   @media screen and (min-width: 768px) {
+    margin-bottom: 0;
   }
-
   @media screen and (min-width: 1280px) {
   }
 `;

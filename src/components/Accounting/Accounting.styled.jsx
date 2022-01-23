@@ -30,6 +30,7 @@ export const Section = styled.div`
 export const List = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
 `;
@@ -53,7 +54,7 @@ export const Item = styled.div`
 `;
 
 export const Vertical = styled.div`
-  margin-right: 10px;
+  margin-right: 15px;
 
   height: 71px;
   border-right: 1px solid ${theme.color.lightGray};

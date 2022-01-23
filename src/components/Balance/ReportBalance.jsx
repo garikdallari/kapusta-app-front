@@ -26,17 +26,19 @@ export default function ReportBalance() {
 
   return (
     <>
-      <WrapperInput>
+      <WrapperInput gap={'80px'}>
         <Data>
           <BalanceTitle>Current period:</BalanceTitle>
           <CurrentPeriod />
         </Data>
         <BalanceBox>
           <BalanceTitle>Balance:</BalanceTitle>
-          <InputContainer>
-            <Placeholder>{`${balance}`}$</Placeholder>
+          <InputContainer display={'block'}>
+            <Placeholder left={'48px'}>{`${balance}`}$</Placeholder>
             <ReportInput></ReportInput>
-            <ReportButton type="submit">Confirm</ReportButton>
+            <ReportButton type="submit" display={'none'}>
+              Confirm
+            </ReportButton>
           </InputContainer>
         </BalanceBox>
       </WrapperInput>

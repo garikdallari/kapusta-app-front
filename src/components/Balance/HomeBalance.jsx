@@ -55,12 +55,12 @@ export default function HomeBalance() {
 
   return (
     <>
-      <WrapperInput>
+      <WrapperInput gap={'0'}>
         <ReportsNavigation />
         <BalanceBox>
           <BalanceTitle>Balance:</BalanceTitle>
 
-          <InputContainer onSubmit={handleSubmit}>
+          <InputContainer onSubmit={handleSubmit} display={'flex'}>
             <Label>$</Label>
             <BalanceInput
               name="balance"
