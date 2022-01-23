@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { GrClose } from 'react-icons/gr';
 import Button from '../Button/Button';
 import { theme } from '../../constants/theme';
@@ -10,16 +10,29 @@ import {
   CloseButton,
   Overlay,
   WrapperOverlay,
-} from './Modal.styled';
+} from './TransConfirmModal.styled';
+import transOperations from '../../redux/transactions/trans-operations';
+import transSelectors from '../../redux/transactions/trans-selectors';
+import authSelectors from '../../redux/auth/auth-selectors';
+import { getUserBalance } from '../../redux/balance/balance-operations';
 
-export default function Modal({
+export default function TransConfirmModal({
+  cancelOperation,
   onClick,
   text,
   textColor,
-  confirmOperation,
-  cancelOperation,
+  id,
 }) {
   const dispatch = useDispatch();
+  const token = useSelector(authSelectors.getToken);
+  const type = useSelector(transSelectors.getType);
+
+  const OnClickDelete = () => {
+    dispatch(transOperations.deleteTransactions(id, token));
+    dispatch(transOperations.getBalanceBy6Month(type, token));
+    dispatch(getUserBalance());
+    onClick();
+  };
   return (
     <>
       <Overlay>
@@ -33,7 +46,7 @@ export default function Modal({
                   type="button"
                   backgroundColor={theme.color.buttonOrangeBg}
                   textColor={theme.color.buttonWhiteText}
-                  onClick={() => dispatch(confirmOperation())}
+                  onClick={OnClickDelete}
                 />
                 <Button
                   text="No"

@@ -1,10 +1,9 @@
 import Icons from '../Icons/Icons';
 import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/auth-operations';
-import Modal from '../Modal/Modal';
+import LogOutConfirmModal from '../LogOutConfirmModal/LogOutConfirmModal';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-
 import {
   UserName,
   UserAvatarBox,
@@ -58,10 +57,9 @@ export default function UserMenu() {
       </LogOutTextButton>
 
       {modal && (
-        <Modal
+        <LogOutConfirmModal
           onClick={closeModal}
           text="Do you really want to leave?"
-          confirmOperation={authOperations.logout}
           cancelOperation={() => setModal(prevState => !prevState)}
         />
       )}
