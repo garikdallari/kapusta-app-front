@@ -73,7 +73,7 @@ display:none;
   }
 
   @media (min-width: 1280px) {
-    bottom: -122px;
+    bottom: -114px;
     right: -123px;
   }
 `;
@@ -88,8 +88,8 @@ export const StyledBottomIcon = styled(Icons)`
   }
 
   @media (min-width: 1280px) {
-    width: 1334px;
-    height: 232px;
+    width: 1345px;
+    height: 183px;
   }
 `;
 
