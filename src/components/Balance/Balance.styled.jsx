@@ -226,7 +226,7 @@ export const Data = styled.p`
   margin-bottom: 20px;
   margin-top: 0;
   @media screen and (min-width: 768px) {
-    margin-bottom: ${props => props.marginBottom};
+    margin-bottom: ${({ marginBottom }) => marginBottom};
   }
   @media screen and (min-width: 1280px) {
   }
