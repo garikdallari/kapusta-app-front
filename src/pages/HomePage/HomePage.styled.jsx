@@ -84,7 +84,6 @@ export const StyledBottomIcon = styled(Icons)`
 
   @media (min-width: 1280px) {
     width: ${props => props.width + 'px;'}
-    /* width: 1335px; */
     height: 275px;
   }
 `;
