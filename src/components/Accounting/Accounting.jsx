@@ -12,6 +12,7 @@ import {
 } from './Accounting.styled';
 
 export default function Accounting() {
+  console.log('aaa');
   const { incomeBalanceByMonth, expenseBalanceByMonth } = useSelector(
     transSelectors.getAllByMonth,
   );
