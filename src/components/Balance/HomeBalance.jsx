@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, getState } from 'react-redux';
 import {
   getUserBalance,
   updateUserBalance,
 } from '../../redux/balance/balance-operations.js';
 import { getBalance } from '../../redux/balance/balance-selectors.js';
+import { store } from '../../redux/store';
 
 import {
   WrapperInput,
@@ -25,13 +26,7 @@ export default function HomeBalance() {
   const [balance, setBalance] = useState();
   const transByType = useSelector(transSelectors.getTransByType);
   const allTrans = useSelector(transSelectors.getAllTrans);
-  let btnText = '';
-
-  if (currentBalance === 0) {
-    btnText = 'confirm';
-  } else {
-    btnText = 'renew';
-  }
+  const emptyBalance = currentBalance === 0 ? false : true;
 
   useEffect(() => {
     dispatch(getUserBalance());
@@ -68,11 +63,14 @@ export default function HomeBalance() {
               name="balance"
               value={balance}
               onChange={handleInput}
+              disabled={emptyBalance}
               required
             />
-            <BalanceButton type="submit">{btnText}</BalanceButton>{' '}
-            {balance === 0 && <BalanceNotification />}
+            <BalanceButton type="submit" disabled={emptyBalance}>
+              Confirm
+            </BalanceButton>
           </InputContainer>
+          {/* <BalanceNotification /> */}
         </BalanceBox>
       </WrapperInput>
     </>
