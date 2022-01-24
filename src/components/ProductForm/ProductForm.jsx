@@ -22,7 +22,7 @@ import transSelectors from '../../redux/transactions/trans-selectors';
 import { convertDate } from '../../helpers/dateConverter';
 import { getUserBalance } from '../../redux/balance/balance-operations.js';
 
-export default function ProductForm({ transactionDate }) {
+export default function ProductForm({ transactionDate, displayMobile }) {
   const dispatch = useDispatch();
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -70,7 +70,7 @@ export default function ProductForm({ transactionDate }) {
 
   return (
     <>
-      <Container>
+      <Container displayMobile={displayMobile}> 
         <Form name="productForm" autoComplete="on" noValidate>
           <Label>
             <Input

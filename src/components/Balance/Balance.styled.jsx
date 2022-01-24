@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 
 export const WrapperInput = styled.div`
-  display: flex;
+
+  display: ${prop=> prop.displayMobile}
   flex-direction: column;
   gap: 40px;
   padding: 0 9px 0 9px;
   margin: 0 0 30px 0;
   @media screen and (min-width: 768px) {
+    display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
     align-items: center;
