@@ -37,6 +37,7 @@ const customStyles = {
     height: '32px',
     lineHeight: '14px',
     letterSpacing: '0.02em',
+    textAlign: 'left',
   }),
   container: (provided, state) => ({
     ...provided,
