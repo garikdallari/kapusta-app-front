@@ -7,22 +7,22 @@ import IncomeExpenseBtns from '../../components/IncomeExpenseBtns/IncomeExpenseB
 import HomeBalance from '../../components/Balance/HomeBalance';
 import FinanceTable from '../../components/FinanceTable/FinanceTable';
 import Container from '../../components/Container/Container';
-// import { changeNameBottomIcon } from '../../helpers/changeNameBottomIcon';
-// import useWindowDimensions from '../../helpers/useWindowDimensions';
+import { changeNameIconForHomePage } from '../../helpers/changeNameIconForHomePage';
+import useWindowDimensions from '../../helpers/useWindowDimensions';
 import {
   TableSummaryWrapper,
   PaperHomePage,
   BackgroundBody,
-  // WrapperBottomIcon,
-  // StyledBottomIcon,
+  WrapperBottomIcon,
+  StyledBottomIcon,
   // PositionWrapper,
 } from './HomePage.styled';
 
 function HomePage() {
-  // const { width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   return (
     <BackgroundBody>
-      <Container minTabletHeight={"1180px"} minDesktopHeight={"790px"}>
+      <Container minTabletHeight={'1180px'} minDesktopHeight={'790px'}>
         <HomeBalance />
         <FinanceTable>
           <IncomeExpenseBtns />
@@ -32,6 +32,9 @@ function HomePage() {
               <TabletDesktopTable />
               <MobileTable />
               <Summary />
+              <WrapperBottomIcon>
+                <StyledBottomIcon name={changeNameIconForHomePage(width)} />
+              </WrapperBottomIcon>
             </TableSummaryWrapper>
           </PaperHomePage>
         </FinanceTable>

@@ -2,22 +2,20 @@ import styled from '@emotion/styled';
 import Icons from '../../components/Icons/Icons';
 
 export const TableSummaryWrapper = styled.div`
-display:flex;
-align-items:center;
-justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-@media screen and (min-width: 768px) {
-  display:block;
-  
-}
-    
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 
-@media screen and (min-width: 1280px) {
-  display:flex;
-  flex-direction:row;
-  align-items: start;
-  justify-content:start;
-}
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+  }
 `;
 
 export const PaperHomePage = styled.div`
@@ -62,9 +60,10 @@ display:none;
 
 @media  (min-width: 768px) {
   position: absolute;
+  z-index:-1;
   display:block;
-  bottom:36px;
-  right:46px;
+  bottom:-320px;
+  right:35px;
   /* margin: 610px 0px 0px 35px; */
 
   @media (min-width: 768px) {
@@ -73,7 +72,8 @@ display:none;
   }
 
   @media (min-width: 1280px) {
-    /* margin: 76px 867px 50px 230px; */
+    bottom: -221px;
+    right: -118px;
   }
 `;
 
@@ -84,6 +84,11 @@ export const StyledBottomIcon = styled(Icons)`
   @media (min-width: 768px) {
     width: 183px;
     height: 142px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1334px;
+    height: 232px;
   }
 `;
 
