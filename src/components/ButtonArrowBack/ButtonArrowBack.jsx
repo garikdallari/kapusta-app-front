@@ -7,8 +7,6 @@ export default function ButtonArrowBack({ displayBtn, displayText, displayMobile
   const history = useHistory();
 
  const onClick=(e)=>{ history.push('/home');
- console.log(displayItem);
- console.log(e.target);
  displayItem(e.target.id);
  history.push('/home');
 }

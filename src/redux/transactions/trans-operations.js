@@ -86,7 +86,6 @@ const createTransactions = createAsyncThunk(
         Authorization: `Bearer ${token}`,
       });
       const { data } = response;
-console.log(data.data)
       return data.data;
     } catch (error) {
       console.log(error.message);
@@ -98,8 +97,7 @@ console.log(data.data)
 const listAllTransactions = createAsyncThunk(
   'transactions/listAllTransactions',
   async (token) => {
-    console.log(token)
-    try {
+      try {
       const response = await axios.get(`/transactions`, {
         Authorization: `Bearer ${token}`,
       });
