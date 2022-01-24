@@ -50,6 +50,8 @@ const customStyles = {
     color: `${theme.color.inputPlaceholderColor}`,
   }),
   control: (provided, state, base) => ({
+    textAlign:"left",
+    paddingLeft:"12px",
     //весь контейнер инпута селект.
     ...provided,
     ...base,

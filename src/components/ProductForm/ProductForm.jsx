@@ -71,7 +71,7 @@ export default function ProductForm({ transactionDate, displayMobile }) {
 
   return (
     <>
-      <Container displayMobile={displayMobile}> 
+      <Container displayMobile={displayMobile}>
         <Form name="productForm" autoComplete="on" noValidate>
           <Label>
             <Input

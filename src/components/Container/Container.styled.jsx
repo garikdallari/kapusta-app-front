@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   padding: 0px 0px;
   margin: 0 auto;
   @media screen and (min-width: 320px) {
+    min-height: ${props => props.minMobileHeight};
     max-width: 767px;
     padding: 0px 0px;
   }

@@ -41,7 +41,7 @@ function HomePage() {
 
  return (
     <BackgroundBody>
-      <Container minTabletHeight={"1180px"} minDesktopHeight={"790px"}>
+      <Container minTabletHeight={"1180px"} minDesktopHeight={"790px"} minMobileHeight={"512px"}>
         <HomeBalance displayMobile={display?"block":"none"}/>
         <FinanceTable>
           <IncomeExpenseBtns displayMobile={display?"flex":"none"} displayItem={displayItem}/>

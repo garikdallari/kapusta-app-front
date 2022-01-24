@@ -3,6 +3,7 @@ import { Wrapper } from './Container.styled';
 export default function Container({
   minTabletHeight,
   minDesktopHeight,
+  minMobileHeight,
   children,
 }) {
   return (
@@ -10,6 +11,7 @@ export default function Container({
       <Wrapper
         minTabletHeight={minTabletHeight}
         minDesktopHeight={minDesktopHeight}
+        minMobileHeight={minMobileHeight}
       >
         {children}
       </Wrapper>
