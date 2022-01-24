@@ -136,6 +136,10 @@ export const InputPrice = styled.input`
 `;
 
 export const Container = styled.div`
+display: ${prop=>prop.displayMobile};
+@media (min-width: 768px) {
+  display: block;
+}
   @media (min-width: 1280px) {
     display: flex;
   }

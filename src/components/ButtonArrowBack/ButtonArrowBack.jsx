@@ -3,15 +3,23 @@ import { HiArrowNarrowLeft } from 'react-icons/hi';
 import { Button, BtnBackText, NavContainer } from './ButtonArrowBack.styled';
 import { theme } from '../../constants/theme';
 
-export default function ButtonArrowBack({ displayBtn, displayText }) {
+export default function ButtonArrowBack({ displayBtn, displayText, displayMobile, displayItem }) {
   const history = useHistory();
 
+ const onClick=(e)=>{ history.push('/home');
+ console.log(displayItem);
+ console.log(e.target);
+ displayItem(e.target.id);
+ history.push('/home');
+}
+
   return (
-    <NavContainer displayBtn={displayBtn}>
-      <Button onClick={() => history.push('/home')}>
+    <NavContainer displayBtn={displayBtn} displayMobile={displayMobile} >
+      <Button id="arrowBack" onClick={onClick}>
         <HiArrowNarrowLeft
           style={{
             color: theme.color.buttonOrangeBg,
+            pointerEvents:"none"
           }}
         />
         <BtnBackText displayText={displayText}>Go back</BtnBackText>

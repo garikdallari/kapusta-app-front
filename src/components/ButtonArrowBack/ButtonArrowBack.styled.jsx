@@ -35,6 +35,8 @@ export const BtnBackText = styled.p`
 `;
 
 export const NavContainer = styled.div`
+display: ${prop=>prop.displayMobile};
+
   @media (min-width: 767px) {
     display: flex;
     margin: 0 47px 0 0;

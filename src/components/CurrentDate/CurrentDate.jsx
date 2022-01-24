@@ -5,7 +5,7 @@ import { Container, Current } from './CurrentDate.styled';
 import styles from './CurrentDate.module.css';
 import './CurrentDate.css';
 
-export default function CurrentDate({ getDate }) {
+export default function CurrentDate({ getDate,displayMobile,displayTablet}) {
   const [startDate, setStartDate] = useState(new Date());
 
   const onChange = date => {
@@ -27,7 +27,7 @@ export default function CurrentDate({ getDate }) {
   ));
 
   return (
-    <Container>
+    <Container displayMobile={displayMobile} displayTablet={displayTablet}>
       <DataPicker
         selected={startDate}
         onChange={date => onChange(date)}

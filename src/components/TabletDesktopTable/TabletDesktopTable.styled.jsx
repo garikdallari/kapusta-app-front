@@ -56,6 +56,19 @@ export const ScrollBody = styled.div`
   }
 `;
 
+
+
+export const AmountTd = styled.td`
+  color: ${props => (props.type ? "#E7192E" : '#407946')};
+  font-weight: 700;
+  width: 100px;
+  text-align: center;
+  @media screen and (min-width: 1280px) {
+    width: 127px;
+  }
+
+`;
+
 export const HeadTable = styled.table`
   border-collapse: collapse;
   width: 100%;
@@ -67,7 +80,19 @@ export const HeadTable = styled.table`
   width: 100%;
   table-layout: fixed;
   text-align: left;
+  color:#000000;
+
 `;
+
+export const AmountHeadTd = styled.td`
+color: #000000;
+width: 100px;
+text-align: center;
+@media screen and (min-width: 1280px) {
+  width: 127px;
+}
+
+`
 
 export const BodyTable = styled.table`
   border-collapse: collapse;
@@ -95,15 +120,6 @@ export const StyledTd = styled.td`
   text-align: center;
 `;
 
-export const AmountTd = styled.td`
-  color: ${props => (props.type ? 'red' : 'green')};
-  font-weight: 700;
-  &:first-letter {
-    text-transform: uppercase;
-  }
-  width: 100px;
-  text-align: center;
-`;
 
 export const TabletText = styled.p`
   margin: 0;
