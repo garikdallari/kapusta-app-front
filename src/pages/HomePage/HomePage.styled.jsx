@@ -63,15 +63,13 @@ display:none;
   position: absolute;
   z-index:-1;
   display:block;
-  bottom: -316px;
-  right: 29px;
+  bottom: 42px;
+  right: 217px;
 
   @media (min-width: 1280px) {
-  bottom: -171px;
-  right: -123px;
+    bottom: -49px;
+    right: 3px;
   }
-
- 
 `;
 
 export const StyledBottomIcon = styled(Icons)`
@@ -85,7 +83,8 @@ export const StyledBottomIcon = styled(Icons)`
   }
 
   @media (min-width: 1280px) {
-    width: 1335px;
+    width: ${props => props.width + 'px;'}
+    /* width: 1335px; */
     height: 275px;
   }
 `;

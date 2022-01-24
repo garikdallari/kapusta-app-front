@@ -40,33 +40,38 @@ function HomePage() {
   };
 
   return (
-    <BackgroundBody>
-      <Container minTabletHeight={'1180px'} minDesktopHeight={'790px'}>
-        <HomeBalance displayMobile={display ? 'block' : 'none'} />
-        <FinanceTable>
-          <IncomeExpenseBtns
-            displayMobile={display ? 'flex' : 'none'}
-            displayItem={displayItem}
-          />
-          <PaperHomePage>
-            <SectionInputAndClear
-              displayMobile={display}
+    <>
+      <BackgroundBody>
+        <Container minTabletHeight={'1180px'} minDesktopHeight={'790px'}>
+          <HomeBalance displayMobile={display ? 'block' : 'none'} />
+          <FinanceTable>
+            <IncomeExpenseBtns
+              displayMobile={display ? 'flex' : 'none'}
               displayItem={displayItem}
             />
-            <TableSummaryWrapper displayMobile={display ? 'flex' : 'none'}>
-              <TabletDesktopTable />
-              <MobileTable />
-              <Summary />
-            </TableSummaryWrapper>
-          </PaperHomePage>
-        </FinanceTable>
+            <PaperHomePage>
+              <SectionInputAndClear
+                displayMobile={display}
+                displayItem={displayItem}
+              />
+              <TableSummaryWrapper displayMobile={display ? 'flex' : 'none'}>
+                <TabletDesktopTable />
+                <MobileTable />
+                <Summary />
+              </TableSummaryWrapper>
+            </PaperHomePage>
+          </FinanceTable>
+        </Container>
         <PositionWrapper>
           <WrapperBottomIcon>
-            <StyledBottomIcon name={changeNameIconForPages(width)} />
+            <StyledBottomIcon
+              name={changeNameIconForPages(width)}
+              width={width}
+            />
           </WrapperBottomIcon>
         </PositionWrapper>
-      </Container>
-    </BackgroundBody>
+      </BackgroundBody>
+    </>
   );
 }
 
