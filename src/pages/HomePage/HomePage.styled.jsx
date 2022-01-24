@@ -38,7 +38,7 @@ export const PaperHomePage = styled.div`
 
 export const BackgroundBody = styled.div`
   margin: 0px auto;
-  position: relative;
+  
   background-color: ${props => props.theme.backgroundBodyColor};
   max-width: 767px;
   height: 286px;
@@ -51,6 +51,7 @@ export const BackgroundBody = styled.div`
   }
 
   @media (min-width: 768px) {
+    position: relative;
     max-width: 2280px;
     height: 526px;
     padding: 35px 0px 0px 0px;

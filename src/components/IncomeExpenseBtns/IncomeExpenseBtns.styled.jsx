@@ -2,7 +2,9 @@ import styled from '@emotion/styled';
 
 export const ButtonsWrapper = styled.div`
   display: ${prop => prop.displayMobile};
-  position: relative;
+  position: absolute;
+  bottom:0;
+  left:0;
   width: 100vw;
 
   @media (min-width: 768px) {

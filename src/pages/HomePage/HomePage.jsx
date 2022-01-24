@@ -9,7 +9,7 @@ import FinanceTable from '../../components/FinanceTable/FinanceTable';
 import Container from '../../components/Container/Container';
 import { changeNameIconForHomePage } from '../../helpers/changeNameIconForHomePage';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
-import CurrentDate from '../../components/CurrentDate/CurrentDate';
+
 import {
   TableSummaryWrapper,
   PaperHomePage,
@@ -36,8 +36,7 @@ function HomePage() {
      break;
     default:
      break;
- }
- }
+ }}
 
  return (
     <BackgroundBody>
