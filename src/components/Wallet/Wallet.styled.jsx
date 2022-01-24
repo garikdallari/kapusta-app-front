@@ -18,7 +18,7 @@ export const ContainerWallet = styled.div`
   }
 
   @media (max-width: 767px) {
-    margin-top: 30px;
+    
     margin-right: auto;
     margin-left: auto;
     padding: 12px 20px 12px 0px;

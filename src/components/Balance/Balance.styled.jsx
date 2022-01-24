@@ -6,13 +6,14 @@ const none = 'default';
 
 export const WrapperInput = styled.div`
 
-  display: ${prop=> prop.displayMobile}
+  display: ${prop=> prop.displayMobile};
   flex-direction: column;
   gap: 40px;
-  padding: 0 9px 0 9px;
+
   margin: 0 0 30px 0;
 
   @media screen and (min-width: 768px) {
+    padding: 0 9px 0 9px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
@@ -29,7 +30,13 @@ export const WrapperInput = styled.div`
 `;
 
 export const BalanceBox = styled.div`
+margin-top: 40px;
+margin-left:auto;
+margin-right:auto;
+margin-bottom: 0;
+
   @media screen and (min-width: 768px) {
+    margin:0;
     display: flex;
     align-items: center;
     gap: 22px;
@@ -63,13 +70,13 @@ export const InputContainer = styled.form`
   display: ${props => props.display};
   justify-content: center;
   width: fit-content;
-  margin: 0 auto;
+  margin-left:auto;
+  margin-right:auto;
+ 
   @media screen and (min-width: 768px) {
     display: ${props => props.display};
   }
 
-  @media screen and (min-width: 1280px) {
-  }
 `;
 
 export const Label = styled.label`

@@ -16,10 +16,10 @@ export default function ButtonArrowBack({ displayBtn, displayText, displayMobile
   return (
     <NavContainer displayBtn={displayBtn} displayMobile={displayMobile} >
       <Button id="arrowBack" onClick={onClick}>
-        <HiArrowNarrowLeft
+        <HiArrowNarrowLeft size={24}
           style={{
             color: theme.color.buttonOrangeBg,
-            pointerEvents:"none"
+            pointerEvents:"none",
           }}
         />
         <BtnBackText displayText={displayText}>Go back</BtnBackText>
