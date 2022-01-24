@@ -2,10 +2,9 @@ import styled from '@emotion/styled';
 import Icons from '../../components/Icons/Icons';
 
 export const TableSummaryWrapper = styled.div`
-display: ${prop=>prop.displayMobile};
-align-items:center;
-justify-content:center;
-
+  display: ${prop => prop.displayMobile};
+  align-items: center;
+  justify-content: center;
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -22,7 +21,7 @@ justify-content:center;
 export const PaperHomePage = styled.div`
   padding: 0;
   margin: 0;
- 
+
   @media screen and (min-width: 768px) {
     width: 665px;
     padding: 28px 30px 48px 30px;
@@ -70,6 +69,9 @@ display:none;
   @media (min-width: 1280px) {
   bottom: -171px;
   right: -123px;
+  }
+
+ 
 `;
 
 export const StyledBottomIcon = styled(Icons)`
