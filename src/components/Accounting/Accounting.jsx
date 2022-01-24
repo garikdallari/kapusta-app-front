@@ -15,17 +15,29 @@ export default function Accounting() {
   const { incomeBalanceByMonth, expenseBalanceByMonth } = useSelector(
     transSelectors.getAllByMonth,
   );
+
+  const mathExpense = Math.abs(expenseBalanceByMonth);
+  const parsedIncome = parseFloat(incomeBalanceByMonth).toFixed(2);
+
   return (
     <Section>
       <List>
         <Item>
           <Nomination>Expenses:</Nomination>
-          <Amount>{`- ${Math.abs(expenseBalanceByMonth)} usd.`}</Amount>
+          {expenseBalanceByMonth === 0 ? (
+            <Amount>0.00 usd.</Amount>
+          ) : (
+            <Amount>{`- ${parseFloat(mathExpense).toFixed(2)} usd.`}</Amount>
+          )}
         </Item>
         <Vertical />
         <Item>
           <Nomination>Income:</Nomination>
-          <AmountIncome>{`+ ${incomeBalanceByMonth} usd.`}</AmountIncome>
+          {incomeBalanceByMonth === 0 ? (
+            <AmountIncome>0.00 usd.</AmountIncome>
+          ) : (
+            <AmountIncome>{`+ ${parsedIncome} usd.`}</AmountIncome>
+          )}
         </Item>
       </List>
     </Section>
