@@ -57,16 +57,12 @@ export const BackgroundBody = styled.div`
 `;
 
 export const WrapperBottomIcon = styled.div`
-display:none;
-
-@media  (min-width: 768px) {
-  position: absolute;
-  z-index:-1;
-  display:block;
-  bottom: 42px;
-  right: 217px;
+  display: none;
 
   @media (min-width: 1280px) {
+    display: block;
+    position: absolute;
+    z-index: -1;
     bottom: -49px;
     right: 3px;
   }
@@ -85,6 +81,32 @@ export const StyledBottomIcon = styled(Icons)`
   @media (min-width: 1280px) {
     width: ${props => props.width + 'px;'}
     height: 275px;
+  }
+`;
+
+export const StyledBottomTableIcon = styled(Icons)`
+  color: #000000;
+  width: 83px;
+  height: 89px;
+
+  @media (min-width: 768px) {
+    width: 183px;
+    height: 142px;
+  }
+
+  @media (min-width: 1280px) {
+    display: none;
+  }
+`;
+
+export const WrapperBottomTableIcon = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: -310px;
+    right: 34px;
   }
 `;
 
