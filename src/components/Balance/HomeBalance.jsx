@@ -36,8 +36,7 @@ export default function HomeBalance() {
   useEffect(() => {
     dispatch(getUserBalance());
     setBalance(currentBalance);
-  }, [dispatch,transByType,
-    allTrans, currentBalance]);
+  }, [dispatch, transByType, allTrans, currentBalance]);
 
   const handleInput = e => {
     const { value } = e.currentTarget;
@@ -71,9 +70,9 @@ export default function HomeBalance() {
               onChange={handleInput}
               required
             />
-            <BalanceButton type="submit">{btnText}</BalanceButton>
+            <BalanceButton type="submit">{btnText}</BalanceButton>{' '}
+            {balance === 0 && <BalanceNotification />}
           </InputContainer>
-          {/* <BalanceNotification /> */}
         </BalanceBox>
       </WrapperInput>
     </>
