@@ -12,6 +12,7 @@ import {
   ButtonContainer,
   ButtonContainerInline,
 } from './ProductForm.styled';
+import InputSelect from '../InputSelect/InputSelect';
 
 import Button from '../Button/Button';
 import { theme } from '../../constants/theme';
@@ -81,20 +82,25 @@ export default function ProductForm({ transactionDate }) {
             />
           </Label>
 
-          <Label>
+          <InputSelect
+            handleChange={handleChange}
+            category={category}
+            setCategory={setCategory}
+          />
+          {/* <Label>
             <Select name="category" onChange={handleChange} value={category}>
-              <Option value disabled selected hidden>
+            <Option value disabled selected hidden>
                 Category product.
               </Option>
               <Option value="Transport">Transport</Option>
               <Option value="Food">Food</Option>
               <Option value="Health">Health</Option>
             </Select>
-          </Label>
+          </Label> */}
 
           <LabelInputPrice>
             <InputPrice
-              placeholder="00.00 $"
+              placeholder="00.00 USD"
               name="amount"
               type="number"
               onChange={handleChange}
