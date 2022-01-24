@@ -27,7 +27,7 @@ export default function ReportBalance() {
   return (
     <>
       <WrapperInput gap={'80px'}>
-        <Data>
+        <Data marginBottom={'0'}>
           <BalanceTitle>Current period:</BalanceTitle>
           <CurrentPeriod />
         </Data>

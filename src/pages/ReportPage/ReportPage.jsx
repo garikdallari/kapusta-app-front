@@ -35,7 +35,6 @@ export default function ReportPage() {
                 <Accounting />
                 <IconsReportSection
                   amount={context === 'expense' ? expenseRes : incomeRes}
-                  amount={expenseRes}
                 />
               </ReportContainer>
             </Container>
