@@ -1,4 +1,8 @@
 import styled from '@emotion/styled';
+import { theme } from '../../constants/theme';
+
+const pointer = 'pointer';
+const none = 'default';
 
 export const WrapperInput = styled.div`
   display: flex;
@@ -6,6 +10,7 @@ export const WrapperInput = styled.div`
   gap: 40px;
   padding: 0 9px 0 9px;
   margin: 0 0 30px 0;
+
   @media screen and (min-width: 768px) {
     flex-direction: row-reverse;
     justify-content: flex-start;
@@ -14,6 +19,7 @@ export const WrapperInput = styled.div`
     padding: 0;
     margin-bottom: 0;
   }
+
   @media screen and (min-width: 1280px) {
     margin-bottom: 9px;
     gap: 225px;
@@ -27,6 +33,7 @@ export const BalanceBox = styled.div`
     gap: 22px;
     // justify-content: center;
   }
+
   @media screen and (min-width: 1280px) {
     align-items: center;
     // justify-content: center;
@@ -35,7 +42,6 @@ export const BalanceBox = styled.div`
 
 export const BalanceTitle = styled.p`
   text-align: center;
-  text-transform: none;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 500;
   font-size: 12px;
@@ -45,6 +51,7 @@ export const BalanceTitle = styled.p`
   margin: 0 0 6px 0;
   @media screen and (min-width: 768px) {
   }
+
   @media screen and (min-width: 1280px) {
   }
 `;
@@ -58,6 +65,7 @@ export const InputContainer = styled.form`
   @media screen and (min-width: 768px) {
     display: ${props => props.display};
   }
+
   @media screen and (min-width: 1280px) {
   }
 `;
@@ -76,6 +84,7 @@ export const Label = styled.label`
   text-transform: uppercase;
   @media screen and (max-width: 768px) {
   }
+
   @media screen and (max-width: 1280px) {
   }
 `;
@@ -93,6 +102,7 @@ export const BalanceInput = styled.input`
     border-radius: 16px;
     margin: 0 15px 0 0;
   }
+
   @media screen and (max-width: 1280px) {
   }
 `;
@@ -106,6 +116,7 @@ export const BalanceButton = styled.button`
   box-sizing: border-box;
   outline: none;
   cursor: pointer;
+
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -120,14 +131,17 @@ export const BalanceButton = styled.button`
   background-color: transparent;
   box-sizing: border-box;
   &:hover {
-    background-color: #ff751d;
-    color: white;
+    background-color: ${props =>
+      props.disabled ? false : theme.color.buttonOrangeBg};
+    color: ${props => (props.disabled ? false : theme.color.buttonWhiteText)};
+    cursor: ${props => (props.disabled ? none : pointer)};
   }
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
     border-radius: 16px;
   }
+
   @media screen and (max-width: 1280px) {
   }
 `;
@@ -147,6 +161,7 @@ export const ReportInput = styled.input`
   @media screen and (min-width: 768px) {
     ${'' /* margin: 0 80px 0 21px; */}
   }
+
   @media screen and (min-width: 1280px) {
     margin: 0 15px 0 21px;
   }
@@ -168,6 +183,7 @@ export const ReportButton = styled.button`
   @media screen and (min-width: 768px) {
     margin: 0 80px 0 21px;
   }
+
   @media screen and (min-width: 1280px) {
     margin: 0 225px 0 21px;
   }
@@ -226,8 +242,9 @@ export const Data = styled.p`
   margin-bottom: 20px;
   margin-top: 0;
   @media screen and (min-width: 768px) {
-    margin-bottom: ${({ marginBottom }) => marginBottom};
+    margin-bottom: 0;
   }
+
   @media screen and (min-width: 1280px) {
   }
 `;
@@ -236,6 +253,7 @@ export const DataBox = styled.p`
   margin: 0 15px 0 15px;
   @media screen and (min-width: 768px) {
   }
+
   @media screen and (min-width: 1280px) {
   }
 `;
