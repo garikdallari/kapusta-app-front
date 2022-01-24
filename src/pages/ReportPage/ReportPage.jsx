@@ -57,7 +57,10 @@ export default function ReportPage() {
         </WrapperBackgroundBody>
         <PositionWrapper>
           <WrapperBottomIcon>
-            <StyledBottomIcon name={changeNameIconForPages(width)} />
+            <StyledBottomIcon
+              name={changeNameIconForPages(width)}
+              width={width}
+            />
           </WrapperBottomIcon>
         </PositionWrapper>
       </Context.Provider>
