@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Icons from '../../components/Icons/Icons';
 
 export const NavBox = styled.div`
   @media screen and (min-width: 768px) {
@@ -30,4 +31,42 @@ export const ReportContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
+`;
+
+export const WrapperBottomIcon = styled.div`
+display:none;
+
+@media  (min-width: 768px) {
+  position: absolute;
+  z-index:-1;
+  display:block;
+  bottom: -316px;
+  right: 29px;
+
+  @media (min-width: 1280px) {
+  bottom: -171px;
+  right: -123px;
+  }
+
+ 
+`;
+
+export const StyledBottomIcon = styled(Icons)`
+  color: #000000;
+  width: 83px;
+  height: 89px;
+
+  @media (min-width: 768px) {
+    width: 183px;
+    height: 142px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1335px;
+    height: 275px;
+  }
+`;
+
+export const PositionWrapper = styled.div`
+  position: relative;
 `;

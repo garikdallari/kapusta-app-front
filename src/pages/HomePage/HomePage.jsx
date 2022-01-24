@@ -7,7 +7,7 @@ import IncomeExpenseBtns from '../../components/IncomeExpenseBtns/IncomeExpenseB
 import HomeBalance from '../../components/Balance/HomeBalance';
 import FinanceTable from '../../components/FinanceTable/FinanceTable';
 import Container from '../../components/Container/Container';
-import { changeNameIconForHomePage } from '../../helpers/changeNameIconForHomePage';
+import { changeNameIconForPages } from '../../helpers/changeNameIconForPages';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import CurrentDate from '../../components/CurrentDate/CurrentDate';
 import {
@@ -21,33 +21,39 @@ import {
 
 function HomePage() {
   const { width } = useWindowDimensions();
-  const [display, setDisplay]=useState(true);
+  const [display, setDisplay] = useState(true);
 
- const displayItem=(id)=>{
-   switch (id) {
-   case "arrowBack":
-    setDisplay(true);
-     break;
-     case "expense":
-      setDisplay(false);
-     break;
-     case "income":
-      setDisplay(false);
-     break;
-    default:
-     break;
- }
- }
+  const displayItem = id => {
+    switch (id) {
+      case 'arrowBack':
+        setDisplay(true);
+        break;
+      case 'expense':
+        setDisplay(false);
+        break;
+      case 'income':
+        setDisplay(false);
+        break;
+      default:
+        break;
+    }
+  };
 
- return (
+  return (
     <BackgroundBody>
-      <Container minTabletHeight={"1180px"} minDesktopHeight={"790px"}>
-        <HomeBalance displayMobile={display?"block":"none"}/>
+      <Container minTabletHeight={'1180px'} minDesktopHeight={'790px'}>
+        <HomeBalance displayMobile={display ? 'block' : 'none'} />
         <FinanceTable>
-          <IncomeExpenseBtns displayMobile={display?"flex":"none"} displayItem={displayItem}/>
+          <IncomeExpenseBtns
+            displayMobile={display ? 'flex' : 'none'}
+            displayItem={displayItem}
+          />
           <PaperHomePage>
-            <SectionInputAndClear displayMobile={display} displayItem={displayItem}  />
-            <TableSummaryWrapper displayMobile={display?"flex":"none"}>
+            <SectionInputAndClear
+              displayMobile={display}
+              displayItem={displayItem}
+            />
+            <TableSummaryWrapper displayMobile={display ? 'flex' : 'none'}>
               <TabletDesktopTable />
               <MobileTable />
               <Summary />
@@ -56,7 +62,7 @@ function HomePage() {
         </FinanceTable>
         <PositionWrapper>
           <WrapperBottomIcon>
-            <StyledBottomIcon name={changeNameIconForHomePage(width)} />
+            <StyledBottomIcon name={changeNameIconForPages(width)} />
           </WrapperBottomIcon>
         </PositionWrapper>
       </Container>

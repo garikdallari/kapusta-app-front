@@ -12,10 +12,19 @@ import ButtonArrowBack from '../../components/ButtonArrowBack/ButtonArrowBack';
 import Accounting from '../../components/Accounting/Accounting';
 import ReportBalance from '../../components/Balance/ReportBalance';
 import IconsReportSection from '../../components/IconsReportSection/IconsReportSection';
-import { NavBox, ReportContainer } from './ReportPage.styled';
+import {
+  NavBox,
+  ReportContainer,
+  PositionWrapper,
+  WrapperBottomIcon,
+  StyledBottomIcon,
+} from './ReportPage.styled';
 import CartReport from '../../components/ChartsReport/ChartsReport';
+import useWindowDimensions from '../../helpers/useWindowDimensions';
+import { changeNameIconForPages } from '../../helpers/changeNameIconForPages';
 
 export default function ReportPage() {
+  const { width } = useWindowDimensions();
   const [context, setContext] = useState('expense');
   const { incomeRes, expenseRes, subIncomeRes, subExpenseRes } = useSelector(
     transSelectors.getAllByMonth,
@@ -29,7 +38,10 @@ export default function ReportPage() {
             <Container>
               <ReportContainer>
                 <NavBox>
-                  <ButtonArrowBack displayText={'block'} displayMobile={"block"} />
+                  <ButtonArrowBack
+                    displayText={'block'}
+                    displayMobile={'block'}
+                  />
                   <ReportBalance />
                 </NavBox>
                 <Accounting />
@@ -43,6 +55,11 @@ export default function ReportPage() {
             />
           </BackgroundBodyReport>
         </WrapperBackgroundBody>
+        <PositionWrapper>
+          <WrapperBottomIcon>
+            <StyledBottomIcon name={changeNameIconForPages(width)} />
+          </WrapperBottomIcon>
+        </PositionWrapper>
       </Context.Provider>
     </>
   );
