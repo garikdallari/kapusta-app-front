@@ -5,21 +5,22 @@ import { useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selectors';
 
 const expenseData = [
-  { value: 'Transport', label: 'Transport' },
-  { value: 'Food', label: 'Food' },
-  { value: 'Health', label: 'Health' },
-  { value: 'Entertainment', label: 'Entertainment' },
-  { value: 'House', label: 'House' },
-  { value: 'Technics', label: 'Technics' },
-  { value: 'Utilities, communic', label: 'Utilities, communic' },
-  { value: 'Sports, hobbies', label: 'Sports, hobbies' },
-  { value: 'Education', label: 'Education' },
-  { value: 'Other', label: 'Other' },
+  { value: 'transport', label: 'Transport' },
+  { value: 'food', label: 'Food' },
+  { value: 'health', label: 'Health' },
+  { value: 'alcohol', label: 'Alcohol' },
+  { value: 'activities', label: 'Activities' },
+  { value: 'home_stuff', label: 'Home stuff' },
+  { value: 'gadgets', label: 'Gadgets' },
+  { value: 'utility_bills', label: 'Utility bills' },
+  { value: 'hobbies', label: 'Hobbies' },
+  { value: 'education', label: 'Education' },
+  { value: 'others', label: 'Others' },
 ];
 
 const incomeData = [
-  { value: 'Salary', label: 'Salary' },
-  { value: 'Additional salary', label: 'Additional salary' },
+  { value: 'salary', label: 'Salary' },
+  { value: 'extra_income', label: 'Extra Income' },
 ];
 
 const customStyles = {
