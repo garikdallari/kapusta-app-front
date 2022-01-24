@@ -122,7 +122,7 @@ export const WrapperTopIcon = styled.div`
 
   @media (min-width: 768px) {
     top: 3%;
-    right: 12px;
+    right: 3px;
   }
 
   @media (min-width: 1280px) {
