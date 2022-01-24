@@ -2,8 +2,13 @@ import styled from '@emotion/styled';
 import { theme } from '../../constants/theme';
 
 export const Input = styled.input`
-  color: ${theme.color.buttonDarkText};
+  color: ${theme.color.blackText};
   font-size: ${theme.fontSize.descriptionProduct};
+
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+
   background-color: inherit;
   padding: 0px;
   height: 44px;
@@ -180,7 +185,7 @@ export const ButtonContainerInline = styled.div`
     display: inline-block;
   }
 
-  @media (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1279px) { {
     margin-left: 13%;
   }
 `;
