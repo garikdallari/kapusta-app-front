@@ -35,6 +35,7 @@ export const PaperHomePage = styled.div`
 `;
 
 export const BackgroundBody = styled.div`
+  margin: 0px auto;
   position: relative;
   background-color: ${props => props.theme.backgroundBodyColor};
   max-width: 767px;
