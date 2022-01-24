@@ -72,8 +72,8 @@ display:none;
   }
 
   @media (min-width: 1280px) {
-    bottom: -221px;
-    right: -118px;
+    bottom: -122px;
+    right: -123px;
   }
 `;
 
