@@ -5,6 +5,7 @@ export const Container = styled.div`
  display:${props=>props.displayMobile};
  margin-left:auto;
  margin-right:auto;
+ margin-bottom:62px;
   width: 104px;
   height: 40px;
   @media (min-width: 768px) {

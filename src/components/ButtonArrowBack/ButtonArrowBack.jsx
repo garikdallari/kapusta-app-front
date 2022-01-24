@@ -7,8 +7,6 @@ export default function ButtonArrowBack({ displayBtn, displayText, displayMobile
   const history = useHistory();
 
  const onClick=(e)=>{ history.push('/home');
- console.log(displayItem);
- console.log(e.target);
  displayItem(e.target.id);
  history.push('/home');
 }
@@ -16,10 +14,10 @@ export default function ButtonArrowBack({ displayBtn, displayText, displayMobile
   return (
     <NavContainer displayBtn={displayBtn} displayMobile={displayMobile} >
       <Button id="arrowBack" onClick={onClick}>
-        <HiArrowNarrowLeft
+        <HiArrowNarrowLeft size={24}
           style={{
             color: theme.color.buttonOrangeBg,
-            pointerEvents:"none"
+            pointerEvents:"none",
           }}
         />
         <BtnBackText displayText={displayText}>Go back</BtnBackText>
