@@ -35,7 +35,7 @@ export default function ReportBalance() {
           <BalanceTitle>Balance:</BalanceTitle>
           <InputContainer display={'block'}>
             <Placeholder left={'48px'}>{`${balance}`}$</Placeholder>
-            <ReportInput></ReportInput>
+            <ReportInput disabled={true}></ReportInput>
             <ReportButton type="submit" display={'none'}>
               Confirm
             </ReportButton>
