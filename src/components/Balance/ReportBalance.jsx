@@ -12,6 +12,7 @@ import {
   Data,
   Placeholder,
   ReportButton,
+  ReportTitle,
 } from './Balance.styled.jsx';
 
 import CurrentPeriod from './CurrentPeriod';
@@ -26,13 +27,15 @@ export default function ReportBalance() {
 
   return (
     <>
-      <WrapperInput gap={'80px'}>
+      <WrapperInput>
         <Data marginBottom={'0'}>
-          <BalanceTitle>Current period:</BalanceTitle>
+          <ReportTitle gap={'80px'} marginBottom={'45px'}>
+            Current period:
+          </ReportTitle>
           <CurrentPeriod />
         </Data>
         <BalanceBox>
-          <BalanceTitle>Balance:</BalanceTitle>
+          <ReportTitle>Balance:</ReportTitle>
           <InputContainer display={'block'}>
             <Placeholder left={'48px'}>{`${balance}`}$</Placeholder>
             <ReportInput disabled={true}></ReportInput>
