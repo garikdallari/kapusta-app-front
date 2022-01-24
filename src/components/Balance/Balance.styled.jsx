@@ -6,9 +6,9 @@ const none = 'default';
 
 export const WrapperInput = styled.div`
 
-  display: ${prop=> prop.displayMobile}
+  display: ${prop => prop.displayMobile}
   flex-direction: column;
-  gap: 40px;
+  gap: 60px;
   padding: 0 9px 0 9px;
   margin: 0 0 30px 0;
 
@@ -25,6 +25,7 @@ export const WrapperInput = styled.div`
   @media screen and (min-width: 1280px) {
     margin-bottom: 9px;
     gap: 225px;
+    gap: ${props => props.gap};
   }
 `;
 
@@ -33,12 +34,10 @@ export const BalanceBox = styled.div`
     display: flex;
     align-items: center;
     gap: 22px;
-    // justify-content: center;
   }
 
   @media screen and (min-width: 1280px) {
     align-items: center;
-    // justify-content: center;
   }
 `;
 
@@ -49,9 +48,10 @@ export const BalanceTitle = styled.p`
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
-  color: rgba(82, 85, 95, 0.7);
-  margin: 0 0 6px 0;
+  color: ${theme.color.buttonDarkText};
+  margin: 43px 0 6px 0;
   @media screen and (min-width: 768px) {
+    margin: 0 auto;
   }
 
   @media screen and (min-width: 1280px) {
@@ -77,7 +77,7 @@ export const Label = styled.label`
   left: 110px;
   top: 15px;
   font-family: ${props => props.theme.fontFamily};
-  color: black;
+  color: ${theme.color.blackText};
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -99,13 +99,10 @@ export const BalanceInput = styled.input`
   border-radius: 22px 0px 0px 22px;
   box-sizing: border-box;
   outline: none;
-  background-color: transparent;
+  background-color: ${theme.color.overlay};
   @media screen and (min-width: 768px) {
     border-radius: 16px;
     margin: 0 15px 0 0;
-  }
-
-  @media screen and (max-width: 1280px) {
   }
 `;
 
@@ -129,7 +126,7 @@ export const BalanceButton = styled.button`
   justify-content: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #52555f;
+  color: ${theme.color.buttonDarkText};
   background-color: transparent;
   box-sizing: border-box;
   &:hover {
@@ -143,14 +140,27 @@ export const BalanceButton = styled.button`
     align-items: center;
     border-radius: 16px;
   }
-
-  @media screen and (max-width: 1280px) {
-  }
 `;
 
+export const ReportTitle = styled.p`
+  text-align: center;
+  font-family: ${props => props.theme.fontFamily};
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: ${theme.color.buttonDarkText};
+  margin: 30px 0 0 0;
+  @media screen and (min-width: 768px) {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
+`;
 export const ReportInput = styled.input`
   padding: 12px 30px 12px 30px;
-  margin: 0 0 5px 0;
+  margin: 0 auto;
   width: 125px;
   height: 44px;
   margin-right: auto;
@@ -159,13 +169,13 @@ export const ReportInput = styled.input`
   box-sizing: border-box;
   border-radius: 22px;
   outline: none;
-  background-color: transparent;
+  background-color: ${theme.color.overlay};
   @media screen and (min-width: 768px) {
-    ${'' /* margin: 0 80px 0 21px; */}
+    margin: 0 auto;
   }
 
   @media screen and (min-width: 1280px) {
-    margin: 0 15px 0 21px;
+    margin: 0 15px 5px 21px;
   }
 `;
 
@@ -181,7 +191,7 @@ export const ReportButton = styled.button`
   box-sizing: border-box;
   border-radius: 22px;
   outline: none;
-  background-color: transparent;
+  background-color: ${theme.color.overlay};
   @media screen and (min-width: 768px) {
     margin: 0 80px 0 21px;
   }
@@ -199,7 +209,7 @@ export const Placeholder = styled.span`
   left: ${props => props.left};
   top: 15px;
   font-family: ${props => props.theme.fontFamily};
-  color: black;
+  color: ${theme.color.blackText};
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -222,11 +232,9 @@ export const ReportData = styled.p`
   justify-content: center;
   display: flex;
   border-box: center;
-  margin: 0 0 20px 0;
+  margin: 0 auto;
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
-  }
-  @media screen and (min-width: 1280px) {
   }
 `;
 
@@ -246,16 +254,10 @@ export const Data = styled.p`
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
   }
-
-  @media screen and (min-width: 1280px) {
-  }
 `;
 
 export const DataBox = styled.p`
-  margin: 0 15px 0 15px;
+  margin: 5px 15px 0 15px;
   @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
   }
 `;

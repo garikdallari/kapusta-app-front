@@ -20,7 +20,7 @@ import transSelectors from '../../redux/transactions/trans-selectors';
 import BalanceNotification from '../BalanceNotification/BalanceNotification';
 import ReportsNavigation from '../ReportsNavigation/ReportsNavigation';
 
-export default function HomeBalance({displayMobile}) {
+export default function HomeBalance({ displayMobile }) {
   const currentBalance = useSelector(getBalance);
   const dispatch = useDispatch();
   const [balance, setBalance] = useState();
@@ -52,7 +52,7 @@ export default function HomeBalance({displayMobile}) {
 
   return (
     <>
-      <WrapperInput displayMobile={displayMobile} gap={'0'}>
+      <WrapperInput gap={'0px'} displayMobile={displayMobile} gap={'0'}>
         <ReportsNavigation />
         <BalanceBox>
           <BalanceTitle>Balance:</BalanceTitle>

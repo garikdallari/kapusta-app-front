@@ -18,6 +18,7 @@ export const theme = {
     inputBorderColor: '#FFFFFF',
     inputBorderColorDeskTab: '#F5F6FB',
     blackText: '#000000',
+    overlay: 'transparent',
   },
   fontFamily: 'Roboto',
   backgroundBodyColor: '#F5F6FB',

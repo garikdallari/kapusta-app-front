@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { theme } from '../../constants/theme';
 
 export const ReportBox = styled.a`
   display: flex;
@@ -21,7 +22,7 @@ export const ReportHeader = styled.span`
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
-  color: rgba(82, 85, 95, 0.7);
+  color: ${theme.color.buttonDarkText};
   border: none;
   background-color: transparent;
   @media screen and (min-width: 768px) {
