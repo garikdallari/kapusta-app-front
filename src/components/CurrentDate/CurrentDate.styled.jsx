@@ -2,16 +2,20 @@ import styled from '@emotion/styled';
 import { theme } from '../../constants/theme';
 
 export const Container = styled.div`
+ display:${props=>props.displayMobile};
+ margin-left:auto;
+ margin-right:auto;
   width: 104px;
   height: 40px;
-
-  @media screen and (max-width: 767px) {
-    display: none;
+  @media (min-width: 768px) {
+    display: ${props=>props.displayTablet};
+    margin:0;
   }
 `;
 
 export const Current = styled.button`
   display: flex;
+
   align-items: center;
 
   padding: 10px 0;
@@ -29,6 +33,7 @@ export const Current = styled.button`
   color: ${theme.color.buttonDarkText};
 
   border: none;
-  background-color: #ffffff;
+  background-color: transparent;
   cursor: pointer;
+ 
 `;

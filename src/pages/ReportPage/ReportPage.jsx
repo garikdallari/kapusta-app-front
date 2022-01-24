@@ -29,13 +29,12 @@ export default function ReportPage() {
             <Container>
               <ReportContainer>
                 <NavBox>
-                  <ButtonArrowBack displayText={'block'} />
+                  <ButtonArrowBack displayText={'block'} displayMobile={"block"} />
                   <ReportBalance />
                 </NavBox>
                 <Accounting />
                 <IconsReportSection
                   amount={context === 'expense' ? expenseRes : incomeRes}
-                  amount={expenseRes}
                 />
               </ReportContainer>
             </Container>

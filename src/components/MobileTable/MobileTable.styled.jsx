@@ -54,14 +54,14 @@ export const BodyTr = styled.tr`
   border-bottom: 1px solid #f5f6fb;
 `;
 export const DeleteTd = styled.td`
-  width: 60px;
+  width: 50px;
   text-align: end;
 `;
 
 export const AmountTd = styled.td`
   width: 100px;
   text-align: end;
-  color: ${props => (props.type ? 'red' : 'green')};
+  color: ${props => (props.type ? "#E7192E" : '#407946')};
   font-weight: 700;
 `;
 

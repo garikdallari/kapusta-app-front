@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, getState } from 'react-redux';
 import {
   getUserBalance,
   updateUserBalance,
 } from '../../redux/balance/balance-operations.js';
 import { getBalance } from '../../redux/balance/balance-selectors.js';
+import { store } from '../../redux/store';
 
 import {
   WrapperInput,
@@ -19,25 +20,18 @@ import transSelectors from '../../redux/transactions/trans-selectors';
 import BalanceNotification from '../BalanceNotification/BalanceNotification';
 import ReportsNavigation from '../ReportsNavigation/ReportsNavigation';
 
-export default function HomeBalance() {
+export default function HomeBalance({displayMobile}) {
   const currentBalance = useSelector(getBalance);
   const dispatch = useDispatch();
   const [balance, setBalance] = useState();
   const transByType = useSelector(transSelectors.getTransByType);
   const allTrans = useSelector(transSelectors.getAllTrans);
-  let btnText = '';
-
-  if (currentBalance === 0) {
-    btnText = 'confirm';
-  } else {
-    btnText = 'renew';
-  }
+  const emptyBalance = currentBalance === 0 ? false : true;
 
   useEffect(() => {
     dispatch(getUserBalance());
     setBalance(currentBalance);
-  }, [dispatch,transByType,
-    allTrans, currentBalance]);
+  }, [dispatch, transByType, allTrans, currentBalance]);
 
   const handleInput = e => {
     const { value } = e.currentTarget;
@@ -58,7 +52,7 @@ export default function HomeBalance() {
 
   return (
     <>
-      <WrapperInput gap={'0'}>
+      <WrapperInput displayMobile={displayMobile} gap={'0'}>
         <ReportsNavigation />
         <BalanceBox>
           <BalanceTitle>Balance:</BalanceTitle>
@@ -69,9 +63,12 @@ export default function HomeBalance() {
               name="balance"
               value={balance}
               onChange={handleInput}
+              disabled={emptyBalance}
               required
             />
-            <BalanceButton type="submit">{btnText}</BalanceButton>
+            <BalanceButton type="submit" disabled={emptyBalance}>
+              Confirm
+            </BalanceButton>
           </InputContainer>
           {/* <BalanceNotification /> */}
         </BalanceBox>

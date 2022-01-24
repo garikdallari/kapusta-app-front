@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionInputAndClear from '../../components/SectionInputAndClear/SectionInputAndClear';
 import TabletDesktopTable from '../../components/TabletDesktopTable/TabletDesktopTable';
 import MobileTable from '../../components/MobileTable/MobileTable';
@@ -9,6 +9,7 @@ import FinanceTable from '../../components/FinanceTable/FinanceTable';
 import Container from '../../components/Container/Container';
 import { changeNameIconForHomePage } from '../../helpers/changeNameIconForHomePage';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
+import CurrentDate from '../../components/CurrentDate/CurrentDate';
 import {
   TableSummaryWrapper,
   PaperHomePage,
@@ -20,15 +21,33 @@ import {
 
 function HomePage() {
   const { width } = useWindowDimensions();
-  return (
+  const [display, setDisplay]=useState(true);
+
+ const displayItem=(id)=>{
+   switch (id) {
+   case "arrowBack":
+    setDisplay(true);
+     break;
+     case "expense":
+      setDisplay(false);
+     break;
+     case "income":
+      setDisplay(false);
+     break;
+    default:
+     break;
+ }
+ }
+
+ return (
     <BackgroundBody>
-      <Container minTabletHeight={'1180px'} minDesktopHeight={'790px'}>
-        <HomeBalance />
+      <Container minTabletHeight={"1180px"} minDesktopHeight={"790px"}>
+        <HomeBalance displayMobile={display?"block":"none"}/>
         <FinanceTable>
-          <IncomeExpenseBtns />
+          <IncomeExpenseBtns displayMobile={display?"flex":"none"} displayItem={displayItem}/>
           <PaperHomePage>
-            <SectionInputAndClear />
-            <TableSummaryWrapper>
+            <SectionInputAndClear displayMobile={display} displayItem={displayItem}  />
+            <TableSummaryWrapper displayMobile={display?"flex":"none"}>
               <TabletDesktopTable />
               <MobileTable />
               <Summary />

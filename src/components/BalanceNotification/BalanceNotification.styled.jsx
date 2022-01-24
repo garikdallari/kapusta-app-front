@@ -5,9 +5,11 @@ export const Notification = styled.div`
   margin: 25px 0 0 0;
   padding: 30px 25px;
   flex-direction: column;
-  position: relative;
+  position: absolute;
   max-width: 282px;
   max-height: 152px;
+  top: 52%;
+  z-index: 99;
 
   background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
   border-radius: 30px;
@@ -25,14 +27,10 @@ export const Notification = styled.div`
     margin-top: -15px;
   }
   @media screen and (min-width: 768px) {
-    left: -280px;
-    top: 100px;
     width: 280px;
   }
 
   @media screen and (min-width: 1280px) {
-    left: -280px;
-    top: 100px;
   }
 `;
 

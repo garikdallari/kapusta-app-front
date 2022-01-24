@@ -27,7 +27,7 @@ export default function ReportBalance() {
   return (
     <>
       <WrapperInput gap={'80px'}>
-        <Data>
+        <Data marginBottom={'0'}>
           <BalanceTitle>Current period:</BalanceTitle>
           <CurrentPeriod />
         </Data>
@@ -35,7 +35,7 @@ export default function ReportBalance() {
           <BalanceTitle>Balance:</BalanceTitle>
           <InputContainer display={'block'}>
             <Placeholder left={'48px'}>{`${balance}`}$</Placeholder>
-            <ReportInput></ReportInput>
+            <ReportInput disabled={true}></ReportInput>
             <ReportButton type="submit" display={'none'}>
               Confirm
             </ReportButton>
