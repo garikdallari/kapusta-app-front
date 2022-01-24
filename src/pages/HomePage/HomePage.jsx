@@ -15,7 +15,7 @@ import {
   BackgroundBody,
   WrapperBottomIcon,
   StyledBottomIcon,
-  // PositionWrapper,
+  PositionWrapper,
 } from './HomePage.styled';
 
 function HomePage() {
@@ -32,12 +32,14 @@ function HomePage() {
               <TabletDesktopTable />
               <MobileTable />
               <Summary />
-              <WrapperBottomIcon>
-                <StyledBottomIcon name={changeNameIconForHomePage(width)} />
-              </WrapperBottomIcon>
             </TableSummaryWrapper>
           </PaperHomePage>
         </FinanceTable>
+        <PositionWrapper>
+          <WrapperBottomIcon>
+            <StyledBottomIcon name={changeNameIconForHomePage(width)} />
+          </WrapperBottomIcon>
+        </PositionWrapper>
       </Container>
     </BackgroundBody>
   );

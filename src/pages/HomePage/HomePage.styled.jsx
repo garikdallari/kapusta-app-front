@@ -55,7 +55,6 @@ export const BackgroundBody = styled.div`
   }
 `;
 
-/* Don't touch */
 export const WrapperBottomIcon = styled.div`
 display:none;
 
@@ -63,37 +62,30 @@ display:none;
   position: absolute;
   z-index:-1;
   display:block;
-  bottom:-320px;
-  right:35px;
-  /* margin: 610px 0px 0px 35px; */
-
-  @media (min-width: 768px) {
-    /* position: relative; */
-    /* margin: 435px 0px 56px 114px; */
-  }
+  bottom: -316px;
+  right: 29px;
 
   @media (min-width: 1280px) {
-    bottom: -114px;
-    right: -123px;
-  }
+  bottom: -171px;
+  right: -123px;
 `;
 
 export const StyledBottomIcon = styled(Icons)`
   color: #000000;
   width: 83px;
   height: 89px;
+
   @media (min-width: 768px) {
     width: 183px;
     height: 142px;
   }
 
   @media (min-width: 1280px) {
-    width: 1345px;
-    height: 183px;
+    width: 1335px;
+    height: 275px;
   }
 `;
 
 export const PositionWrapper = styled.div`
   position: relative;
 `;
-/* Don't  touch */
