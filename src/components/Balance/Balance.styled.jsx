@@ -5,8 +5,7 @@ const pointer = 'pointer';
 const none = 'default';
 
 export const WrapperInput = styled.div`
-
-  display: ${prop=> prop.displayMobile};
+  display: ${prop => prop.displayMobile};
   flex-direction: column;
   gap: 40px;
   margin: 0 0 30px 0;
@@ -30,13 +29,13 @@ export const WrapperInput = styled.div`
 `;
 
 export const BalanceBox = styled.div`
-margin-top: 40px;
-margin-left:auto;
-margin-right:auto;
-margin-bottom: 0;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
 
   @media screen and (min-width: 768px) {
-    margin:0;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 22px;
@@ -69,13 +68,12 @@ export const InputContainer = styled.form`
   display: ${props => props.display};
   justify-content: center;
   width: fit-content;
-  margin-left:auto;
-  margin-right:auto;
- 
+  margin-left: auto;
+  margin-right: auto;
+
   @media screen and (min-width: 768px) {
     display: ${props => props.display};
   }
-
 `;
 
 export const Label = styled.label`
@@ -98,14 +96,25 @@ export const Label = styled.label`
 `;
 
 export const BalanceInput = styled.input`
-  padding: 12px 24px 12px 23px;
+  padding: 12px 22px 12px 22px;
   width: 125px;
   height: 44px;
   border: 2px solid white;
   border-radius: 22px 0px 0px 22px;
   box-sizing: border-box;
   outline: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
   background-color: ${theme.color.overlay};
+  &:placeholder {
+    font-family: Roboto;
+    color: ${theme.color.blackText};
+  }
   @media screen and (min-width: 768px) {
     border-radius: 16px;
     margin: 0 15px 0 0;
@@ -113,7 +122,7 @@ export const BalanceInput = styled.input`
 `;
 
 export const BalanceButton = styled.button`
-  padding: 12px 0 12px 0;
+  // padding: 12px 0 12px 0;
   width: 125px;
   height: 44px;
   border: 2px solid white;
@@ -121,8 +130,7 @@ export const BalanceButton = styled.button`
   box-sizing: border-box;
   outline: none;
   cursor: pointer;
-
-  font-family: Roboto;
+  font-family: ${props => props.theme.fontFamily};
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -165,7 +173,7 @@ export const ReportTitle = styled.p`
   }
 `;
 export const ReportInput = styled.input`
-  padding: 12px 30px 12px 30px;
+  padding: 12px 22px 12px 22px;
   margin: 0 auto;
   width: 125px;
   height: 44px;
@@ -176,6 +184,15 @@ export const ReportInput = styled.input`
   border-radius: 22px;
   outline: none;
   background-color: ${theme.color.overlay};
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+
   @media screen and (min-width: 768px) {
     margin: 0 auto;
   }
@@ -224,12 +241,26 @@ export const Placeholder = styled.span`
   text-transform: uppercase;
   @media screen and (min-width: 768px) {
     position: absolute;
-    left: 48px;
-    top: 15px;
+    left: 65px;
+    top: 17px;
   }
   @media screen and (min-width: 1280px) {
     left: 68px;
   }
+`;
+
+export const LabelReport = styled.span`
+  position: relative;
+  left: 110px;
+  top: 0px;
+  font-family: ${props => props.theme.fontFamily};
+  color: ${theme.color.blackText};
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 `;
 
 export const ReportData = styled.p`

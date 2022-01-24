@@ -60,11 +60,13 @@ export default function HomeBalance({ displayMobile }) {
           <InputContainer onSubmit={handleSubmit} display={'flex'}>
             <Label>$</Label>
             <BalanceInput
+              type="number"
               name="balance"
-              value={balance}
+              // value={balance}
               onChange={handleInput}
               disabled={emptyBalance}
               required
+              placeholder={balance}
             />
             <BalanceButton type="submit" disabled={emptyBalance}>
               Confirm
