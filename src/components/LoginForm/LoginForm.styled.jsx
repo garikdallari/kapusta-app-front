@@ -113,7 +113,6 @@ export const WrapperButton = styled.div`
   margin-bottom: 30px;
 `;
 
-//
 export const StyledLink = styled(Link)`
   font-size: 12px;
   line-height: 1.16;
