@@ -22,15 +22,16 @@ import {
 import CartReport from '../../components/ChartsReport/ChartsReport';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import { changeNameIconForPages } from '../../helpers/changeNameIconForPages';
+import { useHistory } from 'react-router-dom';
 
 export default function ReportPage() {
+  const history = useHistory();
   const { width } = useWindowDimensions();
   const [context, setContext] = useState('expense');
   const [subcategoryType, setSubcategoryType] = useState('food');
   const { incomeRes, expenseRes, subIncomeRes, subExpenseRes } = useSelector(
     transSelectors.getAllByMonth,
   );
-
   const getSubcategories = categoryState =>
     categoryState === 'expense'
       ? subExpenseRes[subcategoryType]
@@ -46,6 +47,9 @@ export default function ReportPage() {
                   <ButtonArrowBack
                     displayText={'block'}
                     displayMobile={'block'}
+                    onClick={()=>{
+                       history.push('/home');
+                     }}
                   />
                   <ReportBalance />
                 </NavBox>
