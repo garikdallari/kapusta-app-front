@@ -186,9 +186,7 @@ export const ButtonContainerInline = styled.div`
     padding-left:60px;
   }
 
-
-  (min-width: 1280px) {
-    padding:0;
-    margin-left: 13%;
+  @media (min-width: 1280px) {
+    padding-left:0;
   }
 `;
