@@ -89,6 +89,8 @@ export const Amount = styled.span`
   letter-spacing: 0.04em;
 
   color: ${theme.color.expensesColor};
+
+  white-space: nowrap;
 `;
 export const AmountIncome = styled.span`
   margin: 0;
@@ -99,4 +101,6 @@ export const AmountIncome = styled.span`
   letter-spacing: 0.04em;
 
   color: ${theme.color.incomeColor};
+
+  white-space: nowrap;
 `;

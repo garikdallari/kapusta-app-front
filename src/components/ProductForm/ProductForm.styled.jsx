@@ -2,8 +2,13 @@ import styled from '@emotion/styled';
 import { theme } from '../../constants/theme';
 
 export const Input = styled.input`
-  color: ${theme.color.buttonDarkText};
+  color: ${theme.color.blackText};
   font-size: ${theme.fontSize.descriptionProduct};
+
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+
   background-color: inherit;
   padding: 0px;
   height: 44px;
@@ -66,21 +71,21 @@ export const Label = styled.label`
 `;
 
 export const LabelInputPrice = styled.label`
-margin-top:30px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  
+
   @media (min-width: 768px) {
-    margin:0;
+    margin: 0;
   }
 `;
 
 export const Form = styled.form`
   display: flex;
-  margin-bottom:83px;
+  margin-bottom: 83px;
   @media (min-width: 768px) {
-    margin:0;
+    margin: 0;
     margin-left: 32px;
   }
 
@@ -121,7 +126,6 @@ export const InputPrice = styled.input`
   }
 
   @media (max-width: 767px) {
-  
     padding-right: 15px;
     border: 2px solid ${theme.color.inputBorderColor};
     border-radius: 22px 0px 0px 22px;
@@ -142,10 +146,10 @@ export const InputPrice = styled.input`
 `;
 
 export const Container = styled.div`
-display: ${prop=>prop.displayMobile};
-@media (min-width: 768px) {
-  display: block;
-}
+  display: ${prop => prop.displayMobile};
+  @media (min-width: 768px) {
+    display: block;
+  }
   @media (min-width: 1280px) {
     display: flex;
   }
@@ -155,7 +159,7 @@ export const ButtonContainer = styled.div`
   height: 44px;
   display: flex;
   justify-content: center;
-  text-align-center;
+  text-align: center;
 
   @media (max-width: 767px) {
     margin-top: 40px;
@@ -177,11 +181,10 @@ export const ButtonContainer = styled.div`
 `;
 
 export const ButtonContainerInline = styled.div`
- 
-@media (min-width: 768px) and 
+  @media (min-width: 768px) {
     display: inline-block;
-   
-    }
+  }
+
 
   (min-width: 1280px) {
     margin-left: 13%;

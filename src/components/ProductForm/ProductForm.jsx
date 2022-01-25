@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Input,
-  Select,
   Label,
   Form,
-  Option,
   InputPrice,
   LabelInputPrice,
   Container,
@@ -76,28 +74,13 @@ export default function ProductForm({ transactionDate, displayMobile }) {
           <Label>
             <Input
               name="description"
-              placeholder="Description product."
+              placeholder="Description product"
               onChange={handleChange}
               value={description}
             />
           </Label>
 
-          <InputSelect
-            handleChange={handleChange}
-            category={category}
-            setCategory={setCategory}
-          />
-          {/* <Label>
-            <Select name="category" onChange={handleChange} value={category}>
-            <Option value disabled selected hidden>
-                Category product.
-              </Option>
-              <Option value="Transport">Transport</Option>
-              <Option value="Food">Food</Option>
-              <Option value="Health">Health</Option>
-            </Select>
-          </Label> */}
-
+          <InputSelect handleChange={handleChange} category={category} />
           <LabelInputPrice>
             <InputPrice
               placeholder="00.00 USD"

@@ -2,10 +2,9 @@ import styled from '@emotion/styled';
 import Icons from '../../components/Icons/Icons';
 
 export const TableSummaryWrapper = styled.div`
-display: ${prop=>prop.displayMobile};
-align-items:center;
-justify-content:center;
-
+  display: ${prop => prop.displayMobile};
+  align-items: center;
+  justify-content: center;
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -52,18 +51,15 @@ export const BackgroundBody = styled.div`
 `;
 
 export const WrapperBottomIcon = styled.div`
-display:none;
-
-@media  (min-width: 768px) {
-  position: absolute;
-  z-index:-1;
-  display:block;
-  bottom: -316px;
-  right: 29px;
+  display: none;
 
   @media (min-width: 1280px) {
-  bottom: -171px;
-  right: -123px;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    bottom: -49px;
+    right: 3px;
+  }
 `;
 
 export const StyledBottomIcon = styled(Icons)`
@@ -77,8 +73,34 @@ export const StyledBottomIcon = styled(Icons)`
   }
 
   @media (min-width: 1280px) {
-    width: 1335px;
+    width: ${props => props.width + 'px;'}
     height: 275px;
+  }
+`;
+
+export const StyledBottomTableIcon = styled(Icons)`
+  color: #000000;
+  width: 83px;
+  height: 89px;
+
+  @media (min-width: 768px) {
+    width: 183px;
+    height: 142px;
+  }
+
+  @media (min-width: 1280px) {
+    display: none;
+  }
+`;
+
+export const WrapperBottomTableIcon = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bottom: -310px;
+    right: 34px;
   }
 `;
 
