@@ -17,13 +17,13 @@ const IconsReportSection = ({ amount, categoryType }) => {
         <IncomeExpenseToggle />
         <Wrapper elementoColor={theme.color.lightGray}>
           {amount !== undefined &&
-            amount.map(({ category, amount }, idx) => (
+            amount.map(({ category, sum }, idx) => (
               <WrapperElement elementColor={theme.color.lightGray} key={idx}>
                 <SvgContainer
                   buttonColor={theme.color.buttonOrangeBg}
                   onClick={() => categoryType(category)}
                 >
-                  <TextContainer>{amount}</TextContainer>
+                  <TextContainer>{sum}</TextContainer>
                   <Icons
                     name={category}
                     color="currentColor"
