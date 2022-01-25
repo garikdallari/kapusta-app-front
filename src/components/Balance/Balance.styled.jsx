@@ -5,8 +5,7 @@ const pointer = 'pointer';
 const none = 'default';
 
 export const WrapperInput = styled.div`
-
-  display: ${prop=> prop.displayMobile};
+  display: ${prop => prop.displayMobile};
   flex-direction: column;
   gap: 40px;
   margin: 0 0 30px 0;
@@ -30,13 +29,13 @@ export const WrapperInput = styled.div`
 `;
 
 export const BalanceBox = styled.div`
-margin-top: 40px;
-margin-left:auto;
-margin-right:auto;
-margin-bottom: 0;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
 
   @media screen and (min-width: 768px) {
-    margin:0;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 22px;
@@ -69,13 +68,12 @@ export const InputContainer = styled.form`
   display: ${props => props.display};
   justify-content: center;
   width: fit-content;
-  margin-left:auto;
-  margin-right:auto;
- 
+  margin-left: auto;
+  margin-right: auto;
+
   @media screen and (min-width: 768px) {
     display: ${props => props.display};
   }
-
 `;
 
 export const Label = styled.label`
@@ -251,7 +249,7 @@ export const Data = styled.p`
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
+  text-transform: ${({ textTransform }) => textTransform};
   justify-content: center;
   align-items: center;
   text-align: center;

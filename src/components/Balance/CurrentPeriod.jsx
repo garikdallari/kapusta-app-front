@@ -19,7 +19,7 @@ export default function CurrentPeriod({}) {
 
   return (
     <>
-      <Data marginBottom={'0'}>
+      <Data marginBottom={'0'} textTransform={'none'}>
         <ReportData>
           <ArrowButtonPeriod
             name={'arrow-left'}
