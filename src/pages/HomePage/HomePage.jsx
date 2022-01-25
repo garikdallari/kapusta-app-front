@@ -24,6 +24,7 @@ import {
 function HomePage() {
   const { width } = useWindowDimensions();
   const [display, setDisplay] = useState(true);
+
   const displayItem = id => {
     switch (id) {
       case 'arrowBack':
@@ -38,12 +39,10 @@ function HomePage() {
       case 'income':
         setDisplay(false);
         break;
-
       default:
         break;
     }
   };
-
   return (
     <>
       <BackgroundBody>
