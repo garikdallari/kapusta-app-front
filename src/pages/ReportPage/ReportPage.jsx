@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Context } from '../../components/Context/Context';
 import {
@@ -49,9 +49,9 @@ export default function ReportPage() {
                   <ButtonArrowBack
                     displayText={'block'}
                     displayMobile={'block'}
-                    onClick={()=>{
-                       history.push('/home');
-                     }}
+                    onClick={() => {
+                      history.push('/home');
+                    }}
                   />
                   <ReportBalance />
                 </NavBox>
