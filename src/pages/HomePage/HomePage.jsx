@@ -9,7 +9,7 @@ import FinanceTable from '../../components/FinanceTable/FinanceTable';
 import Container from '../../components/Container/Container';
 import { changeNameIconForPages } from '../../helpers/changeNameIconForPages';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
-import CurrentDate from '../../components/CurrentDate/CurrentDate';
+
 import {
   TableSummaryWrapper,
   PaperHomePage,
@@ -25,21 +25,6 @@ function HomePage() {
   const { width } = useWindowDimensions();
   const [display, setDisplay] = useState(true);
 
-  const displayItem = id => {
-    switch (id) {
-      case 'arrowBack':
-        setDisplay(true);
-        break;
-      case 'expense':
-        setDisplay(false);
-        break;
-      case 'income':
-        setDisplay(false);
-        break;
-      default:
-        break;
-    }
-  };
   return (
     <>
       <BackgroundBody>

@@ -16,7 +16,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 export const StyledMobileTable = styled.div`
   overflow-y: auto;
-  height: 150px;
+  max-height:30vh;
   width: 282px;
   margin-bottom: 10px;
   letter-spacing: 0.04em;
