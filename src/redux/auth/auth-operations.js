@@ -65,11 +65,29 @@ const getCurrentUser = createAsyncThunk('auth/current', async (_, thunkAPI) => {
   }
 });
 
+const firstSetBalance = createAsyncThunk(
+  'auth/firstSetBalance',
+  async token => {
+    try {
+      const response = await axios.patch(`/balance/firstSetBalance`, {
+        Authorization: `Bearer ${token}`,
+      });
+    const {balance}=response.data;
+     console.log(balance);
+      return balance;
+    } catch (error) {
+      console.log(error.message);
+      throw new Error(error.message);
+    }
+  },
+);
+
 export const authOperations = {
   signup,
   login,
   logout,
   getCurrentUser,
+  firstSetBalance
 };
 
 export default authOperations;

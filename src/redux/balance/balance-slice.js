@@ -29,8 +29,7 @@ const balanceSlice = createSlice({
     },
 
     [updateUserBalance.fulfilled]: (state, { payload }) => {
-      console.log(payload);
-      state.balance = payload.balance;
+       state.balance = payload.balance;
       state.isLoading = false;
     },
 
@@ -38,7 +37,7 @@ const balanceSlice = createSlice({
       state.isLoading = false;
       state.error = action.error.message;
     },
-  },
+},
 });
 
 export default balanceSlice.reducer;

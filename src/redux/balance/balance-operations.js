@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as balanceApi from '../../services/balanceAPI';
 
+
 const getUserBalance = createAsyncThunk(
   'auth/getUserBalance',
   async (_, { rejectWithValue }) => {

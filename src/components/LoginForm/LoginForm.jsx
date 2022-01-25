@@ -1,10 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { authOperations } from '../../redux/auth/auth-operations';
 import { Formik, Form } from 'formik';
 import { LoginValidationShema } from '../../helpers/LoginValidationShema';
 import Button from '../Button/Button';
 import GoogleButton from '../GoogleButton/GoogleButton';
-
+import authSelectors from '../../redux/auth/auth-selectors';
 import {
   ErrorMessageEmail,
   ErrorMessagePassword,
@@ -24,9 +24,11 @@ export default function LoginForm() {
     password: '',
     email: '',
   };
-
+  const token=useSelector(authSelectors.getToken);
   const handleSubmit = values => {
     dispatch(authOperations.login(values));
+    dispatch(authOperations.firstSetBalance(token))
+   
   };
 
   return (

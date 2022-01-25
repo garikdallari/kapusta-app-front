@@ -7,12 +7,7 @@ export const ReportBox = styled.a`
   align-items: flex-end;
   gap: 15px;
   cursor: pointer;
-
-  @media screen and (max-width: 768px) {
-  }
-
-  @media screen and (max-width: 1280px) {
-  }
+  align-items: center;
 `;
 
 export const ReportHeader = styled.span`

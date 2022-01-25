@@ -3,11 +3,15 @@ import {
   WelcTextNotification,
   DescrTextNotification,
 } from './BalanceNotification.styled';
+import { useSelector} from 'react-redux';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 export default function BalanceNotification() {
+const showNotification=useSelector(authSelectors.isBalanceSet);
+
   return (
     <>
-      <Notification>
+      <Notification showNotification={showNotification}>
         <WelcTextNotification>
           Hey! To get started, enter the current balance of your account!
         </WelcTextNotification>
