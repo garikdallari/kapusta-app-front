@@ -30,20 +30,24 @@ export default function MobileChartsReport({ data }) {
         barGap="15"
       >
         <XAxis hide axisLine={false} type="number" />
-        <YAxis dataKey="category" type="category" hide />
+        <YAxis dataKey="subcategory" type="category" hide />
         <Bar
-          dataKey="amount"
+          dataKey="sum"
           barSize={15}
           radius={[0, 10, 10, 0]}
           label={renderBarLabel}
           fill="#52555f"
           minPointSize={5}
         >
-          {data.map((el, idx) => (
-            <Cell key={`cell-${idx}`} fill={idx % 3 ? '#FFDAC0' : '#ff751d'} />
-          ))}
+          {data &&
+            data.map((el, idx) => (
+              <Cell
+                key={`cell-${idx}`}
+                fill={idx % 3 ? '#FFDAC0' : '#ff751d'}
+              />
+            ))}
           <LabelList
-            dataKey="category"
+            dataKey="subcategory"
             content={renderCategoryLabel}
             fill="#52555F"
           />

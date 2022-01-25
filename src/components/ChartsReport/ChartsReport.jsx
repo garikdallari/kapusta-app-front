@@ -5,6 +5,7 @@ import useWindowDimensions from '../../helpers/useWindowDimensions';
 
 export default function ChartsReport({ data }) {
   const { width } = useWindowDimensions();
+  // console.log(data && data.length);
 
   const renderCustomBarLabel = ({ x, y, width, value }) => {
     return (
