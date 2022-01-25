@@ -35,7 +35,6 @@ export default function ReportPage() {
     categoryState === 'expense'
       ? subExpenseRes[subcategoryType]
       : subIncomeRes[subcategoryType];
-  console.log(subExpenseRes && getSubcategories(context));
   return (
     <>
       <Context.Provider value={[context, setContext]}>
