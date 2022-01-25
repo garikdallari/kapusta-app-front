@@ -16,7 +16,7 @@ export default function CurrentPeriod({ updateValue, isDate }) {
 
   return (
     <>
-      <Data textTransform={'uppercase'}>
+      <Data textTransform={'uppercase'} marginBottom={'20px'}>
         <ReportData>
           <ArrowButton
             name={'arrow-left'}

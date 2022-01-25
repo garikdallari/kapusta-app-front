@@ -164,7 +164,7 @@ export const ReportTitle = styled.div`
   line-height: 14px;
   letter-spacing: 0.04em;
   color: ${theme.color.buttonDarkText};
-  margin: 30px 0 0 0;
+  margin: 30px 0 5px 0;
   @media screen and (min-width: 768px) {
     margin: 0 auto 5px;
   }
@@ -289,7 +289,7 @@ export const Data = styled.div`
   margin-bottom: 20px;
   margin-top: 0;
   @media screen and (min-width: 768px) {
-    margin-bottom: 0;
+    margin-bottom: ${({ marginBottom }) => marginBottom};
   }
 `;
 
