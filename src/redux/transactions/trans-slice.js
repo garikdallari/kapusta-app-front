@@ -24,7 +24,7 @@ const transSlice = createSlice({
     },
 
     [transOperations.getAllByType.fulfilled](state, { payload }) {
-      state.byType = [...payload.response];
+      state.byType = [...payload.response].reverse();
       state.type = payload.type;
     },
 
@@ -44,7 +44,7 @@ const transSlice = createSlice({
     },
 
     [transOperations.listAllTransactions.fulfilled](state, { payload }) {
-      state.all = [...payload];
+      state.all = [...payload].reverse();
     },
   },
 });
