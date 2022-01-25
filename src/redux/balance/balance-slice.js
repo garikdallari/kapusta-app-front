@@ -1,10 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { updateUserBalance, getUserBalance, firstSetBalance } from './index';
+import { updateUserBalance, getUserBalance } from './index';
 
 const initialState = {
   balance: 0,
   isLoading: false,
-  isBalanceSet: false,
 };
 
 const balanceSlice = createSlice({
@@ -30,8 +29,7 @@ const balanceSlice = createSlice({
     },
 
     [updateUserBalance.fulfilled]: (state, { payload }) => {
-      console.log(payload);
-      state.balance = payload.balance;
+       state.balance = payload.balance;
       state.isLoading = false;
     },
 
@@ -39,12 +37,7 @@ const balanceSlice = createSlice({
       state.isLoading = false;
       state.error = action.error.message;
     },
-
-    [firstSetBalance.fulfilled]: (state, { payload }) => {
-       state.isBalanceSet=payload.isBalanceSet;
-    },
-
-  },
+},
 });
 
 export default balanceSlice.reducer;
