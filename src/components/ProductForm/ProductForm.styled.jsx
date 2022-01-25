@@ -183,7 +183,7 @@ export const ButtonContainerInline = styled.div`
    
     }
 
-  (max-width: 1279px) {
+  (min-width: 1280px) {
     margin-left: 13%;
   }
 `;
