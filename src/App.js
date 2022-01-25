@@ -1,5 +1,5 @@
 import { Switch, Redirect } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from './redux/auth/auth-operations';
 import authSelectors from './redux/auth/auth-selectors';
@@ -9,14 +9,38 @@ import './App.css';
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
 
-import RegisterPage from './pages/RegisterPage/RegisterPage';
-import LoginPage from './pages/LoginPage/LoginPage';
-import ReportPage from './pages/ReportPage/ReportPage';
-import HomePage from './pages/HomePage/HomePage';
-import Header from './components/Header/Header';
-import GoogleLoader from './components/GoogleLoader/GoogleLoader';
 import { ToastContainer } from 'react-toastify';
+import Header from './components/Header/Header';
 
+// import RegisterPage from './pages/RegisterPage/RegisterPage';
+// import LoginPage from './pages/LoginPage/LoginPage';
+// import ReportPage from './pages/ReportPage/ReportPage';
+// import HomePage from './pages/HomePage/HomePage';
+// import GoogleLoader from './components/GoogleLoader/GoogleLoader';
+
+const RegisterPage = lazy(() =>
+  import(
+    './pages/RegisterPage/RegisterPage' /* webpackChunkName: 'RegisterPage' */
+  ),
+);
+
+const LoginPage = lazy(() =>
+  import('./pages/LoginPage/LoginPage' /* webpackChunkName: 'LoginPage' */),
+);
+
+const HomePage = lazy(() =>
+  import('./pages/HomePage/HomePage' /* webpackChunkName: 'HomePage' */),
+);
+
+const ReportPage = lazy(() =>
+  import('./pages/ReportPage/ReportPage' /* webpackChunkName: 'ReportPage' */),
+);
+
+const GoogleLoader = lazy(() =>
+  import(
+    './components/GoogleLoader/GoogleLoader' /* webpackChunkName: 'GoogleLoader' */
+  ),
+);
 
 function App() {
   const isFetchingCurrent = useSelector(authSelectors.getFetchingCurrent);
@@ -31,31 +55,33 @@ function App() {
       <>
         <Header></Header>
 
-        <Switch>
-          <PublicRoute path="/" exact redirectTo="/home" restricted>
-            <Redirect to="/login" />
-          </PublicRoute>
+        <Suspense fallback={<h1>Loading.....</h1>}>
+          <Switch>
+            <PublicRoute path="/" exact redirectTo="/home" restricted>
+              <Redirect to="/login" />
+            </PublicRoute>
 
-          <PublicRoute path="/signup" redirectTo="/home" restricted>
-            <RegisterPage />
-          </PublicRoute>
+            <PublicRoute path="/signup" redirectTo="/home" restricted>
+              <RegisterPage />
+            </PublicRoute>
 
-          <PublicRoute path="/login" redirectTo="/home" restricted>
-            <LoginPage />
-          </PublicRoute>
+            <PublicRoute path="/login" redirectTo="/home" restricted>
+              <LoginPage />
+            </PublicRoute>
 
-          <PublicRoute path="/google" redirectTo="/home" restricted>
-            <GoogleLoader />
-          </PublicRoute>
+            <PublicRoute path="/google" redirectTo="/home" restricted>
+              <GoogleLoader />
+            </PublicRoute>
 
-          <PrivateRoute path="/home" redirectTo="/login">
-            <HomePage />
-          </PrivateRoute>
+            <PrivateRoute path="/home" redirectTo="/login">
+              <HomePage />
+            </PrivateRoute>
 
-          <PrivateRoute path="/report" redirectTo="/login">
-            <ReportPage />
-          </PrivateRoute>
-        </Switch>
+            <PrivateRoute path="/report" redirectTo="/login">
+              <ReportPage />
+            </PrivateRoute>
+          </Switch>
+        </Suspense>
         <ToastContainer autoClose={4000} />
       </>
     )
