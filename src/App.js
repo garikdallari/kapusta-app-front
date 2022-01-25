@@ -11,6 +11,7 @@ import PrivateRoute from './routes/PrivateRoute';
 
 import { ToastContainer } from 'react-toastify';
 import Header from './components/Header/Header';
+import Loader from './components/Loader/Loader';
 
 // import RegisterPage from './pages/RegisterPage/RegisterPage';
 // import LoginPage from './pages/LoginPage/LoginPage';
@@ -55,7 +56,7 @@ function App() {
       <>
         <Header></Header>
 
-        <Suspense fallback={<h1>Loading.....</h1>}>
+        <Suspense fallback={<Loader />}>
           <Switch>
             <PublicRoute path="/" exact redirectTo="/home" restricted>
               <Redirect to="/login" />
