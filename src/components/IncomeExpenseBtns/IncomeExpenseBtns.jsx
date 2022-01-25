@@ -11,7 +11,7 @@ export default function IncomeExpenseBtns({displayItem, displayMobile}) {
   
   const onClick=(e)=>{
    displayItem(e.target.id);
- 
+  
     switch (e.target.id) {
       case 'income':
         dispatch(transOperations.getAllByType('income', token));
