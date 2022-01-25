@@ -22,7 +22,6 @@ justify-content:center;
 export const PaperHomePage = styled.div`
   padding: 0;
   margin: 0;
- 
   @media screen and (min-width: 768px) {
     width: 665px;
     padding: 28px 30px 48px 30px;
@@ -38,18 +37,12 @@ export const PaperHomePage = styled.div`
 
 export const BackgroundBody = styled.div`
   margin: 0px auto;
-  
   background-color: ${props => props.theme.backgroundBodyColor};
   max-width: 767px;
-  height: 286px;
   border-radius: 0px 0px 0px 80px;
   padding: 37px 0px 0px 0px;
-
-  @media (min-width: 320px) {
-    max-width: 767px;
-    height: 286px;
-  }
-
+  height: 286px;
+ 
   @media (min-width: 768px) {
     position: relative;
     max-width: 2280px;
