@@ -12,6 +12,7 @@ export default function Button({
   return (
     <>
       <StyledBtn
+        id='addButton'
         type={type}
         backgroundColor={backgroundColor}
         textColor={textColor}

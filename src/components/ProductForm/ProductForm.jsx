@@ -11,7 +11,6 @@ import {
   ButtonContainerInline,
 } from './ProductForm.styled';
 import InputSelect from '../InputSelect/InputSelect';
-
 import Button from '../Button/Button';
 import { theme } from '../../constants/theme';
 import Wallet from '../../components/Wallet/Wallet';
@@ -21,7 +20,7 @@ import transSelectors from '../../redux/transactions/trans-selectors';
 import { convertDate } from '../../helpers/dateConverter';
 import { getUserBalance } from '../../redux/balance/balance-operations.js';
 
-export default function ProductForm({ transactionDate, displayMobile }) {
+export default function ProductForm({ transactionDate, displayMobile, displayItem }) {
   const dispatch = useDispatch();
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -49,7 +48,8 @@ export default function ProductForm({ transactionDate, displayMobile }) {
     setAmount('');
   };
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm = (e) => {
+    displayItem(e.target.id);
     dispatch(
       transOperations.createTransactions({
         type,
@@ -94,15 +94,14 @@ export default function ProductForm({ transactionDate, displayMobile }) {
         </Form>
 
         <ButtonContainerInline>
-          <ButtonContainer>
+          <ButtonContainer >
             <Button
+              onClick={handleSubmitForm}
               text={'ADD'}
               type={'button'}
               backgroundColor={theme.color.buttonOrangeBg}
               textColor={theme.color.inputBorderColor}
-              marginRight={'15px'}
-              onClick={handleSubmitForm}
-            />
+              marginRight={'15px'}/>
             <Button text={'CLEAR'} type={'button'} onClick={handleClearForm} />
           </ButtonContainer>
         </ButtonContainerInline>
