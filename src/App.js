@@ -1,6 +1,7 @@
 import { Switch, Redirect } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Loader from './components/Loader/Loader';
 import authOperations from './redux/auth/auth-operations';
 import authSelectors from './redux/auth/auth-selectors';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,14 +18,19 @@ import Header from './components/Header/Header';
 import GoogleLoader from './components/GoogleLoader/GoogleLoader';
 import { ToastContainer } from 'react-toastify';
 
-
 function App() {
   const isFetchingCurrent = useSelector(authSelectors.getFetchingCurrent);
+  const [inProgress, setInProgress] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(authOperations.getCurrentUser());
+    setInProgress(false);
   }, [dispatch]);
+
+  if (inProgress || isFetchingCurrent) {
+    return <Loader />;
+  }
 
   return (
     !isFetchingCurrent && (
