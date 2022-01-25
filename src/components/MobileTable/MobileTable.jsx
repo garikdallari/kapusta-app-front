@@ -25,7 +25,7 @@ export default function MobileTable() {
   const dispatch = useDispatch();
   const token = useSelector(authSelectors.getToken);
   const transactions = useSelector(transSelectors.getAllTrans);
-  const type = useSelector(transSelectors.getType);
+  
 
   useEffect(() => {
     dispatch(transOperations.listAllTransactions(token));

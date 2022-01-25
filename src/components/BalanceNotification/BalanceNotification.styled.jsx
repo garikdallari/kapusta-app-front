@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Notification = styled.div`
-  display: flex;
+
+  display:${(prop)=>prop.showNotification?"none":"flex"};
   margin: 25px 0 0 0;
   padding: 30px 25px;
   flex-direction: column;
