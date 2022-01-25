@@ -24,6 +24,25 @@ import {
 function HomePage() {
   const { width } = useWindowDimensions();
   const [display, setDisplay] = useState(true);
+  const displayItem = id => {
+    switch (id) {
+      case 'arrowBack':
+        setDisplay(true);
+        break;
+      case 'addButton':
+        setDisplay(true);
+        break;
+      case 'expense':
+        setDisplay(false);
+        break;
+      case 'income':
+        setDisplay(false);
+        break;
+
+      default:
+        break;
+    }
+  };
 
   return (
     <>

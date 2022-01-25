@@ -4,9 +4,9 @@ import { Button, BtnBackText, NavContainer } from './ButtonArrowBack.styled';
 import { theme } from '../../constants/theme';
 
 export default function ButtonArrowBack({ displayBtn, displayText, displayMobile, displayItem }) {
-  const history = useHistory();
+const history = useHistory();
 
- const onClick=(e)=>{ history.push('/home');
+ const onClick=(e)=>{
  displayItem(e.target.id);
  history.push('/home');
 }

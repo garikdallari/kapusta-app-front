@@ -1,5 +1,5 @@
 export const AddMinusToAmount=(amount,type)=>{
-    if(type==="expense"){
-      return "- "+amount;
+    if(type==="expense"&&Number(amount)!==0){
+      return "-"+amount;
     } return amount;
 }

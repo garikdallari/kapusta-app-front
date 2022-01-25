@@ -183,10 +183,10 @@ export const ButtonContainer = styled.div`
 export const ButtonContainerInline = styled.div`
   @media (min-width: 768px) {
     display: inline-block;
+    padding-left:60px;
   }
 
-
-  (min-width: 1280px) {
-    margin-left: 13%;
+  @media (min-width: 1280px) {
+    padding-left:0;
   }
 `;

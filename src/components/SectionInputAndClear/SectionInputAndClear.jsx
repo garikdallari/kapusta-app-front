@@ -14,7 +14,7 @@ export default function SectionInputAndClear({displayMobile, displayItem}) {
     <Section>
       <ButtonArrowBack displayItem={displayItem} displayBtn={'none'} displayText={'none'} displayMobile={displayMobile?"none":"block"}/>
       <CurrentDate getDate={getDate} displayMobile={displayMobile?"block":"none"} displayTablet={"block"}/>
-      <ProductForm transactionDate={date} displayMobile={displayMobile?"none":"block"}/>
+      <ProductForm transactionDate={date} displayItem={displayItem} displayMobile={displayMobile?"none":"block"}/>
     </Section>
   );
 }
