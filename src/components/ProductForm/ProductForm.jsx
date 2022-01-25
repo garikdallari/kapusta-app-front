@@ -20,7 +20,25 @@ import transSelectors from '../../redux/transactions/trans-selectors';
 import { convertDate } from '../../helpers/dateConverter';
 import { getUserBalance } from '../../redux/balance/balance-operations.js';
 
-export default function ProductForm({ transactionDate, displayMobile, displayItem }) {
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+export default function ProductForm({
+  transactionDate,
+  displayMobile,
+  displayItem,
+}) {
+  const notify = () =>
+    toast.warn('Empty fields must be filled.', {
+      position: 'top-right',
+      autoClose: 7000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   const dispatch = useDispatch();
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -48,7 +66,11 @@ export default function ProductForm({ transactionDate, displayMobile, displayIte
     setAmount('');
   };
 
-  const handleSubmitForm = (e) => {
+  const handleSubmitForm = e => {
+    if (!description || !category || !amount) {
+      notify();
+      return;
+    }
     displayItem(e.target.id);
     dispatch(
       transOperations.createTransactions({
@@ -94,14 +116,15 @@ export default function ProductForm({ transactionDate, displayMobile, displayIte
         </Form>
 
         <ButtonContainerInline>
-          <ButtonContainer >
+          <ButtonContainer>
             <Button
               onClick={handleSubmitForm}
               text={'ADD'}
               type={'button'}
               backgroundColor={theme.color.buttonOrangeBg}
               textColor={theme.color.inputBorderColor}
-              marginRight={'15px'}/>
+              marginRight={'15px'}
+            />
             <Button text={'CLEAR'} type={'button'} onClick={handleClearForm} />
           </ButtonContainer>
         </ButtonContainerInline>
