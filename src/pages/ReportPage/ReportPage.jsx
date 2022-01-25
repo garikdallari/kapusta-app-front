@@ -56,7 +56,7 @@ export default function ReportPage() {
                 />
               </ReportContainer>
             </Container>
-            <CartReport data={getSubcategories(context)} />
+            {subExpenseRes && <CartReport data={getSubcategories(context)} />}
           </BackgroundBodyReport>
         </WrapperBackgroundBody>
         <PositionWrapper>
