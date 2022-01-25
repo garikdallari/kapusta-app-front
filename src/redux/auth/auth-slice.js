@@ -27,6 +27,7 @@ const authSlice = createSlice({
       state.user = payload.data.user;
       state.token = payload.data.token;
       state.isLoggedIn = true;
+      // state.isBalanceSet = payload.data.user.isBalanceSet;
     },
     [authOperations.logout.fulfilled](state, action) {
       state.user = { name: null, email: null };
@@ -48,7 +49,8 @@ const authSlice = createSlice({
     },
 
     [authOperations.firstSetBalance.fulfilled]: (state, { payload }) => {
-      state.isBalanceSet = payload;
+      state.isBalanceSet = payload.isBalanceSet;
+      console.log(payload);
     },
   },
 });

@@ -24,11 +24,11 @@ export default function LoginForm() {
     password: '',
     email: '',
   };
-  const token=useSelector(authSelectors.getToken);
-  const handleSubmit = values => {
-    dispatch(authOperations.login(values));
-    dispatch(authOperations.firstSetBalance(token))
-   
+  const token = useSelector(authSelectors.getToken);
+  const handleSubmit = async values => {
+    await dispatch(authOperations.login(values));
+    dispatch(authOperations.getCurrentUser());
+    // dispatch(authOperations.firstSetBalance(token))
   };
 
   return (
