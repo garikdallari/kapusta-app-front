@@ -146,7 +146,7 @@ export const BalanceButton = styled.button`
   }
 `;
 
-export const ReportTitle = styled.p`
+export const ReportTitle = styled.div`
   text-align: center;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 500;
@@ -156,7 +156,7 @@ export const ReportTitle = styled.p`
   color: ${theme.color.buttonDarkText};
   margin: 30px 0 0 0;
   @media screen and (min-width: 768px) {
-    margin: 0 auto;
+    margin: 0 auto 5px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -230,7 +230,7 @@ export const Placeholder = styled.span`
   }
 `;
 
-export const ReportData = styled.p`
+export const ReportData = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,7 +242,7 @@ export const ReportData = styled.p`
   }
 `;
 
-export const Data = styled.p`
+export const Data = styled.div`
   font-family: ${props => props.theme.fontFamily};
   font-style: normal;
   font-weight: bold;
@@ -263,5 +263,7 @@ export const Data = styled.p`
 export const DataBox = styled.p`
   margin: 5px 15px 0 15px;
   @media screen and (min-width: 768px) {
+    margin-top: ${({ marginTop }) => marginTop};
+    margin-bottom: ${({ marginBottom }) => marginBottom};
   }
 `;

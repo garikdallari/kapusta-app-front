@@ -65,7 +65,7 @@ export const WrapperElement = styled.li`
   padding-top: 20px;
   padding-bottom: 20px;
 
-  &:nth-child(3n)::after {
+  &:nth-of-type(3n)::after {
     position: absolute;
     right: 6px;
     bottom: 0;
@@ -81,7 +81,7 @@ export const WrapperElement = styled.li`
     margin: 0;
     padding: 0;
 
-    &:nth-child(3n)::after {
+    &:nth-of-type(3n)::after {
       display: none;
     }
   }

@@ -19,12 +19,14 @@ export const ReportContainer = styled.div`
     max-width: 350px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 34px;
   }
 
   @media screen and (min-width: 768px) {
     max-width: 657px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
   }
   @media screen and (min-width: 768px) {
     max-width: 1055px;
@@ -61,7 +63,6 @@ export const StyledBottomIcon = styled(Icons)`
   }
 
   @media (min-width: 1280px) {
-    /* width: 1335px; */
     width: ${props => props.width + 'px;'}
     height: 275px;
   }
