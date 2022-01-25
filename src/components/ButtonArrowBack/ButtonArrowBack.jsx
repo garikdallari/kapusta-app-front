@@ -1,15 +1,9 @@
-import { useHistory } from 'react-router-dom';
+
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import { Button, BtnBackText, NavContainer } from './ButtonArrowBack.styled';
 import { theme } from '../../constants/theme';
 
-export default function ButtonArrowBack({ displayBtn, displayText, displayMobile, displayItem }) {
-const history = useHistory();
-
- const onClick=(e)=>{
- displayItem(e.target.id);
- history.push('/home');
-}
+export default function ButtonArrowBack({onClick, displayBtn, displayText, displayMobile, displayItem }) {
 
   return (
     <NavContainer displayBtn={displayBtn} displayMobile={displayMobile} >
