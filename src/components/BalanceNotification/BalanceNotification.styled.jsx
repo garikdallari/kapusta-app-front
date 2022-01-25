@@ -6,13 +6,14 @@ export const Notification = styled.div`
   padding: 30px 25px;
   flex-direction: column;
   position: absolute;
-  max-width: 282px;
-  max-height: 152px;
-  top: 52%;
+  width: 282px;
+  height: 163px;
+  top: 78%;
   z-index: 99;
-
+  left: -12px;
   background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
   border-radius: 30px;
+ justify-content:center;
   &:after {
     content: '';
     position: absolute;
@@ -25,9 +26,13 @@ export const Notification = styled.div`
     border-top: 0;
     margin-left: -95px;
     margin-top: -15px;
+  
   }
+
   @media screen and (min-width: 768px) {
-    width: 280px;
+    width: 292px;
+    left: 4px;
+    top: 90%;
   }
 
   @media screen and (min-width: 1280px) {
@@ -43,6 +48,7 @@ export const WelcTextNotification = styled.p`
   font-weight: normal;
   font-size: 14px;
   line-height: 20px;
+ 
   @media screen and (max-width: 768px) {
   }
 
