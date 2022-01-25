@@ -20,5 +20,3 @@ export const BackGroundBody = styled.div`
     height: 526px;
   }
 `;
-
-export const WrapperLoader = styled.div``;
