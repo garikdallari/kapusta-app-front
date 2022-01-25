@@ -20,15 +20,13 @@ export default function CurrentPeriod({ updateValue, isDate }) {
         <ReportData>
           <ArrowButton
             name={'arrow-left'}
-            date={'10-2021'}
             updateValue={value => setSelector(value)}
             currentValue={selector}
             onClick={() => updateValue(selector)}
           />
-          <DataBox>{isDate ? date : selector}</DataBox>
+          <DataBox marginTop={'0'}>{isDate ? date : selector}</DataBox>
           <ArrowButton
             name={'arrow-right'}
-            date={'12-2021'}
             updateValue={value => setSelector(value)}
             currentValue={selector}
           />

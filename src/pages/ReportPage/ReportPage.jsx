@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Context } from '../../components/Context/Context';
 import {
@@ -32,10 +32,12 @@ export default function ReportPage() {
   const { incomeRes, expenseRes, subIncomeRes, subExpenseRes } = useSelector(
     transSelectors.getAllByMonth,
   );
+
   const getSubcategories = categoryState =>
     categoryState === 'expense'
       ? subExpenseRes[subcategoryType]
       : subIncomeRes[subcategoryType];
+
   return (
     <>
       <Context.Provider value={[context, setContext]}>
@@ -59,14 +61,14 @@ export default function ReportPage() {
                   categoryType={value => setSubcategoryType(value)}
                 />
               </ReportContainer>
+              {subExpenseRes && (
+                <CartReport
+                  data={
+                    getSubcategories(context) ? getSubcategories(context) : []
+                  }
+                />
+              )}
             </Container>
-            {subExpenseRes && (
-              <CartReport
-                data={
-                  getSubcategories(context) ? getSubcategories(context) : []
-                }
-              />
-            )}
           </BackgroundBodyReport>
         </WrapperBackgroundBody>
         <PositionWrapper>
