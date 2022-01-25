@@ -26,9 +26,15 @@ import { changeNameIconForPages } from '../../helpers/changeNameIconForPages';
 export default function ReportPage() {
   const { width } = useWindowDimensions();
   const [context, setContext] = useState('expense');
+  const [subcategoryType, setSubcategoryType] = useState('food');
   const { incomeRes, expenseRes, subIncomeRes, subExpenseRes } = useSelector(
     transSelectors.getAllByMonth,
   );
+
+  const getSubcategories = categoryState =>
+    categoryState === 'expense'
+      ? subExpenseRes[subcategoryType]
+      : subIncomeRes[subcategoryType];
 
   return (
     <>
@@ -47,12 +53,11 @@ export default function ReportPage() {
                 <Accounting />
                 <IconsReportSection
                   amount={context === 'expense' ? expenseRes : incomeRes}
+                  categoryType={value => setSubcategoryType(value)}
                 />
               </ReportContainer>
             </Container>
-            <CartReport
-              data={context === 'expense' ? subExpenseRes : subIncomeRes}
-            />
+            <CartReport data={getSubcategories(context)} />
           </BackgroundBodyReport>
         </WrapperBackgroundBody>
         <PositionWrapper>

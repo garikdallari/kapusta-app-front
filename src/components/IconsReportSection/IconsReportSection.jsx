@@ -10,7 +10,7 @@ import IncomeExpenseToggle from '../../components/Balance/IncomeExpenseToggle';
 import { theme } from '../../constants/theme';
 import convertName from '../../helpers/convertName';
 
-const IconsReportSection = ({ amount }) => {
+const IconsReportSection = ({ amount, categoryType }) => {
   return (
     <>
       <Section bgColor={theme.color.buttonWhiteBg}>
@@ -19,7 +19,10 @@ const IconsReportSection = ({ amount }) => {
           {amount !== undefined &&
             amount.map(({ category, amount }, idx) => (
               <WrapperElement elementColor={theme.color.lightGray} key={idx}>
-                <SvgContainer buttonColor={theme.color.buttonOrangeBg}>
+                <SvgContainer
+                  buttonColor={theme.color.buttonOrangeBg}
+                  onClick={() => categoryType(category)}
+                >
                   <TextContainer>{amount}</TextContainer>
                   <Icons
                     name={category}
