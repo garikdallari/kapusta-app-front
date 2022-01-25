@@ -29,7 +29,6 @@ const GoogleLoader = () => {
 
   useEffect(() => {
     if (storedToken) {
-      console.log(storedToken);
       dispatch(authOperations.getCurrentUser());
     }
   }, [dispatch, history, storedToken]);

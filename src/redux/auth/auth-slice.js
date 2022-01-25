@@ -32,12 +32,13 @@ const authSlice = createSlice({
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
-      state.isBalanceSet=false;
+      state.isBalanceSet = false;
     },
     [authOperations.getCurrentUser.fulfilled](state, { payload }) {
       state.user = payload.data;
       state.isLoggedIn = true;
       state.isFetchingCurrent = false;
+      state.isBalanceSet = payload.data.isBalanceSet;
     },
     [authOperations.getCurrentUser.pending](state, _) {
       state.isFetchingCurrent = true;
@@ -47,10 +48,8 @@ const authSlice = createSlice({
     },
 
     [authOperations.firstSetBalance.fulfilled]: (state, { payload }) => {
-      console.log(payload.isBalanceSet);
-      state.isBalanceSet=payload.isBalanceSet;
-   },
-
+      state.isBalanceSet = payload;
+    },
   },
 });
 
