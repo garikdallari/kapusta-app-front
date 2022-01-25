@@ -36,7 +36,7 @@ export default function ChartsReport({ data }) {
           ></XAxis>
 
           <Bar
-            dataKey="amount"
+            dataKey="sum"
             barSize={38}
             fill="#fd8905"
             label={renderCustomBarLabel}

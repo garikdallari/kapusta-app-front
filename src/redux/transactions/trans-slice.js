@@ -30,12 +30,12 @@ const transSlice = createSlice({
 
     [transOperations.getAllByMonth.fulfilled](state, { payload }) {
       state.allByMonth = {
-        expenseRes: [...payload.expenseRes],
-        incomeRes: [...payload.incomeRes],
-        subIncomeRes: [...payload.subcategoryIncomeRes],
-        subExpenseRes: [...payload.subcategoryExpenseRes],
-        expenseBalanceByMonth: payload.expenseBalanceByMonth,
-        incomeBalanceByMonth: payload.incomeBalanceByMonth,
+        expenseRes: [...payload.expenseCategories],
+        incomeRes: [...payload.incomeCategories],
+        subIncomeRes: payload.incomeSubcategories,
+        subExpenseRes: payload.expenseSubcategories,
+        expenseBalanceByMonth: payload.expenseSum,
+        incomeBalanceByMonth: payload.incomeSum,
       };
     },
     [transOperations.createTransactions.fulfilled](state, { payload }) {
