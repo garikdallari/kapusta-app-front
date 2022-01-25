@@ -27,7 +27,7 @@ export default function CurrentPeriod() {
             msDate={dateInMs}
             updateValue={value => setDateInMs(value)}
           />
-          <DataBox>{date}</DataBox>
+          <DataBox marginBottom={'5px'}>{date}</DataBox>
           <ArrowButtonPeriod
             name={'arrow-right'}
             msDate={dateInMs}

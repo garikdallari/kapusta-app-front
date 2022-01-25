@@ -50,10 +50,18 @@ export const Card = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 100%;
   margin-top: 30px;
   background-color: #fff;
   border-radius: 30px;
   padding-top: 25px;
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto;
+    width: 666px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1046px;
+  }
 `;
