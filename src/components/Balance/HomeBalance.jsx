@@ -66,11 +66,12 @@ export default function HomeBalance({ displayMobile }) {
               disabled={emptyBalance}
               required
             />
+            <BalanceNotification />
             <BalanceButton type="submit" disabled={emptyBalance}>
               Confirm
             </BalanceButton>
           </InputContainer>
-          {/* <BalanceNotification /> */}
+        
         </BalanceBox>
       </WrapperInput>
     </>

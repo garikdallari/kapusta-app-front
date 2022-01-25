@@ -5,7 +5,7 @@ import { ReportData, Data, DataBox } from './Balance.styled.jsx';
 import ArrowButtonPeriod from '../ArrowButton/ArrowButtonPeriod.js';
 import transOperations from '../../redux/transactions/trans-operations';
 
-export default function CurrentPeriod({}) {
+export default function CurrentPeriod() {
   const [date, getDate] = useState(format(new Date(), 'MMM Y'));
   const [dateInMs, setDateInMs] = useState(Date.now());
 
@@ -15,7 +15,7 @@ export default function CurrentPeriod({}) {
     getDate(format(new Date(dateInMs), 'MMM yyyy'));
     const fetchDate = format(new Date(dateInMs), 'M-yyyy');
     dispatch(transOperations.getAllByMonth(fetchDate));
-  }, [dateInMs]);
+  }, [dateInMs, dispatch]);
 
   return (
     <>
