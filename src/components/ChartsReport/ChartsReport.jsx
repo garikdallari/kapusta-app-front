@@ -35,6 +35,7 @@ export default function ChartsReport({ data }) {
             axisLine={false}
             tickLine={false}
             dy={5}
+            domain={['','']}
           ></XAxis>
 
           <Bar
