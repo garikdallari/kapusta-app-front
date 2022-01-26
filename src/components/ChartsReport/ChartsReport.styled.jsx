@@ -52,14 +52,15 @@ export const Card = styled.div`
 export const Container = styled.div`
   margin: 0 auto;
   width: ${({ width }) => width};
-  margin-top: 30px;
   background-color: #fff;
   border-radius: 30px;
-  padding-top: 25px;
+  padding-bottom: 25px;
 
   @media screen and (min-width: 768px) {
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     width: 666px;
+    padding-bottom: 19px;
+    margin-bottom: 50px;
   }
 
   @media screen and (min-width: 1280px) {

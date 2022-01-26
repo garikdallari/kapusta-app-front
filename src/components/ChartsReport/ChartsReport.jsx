@@ -5,7 +5,8 @@ import useWindowDimensions from '../../helpers/useWindowDimensions';
 
 export default function ChartsReport({ data }) {
   const { width } = useWindowDimensions();
-  // console.log(data && data.length);
+
+  const SortedData = [...data].sort((a, b) => b.sum - a.sum);
 
   const renderCustomBarLabel = ({ x, y, width, value }) => {
     return (
@@ -25,7 +26,7 @@ export default function ChartsReport({ data }) {
         <BarChart
           width={605}
           height={328}
-          data={data}
+          data={SortedData}
           margin={{ top: 50, right: 20, bottom: 9, left: 20 }}
           barCategoryGap={20}
         >
@@ -56,6 +57,6 @@ export default function ChartsReport({ data }) {
       </Card>
     </Container>
   ) : (
-    <MobileChartsReport data={data} />
+    <MobileChartsReport data={SortedData} />
   );
 }
