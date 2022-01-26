@@ -14,7 +14,7 @@ import {
   TabletText,
   DesktopText,
   AmountTd,
-  AmountHeadTd
+  AmountHeadTd,
 } from './TabletDesktopTable.styled';
 
 import { AddMinusToAmount } from '../../helpers/addMinusToAmount';
@@ -24,6 +24,7 @@ import authSelectors from '../../redux/auth/auth-selectors';
 import transSelectors from '../../redux/transactions/trans-selectors';
 import { getUserBalance } from '../../redux/balance/balance-operations.js';
 import TransConfirmModal from '../TransConfirmModal/TransConfirmModal';
+import convertName from '../../helpers/convertName';
 
 export default function TabletDesktopTable() {
   const dispatch = useDispatch();
@@ -100,7 +101,7 @@ export default function TabletDesktopTable() {
                         />
                       </DesktopText>
                     </td>
-                    <StyledTd>{trans.category}</StyledTd>
+                    <StyledTd>{convertName(trans.category)}</StyledTd>
                     <AmountTd type={trans.type === 'expense' ? true : false}>
                       {AddMinusToAmount(trans.amount, trans.type)} $
                     </AmountTd>
