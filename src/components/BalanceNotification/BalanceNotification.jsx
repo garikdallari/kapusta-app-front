@@ -11,14 +11,14 @@ export default function BalanceNotification() {
 
   return (
     <>
-      {/* <Notification showNotification={showNotification}>
+      <Notification showNotification={showNotification}>
         <WelcTextNotification>
           Hey! To get started, enter the current balance of your account!
         </WelcTextNotification>
         <DescrTextNotification>
           You can't spend money until you haven't it &#58;&#41;
         </DescrTextNotification>
-      </Notification> */}
+      </Notification>
     </>
   );
 }
