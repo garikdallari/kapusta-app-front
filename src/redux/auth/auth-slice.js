@@ -50,7 +50,6 @@ const authSlice = createSlice({
 
     [authOperations.firstSetBalance.fulfilled]: (state, { payload }) => {
       state.isBalanceSet = payload.isBalanceSet;
-      console.log(payload);
     },
   },
 });

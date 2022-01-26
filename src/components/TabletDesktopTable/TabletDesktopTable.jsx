@@ -102,7 +102,7 @@ export default function TabletDesktopTable() {
                       </DesktopText>
                     </td>
                     <StyledTd>{convertName(trans.category)}</StyledTd>
-                    <AmountTd type={trans.type === 'expense' ? true : false}>
+                    <AmountTd textColor={trans.type === 'expense' ? true : false}>
                       {AddMinusToAmount(trans.amount, trans.type)} $
                     </AmountTd>
                     <StyledTd>

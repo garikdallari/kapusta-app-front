@@ -73,7 +73,6 @@ const firstSetBalance = createAsyncThunk(
         Authorization: `Bearer ${token}`,
       });
       const result = response.data.result;
-
       return result;
     } catch (error) {
       console.log(error.message);
