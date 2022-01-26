@@ -47,7 +47,6 @@ const authSlice = createSlice({
     },
 
     [authOperations.firstSetBalance.fulfilled]: (state, { payload }) => {
-      console.log(payload.isBalanceSet);
       state.isBalanceSet=payload.isBalanceSet;
    },
 

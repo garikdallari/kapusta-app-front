@@ -1,6 +1,5 @@
 import Icons from '../Icons/Icons';
 import authSelectors from '../../redux/auth/auth-selectors';
-import authOperations from '../../redux/auth/auth-operations';
 import LogOutConfirmModal from '../LogOutConfirmModal/LogOutConfirmModal';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';

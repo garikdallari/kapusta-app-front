@@ -31,7 +31,6 @@ export default function TabletDesktopTable() {
   const token = useSelector(authSelectors.getToken);
   const transactions = useSelector(transSelectors.getTransByType);
   const type = useSelector(transSelectors.getType);
-  console.log(type)
   const [modal, setModal] = useState(false);
   const [id, setId] = useState(null);
 
