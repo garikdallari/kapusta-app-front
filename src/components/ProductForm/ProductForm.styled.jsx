@@ -19,6 +19,7 @@ export const Input = styled.input`
   }
   ::placeholder {
     color: ${theme.color.inputPlaceholderColor};
+    font-weight: normal;
   }
 
   @media (max-width: 767px) {
@@ -183,10 +184,10 @@ export const ButtonContainer = styled.div`
 export const ButtonContainerInline = styled.div`
   @media (min-width: 768px) {
     display: inline-block;
-    padding-left:60px;
+    padding-left: 60px;
   }
 
   @media (min-width: 1280px) {
-    padding-left:0;
+    padding-left: 0;
   }
 `;

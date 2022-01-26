@@ -58,9 +58,6 @@ export const BalanceTitle = styled.p`
   @media screen and (min-width: 768px) {
     margin: 0 auto;
   }
-
-  @media screen and (min-width: 1280px) {
-  }
 `;
 
 export const InputContainer = styled.form`
@@ -79,7 +76,7 @@ export const InputContainer = styled.form`
 export const Label = styled.label`
   position: relative;
   left: 110px;
-  top: 15px;
+  top: 16px;
   font-family: ${props => props.theme.fontFamily};
   color: ${theme.color.blackText};
   font-style: normal;
@@ -88,11 +85,6 @@ export const Label = styled.label`
   line-height: 14px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  @media screen and (max-width: 768px) {
-  }
-
-  @media screen and (max-width: 1280px) {
-  }
 `;
 
 export const BalanceInput = styled.input`
@@ -111,9 +103,17 @@ export const BalanceInput = styled.input`
   text-align: center;
   letter-spacing: 0.02em;
   background-color: ${theme.color.overlay};
-  &:placeholder {
-    font-family: Roboto;
+  &::placeholder {
     color: ${theme.color.blackText};
+    font-family: ${props => props.theme.fontFamily};
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
   }
   @media screen and (min-width: 768px) {
     border-radius: 16px;
@@ -122,7 +122,6 @@ export const BalanceInput = styled.input`
 `;
 
 export const BalanceButton = styled.button`
-  // padding: 12px 0 12px 0;
   width: 125px;
   height: 44px;
   border: 2px solid white;
@@ -155,7 +154,6 @@ export const BalanceButton = styled.button`
     border-radius: 16px;
   }
 `;
-
 export const ReportTitle = styled.div`
   text-align: center;
   font-family: ${props => props.theme.fontFamily};
@@ -164,12 +162,9 @@ export const ReportTitle = styled.div`
   line-height: 14px;
   letter-spacing: 0.04em;
   color: ${theme.color.buttonDarkText};
-  margin: 30px 0 5px 0;
+  margin: 30px 0 6px 0;
   @media screen and (min-width: 768px) {
-    margin: 0 auto 5px;
-  }
-
-  @media screen and (min-width: 1280px) {
+    margin: 0 auto;
   }
 `;
 export const ReportInput = styled.input`
@@ -192,6 +187,18 @@ export const ReportInput = styled.input`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-align: center;
+  &::placeholder {
+    color: ${theme.color.blackText};
+    font-family: ${props => props.theme.fontFamily};
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
 
   @media screen and (min-width: 768px) {
     margin: 0 auto;
@@ -227,28 +234,6 @@ export const ReportButton = styled.button`
   }
 `;
 
-export const Placeholder = styled.span`
-  position: absolute;
-  left: ${props => props.left};
-  top: 15px;
-  font-family: ${props => props.theme.fontFamily};
-  color: ${theme.color.blackText};
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    left: 65px;
-    top: 17px;
-  }
-  @media screen and (min-width: 1280px) {
-    left: 68px;
-  }
-`;
-
 export const LabelReport = styled.span`
   position: relative;
   left: 110px;
@@ -261,6 +246,9 @@ export const LabelReport = styled.span`
   line-height: 14px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  @media screen and (min-width: 1280px) {
+    left: 130px;
+  }
 `;
 
 export const ReportData = styled.div`

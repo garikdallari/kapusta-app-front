@@ -10,10 +10,8 @@ export async function getUserBalance() {
 }
 
 export async function updateBalance(balance) {
-  console.log(balance);
   try {
     const data = await axios.patch('/balance', balance);
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error.message);

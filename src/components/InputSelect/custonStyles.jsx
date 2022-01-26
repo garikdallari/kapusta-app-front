@@ -16,18 +16,17 @@ export const customStyles = {
     letterSpacing: '0.02em',
     textAlign: 'left',
   }),
-  container: (provided, state) => ({
+  container: provided => ({
     ...provided,
     height: '44px',
     width: '100%',
   }),
-  placeholder: (provided, state) => ({
+  placeholder: provided => ({
     ...provided,
     fontSize: '12px',
     color: `${theme.color.inputPlaceholderColor}`,
   }),
   control: (provided, state, base) => ({
-    //весь контейнер инпута селект.
     paddingLeft: '12px',
     ...provided,
     ...base,
@@ -43,12 +42,11 @@ export const customStyles = {
         : theme.color.inputBorderColorDeskTab,
     },
   }),
-  indicatorSeparator: (provided, state) => ({
+  indicatorSeparator: provided => ({
     ...provided,
     display: 'none',
   }),
-  singleValue: (provided, state) => ({
-    //выбранное значение в инпуте.
+  singleValue: provided => ({
     ...provided,
     color: theme.color.blackText,
     fontSize: '12px',
@@ -57,7 +55,7 @@ export const customStyles = {
     letterSpacing: '0.02em',
     fontWeight: 'bold',
   }),
-  selectContainer: (provided, state) => ({
+  selectContainer: provided => ({
     ...provided,
     fontSize: '12px',
     lineHeight: '14px',

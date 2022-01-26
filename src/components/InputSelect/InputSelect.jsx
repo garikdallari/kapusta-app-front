@@ -14,8 +14,21 @@ export default function InputSelect({ handleChange, category }) {
   const dataPlaceholder =
     typeTransactions === 'income' ? 'Income category' : 'Product category';
 
+  const deleteUnderscore = category => {
+    switch (category) {
+      case 'Home_stuff':
+        return 'Home stuff';
+      case 'Utility_bills':
+        return 'Utility bills';
+      case 'Extra_Income':
+        return 'Extra Income';
+      default:
+        return category;
+    }
+  };
+
   const changeCategory = category && {
-    label: category,
+    label: deleteUnderscore(category),
     value: category,
   };
 

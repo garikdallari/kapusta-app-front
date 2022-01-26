@@ -11,13 +11,13 @@ import { Container } from './ChartsReport.styled';
 
 export default function MobileChartsReport({ data }) {
   const renderBarLabel = ({ x, y, width, value }) => (
-    <text x={x + width / 1.1} y={y} textAnchor="middle" fontSize={10} dy={-10}>
+    <text x={x + width / 1.1} y={y} textAnchor="middle" fontSize={10} dy={-8}>
       {value ? `${value} USD` : ''}
     </text>
   );
 
   const renderCategoryLabel = ({ x, y, value }) => (
-    <text x={x} y={y} dy={-10} fontSize={10}>
+    <text x={x} y={y} dy={-8} fontSize={10}>
       {value}
     </text>
   );
@@ -39,7 +39,7 @@ export default function MobileChartsReport({ data }) {
             radius={[0, 10, 10, 0]}
             label={renderBarLabel}
             fill="#52555f"
-            minPointSize={5}
+            minPointSize={80}
           >
             {data &&
               data.map((el, idx) => (
