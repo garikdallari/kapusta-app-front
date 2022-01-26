@@ -1,17 +1,15 @@
 const convertName = key => {
-  switch (key.toLowerCase()) {
+  const keyX=key.toLowerCase();
+  switch ( keyX) {
     case 'utility_bills':
       return 'bills';
-      break;
     case 'extra_income':
-        return 'extra';
-        break;
-        case 'home_stuff': 
-        return 'home stuff';
-        break; 
+      return 'extra';
+    case 'home_stuff':
+      return 'home stuff';
     default:
       return key;
-      break;
-  }}
+  }
+};
 
 export default convertName;
