@@ -69,7 +69,7 @@ export default function ReportPage() {
                 />
               )}
             </Container>
-          </BackgroundBodyReport>
+            </BackgroundBodyReport>
         </WrapperBackgroundBody>
         <PositionWrapper>
           <WrapperBottomIcon>

@@ -66,6 +66,7 @@ export const BackgroundBodyReport = styled.div`
   }
 
   @media (min-width: 1280px) {
+    max-width: 100vw;
     margin: auto;
     padding: 43px 110px 74px 110px;
   }
@@ -73,6 +74,7 @@ export const BackgroundBodyReport = styled.div`
 
 export const WrapperBackgroundBody = styled.div`
   position: relative;
+  width:100vw;
 `;
 
 export const WrapperLoginForm = styled.div`
