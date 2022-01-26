@@ -72,9 +72,9 @@ const firstSetBalance = createAsyncThunk(
       const response = await axios.patch(`/balance/firstSetBalance`, {
         Authorization: `Bearer ${token}`,
       });
-    const {balance}=response.data;
-     console.log(balance);
-      return balance;
+      const result = response.data.result;
+
+      return result;
     } catch (error) {
       console.log(error.message);
       throw new Error(error.message);
@@ -87,7 +87,7 @@ export const authOperations = {
   login,
   logout,
   getCurrentUser,
-  firstSetBalance
+  firstSetBalance,
 };
 
 export default authOperations;
