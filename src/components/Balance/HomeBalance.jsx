@@ -19,6 +19,8 @@ import {
 import transSelectors from '../../redux/transactions/trans-selectors';
 import BalanceNotification from '../BalanceNotification/BalanceNotification';
 import ReportsNavigation from '../ReportsNavigation/ReportsNavigation';
+import authSelectors from '../../redux/auth/auth-selectors';
+import authOperations from '../../redux/auth/auth-operations';
 
 export default function HomeBalance({ displayMobile }) {
   const currentBalance = useSelector(getBalance);
@@ -26,7 +28,9 @@ export default function HomeBalance({ displayMobile }) {
   const [balance, setBalance] = useState();
   const transByType = useSelector(transSelectors.getTransByType);
   const allTrans = useSelector(transSelectors.getAllTrans);
-  const emptyBalance = currentBalance === 0 ? false : true;
+  // const emptyBalance = currentBalance === 0 ? false : true;
+
+  const isBalanceSet = useSelector(authSelectors.isBalanceSet);
 
   useEffect(() => {
     dispatch(getUserBalance());
@@ -39,6 +43,9 @@ export default function HomeBalance({ displayMobile }) {
   };
 
   const handleSubmit = e => {
+    if (balance) {
+      dispatch(authOperations.firstSetBalance());
+    }
     e.preventDefault();
     if (currentBalance === 0) {
       dispatch(updateUserBalance({ balance }));
@@ -64,16 +71,16 @@ export default function HomeBalance({ displayMobile }) {
               name="balance"
               // value={balance}
               onChange={handleInput}
-              disabled={emptyBalance}
+              disabled={isBalanceSet}
               required
               placeholder={balance}
             />
-            <BalanceNotification />
-            <BalanceButton type="submit" disabled={emptyBalance}>
+            {!isBalanceSet && <BalanceNotification />}
+
+            <BalanceButton type="submit" disabled={isBalanceSet}>
               Confirm
             </BalanceButton>
           </InputContainer>
-        
         </BalanceBox>
       </WrapperInput>
     </>
