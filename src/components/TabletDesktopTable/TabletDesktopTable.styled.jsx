@@ -59,7 +59,7 @@ export const ScrollBody = styled.div`
 
 
 export const AmountTd = styled.td`
-  color: ${props => (props.type ? "#E7192E" : '#407946')};
+  color: ${props => (props.textColor? "#E7192E" : '#407946')};
   font-weight: 700;
   width: 100px;
   text-align: center;

@@ -61,7 +61,7 @@ export const DeleteTd = styled.td`
 export const AmountTd = styled.td`
   width: 100px;
   text-align: end;
-  color: ${props => (props.type ? "#E7192E" : '#407946')};
+  color: ${props => (props.textColor ? "#E7192E" : '#407946')};
   font-weight: 700;
 `;
 

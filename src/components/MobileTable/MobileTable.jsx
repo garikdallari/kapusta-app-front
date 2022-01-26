@@ -59,7 +59,7 @@ export default function MobileTable() {
                       <Category>{trans.category}</Category>
                     </StyledP>
                   </DescriptionTd>
-                  <AmountTd type={trans.type==="expense"?true:false}>{AddMinusToAmount(trans.amount, trans.type)} $</AmountTd>
+                  <AmountTd textColor={trans.type==="expense"?true:false}>{AddMinusToAmount(trans.amount, trans.type)} $</AmountTd>
                   <DeleteTd>
                     <DeleteBtn
                       type="button"

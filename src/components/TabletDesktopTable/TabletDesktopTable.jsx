@@ -31,6 +31,7 @@ export default function TabletDesktopTable() {
   const token = useSelector(authSelectors.getToken);
   const transactions = useSelector(transSelectors.getTransByType);
   const type = useSelector(transSelectors.getType);
+  console.log(type)
   const [modal, setModal] = useState(false);
   const [id, setId] = useState(null);
 
@@ -102,7 +103,7 @@ export default function TabletDesktopTable() {
                       </DesktopText>
                     </td>
                     <StyledTd>{convertName(trans.category)}</StyledTd>
-                    <AmountTd type={trans.type === 'expense' ? true : false}>
+                    <AmountTd textColor={trans.type === 'expense' ? true : false}>
                       {AddMinusToAmount(trans.amount, trans.type)} $
                     </AmountTd>
                     <StyledTd>
