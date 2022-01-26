@@ -58,7 +58,7 @@ function HomePage() {
                 displayMobile={display}
                 displayItem={displayItem}
               />
-              <TableSummaryWrapper displayMobile={display ? 'flex' : 'none'}>
+              <TableSummaryWrapper displayMobile={display}>
                 <TabletDesktopTable />
                 <MobileTable />
                 <Summary />

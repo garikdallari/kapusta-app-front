@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Icons from '../../components/Icons/Icons';
 
 export const TableSummaryWrapper = styled.div`
-  display: ${prop => prop.displayMobile};
+  display: ${prop => prop.displayMobile?"flex":"none"};
   align-items: center;
   justify-content: center;
 
